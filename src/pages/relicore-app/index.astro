@@ -1,0 +1,87 @@
+---
+// Geen BaseLayout — eigen RELICORE shell
+---
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RELICORE — Lifecycle Asset Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f3f4f6; color: #0f1f35; min-height: 100vh; }
+  </style>
+</head>
+<body>
+
+  <!-- RELICORE Header — sticky, zelfde stijl als live app -->
+  <header style="position: sticky; top: 0; z-index: 50; background: #0f1f35; padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <svg viewBox="0 0 48 48" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="20" fill="none" stroke="white" stroke-width="2"/>
+        <circle cx="24" cy="24" r="5" fill="none" stroke="white" stroke-width="2"/>
+        <line x1="24" y1="4" x2="24" y2="14" stroke="white" stroke-width="2"/>
+        <line x1="24" y1="34" x2="24" y2="44" stroke="white" stroke-width="2"/>
+        <line x1="4" y1="24" x2="14" y2="24" stroke="white" stroke-width="2"/>
+        <line x1="34" y1="24" x2="44" y2="24" stroke="white" stroke-width="2"/>
+      </svg>
+      <span style="color: white; font-size: 15px; font-weight: 700; letter-spacing: 3px;">RELICORE</span>
+    </div>
+    <span style="color: #6b7280; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;">By AssetWize</span>
+  </header>
+
+  <!-- Ontvangst content — gecentreerd, card op grijze achtergrond -->
+  <main style="min-height: calc(100vh - 56px); display: flex; align-items: center; justify-content: center; padding: 3rem 2rem;">
+    <div style="width: 100%; max-width: 480px;">
+
+      <!-- Logo herhaling in content -->
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1rem;">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="#147878" stroke-width="2"/>
+          <circle cx="24" cy="24" r="5" fill="none" stroke="#147878" stroke-width="2"/>
+          <line x1="24" y1="4" x2="24" y2="14" stroke="#147878" stroke-width="2"/>
+          <line x1="24" y1="34" x2="24" y2="44" stroke="#147878" stroke-width="2"/>
+          <line x1="4" y1="24" x2="14" y2="24" stroke="#147878" stroke-width="2"/>
+          <line x1="34" y1="24" x2="44" y2="24" stroke="#147878" stroke-width="2"/>
+        </svg>
+        <h1 style="font-size: 1.25rem; font-weight: 700; color: #0f1f35; letter-spacing: 0.5px;">
+          Lifecycle Asset Intelligence
+        </h1>
+        <p style="color: #6b7280; font-size: 13px; margin-top: 0.5rem;">
+          Log in met uw organisatieaccount
+        </p>
+      </div>
+
+      <!-- Login card -->
+      <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+        <p style="font-size: 13px; font-weight: 600; color: #0f1f35; margin-bottom: 1.5rem; text-align: center;">
+          Toegang voor organisaties
+        </p>
+
+        <!-- Login placeholder — wordt Clerk in Platform Fase 3 -->
+        <div style="background: #f9fafb; border: 1px dashed #d1d5db; border-radius: 8px; padding: 2.5rem 2rem; text-align: center;">
+          <p style="color: #9ca3af; font-size: 13px; margin-bottom: 0.25rem;">Login via Clerk</p>
+          <p style="color: #d1d5db; font-size: 11px;">Wordt gekoppeld in Platform Fase 3</p>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #f3f4f6; text-align: center;">
+          <p style="font-size: 12px; color: #9ca3af;">
+            Nog geen toegang?
+            <a href="/contact" style="color: #147878; font-weight: 500; text-decoration: none;">Neem contact op →</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Terug link -->
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <a href="/relicore" style="font-size: 12px; color: #9ca3af; text-decoration: none;">
+          ← Terug naar RELICORE informatie
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

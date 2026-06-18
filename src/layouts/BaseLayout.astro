@@ -1,0 +1,71 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'AssetWize — Structured asset governance' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | AssetWize</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Zorgt dat de footer altijd aansluit zonder witte gap */
+    html, body { background-color: #0f1f35; }
+    main { background-color: white; }
+  </style>
+</head>
+<body class="text-gray-900 font-sans">
+
+  <header class="sticky top-0 z-50 bg-gray-50 shadow-sm">
+    <nav class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center">
+        <img src="/assetwize_logo_cropped.png" alt="AssetWize" class="h-10 w-auto" />
+      </a>
+      <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+        <li><a href="/governance-compass" class="hover:text-teal-700 transition-colors">Governance Compass</a></li>
+        <li><a href="/relicore" class="hover:text-teal-700 transition-colors">RELICORE</a></li>
+        <li><a href="/over-ons" class="hover:text-teal-700 transition-colors">Over ons</a></li>
+        <li><a href="/contact" class="hover:text-teal-700 transition-colors">Contact</a></li>
+      </ul>
+      <a href="/contact" class="px-4 py-2 bg-teal-700 text-white text-sm font-medium rounded-lg hover:bg-teal-800 transition-colors">
+        Demo aanvragen
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="bg-navy-900 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <img src="/assetwize_logo_cropped.png" alt="AssetWize" class="h-8 w-auto brightness-0 invert mb-2" />
+      </div>
+      <div>
+        <div class="font-semibold text-gray-300 mb-3">Producten</div>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="/governance-compass" class="hover:text-white transition-colors">Governance Compass</a></li>
+          <li><a href="/relicore" class="hover:text-white transition-colors">RELICORE</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-300 mb-3">Bedrijf</div>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="/over-ons" class="hover:text-white transition-colors">Over ons</a></li>
+          <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 max-w-6xl mx-auto px-6 py-4 text-xs text-gray-500">
+      &copy; {new Date().getFullYear()} AssetWize Software Solutions
+    </div>
+  </footer>
+
+</body>
+</html>

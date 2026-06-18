@@ -1,0 +1,17 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+
+import tailwindcss from '@tailwindcss/vite';
+
+// https://astro.build/config
+export default defineConfig({
+  output: 'static',
+  devToolbar: {
+    enabled: false
+  },
+  vite: {
+    plugins: [tailwindcss()]
+  },
+  // Cloudflare adapter wordt toegevoegd bij deployment via CI/CD pipeline
+  // adapter: cloudflare()
+});
