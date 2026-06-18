@@ -1,234 +1,214 @@
-# AssetWize — START_HERE
-**Versie:** 2026-02-27 (Session 2)  
-**Laatst gewijzigd:** Dimitry (via Claude)
+# START_HERE.md — AssetWize Website Project
+
+> Dit is het startpunt voor een nieuw gesprek of een nieuwe Claude Code sessie.
+> Lees dit volledig voordat je iets doet.
 
 ---
 
-## 🎯 LEESINSTRUCTIE VOOR NIEUWE CHAT
+## 1. Wat is dit project?
 
-**Verplichte volgorde:**
-1. Lees dit document (5 min)
-2. Lees `BACKLOG.md` (huidige werklijst)
-3. Lees het document dat bij jouw sessie past (zie Routering hieronder)
-4. Bevestig in chat: _"Ik heb gelezen: [docs]. Huidige focus: [X]"_
+Dit is de **officiële marketingwebsite van AssetWize Software Solutions** —
+het moedermerk achter RELICORE, Governance Compass en KADENZ.
 
-**Als je niet weet waar te beginnen:** Lees BACKLOG.md → 🔴 TO DO sectie
+De website draait op **assetwize.nl** en is het centrale publieke gezicht van AssetWize.
+Hij dient als:
 
----
+- Merkplatform op board/directieniveau (AssetWize als governance partner)
+- Landingspagina voor twee software-producten: **RELICORE** en **Governance Compass**
+- Doorgangspunt naar de software zelf (login / demo aanvragen)
 
-## 📝 WAT IS DIT PROJECT?
-
-**AssetWize** is een consultancy-first SaaS platform voor asset management maturity assessments gebaseerd op ISO 55000. 
-
-**Drielaags:**
-- **L1:** Board Scan (28 vragen, governance niveau)
-- **L2:** Management Control (100 vragen, proces niveau)  
-- **L3:** Growth Paths (capability-driven roadmaps)
-
-**Doel:** Van board-pijn naar traceerbare actie via maturity scans + interventie roadmaps.
-
-**Operating model:** Tool gebruikt door consultant tijdens begeleide workshops (niet zelfbediening SaaS).
+**De website is GEEN productapp.** Hij is marketing + doorgangspunt.
 
 ---
 
-## 📊 HUIDIGE STAAT (2026-02-27)
+## 2. Huidige staat
 
-### ✅ WERKT (PRODUCTION READY)
+### Wat er is
 
-**Core Functionality:**
-- L1 Board Scan: questions, responses, reports (radar chart, band analysis)
-- L2 Management Control: questions with filters (theme/subtheme/PDCA), PDCA analysis, reports
-- L3 Growth Paths: database models, recommended domains, capability scan UI, roadmap generation per domain
+Een werkende Astro-website met de volgende pagina's:
 
-**State Management:**
-- Assessment lifecycle: IN_PROGRESS → REVIEW_READY → FINALIZED
-- Preview report mode (geen auto-lock)
-- Read-only enforcement voor finalized assessments
+| Pagina | Route | Status |
+|---|---|---|
+| Homepage | `/` | Uitgewerkt — board-niveau, governance narratief |
+| RELICORE | `/relicore` | Uitgewerkt — productpagina, modules, architectuurdiagram |
+| Governance Compass | `/governance-compass` | Uitgewerkt — productpagina |
+| RELICORE App ontvangst | `/relicore-app` | Uitgewerkt — login card, doorgangspunt naar app |
+| Over ons | `/over-ons` | Uitgewerkt — Dimitry, filosofie, vier domeinen |
+| Contact | `/contact` | Aanwezig |
 
-**Evidence & Commentary:**
-- Consultant notes per question (auto-save, debounced)
-- Theme notes (observation, insight, action, risk)
-- SubTheme notes (L2 diagnostic)
-- Evidence linking systeem
+### Wat ontbreekt / nog te bouwen
 
-**Operations:**
-- Health monitoring (`/api/health`)
-- Structured error logging (daily files in `/logs`)
-- Database backup scripts (daily cron ready)
-- PM2 process management
-- Uptime monitoring script
+- Geen GitHub remote (nog niet gepushed naar GitHub)
+- Geen Cloudflare Pages deployment (nog lokaal)
+- Geen Governance Compass login/ontvangstpagina (equivalent van `/relicore-app`)
+- Geen KADENZ pagina (product nog in planning)
+- Wix (`assetwize.nl`) nog niet afgekoppeld — domein migratie nog te doen
+- Design nog functioneel/technisch — geen professionele designsessie geweest
 
-### ⚠️ IN PROGRESS
+### Lokaal draaien
 
-**L3 Data Enrichment:**
-- Need 150 L2→L3 question mappings (0/150 done)
-- Need 200+ rich interventions (24/200 done, content te summier)
-- Need observable behaviors per capability question (0/30 done)
-- Need intervention dependencies (0/400 done)
-
-**Quick Fixes:**
-- Duplicate comment fields bug (consultant + client comment both visible)
-
-### 🔴 KNOWN ISSUES
-
-**High Priority:**
-1. **Duplicate Comment Fields** (L1/L2 runner)
-   - Impact: Confusing UX, unclear distinction
-   - Fix: Cursor task (5-10 min) - wrap consultant notes in collapsible
-
-**Medium Priority:**
-2. **L3 Content Quality**
-   - Impact: Roadmaps niet board-ready (geen business case, rationale)
-   - Fix: Data enrichment (15-22 dagen, 8-12 met 2 mensen)
-
-3. **L3 Program Reporting Missing**
-   - Impact: Losse roadmaps per domain, geen integraal programma
-   - Fix: Program aggregation (Stage 5C, 3-4 dagen)
-
-**Low Priority:**
-4. L2 filter persistence (sessionstorage oplossing)
-5. Missing timestamps op enkele models
+```bash
+cd /Users/drvandort/dev/assetwize-website
+npm install
+npm run dev
+# → http://localhost:4321/
+```
 
 ---
 
-## 🎯 ACTIEVE PRIORITEITEN
+## 3. Merkstructuur en messaging
 
-| Pri | Wat | Document | Status | Owner |
-|-----|-----|----------|--------|-------|
-| 🔴 | Fix duplicate comment fields | `tasks/TASK_FIX_DUPLICATE_COMMENTS.md` | To Do | - |
-| 🔴 | L3 L2→L3 question mapping | `docs/design/L3_DATA_ARCHITECTURE.md` Part 1 | Design | - |
-| 🔴 | L3 Observable behaviors | `docs/design/L3_DATA_ARCHITECTURE.md` Part 2 | Design | - |
-| 🟡 | Test consultancy workflow | - | To Do | Dimitry |
-| 🟡 | Setup backup automation (cron) | `docs/operations/RUNBOOK.md` | To Do | - |
-| 🟡 | L3 Enhanced interventions | `docs/design/L3_DATA_ARCHITECTURE.md` Part 3 | Design | - |
+**Strikte scheiding tussen twee niveaus:**
 
----
+| | AssetWize (moedermerk) | RELICORE / Compass (producten) |
+|---|---|---|
+| Doelgroep | Board / directie | Asset managers / engineers |
+| Taal | Governance · bestuur · systeem · richting | Structuur · inzicht · controle · boven CMMS |
+| CTA | "Start het gesprek" | "Demo aanvragen" / "Open RELICORE" |
+| Nooit | CMMS-taal, tool-taal | Board-taal, governance-jargon |
 
-## 🗺️ ROUTERING — BIJ VRAAG OVER X, LEES Y
+Elke pagina heeft één taal. Nooit mengen.
 
-| Vraag over... | Lees dit document |
-|---------------|-------------------|
-| Tech stack, database schema, API design | `docs/foundation/PROJECT_OVERVIEW.md` |
-| Roadmap, planning, stages, overall progress | `docs/foundation/ASSETWIZE_ROADMAP.md` |
-| L3 data design (mappings, interventions, dependencies) | `docs/design/L3_DATA_ARCHITECTURE.md` |
-| State machine implementation | `tasks/CURSOR_TASK_BUNDLE_A_STATE_MACHINE.md` |
-| Evidence & commentary layer | `tasks/CURSOR_TASK_BUNDLE_B_EVIDENCE_COMMENTARY.md` |
-| Operational hardening (health, backups, monitoring) | `tasks/CURSOR_TASK_BUNDLE_C_OPERATIONAL_HARDENING.md` |
-| Server operations, deployment, troubleshooting | `docs/operations/RUNBOOK.md` |
-| Database schema details | `schema.prisma` (root) |
-| Package dependencies | `package.json` (root) |
+**Producthiërarchie:**
 
-**Als document niet in bovenstaande lijst:** Check `BACKLOG.md` voor verwijzingen.
+```
+AssetWize Software Solutions     ← moedermerk (assetwize.nl)
+├── RELICORE                     ← relicore.app (eigen domein, geregistreerd)
+├── Governance Compass           ← assetwize.nl/governance-compass
+└── KADENZ                       ← in planning
+```
+
+RELICORE draagt altijd "by AssetWize" — in header, ontvangstpagina en footer.
 
 ---
 
-## ⚠️ KRITIEKE REGELS (NEVER VIOLATE)
+## 4. Tech stack
 
-### Database (Prisma)
-1. **Shared Prisma instance:** ALWAYS `import prisma from '@/lib/prisma'`
-2. **NEVER call `$disconnect()`** in API routes or functions
-3. **Absolute paths** for reliability (not relative, not tilde)
+| Onderdeel | Keuze |
+|---|---|
+| Framework | Astro (statisch, snel) |
+| Styling | Tailwind CSS (utility-first) |
+| Hosting | Cloudflare Pages (nog te koppelen) |
+| Domein | assetwize.nl (nu nog Wix, te migreren) |
+| DNS | Cloudflare DNS |
+| Repo | GitHub — `Dmytrius79/assetwize-website` (nog aan te maken) |
 
-### UI Components
-4. **Button variants:** Use `variant="primary"` or `variant="secondary"` (NEVER default/outline)
-5. **State badges:** Use StateBadge component for assessment status display
+**Build:**
+```bash
+npm run build
+# Output: dist/
+```
 
-### Assessment Flow
-6. **State machine:** IN_PROGRESS → REVIEW_READY → FINALIZED (no shortcuts)
-7. **Preview mode:** Use `?preview=true` query param, don't auto-lock on report view
-8. **Module completion:** Sets `REVIEW_READY` (not COMPLETED)
-
-### Commentary
-9. **Client vs Consultant:** Client comment (prominent field), Consultant notes (collapsible panel)
-10. **Auto-save:** Use debounce (1000ms) for all note fields
-
-### L3 Design
-11. **Auto-suggestion workflow:** L2 scores → auto-fill L3 capability answers → consultant review (NEVER blank questionnaire)
-12. **Compensatie patronen:** Consultant must explain when overriding L2-based suggestion
+**Cloudflare Pages config (bij deployment):**
+- Build command: `npm run build`
+- Output directory: `dist`
+- Node version: 18+
 
 ---
 
-## 📅 LAATSTE SESSIE (2026-02-27)
+## 5. Bestandsstructuur
 
-**Focus:** Consultancy-first epics (3 bundles)  
-**Duration:** ~8 hours  
-**Progress:** 75% → 85%
-
-**Implemented:**
-- Bundle A: Assessment State Machine (12 files, ~800 LOC)
-- Bundle B: Evidence & Commentary Layer (15 files, ~1200 LOC)
-- Bundle C: Operational Hardening (13 files, ~600 LOC)
-- **Total:** 40 files, ~2600 LOC
-
-**Identified:**
-- Duplicate comment fields bug (high priority quick fix)
-- L3 data architecture requirements (15-22 dagen effort)
-
-**Design Decisions:**
-- L3 capability scan = auto-suggestion + review (not blank questionnaire)
-- Consultant notes collapsed by default (reduce confusion)
-- Observable behaviors per maturity level required for meaningful review
-
-**Next Session Focus:**
-- Fix duplicate comment fields (quick win)
-- Start L3 data generation (L2→L3 mappings first)
-- Test consultancy workflow end-to-end
-
----
-
-## 🔄 SESSIE AFSLUITING PROTOCOL
-
-**Verplicht aan einde elke sessie (5 min):**
-
-1. [ ] Update `BACKLOG.md`
-   - Gedane items → Done (met datum)
-   - Nieuwe items toevoegen
-   - In Progress items updaten
-
-2. [ ] Update `CHANGELOG.md`
-   - Nieuwe sessie sectie
-   - Wat added/changed/fixed/designed
-   - Files changed count
-
-3. [ ] Update `START_HERE.md` (indien status/prioriteiten wijzigen)
-   - Huidige staat
-   - Actieve prioriteiten
-   - Laatste sessie notitie
-
-4. [ ] Update design docs (indien architectuur beslissingen)
-
-5. [ ] Git commit + push
+```
+assetwize-website/
+├── src/
+│   ├── layouts/
+│   │   └── BaseLayout.astro       ← Gedeelde header/footer shell
+│   ├── pages/
+│   │   ├── index.astro            ← Homepage (board niveau)
+│   │   ├── relicore/index.astro   ← RELICORE productpagina
+│   │   ├── relicore-app/index.astro ← RELICORE login ontvangst
+│   │   ├── governance-compass/index.astro ← Compass productpagina
+│   │   ├── over-ons/index.astro   ← Over AssetWize
+│   │   └── contact/index.astro    ← Contact
+│   └── styles/
+│       └── global.css             ← Tailwind + custom kleuren
+├── public/
+│   ├── assetwize_logo.png
+│   ├── assetwize_logo_cropped.png
+│   ├── relicore_logo.svg
+│   └── relicore_logo_dark.svg
+├── docs/
+│   ├── ARCHITECTURE.md            ← Volledige platformarchitectuur
+│   ├── CLAUDE.md                  ← Werkwijze voor Claude Code sessies
+│   ├── OPERATIONEEL_PROTOCOL.md
+│   ├── RUNBOOK.md
+│   ├── ASSETWIZE_KB_START.md      ← Kennisbank overdrachtsnotitie
+│   └── design/
+│       └── CONSULTANCY_WORKFLOW.md
+├── tasks/                         ← Uitgevoerde TASK bestanden (history)
+├── astro.config.mjs
+├── package.json
+├── tailwind.config.mjs (indien aanwezig)
+├── wrangler.jsonc                 ← Cloudflare Workers config
+└── START_HERE.md                  ← Dit bestand
+```
 
 ---
 
-## 📚 SNELLE REFERENTIE
+## 6. Kleurenpalet (huidig, functioneel)
 
-**Platform:**
-- Next.js 16.1.6, React 19, TypeScript 5
-- Prisma 6.19.2 + PostgreSQL
-- Tailwind CSS 4
-- PM2 process manager
+| Naam | Gebruik |
+|---|---|
+| `navy-900` | Achtergrond secties, headers, CTA-blokken |
+| `teal-400` / `teal-600` / `teal-700` | Accenten, labels, knoppen, pijlen |
+| `gray-50` / `gray-200` | Lichte secties, dividers |
+| `white` | Tekst op donker, kaartachtergronden |
 
-**Deployment:**
-- Production: http://192.168.1.182:3000
-- Server: /home/amadmin/am-scan-app
-- PM2: `pm2 restart assetwize`
-
-**Key Endpoints:**
-- Health: `/api/health`
-- Status: `/api/status`
-- L1 Questions: `/api/modules/L1/questions`
-- L2 Questions: `/api/modules/L2/questions`
-- Report: `/api/assessments/[id]/report?preview=true`
-
-**Scripts:**
-- Dev: `npm run dev`
-- Build: `npm run build`
-- Deploy: `npm run build && pm2 restart assetwize`
-- Backup: `./scripts/backup-database.sh`
+Dit palet is functioneel uitgewerkt maar nog **niet professioneel gedesigned**.
+Een designsessie moet dit verfijnen.
 
 ---
 
-_Voor gedetailleerde informatie: zie gerouteerde documenten hierboven._  
-_Voor actieve taken: zie `BACKLOG.md`._  
-_Voor geschiedenis: zie `CHANGELOG.md`._
+## 7. Wat een designsessie moet opleveren
+
+De huidige website werkt maar is technisch gebouwd — geen designbureau betrokken.
+Bij een herontwerp of designsessie zijn dit de kernvragen:
+
+1. **Visuele identiteit** — Is het huidige navy/teal palet het definitieve merk? Typografie?
+2. **Homepage narratief** — Klopt de volgorde: pijn → aanpak → software → CTA?
+3. **Productpagina's** — Hoe presenteer je RELICORE en Compass consistent maar onderscheidend?
+4. **Login doorgangspunt** — `/relicore-app` is nu een simpel login card. Moet dit een volwaardige ontvangstpagina worden?
+5. **Mobile** — Huidige layout is responsive maar niet mobiel geoptimaliseerd
+6. **Animaties / interactie** — Nu volledig statisch
+
+---
+
+## 8. Volgende stappen (in volgorde)
+
+1. **GitHub repo aanmaken** — `Dmytrius79/assetwize-website` (privé), remote koppelen, pushen
+2. **Cloudflare Pages koppelen** — repo → Pages project → automatische deploys bij push
+3. **Designsessie** — visuele identiteit, paginastructuur, component library
+4. **Governance Compass ontvangstpagina** — equivalent van `/relicore-app`
+5. **Domeinmigratie** — Wix afkoppelen, `assetwize.nl` naar Cloudflare Pages
+6. **KADENZ pagina** — zodra product concreter is
+
+---
+
+## 9. Relatie met andere projecten
+
+| Project | Relatie |
+|---|---|
+| RELICORE (`/opt/relicore/` op VM) | De app waar `/relicore-app` naartoe linkt. Eigen repo: `Dmytrius79/relicore` |
+| AssetWize Kennisbank (`/opt/relicore/assetwize-kb/`) | Intern, draait op RELICORE VM. Geen directe koppeling met deze website |
+| Platform core (toekomstig) | Auth (Clerk) + billing (Stripe) — nog te bouwen. Deze website linkt straks naar `platform.assetwize.nl` voor login |
+
+---
+
+## 10. Werkwijze in dit project
+
+- **Claude AI** — architectuur, content, taakbestanden schrijven
+- **Claude Code** — implementatie, Astro pagina's bouwen, commits
+- **Dimitry** — beslissingen, richting, designkeuzes
+
+Claude Code starten:
+```bash
+cd /Users/drvandort/dev/assetwize-website
+claude --dangerously-skip-permissions
+```
+
+Daarna: `"Lees START_HERE.md en voer tasks/TASK-XXX.md uit"`
+
+---
+
+*AssetWize Website — START_HERE.md*
+*Aangemaakt juni 2026 — na migratie vanuit assetwize-platform*
