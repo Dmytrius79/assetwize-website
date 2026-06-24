@@ -206,25 +206,124 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ⑥ SCREENSHOT PLACEHOLDER -->
+  <!-- ⑥ EEN KIJKJE IN ATLAS -->
   <section class="py-20 px-6" style="background:#faf7f4;">
     <div class="max-w-4xl mx-auto">
       <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">Een kijkje in Atlas</p>
       <h2 class="text-2xl leading-snug mb-4" style="font-weight:500; color:#1C0F07;">
         Uitgewerkte bouwstenen, direct toepasbaar.
       </h2>
-      <p class="text-sm leading-relaxed mb-8 max-w-lg" style="font-weight:400; color:#6b7280;">
-        Atlas bevat uitgewerkte governance-documenten, blueprints, referentiemodellen, RACI-structuren, maturity modellen en implementatierichtlijnen. Geen theorie — direct toepasbare bouwstenen voor de inrichting van assetmanagement.
+      <p class="text-sm leading-relaxed mb-12 max-w-lg" style="font-weight:400; color:#6b7280;">
+        Elk document in Atlas is volledig uitgewerkt — met normatieve grondslag, rolbeschrijvingen, RACI-structuren, competentie-eisen en maturity levels. Hieronder een fragment uit T5.1 — het Asset Management Organisation Model.
       </p>
-      <!-- Screenshot placeholder — vervang door echte afbeelding -->
-      <div class="rounded-xl overflow-hidden border"
-           style="border-color:#e5ddd5; background:white; padding:48px; text-align:center;">
-        <p class="text-xs uppercase tracking-widest mb-2" style="color:#7A4F1E; font-weight:600;">Screenshot</p>
-        <p class="text-sm" style="color:#6b7280;">
-          Voeg hier een afbeelding toe van het Atlas Organisation Model of een framework-pagina.<br/>
-          Formaat: breed, hoge resolutie PNG of JPEG.
-        </p>
+
+      <!-- VOORBEELD 1: Rollenstructuur -->
+      <div class="mb-8 rounded-xl overflow-hidden" style="border:1px solid #e5ddd5;">
+        <div class="px-6 py-4 flex items-center justify-between" style="background:#7A4F1E;">
+          <div>
+            <p class="text-xs uppercase tracking-widest" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Governance &amp; Eigenaarschap</p>
+            <p class="text-sm mt-1" style="color:white; font-weight:500;">Asset Management Organisation Model — Rollenstructuur</p>
+          </div>
+          <span class="text-xs px-2 py-1 rounded" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">ISO 55001 §5.3</span>
+        </div>
+        <div style="background:white; overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px;">
+            <thead>
+              <tr style="background:#faf7f4;">
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.08em;">Laag</th>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.08em;">Rollen</th>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.08em;">Uitbesteding</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { laag: "Eigendomsrollen", rollen: "Asset Owner · Asset Manager · Portfolio Manager", uitbesteding: "Aanbevolen: altijd eigen organisatie" },
+                { laag: "Uitvoeringsrollen", rollen: "Maintenance Engineer · Contractor Manager · Werkvoorbereider · Planner · Teamlead · Technician", uitbesteding: "Engineer + Contractor Manager: eigen organisatie · Overige: beschikbaar voor uitbesteding" },
+                { laag: "Stakeholderrollen", rollen: "Finance · SHE · Quality/Food Safety · Data Owner · Operations", uitbesteding: "Co-verantwoordelijken — geen klanten van assetmanagement" },
+              ].map((row, i) => (
+                <tr style={i % 2 === 0 ? "background:white;" : "background:#fdfbf8;"}>
+                  <td style="padding:10px 14px; color:#1C0F07; font-weight:500; border-bottom:1px solid #f0ebe3; vertical-align:top; white-space:nowrap;">{row.laag}</td>
+                  <td style="padding:10px 14px; color:#4b3621; border-bottom:1px solid #f0ebe3; vertical-align:top; line-height:1.6;">{row.rollen}</td>
+                  <td style="padding:10px 14px; color:#6b7280; border-bottom:1px solid #f0ebe3; vertical-align:top; line-height:1.6;">{row.uitbesteding}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+
+      <!-- VOORBEELD 2: RACI-fragment -->
+      <div class="mb-8 rounded-xl overflow-hidden" style="border:1px solid #e5ddd5;">
+        <div class="px-6 py-4 flex items-center justify-between" style="background:#7A4F1E;">
+          <div>
+            <p class="text-xs uppercase tracking-widest" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · RACI-matrix</p>
+            <p class="text-sm mt-1" style="color:white; font-weight:500;">Verantwoordelijkheidsverdeling AM-processen (fragment)</p>
+          </div>
+          <span class="text-xs px-2 py-1 rounded" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">A · R · C · I</span>
+        </div>
+        <div style="background:white; overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:11px;">
+            <thead>
+              <tr style="background:#faf7f4;">
+                <th style="padding:8px 12px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; min-width:180px;">AM-proces</th>
+                {["Asset Owner","Asset Manager","Maint. Engineer","Contractor Mgr","Planner","Teamlead"].map(h => (
+                  <th style="padding:8px 8px; text-align:center; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; min-width:72px;">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { proc: "Kriticiteitsbepaling A/B/C", vals: ["C","A","R","—","—","—"] },
+                { proc: "Onderhoudsstrategie bepalen", vals: ["C","A","R","—","—","—"] },
+                { proc: "Investeringsvoorstel opstellen", vals: ["C","A","R","—","—","—"] },
+                { proc: "Investeringsbesluit",           vals: ["A","R","C","—","—","—"] },
+                { proc: "Planning & scheduling",         vals: ["—","I","C","—","A/R","C"] },
+                { proc: "Contractormanagement",          vals: ["I","A","—","R","—","—"] },
+                { proc: "Datakwaliteit systeem",         vals: ["I","A","C","C","—","—"] },
+              ].map((row, i) => (
+                <tr style={i % 2 === 0 ? "background:white;" : "background:#fdfbf8;"}>
+                  <td style="padding:8px 12px; color:#1C0F07; font-weight:400; border-bottom:1px solid #f0ebe3;">{row.proc}</td>
+                  {row.vals.map(v => (
+                    <td style={`padding:8px 8px; text-align:center; border-bottom:1px solid #f0ebe3; font-weight:600; font-size:11px; color:${v === "A" ? "#7A4F1E" : v === "R" ? "#B07D3A" : v === "A/R" ? "#8B6230" : v === "C" ? "#9ca3af" : "#e5e7eb"};`}>{v}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p style="padding:8px 12px; font-size:10px; color:#9ca3af; border-top:1px solid #f0ebe3;">
+            A = Accountable · R = Responsible · C = Consulted · I = Informed · — = geen betrokkenheid
+          </p>
+        </div>
+      </div>
+
+      <!-- VOORBEELD 3: Maturity levels -->
+      <div class="rounded-xl overflow-hidden" style="border:1px solid #e5ddd5;">
+        <div class="px-6 py-4" style="background:#7A4F1E;">
+          <p class="text-xs uppercase tracking-widest" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Maturity Model</p>
+          <p class="text-sm mt-1" style="color:white; font-weight:500;">Maturity Levels — Rolbezetting &amp; Eigenaarschap</p>
+        </div>
+        <div style="background:white;">
+          {[
+            { nr: "1", titel: "Ongeorganiseerd", tekst: "Rollen en verantwoordelijkheden zijn niet formeel vastgelegd. Assetmanagement is persoonsafhankelijk." },
+            { nr: "2", titel: "Reactief", tekst: "Functionarissen aangewezen zonder formele functiebeschrijving. Serviceprovider neemt feitelijk beslissingen die de eigen organisatie zou moeten nemen." },
+            { nr: "3", titel: "Gepland", tekst: "Functies beschreven met verantwoordelijkheden en bevoegdheden. RACI aanwezig voor kernprocessen. Competentie-eisen globaal vastgesteld." },
+            { nr: "4", titel: "Proactief", tekst: "Functies actief ingevuld conform AM Operating Model. Competentie getoetst bij aanstelling. RACI is sturingsinstrument." },
+            { nr: "5", titel: "Optimaliserend", tekst: "Rollenstructuur continu geëvalueerd. Eigenaarschap zichtbaar in gedrag — niet alleen op papier." },
+          ].map((level, i) => (
+            <div class="flex items-start gap-4 px-6 py-4" style={`border-bottom:${i < 4 ? "1px solid #f0ebe3" : "none"};`}>
+              <span style={`min-width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; flex-shrink:0; margin-top:1px; background:${i < 2 ? "#f5f5f4" : i < 3 ? "#faf7f4" : i < 4 ? "#f0e8dc" : "#7A4F1E"}; color:${i < 4 ? "#7A4F1E" : "white"};`}>{level.nr}</span>
+              <div>
+                <p style="font-size:12px; font-weight:600; color:#1C0F07; margin-bottom:2px;">{level.titel}</p>
+                <p style="font-size:12px; color:#6b7280; line-height:1.5;">{level.tekst}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <p class="mt-6 text-xs" style="color:#9ca3af; font-weight:400;">
+        Dit is één document uit T5 — Governance &amp; Eigenaarschap. Atlas bevat vergelijkbare uitwerkingen voor alle zeven domeinen.
+      </p>
     </div>
   </section>
 
