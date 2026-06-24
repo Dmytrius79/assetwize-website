@@ -36,58 +36,35 @@ import '../styles/global.css';
     <div class="max-w-4xl mx-auto">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-navy-800">
         {[
-          { getal: "15+",    label: "jaar praktijkervaring in asset governance" },
-          { getal: "29.872", label: "assets geanalyseerd in pilotimplementatie" },
-          { getal: "370",    label: "procesfuncties ingericht" },
-          { getal: "7",      label: "sectoren · industrie t/m agrochemie" },
+          { label: "Gebouwd in de praktijk",       sub: "Twintig jaar. Geen theorie." },
+          { label: "Van strategie tot uitvoering",  sub: "Boardroom tot werkvloer." },
+          { label: "Sectoronafhankelijk",            sub: "Industrie · Farma · Utilities · Agri" },
+          { label: "Ontworpen voor implementatie",  sub: "Niet voor rapporten." },
         ].map((item) => (
-          <div class="bg-navy-900 px-6 py-5 text-center">
-            <p style="font-size:28px; font-weight:500; color:#2dd4bf; line-height:1;">{item.getal}</p>
-            <p style="font-size:11px; font-weight:400; color:#4b5563; margin-top:6px; line-height:1.4;">{item.label}</p>
+          <div class="bg-navy-900 px-6 py-6 text-center">
+            <p style="font-size:13px; font-weight:600; color:#2dd4bf; line-height:1.3; letter-spacing:0.01em;">{item.label}</p>
+            <p style="font-size:11px; font-weight:400; color:#4b5563; margin-top:5px; line-height:1.4;">{item.sub}</p>
           </div>
         ))}
       </div>
-      <p class="text-center mt-5 text-xs" style="font-weight:400; color:#374151;">
-        AssetWize-principes worden toegepast in:
-        <span style="color:#6b7280;"> zaadveredeling · agrochemie · productie-industrie · utilities · gebouwgebonden assets · technische dienstverlening</span>
-      </p>
     </div>
   </section>
 
-  <!-- ③ DE OBSERVATIE — waarom lukt het vaak niet? -->
+  <!-- ③ DE OBSERVATIE -->
   <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-16 items-start">
-        <div>
-          <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
-             style="font-weight:600;">De observatie</p>
-          <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6"
-              style="font-weight:500;">
-            Waarom ontbreekt grip in de meeste organisaties?
-          </h2>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
-            Niet omdat de inspanning ontbreekt. Niet omdat de mensen het niet willen. Maar omdat bestuur, techniek, finance, informatie en uitvoering niet vanuit hetzelfde systeem werken.
-          </p>
-          <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
-            Het gevolg is herkenbaar in elke sector: beslissingen op gevoel, investeringen zonder grondslag, risico's die pas zichtbaar worden als ze zich manifesteren.
-          </p>
-        </div>
-        <div class="flex flex-col gap-0 divide-y divide-gray-100">
-          {[
-            { kop: "Bestuur",    sub: "Stelt kaders maar heeft geen zicht op wat er werkelijk speelt." },
-            { kop: "Techniek",   sub: "Weet wat er is maar spreekt niet de taal van het bestuur." },
-            { kop: "Finance",    sub: "Beoordeelt investeringen zonder assetlogica als grondslag." },
-            { kop: "Informatie", sub: "Registreert wat er was, niet wat besluitvorming nodig heeft." },
-            { kop: "Uitvoering", sub: "Handelt op basis van gewoonten, niet op basis van prioriteiten." },
-          ].map((item) => (
-            <div class="flex items-start gap-4 py-4">
-              <span class="text-teal-700 text-xs uppercase tracking-widest min-w-24 mt-0.5 flex-shrink-0"
-                    style="font-weight:600;">{item.kop}</span>
-              <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.sub}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-6"
+         style="font-weight:600;">Twintig jaar praktijkervaring. Eén terugkerende observatie.</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
+          style="font-weight:500;">
+        Organisaties worstelen zelden met een gebrek aan techniek.
+      </h2>
+      <p class="text-gray-500 text-base leading-relaxed mb-4 max-w-xl" style="font-weight:400;">
+        De uitdaging zit vrijwel altijd in de verbinding — tussen strategie en uitvoering, tussen data en beslissing, tussen techniek en bestuur.
+      </p>
+      <p class="text-gray-500 text-base leading-relaxed max-w-xl" style="font-weight:400;">
+        AssetWize is ontwikkeld om precies dat vraagstuk op te lossen. Niet als adviesbureau. Als governance-systeem dat is ontstaan uit twintig jaar praktijkervaring — van petrochemie tot farma, van productiebedrijven tot utilities, van directiekamer tot werkvloer.
+      </p>
     </div>
   </section>
 
