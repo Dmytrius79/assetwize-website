@@ -11,7 +11,7 @@ import '../../styles/global.css';
   <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal-400 text-xs uppercase tracking-widest mb-6"
-         style="font-weight:600; letter-spacing:0.14em;">Waarom AssetWize moest ontstaan</p>
+         style="font-weight:600; letter-spacing:0.14em;">Twintig jaar. Dezelfde observatie.</p>
       <h1 class="text-4xl md:text-5xl leading-tight mb-8 max-w-2xl" style="font-weight:500;">
         Organisaties investeren in assetmanagement.<br />Toch blijft grip vaak uit.
       </h1>
@@ -147,56 +147,67 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ⑤ COMPASS, ATLAS EN RELICORE -->
+  <!-- ⑤ COMPASS, ATLAS EN RELICORE — als natuurlijke evolutie -->
   <section class="bg-gray-50 py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
          style="font-weight:600;">Wat daaruit is ontstaan</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
           style="font-weight:500;">
-        Elk instrument is gebouwd omdat iets ontbrak.
+        Elk instrument is een antwoord op een vraag die steeds terugkwam.
       </h2>
       <p class="text-gray-500 text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
-        Compass, Atlas en RELICORE zijn niet bedacht als producten. Ze zijn gebouwd omdat bestaande instrumenten het governance-vraagstuk niet raakten.
+        Compass, Atlas en RELICORE zijn niet bedacht als producten. Ze zijn gebouwd omdat elke stap in de praktijk een nieuw gat blootlegde.
       </p>
       <div class="flex flex-col divide-y divide-gray-200">
-        {[
-          {
-            naam: "Compass",
-            kleur: "#2D6A4F",
-            vraag: "Hoe weet je waar het werkelijk mis gaat?",
-            antwoord: "Organisaties weten vaak dat grip ontbreekt — maar niet waarom. Compass diagnosticeert het besturingssysteem. Niet door te vragen of processen aanwezig zijn, maar door te beoordelen of de organisatie daadwerkelijk in staat is te sturen op risico, prestaties en investeringen.",
-            href: "/compass",
-          },
-          {
-            naam: "Atlas",
-            kleur: "#7A4F1E",
-            vraag: "Hoe ontwerp je een governance-systeem dat werkt?",
-            antwoord: "Elke organisatie begint opnieuw. Rollen worden opnieuw bedacht. Governance wordt opnieuw gedefinieerd. Atlas is het referentiekader dat dat voorkomt — twintig jaar praktijkervaring vertaald naar frameworks, blueprints en implementatierichtlijnen die direct toepasbaar zijn.",
-            href: "/atlas",
-          },
-          {
-            naam: "RELICORE",
-            kleur: "#147878",
-            vraag: "Hoe zorg je dat governance niet op papier blijft?",
-            antwoord: "Governance werkt alleen als de informatie klopt waarop beslissingen zijn gebaseerd. RELICORE maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat investeringen, risicoacceptatie en besluitvorming gebaseerd zijn op dezelfde assetlogica.",
-            href: "/relicore",
-          },
-        ].map((item) => (
-          <div class="py-10 grid md:grid-cols-3 gap-8 items-start">
-            <div>
-              <a href={item.href}
-                 class="text-xs uppercase tracking-widest flex items-center gap-2 mb-2"
-                 style={`font-weight:600; color:${item.kleur};`}>
-                {item.naam} →
-              </a>
-              <p class="text-navy-900 text-base leading-snug" style="font-weight:500;">{item.vraag}</p>
-            </div>
-            <div class="md:col-span-2">
-              <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.antwoord}</p>
-            </div>
+        <div class="py-10 grid md:grid-cols-3 gap-8 items-start">
+          <div>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-2" style="font-weight:500;">Eerste</p>
+            <a href="/compass"
+               class="text-xs uppercase tracking-widest flex items-center gap-2 mb-2"
+               style="font-weight:600; color:#2D6A4F;">Compass →</a>
           </div>
-        ))}
+          <div class="md:col-span-2">
+            <p class="text-navy-900 text-base mb-3 leading-snug" style="font-weight:500;">
+              Eerst moest zichtbaar worden waar grip ontbreekt — en waarom.
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
+              Organisaties wisten dat het niet goed ging. Maar niet precies waar. Niet op welk niveau. En niet of het lag aan mensen, processen, informatie of structuur. Compass is het diagnose-instrument dat dat zichtbaar maakt — zonder te beginnen bij de oplossing.
+            </p>
+          </div>
+        </div>
+        <div class="py-10 grid md:grid-cols-3 gap-8 items-start">
+          <div>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-2" style="font-weight:500;">Daarna</p>
+            <a href="/atlas"
+               class="text-xs uppercase tracking-widest flex items-center gap-2 mb-2"
+               style="font-weight:600; color:#7A4F1E;">Atlas →</a>
+          </div>
+          <div class="md:col-span-2">
+            <p class="text-navy-900 text-base mb-3 leading-snug" style="font-weight:500;">
+              Daarna moest duidelijk worden hoe het wel zou moeten werken.
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
+              Elke organisatie begon opnieuw. Rollen werden opnieuw bedacht. Governance werd opnieuw gedefinieerd. Atlas is het referentiekader dat dat voorkomt — twintig jaar praktijkervaring vertaald naar frameworks, blueprints en implementatierichtlijnen die direct toepasbaar zijn.
+            </p>
+          </div>
+        </div>
+        <div class="py-10 grid md:grid-cols-3 gap-8 items-start">
+          <div>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-2" style="font-weight:500;">Vervolgens</p>
+            <a href="/relicore"
+               class="text-xs uppercase tracking-widest flex items-center gap-2 mb-2"
+               style="font-weight:600; color:#147878;">RELICORE →</a>
+          </div>
+          <div class="md:col-span-2">
+            <p class="text-navy-900 text-base mb-3 leading-snug" style="font-weight:500;">
+              Vervolgens moest die logica geborgd worden in informatie.
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
+              Governance op papier is geen governance. RELICORE maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat investeringen, risicoacceptatie en besluitvorming gebaseerd zijn op dezelfde assetlogica. Niet als registratie. Als beslissingsondersteuning.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -208,10 +219,10 @@ import '../../styles/global.css';
          style="font-weight:600;">Twintig jaar observaties. Één systeem.</p>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
-            AssetWize is het resultaat van twintig jaar werken in asset-intensieve omgevingen — als consultant bij Shell, NAM en Tata Steel, als Technical en Plant Manager bij productiebedrijven, als strategisch adviseur bij multinationals.
+          <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
+            De ervaring achter AssetWize is opgebouwd in petrochemie, staal, farma, agrochemie, productie-industrie en utilities — in rollen variërend van consultant en engineer tot plantmanager en strategisch adviseur.
           </p>
-          <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
+          <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
             Altijd op het snijvlak van techniek, bedrijfsvoering en bestuur. Altijd met dezelfde vraag: waarom leidt al deze inspanning niet tot grip?
           </p>
           <p class="text-gray-500 text-sm leading-relaxed mb-8" style="font-weight:400;">
@@ -226,28 +237,9 @@ import '../../styles/global.css';
             />
             <div>
               <p class="text-navy-900 text-sm" style="font-weight:500;">Dimitry van Dort</p>
-              <p class="text-gray-400 text-xs mt-0.5" style="font-weight:400;">Oprichter AssetWize</p>
+              <p class="text-gray-400 text-xs mt-0.5" style="font-weight:400;">Oprichter AssetWize · Shell · NAM · Tata Steel · Syngenta · Abbott · AVEBE</p>
             </div>
           </div>
-        </div>
-        <div class="flex flex-col gap-0">
-          {[
-            "Petrochemie — Shell, NAM, Wintershall",
-            "Staal — Tata Steel",
-            "Farma & Life Sciences — Abbott",
-            "Agrochemie — Syngenta",
-            "Agri — AVEBE",
-            "Productie-industrie — Solidus Solutions",
-            "Bouw & infra — Van Wijnen",
-          ].map((item) => (
-            <div class="flex items-center gap-3 py-3 border-b border-gray-100">
-              <span style="color:#147878; font-size:11px;">→</span>
-              <p class="text-gray-600 text-sm" style="font-weight:400;">{item}</p>
-            </div>
-          ))}
-          <p class="text-gray-400 text-xs mt-4" style="font-weight:400;">
-            En meer — over twintig jaar in meerdere sectoren en rollen.
-          </p>
         </div>
       </div>
     </div>
