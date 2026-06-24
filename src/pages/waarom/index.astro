@@ -4,52 +4,92 @@ import '../../styles/global.css';
 ---
 <BaseLayout
   title="Waarom AssetWize"
-  description="AssetWize ontwerpt de systemen waarop asset-intensieve organisaties worden bestuurd. Geen consultancybureau — een ontwerper van bestuurbare assetorganisaties."
+  description="AssetWize is geen consultancybureau. Het is een governance-systeem dat is ontstaan uit twintig jaar praktijkervaring in kapitaalintensieve organisaties."
 >
 
-  <!-- ① HERO -->
+  <!-- ① HERO — het verhaal begint met een observatie -->
   <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal-400 text-xs uppercase tracking-widest mb-5"
+      <p class="text-teal-400 text-xs uppercase tracking-widest mb-6"
          style="font-weight:600; letter-spacing:0.14em;">Waarom AssetWize</p>
-      <h1 class="text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
-        AssetWize is geen consultancybureau.<br />
-        Het ontwerpt de systemen waarop asset-intensieve organisaties worden bestuurd.
+      <h1 class="text-4xl md:text-5xl leading-tight mb-8 max-w-2xl" style="font-weight:500;">
+        Er was geen systeem dat het vraagstuk werkelijk raakte.
       </h1>
-      <p class="text-white/60 text-lg leading-relaxed max-w-xl mb-6" style="font-weight:400;">
-        Niet als project. Niet als adviesrapport. Maar als systeem dat de verbinding legt tussen bestuur, techniek en finance — en daar blijft werken.
-      </p>
-      <p class="text-white/85 text-base leading-relaxed max-w-xl" style="font-weight:500;">
-        AssetWize is opgericht door Dimitry van Dort, met meer dan vijftien jaar ervaring in het ontwerpen en implementeren van asset governance in complexe, kapitaalintensieve omgevingen.
-      </p>
+      <div class="max-w-xl">
+        <p class="text-white/70 text-lg leading-relaxed mb-5" style="font-weight:400;">
+          In twintig jaar werken in asset-intensieve organisaties — van petrochemie tot farma, van productiebedrijven tot utilities — keerde steeds dezelfde observatie terug.
+        </p>
+        <p class="text-white/85 text-lg leading-relaxed" style="font-weight:500;">
+          Organisaties investeerden in systemen, onderhoud en verbeterprogramma's. Maar bleven moeite houden om prestaties, risico's, investeringen en verantwoordelijkheden met elkaar te verbinden.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- ② WAT ASSETWIZE ANDERS DOET — vroeg in de pagina -->
+  <!-- ② DE KERN VAN HET PROBLEEM -->
   <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+             style="font-weight:600;">Het patroon</p>
+          <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6"
+              style="font-weight:500;">
+            Het probleem was nooit de techniek.<br />Het was altijd de verbinding.
+          </h2>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
+            Bestuur stelde kaders maar had geen zicht op wat er werkelijk speelde. Techniek wist wat er was maar sprak niet de taal van het bestuur. Finance beoordeelde investeringen zonder assetlogica als grondslag.
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
+            Het gevolg: beslissingen op gevoel. Investeringen zonder grondslag. Risico's die pas zichtbaar werden als ze zich manifesteerden. Niet omdat mensen het niet wilden — maar omdat er geen systeem was dat alles verbond.
+          </p>
+        </div>
+        <div class="flex flex-col gap-0 divide-y divide-gray-100">
+          {[
+            { kop: "Niet een gebrek aan data", sub: "Het probleem was dat data niet besluitvormend werd gemaakt." },
+            { kop: "Niet een gebrek aan expertise", sub: "Het probleem was dat expertise niet gekoppeld was aan bestuurlijke besluitvorming." },
+            { kop: "Niet een gebrek aan tools", sub: "Het probleem was dat geen enkel instrument het governance-vraagstuk raakte." },
+            { kop: "Niet een gebrek aan wil", sub: "Het probleem was structureel — en vroeg een structurele oplossing." },
+          ].map((item) => (
+            <div class="flex items-start gap-4 py-5">
+              <span class="text-teal-700 text-xs uppercase tracking-widest min-w-32 mt-0.5 flex-shrink-0"
+                    style="font-weight:600; font-size:10px; line-height:1.6;">{item.kop}</span>
+              <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ WAAROM ASSETWIZE BESTAAT -->
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="max-w-4xl mx-auto">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:600;">Wat AssetWize anders doet</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-10 max-w-lg"
+         style="font-weight:600;">Waarom AssetWize bestaat</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
           style="font-weight:500;">
-        Drie dingen die de meeste adviseurs niet combineren.
+        Losse oplossingen lossen het niet op.<br />Het systeem moest ontworpen worden.
       </h2>
+      <p class="text-gray-500 text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+        AssetWize is niet opgericht om te adviseren. Het is opgericht om het systeem te bouwen dat organisaties in staat stelt zelf te sturen — op risico, prestaties, investeringen en continuïteit.
+      </p>
       <div class="grid md:grid-cols-3 gap-px bg-gray-200">
         {[
           {
             num: "01",
-            h: "Bestuur én techniek",
-            p: "De meeste adviseurs opereren óf op bestuurlijk niveau óf op technisch niveau. AssetWize verbindt de twee — omdat bestuurbaarheid van assets het snijvlak vereist.",
+            h: "Niet adviseren — ontwerpen",
+            p: "De meeste adviseurs leveren inzichten. AssetWize bouwt het systeem dat die inzichten operationeel maakt — in governance, informatie en besluitvorming.",
           },
           {
             num: "02",
-            h: "Diagnose én borging",
-            p: "Compass stelt de diagnose. RELICORE borgt de uitkomst. Advies zonder implementatie lost het probleem niet op — implementatie zonder diagnose pakt de verkeerde oorzaak aan.",
+            h: "Niet per traject — structureel",
+            p: "Een rapport helpt eenmalig. AssetWize ontwerpt de structuren die blijven werken — ook als mensen, prioriteiten en marktomstandigheden veranderen.",
           },
           {
             num: "03",
-            h: "Ontwerpen én uitvoeren",
-            p: "AssetWize adviseert niet alleen — het bouwt. Governance frameworks, assetstructuren en software zijn geen aparte producten, maar onderdeel van hetzelfde systeem.",
+            h: "Niet breed — precies",
+            p: "AssetWize werkt alleen voor asset-intensieve organisaties waar bestuurlijke grip op assets bepalend is voor prestaties, risico en waarde. Voor de rest is AssetWize niet de juiste partij.",
           },
         ].map((item) => (
           <div class="bg-white px-8 py-10">
@@ -65,114 +105,130 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ③ DE OBSERVATIE -->
-  <section class="bg-gray-50 py-20 px-6">
+  <!-- ④ WAAROM COMPASS, ATLAS EN RELICORE BESTAAN -->
+  <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:600;">De observatie</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-10 max-w-2xl"
+         style="font-weight:600;">Waarom Compass, Atlas en RELICORE bestaan</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
           style="font-weight:500;">
-        Het probleem is niet wat er ontbreekt.<br />Het probleem is wat er niet verbonden is.
+        Elk instrument is ontstaan uit een specifiek gat in de praktijk.
       </h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5" style="font-weight:400;">
-            In de meeste organisaties zit assetmanagement in de operatie. Terwijl assets bepalend zijn voor kapitaal, risico en continuïteit — en dus bestuurbaar zouden moeten zijn op directieniveau.
-          </p>
-          <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
-            Het gevolg: beslissingen zonder grondslag. Investeringen op gevoel. Risico's die pas zichtbaar worden als ze zich manifesteren.
-          </p>
-        </div>
-        <div class="flex flex-col gap-5">
-          {[
-            { kop: "Niet een gebrek aan data.", sub: "Het probleem is dat data niet besluitvormend wordt gemaakt." },
-            { kop: "Niet een gebrek aan expertise.", sub: "Het probleem is dat expertise niet gekoppeld is aan bestuurlijke besluitvorming." },
-            { kop: "Niet een gebrek aan tools.", sub: "Het probleem is dat er geen systeem is dat alles verbindt." },
-          ].map((item) => (
-            <div style="border-left:3px solid #147878; padding-left:16px;">
-              <p class="text-navy-900 text-sm mb-1" style="font-weight:500;">{item.kop}</p>
-              <p class="text-gray-400 text-sm" style="font-weight:400;">{item.sub}</p>
+      <p class="text-gray-500 text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+        Ze zijn niet bedacht als producten. Ze zijn gebouwd omdat bestaande instrumenten het governance-vraagstuk niet raakten.
+      </p>
+      <div class="flex flex-col divide-y divide-gray-100">
+        {[
+          {
+            naam: "Compass",
+            kleur: "#2D6A4F",
+            vraag: "Hoe weet je waar het werkelijk mis gaat?",
+            antwoord: "Organisaties weten vaak dat grip ontbreekt — maar niet waarom. Compass diagnosticeert het besturingssysteem. Niet door te vragen of processen aanwezig zijn, maar door te beoordelen of de organisatie daadwerkelijk in staat is te sturen op risico, prestaties en investeringen.",
+            href: "/compass",
+          },
+          {
+            naam: "Atlas",
+            kleur: "#7A4F1E",
+            vraag: "Hoe ontwerp je een governance-systeem dat werkt?",
+            antwoord: "Elke organisatie begint opnieuw. Rollen worden opnieuw bedacht. Governance wordt opnieuw gedefinieerd. Atlas is het referentiekader dat dat voorkomt — twintig jaar praktijkervaring vertaald naar frameworks, blueprints en implementatierichtlijnen die direct toepasbaar zijn.",
+            href: "/atlas",
+          },
+          {
+            naam: "RELICORE",
+            kleur: "#147878",
+            vraag: "Hoe zorg je dat governance niet op papier blijft?",
+            antwoord: "Governance werkt alleen als de informatie klopt waarop beslissingen zijn gebaseerd. RELICORE maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat investeringen, risicoacceptatie en besluitvorming gebaseerd zijn op dezelfde assetlogica.",
+            href: "/relicore",
+          },
+        ].map((item) => (
+          <div class="py-10 grid md:grid-cols-3 gap-8 items-start">
+            <div>
+              <a href={item.href}
+                 class="text-xs uppercase tracking-widest flex items-center gap-2 mb-2"
+                 style={`font-weight:600; color:${item.kleur};`}>
+                {item.naam} →
+              </a>
+              <p class="text-navy-900 text-base leading-snug" style="font-weight:500;">{item.vraag}</p>
             </div>
-          ))}
-        </div>
+            <div class="md:col-span-2">
+              <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.antwoord}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ④ DIMITRY — oprichter, niet hoofdpersoon -->
-  <section class="bg-white py-20 px-6">
+  <!-- ⑤ DE OPRICHTER — ondersteunend bewijs, niet het onderwerp -->
+  <section class="bg-gray-50 py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:600;">De oprichter</p>
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-10"
+         style="font-weight:600;">Wie er achter zit</p>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <div class="flex items-center gap-5 mb-6">
+          <div class="flex items-center gap-4 mb-6">
             <img
               src="/dimitry.jpg"
-              alt="Dimitry van Dort — oprichter AssetWize"
-              class="w-16 h-16 rounded-full object-cover grayscale"
+              alt="Dimitry van Dort"
+              class="w-14 h-14 rounded-full object-cover"
               style="filter:grayscale(100%); object-position:center top;"
             />
             <div>
-              <h2 class="text-2xl leading-snug text-navy-900" style="font-weight:500;">
-                Dimitry van Dort
-              </h2>
-              <p class="text-teal-700 text-xs uppercase tracking-widest mt-1" style="font-weight:500;">
+              <p class="text-navy-900 text-base" style="font-weight:500;">Dimitry van Dort</p>
+              <p class="text-teal-700 text-xs uppercase tracking-widest mt-0.5" style="font-weight:500;">
                 Oprichter AssetWize
               </p>
             </div>
           </div>
           <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
-            Hij werkt op het snijvlak van bestuur, techniek en finance — en ontwerpt systemen die organisaties in staat stellen daadwerkelijk te sturen op assets.
-          </p>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
-            In meer dan vijftien jaar werkte hij in industrie, utilities en agrochemie aan de vraag die in elk traject terugkomt: waarom leiden investeringen in assetmanagement niet tot grip op risico, waarde en continuïteit?
+            Twintig jaar in asset-intensieve omgevingen. Als consultant bij Shell, NAM en Tata Steel. Als Technical en Plant Manager bij productiebedrijven. Als strategisch adviseur bij multinationals.
           </p>
           <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
-            Compass en RELICORE zijn voortgekomen uit diezelfde praktijk — gebouwd omdat bestaande tools het governance vraagstuk niet raakten.
+            Altijd op het snijvlak van techniek, bedrijfsvoering en bestuur. Altijd met dezelfde vraag: waarom leidt al deze inspanning niet tot grip?
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed mt-4" style="font-weight:400;">
+            AssetWize is het antwoord op die vraag — niet als adviesbureau, maar als systeem.
           </p>
         </div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-8">
-          <p class="text-gray-400 text-xs uppercase tracking-widest mb-5"
-             style="font-weight:500;">Wat dat in de praktijk betekent</p>
-          <div class="flex flex-col divide-y divide-gray-100">
-            {[
-              "Governance frameworks die aansluiten op hoe de organisatie werkelijk besluiten neemt",
-              "Assetstructuren die zichtbaar maken hoe assets bijdragen aan waarde, risico en continuïteit",
-              "Diagnose-instrumenten die bestuur en management een gemeenschappelijke taal geven",
-              "Software die governance borgt — niet als registratie, maar als beslissingsondersteuning",
-            ].map((item) => (
-              <div class="flex items-start gap-3 py-4">
-                <span class="text-teal-700 text-sm flex-shrink-0 mt-0.5">→</span>
-                <p class="text-gray-600 text-sm leading-relaxed" style="font-weight:400;">{item}</p>
-              </div>
-            ))}
-          </div>
-          <p class="text-gray-400 text-xs mt-4 pt-4 border-t border-gray-100"
-             style="font-weight:400;">
-            Industrie · Utilities · Agrochemie · Gebouwbeheer · Voedingsmiddelen
+        <div class="flex flex-col gap-3">
+          {[
+            "Petrochemie — Shell, NAM, Wintershall",
+            "Staal — Tata Steel",
+            "Farma & Life Sciences — Abbott",
+            "Agrochemie — Syngenta",
+            "Agri — AVEBE",
+            "Productie-industrie — Solidus Solutions",
+            "Bouw & infra — Van Wijnen",
+          ].map((item) => (
+            <div class="flex items-center gap-3 py-2.5 border-b border-gray-100">
+              <span style="color:#147878; font-size:11px;">→</span>
+              <p class="text-gray-600 text-sm" style="font-weight:400;">{item}</p>
+            </div>
+          ))}
+          <p class="text-gray-400 text-xs mt-2" style="font-weight:400;">
+            En meer — over twintig jaar in meerdere sectoren en rollen.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ⑤ CTA -->
+  <!-- ⑥ CTA -->
   <section class="bg-navy-900 text-white py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
-        Asset governance begint met de juiste vragen.
+        Is uw organisatie asset-intensief<br />en ontbreekt bestuurlijke grip?
       </h2>
       <p class="text-white/60 text-base leading-relaxed mb-10 max-w-md mx-auto"
          style="font-weight:400;">
-        In een eerste gesprek kijken we of en hoe AssetWize relevant is voor uw situatie — zonder verplichtingen.
+        In een eerste gesprek kijken we of en hoe AssetWize relevant is voor uw specifieke situatie — zonder verplichtingen, zonder pitch.
       </p>
       <a href="/contact"
          class="inline-flex px-10 py-4 bg-teal-700 hover:bg-teal-600
                 text-white rounded-lg transition-colors"
          style="font-weight:500;">
-        Gesprek aanvragen
+        Start het gesprek
       </a>
     </div>
   </section>
