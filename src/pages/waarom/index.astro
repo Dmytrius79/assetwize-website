@@ -4,14 +4,14 @@ import '../../styles/global.css';
 ---
 <BaseLayout
   title="Waarom AssetWize"
-  description="AssetWize is geen consultancybureau. Het is een governance-systeem dat is ontstaan uit twintig jaar praktijkervaring in kapitaalintensieve organisaties."
+  description="AssetWize is geen consultancybureau. Het is een governance-systeem dat moest ontstaan — omdat bestaande oplossingen het vraagstuk niet raakten."
 >
 
-  <!-- ① HERO — antwoord vóór onderbouwing -->
+  <!-- ① HERO -->
   <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal-400 text-xs uppercase tracking-widest mb-6"
-         style="font-weight:600; letter-spacing:0.14em;">Waarom AssetWize</p>
+         style="font-weight:600; letter-spacing:0.14em;">Waarom AssetWize moest ontstaan</p>
       <h1 class="text-4xl md:text-5xl leading-tight mb-8 max-w-2xl" style="font-weight:500;">
         Organisaties investeren in assetmanagement.<br />Toch blijft grip vaak uit.
       </h1>
@@ -22,14 +22,14 @@ import '../../styles/global.css';
         <p class="text-white/85 text-lg leading-relaxed mb-5" style="font-weight:400;">
           Prestaties, risico's, investeringen en verantwoordelijkheden waren aanwezig — maar onvoldoende met elkaar verbonden.
         </p>
-        <p class="text-white/70 text-base leading-relaxed" style="font-weight:400;">
+        <p class="text-white/60 text-base leading-relaxed" style="font-weight:400;">
           Niet omdat mensen hun werk niet goed deden.<br />Omdat het systeem ontbrak dat alles met elkaar verbindt.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ② DE KERN VAN HET PROBLEEM -->
+  <!-- ② HET PATROON -->
   <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <div class="grid md:grid-cols-2 gap-16 items-start">
@@ -41,22 +41,25 @@ import '../../styles/global.css';
             Het probleem was nooit de techniek.<br />Het was altijd de verbinding.
           </h2>
           <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
-            Bestuur stelde kaders maar had geen zicht op wat er werkelijk speelde. Techniek wist wat er was maar sprak niet de taal van het bestuur. Finance beoordeelde investeringen zonder assetlogica als grondslag.
+            In petrochemie, industrie, farma en utilities — steeds hetzelfde beeld. Organisaties beschikten over onderhoudsprocessen, systemen, specialisten en rapportages.
           </p>
           <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
-            Het gevolg: beslissingen op gevoel. Investeringen zonder grondslag. Risico's die pas zichtbaar werden als ze zich manifesteerden. Niet omdat mensen het niet wilden — maar omdat er geen systeem was dat alles verbond.
+            Toch bleef bestuurlijke grip achter. Beslissingen werden genomen op gevoel. Investeringen zonder grondslag. Risico's die pas zichtbaar werden als ze zich manifesteerden.
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed mt-4" style="font-weight:400;">
+            De oorzaak zat niet in de afzonderlijke onderdelen. De oorzaak zat in de verbinding ertussen.
           </p>
         </div>
         <div class="flex flex-col gap-0 divide-y divide-gray-100">
           {[
-            { kop: "Niet een gebrek aan data", sub: "Het probleem was dat data niet besluitvormend werd gemaakt." },
+            { kop: "Niet een gebrek aan data",      sub: "Het probleem was dat data niet besluitvormend werd gemaakt." },
             { kop: "Niet een gebrek aan expertise", sub: "Het probleem was dat expertise niet gekoppeld was aan bestuurlijke besluitvorming." },
-            { kop: "Niet een gebrek aan tools", sub: "Het probleem was dat geen enkel instrument het governance-vraagstuk raakte." },
-            { kop: "Niet een gebrek aan wil", sub: "Het probleem was structureel — en vroeg een structurele oplossing." },
+            { kop: "Niet een gebrek aan tools",     sub: "Het probleem was dat geen enkel instrument het governance-vraagstuk raakte." },
+            { kop: "Niet een gebrek aan wil",       sub: "Het probleem was structureel — en vroeg een structurele oplossing." },
           ].map((item) => (
             <div class="flex items-start gap-4 py-5">
-              <span class="text-teal-700 text-xs uppercase tracking-widest min-w-32 mt-0.5 flex-shrink-0"
-                    style="font-weight:600; font-size:10px; line-height:1.6;">{item.kop}</span>
+              <span class="text-teal-700 min-w-36 mt-0.5 flex-shrink-0 leading-relaxed"
+                    style="font-weight:600; font-size:10px; text-transform:uppercase; letter-spacing:0.08em;">{item.kop}</span>
               <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.sub}</p>
             </div>
           ))}
@@ -65,17 +68,53 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ③ WAAROM ASSETWIZE BESTAAT -->
+  <!-- ③ WAAROM BESTAANDE OPLOSSINGEN TEKORTSCHIETEN -->
   <section class="bg-gray-50 py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:600;">Waarom AssetWize bestaat</p>
+         style="font-weight:600;">Waarom bestaande oplossingen tekortschieten</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
+          style="font-weight:500;">
+        Er was al veel beschikbaar.<br />Maar niet het juiste.
+      </h2>
+      <p class="text-gray-500 text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+        Normen, consultancybureaus, CMMS-software, verbeterprogramma's — ze zijn er. Maar ze raken elk een deel van het vraagstuk. Niet het geheel.
+      </p>
+      <div class="grid md:grid-cols-3 gap-px bg-gray-200">
+        {[
+          {
+            wat: "Normen zoals ISO 55000",
+            sub: "Beschrijven wat er moet zijn. Niet hoe eigenaarschap, besluitvorming en informatie in de praktijk worden verbonden.",
+          },
+          {
+            wat: "Adviesbureaus",
+            sub: "Leveren rapporten en aanbevelingen. Zelden het systeem dat de aanbeveling operationeel maakt — en laat blijven werken.",
+          },
+          {
+            wat: "CMMS en software",
+            sub: "Registreren wat er is. Maar geven geen antwoord op de vraag hoe assets bijdragen aan waarde, risico en continuïteit.",
+          },
+        ].map((item) => (
+          <div class="bg-white px-8 py-10">
+            <p class="text-navy-900 text-sm mb-3 leading-snug" style="font-weight:500;">{item.wat}</p>
+            <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ WAAROM ASSETWIZE IS GEBOUWD -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+         style="font-weight:600;">Waarom AssetWize is gebouwd</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
           style="font-weight:500;">
         Losse oplossingen lossen het niet op.<br />Het systeem moest ontworpen worden.
       </h2>
       <p class="text-gray-500 text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
-        AssetWize is niet opgericht om te adviseren. Het is opgericht om het systeem te bouwen dat organisaties in staat stelt zelf te sturen — op risico, prestaties, investeringen en continuïteit.
+        AssetWize is niet opgericht om te adviseren. Het is opgericht om het systeem te bouwen dat organisaties in staat stelt zelf te sturen — structureel, herleidbaar en duurzaam.
       </p>
       <div class="grid md:grid-cols-3 gap-px bg-gray-200">
         {[
@@ -92,7 +131,7 @@ import '../../styles/global.css';
           {
             num: "03",
             h: "Niet breed — precies",
-            p: "AssetWize werkt alleen voor asset-intensieve organisaties waar bestuurlijke grip op assets bepalend is voor prestaties, risico en waarde. Voor de rest is AssetWize niet de juiste partij.",
+            p: "AssetWize werkt alleen voor asset-intensieve organisaties waar bestuurlijke grip op assets bepalend is voor prestaties, risico en waarde.",
           },
         ].map((item) => (
           <div class="bg-white px-8 py-10">
@@ -108,19 +147,19 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ④ WAAROM COMPASS, ATLAS EN RELICORE BESTAAN -->
-  <section class="bg-white py-20 px-6">
+  <!-- ⑤ COMPASS, ATLAS EN RELICORE -->
+  <section class="bg-gray-50 py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:600;">Waarom Compass, Atlas en RELICORE bestaan</p>
+         style="font-weight:600;">Wat daaruit is ontstaan</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
           style="font-weight:500;">
-        Elk instrument is ontstaan uit een specifiek gat in de praktijk.
+        Elk instrument is gebouwd omdat iets ontbrak.
       </h2>
       <p class="text-gray-500 text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
-        Ze zijn niet bedacht als producten. Ze zijn gebouwd omdat bestaande instrumenten het governance-vraagstuk niet raakten.
+        Compass, Atlas en RELICORE zijn niet bedacht als producten. Ze zijn gebouwd omdat bestaande instrumenten het governance-vraagstuk niet raakten.
       </p>
-      <div class="flex flex-col divide-y divide-gray-100">
+      <div class="flex flex-col divide-y divide-gray-200">
         {[
           {
             naam: "Compass",
@@ -162,38 +201,36 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ⑤ DE OPRICHTER — ondersteunend bewijs, niet het onderwerp -->
-  <section class="bg-gray-50 py-20 px-6">
+  <!-- ⑥ DIMITRY — resultaat van twintig jaar observaties -->
+  <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-10"
-         style="font-weight:600;">Wie er achter zit</p>
+         style="font-weight:600;">Twintig jaar observaties. Één systeem.</p>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <div class="flex items-center gap-4 mb-6">
+          <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
+            AssetWize is het resultaat van twintig jaar werken in asset-intensieve omgevingen — als consultant bij Shell, NAM en Tata Steel, als Technical en Plant Manager bij productiebedrijven, als strategisch adviseur bij multinationals.
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
+            Altijd op het snijvlak van techniek, bedrijfsvoering en bestuur. Altijd met dezelfde vraag: waarom leidt al deze inspanning niet tot grip?
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-8" style="font-weight:400;">
+            AssetWize is het antwoord op die vraag — niet als adviesbureau, maar als systeem dat is gebouwd vanuit die praktijk.
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-gray-100">
             <img
               src="/dimitry.jpg"
               alt="Dimitry van Dort"
-              class="w-14 h-14 rounded-full object-cover"
+              class="w-12 h-12 rounded-full object-cover"
               style="filter:grayscale(100%); object-position:center top;"
             />
             <div>
-              <p class="text-navy-900 text-base" style="font-weight:500;">Dimitry van Dort</p>
-              <p class="text-teal-700 text-xs uppercase tracking-widest mt-0.5" style="font-weight:500;">
-                Oprichter AssetWize
-              </p>
+              <p class="text-navy-900 text-sm" style="font-weight:500;">Dimitry van Dort</p>
+              <p class="text-gray-400 text-xs mt-0.5" style="font-weight:400;">Oprichter AssetWize</p>
             </div>
           </div>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
-            Twintig jaar in asset-intensieve omgevingen. Als consultant bij Shell, NAM en Tata Steel. Als Technical en Plant Manager bij productiebedrijven. Als strategisch adviseur bij multinationals.
-          </p>
-          <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
-            Altijd op het snijvlak van techniek, bedrijfsvoering en bestuur. Altijd met dezelfde vraag: waarom leidt al deze inspanning niet tot grip?
-          </p>
-          <p class="text-gray-500 text-sm leading-relaxed mt-4" style="font-weight:400;">
-            AssetWize is het antwoord op die vraag — niet als adviesbureau, maar als systeem.
-          </p>
         </div>
-        <div class="flex flex-col gap-3">
+        <div class="flex flex-col gap-0">
           {[
             "Petrochemie — Shell, NAM, Wintershall",
             "Staal — Tata Steel",
@@ -203,12 +240,12 @@ import '../../styles/global.css';
             "Productie-industrie — Solidus Solutions",
             "Bouw & infra — Van Wijnen",
           ].map((item) => (
-            <div class="flex items-center gap-3 py-2.5 border-b border-gray-100">
+            <div class="flex items-center gap-3 py-3 border-b border-gray-100">
               <span style="color:#147878; font-size:11px;">→</span>
               <p class="text-gray-600 text-sm" style="font-weight:400;">{item}</p>
             </div>
           ))}
-          <p class="text-gray-400 text-xs mt-2" style="font-weight:400;">
+          <p class="text-gray-400 text-xs mt-4" style="font-weight:400;">
             En meer — over twintig jaar in meerdere sectoren en rollen.
           </p>
         </div>
@@ -216,7 +253,7 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ⑥ CTA -->
+  <!-- ⑦ CTA -->
   <section class="bg-navy-900 text-white py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
