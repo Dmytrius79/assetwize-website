@@ -212,3 +212,19 @@ Daarna: `"Lees START_HERE.md en voer tasks/TASK-XXX.md uit"`
 
 *AssetWize Website — START_HERE.md*
 *Aangemaakt juni 2026 — na migratie vanuit assetwize-platform*
+
+---
+
+## Gedeelde kennisbasis — lees altijd eerst
+
+Deze website is onderdeel van het AssetWize-systeem.
+Lees bij elke sessie **voordat je begint**:
+
+1. `/Users/drvandort/dev/_assetwize/brand/BRAND_GUIDELINES.md`
+2. `/Users/drvandort/dev/_assetwize/brand/POSITIONERING.md`
+
+Dit borgt consistentie in taal, merkidentiteit en positionering
+met de rest van het AssetWize-systeem.
+
+**Documentatiebeheer:** zie `docs/WERKAFSPRAKEN_DOCUMENTATIE.md`
+voor de volledige afspraken over wat waar wordt bewaard.

@@ -3,259 +3,387 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 ---
 <BaseLayout
-  title="Asset governance — sturen op waarde, risico en continuïteit"
-  description="AssetWize maakt asset management bestuurbaar op board-niveau — door governance, structuur en data als één systeem te ontwerpen."
+  title="AssetWize"
+  description="AssetWize helpt asset-intensieve organisaties grip krijgen op risico, prestaties, investeringen en continuïteit — door bestuurbaarheid rondom assets expliciet te maken, in te richten en duurzaam te borgen."
 >
 
-  <!-- HERO -->
-  <section class="bg-navy-900 text-white pt-28 pb-24 px-6">
+  <!-- ① HERO — uitkomst centraal -->
+  <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal-400 text-xs font-semibold tracking-widest uppercase mb-5">
-        Asset Governance
-      </p>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-3xl">
-        Boards zijn verantwoordelijk voor assets die kapitaal, risico en continuïteit bepalen.
-        Maar missen een systeem om daarop te sturen.
+      <p class="text-teal-400 text-xs uppercase tracking-widest mb-6"
+         style="font-weight:600; letter-spacing:0.14em;">AssetWize</p>
+      <h1 class="text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
+        Grip op risico, prestaties,<br />investeringen en continuïteit.
       </h1>
-      <p class="text-white text-lg font-semibold mb-2">
-        AssetWize maakt asset management bestuurbaar op board-niveau.
+      <p class="text-white/60 text-lg leading-relaxed max-w-xl mb-10" style="font-weight:400;">
+        Assets bepalen de toekomst van uw organisatie. AssetWize helpt organisaties de systemen inrichten waarmee die toekomst bestuurbaar wordt.
       </p>
-      <p class="text-teal-400 font-medium mb-10">
-        Niet als operationele tool — maar als bestuurlijk instrument.
-      </p>
-      <a href="/contact"
-         class="inline-flex px-7 py-3.5 bg-teal-700 hover:bg-teal-600
-                text-white font-semibold rounded-lg transition-colors text-sm">
-        Start het gesprek
-      </a>
-    </div>
-  </section>
-
-
-  <!-- PIJNLAGEN — narratief, minder kaartachtig -->
-  <section class="py-20 px-6 bg-gray-50">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-        De bestuurlijke spanning
-      </p>
-      <h2 class="text-2xl font-bold text-navy-900 mb-12 max-w-2xl">
-        Wat boards voelen als asset governance ontbreekt
-      </h2>
-      <div class="space-y-0 divide-y divide-gray-200">
-
-        <div class="py-8 grid md:grid-cols-4 gap-4 items-start">
-          <div class="text-teal-700 font-bold text-sm uppercase tracking-wide">
-            1 — Zonder fundament
-          </div>
-          <div class="md:col-span-3">
-            <p class="text-navy-900 font-semibold mb-1">
-              Beslissingen worden genomen zonder onderbouwd risico- en waardebeeld.
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Investeringen op gevoel of historische gewoonte.
-              Of te weinig — totdat het fout gaat.
-            </p>
-          </div>
-        </div>
-
-        <div class="py-8 grid md:grid-cols-4 gap-4 items-start">
-          <div class="text-teal-700 font-bold text-sm uppercase tracking-wide">
-            2 — Zonder scherpte
-          </div>
-          <div class="md:col-span-3">
-            <p class="text-navy-900 font-semibold mb-1">
-              Informatie is beschikbaar — maar niet besluitvormend.
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Assetdata versnipperd, taal niet uniform.
-              Rapportages leiden niet tot heldere keuzes op directieniveau.
-            </p>
-          </div>
-        </div>
-
-        <div class="py-8 grid md:grid-cols-4 gap-4 items-start">
-          <div class="text-teal-700 font-bold text-sm uppercase tracking-wide">
-            3 — Zonder systeem
-          </div>
-          <div class="md:col-span-3">
-            <p class="text-navy-900 font-semibold mb-1">
-              Uitkomsten zijn inconsistent en moeilijk uitlegbaar.
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              OPEX vs. CAPEX zonder consistente logica.
-              Besluitvorming afhankelijk van personen, niet van structuur.
-            </p>
-          </div>
-        </div>
-
-        <div class="py-8 grid md:grid-cols-4 gap-4 items-start">
-          <div class="text-teal-700 font-bold text-sm uppercase tracking-wide">
-            4 — Zonder controle
-          </div>
-          <div class="md:col-span-3">
-            <p class="text-navy-900 font-semibold mb-1">
-              De toekomst is niet voorspelbaar.
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Geen betrouwbare lifecycle planning, onverwachte CAPEX-pieken —
-              terwijl continuïteit wél bestuurlijk risico is.
-            </p>
-          </div>
-        </div>
-
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact"
+           class="inline-flex px-7 py-3.5 bg-teal-700 hover:bg-teal-600
+                  text-white rounded-lg transition-colors text-sm"
+           style="font-weight:500;">Start het gesprek</a>
+        <a href="#aanpak"
+           class="inline-flex px-7 py-3.5 border text-white/65 hover:text-white
+                  rounded-lg transition-colors text-sm"
+           style="font-weight:500; border-color:rgba(255,255,255,0.2);">Bekijk de aanpak</a>
       </div>
     </div>
   </section>
 
-
-  <!-- AANPAK -->
-  <section class="py-20 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-      <div>
-        <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-          De aanpak
-        </p>
-        <h2 class="text-2xl font-bold text-navy-900 mb-5">
-          Asset governance is geen project.<br />Het is een besturingssysteem.
-        </h2>
-        <p class="text-gray-600 leading-relaxed mb-5">
-          AssetWize ontwerpt en implementeert het governance-systeem
-          waarop asset management wordt gestuurd.
-          Niet als tijdelijk adviestraject —
-          als fundament voor bestuurlijke besluitvorming.
-        </p>
-        <p class="text-sm font-semibold text-navy-900 mb-3">Het resultaat:</p>
-        <div class="space-y-2 text-sm text-gray-700">
-          <div class="flex items-start gap-3">
-            <span class="text-teal-600 font-bold mt-0.5">→</span>
-            <span>Besluitvorming die consistent en uitlegbaar is — naar bestuur, finance en toezicht</span>
+  <!-- ② BEWIJS STRIP -->
+  <section class="bg-navy-900 py-8 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-navy-800">
+        {[
+          { getal: "15+",    label: "jaar praktijkervaring in asset governance" },
+          { getal: "29.872", label: "assets geanalyseerd in pilotimplementatie" },
+          { getal: "370",    label: "procesfuncties ingericht" },
+          { getal: "7",      label: "sectoren · industrie t/m agrochemie" },
+        ].map((item) => (
+          <div class="bg-navy-900 px-6 py-5 text-center">
+            <p style="font-size:28px; font-weight:500; color:#2dd4bf; line-height:1;">{item.getal}</p>
+            <p style="font-size:11px; font-weight:400; color:#4b5563; margin-top:6px; line-height:1.4;">{item.label}</p>
           </div>
-          <div class="flex items-start gap-3">
-            <span class="text-teal-600 font-bold mt-0.5">→</span>
-            <span>Inzicht in risico en assetwaarde als bestuurlijk instrument</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="text-teal-600 font-bold mt-0.5">→</span>
-            <span>Voorspelbare en onderbouwde investeringsbeslissingen</span>
-          </div>
-        </div>
+        ))}
       </div>
-      <div>
-        <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
-          Het governance-systeem bestaat uit vier lagen
-        </p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-navy-900 text-white rounded-xl p-6">
-            <div class="text-teal-400 font-bold text-xs uppercase tracking-widest mb-2">Strategie</div>
-            <p class="text-sm text-gray-300">Governance kaders afgestemd op risicoprofiel en organisatiestrategie</p>
-          </div>
-          <div class="bg-navy-900 text-white rounded-xl p-6">
-            <div class="text-teal-400 font-bold text-xs uppercase tracking-widest mb-2">Structuur</div>
-            <p class="text-sm text-gray-300">Rollen, besluitvormingslogica en uniforme taal tussen techniek, finance en bestuur</p>
-          </div>
-          <div class="bg-navy-900 text-white rounded-xl p-6">
-            <div class="text-teal-400 font-bold text-xs uppercase tracking-widest mb-2">Software</div>
-            <p class="text-sm text-gray-300">Governance Compass en RELICORE als digitaal fundament</p>
-          </div>
-          <div class="bg-navy-900 text-white rounded-xl p-6">
-            <div class="text-teal-400 font-bold text-xs uppercase tracking-widest mb-2">Implementatie</div>
-            <p class="text-sm text-gray-300">Borging in de organisatie — van nulmeting tot structureel stuurinstrument</p>
-          </div>
-        </div>
-      </div>
+      <p class="text-center mt-5 text-xs" style="font-weight:400; color:#374151;">
+        AssetWize-principes worden toegepast in:
+        <span style="color:#6b7280;"> zaadveredeling · agrochemie · productie-industrie · utilities · gebouwgebonden assets · technische dienstverlening</span>
+      </p>
     </div>
   </section>
 
-
-  <!-- SOFTWARE — Compass links, RELICORE rechts -->
-  <section class="py-20 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
-      <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-        Software
-      </p>
-      <h2 class="text-2xl font-bold text-navy-900 mb-3">
-        Twee producten. Één samenhangend systeem.
-      </h2>
-      <p class="text-gray-500 mb-12 max-w-xl">
-        Governance Compass en RELICORE zijn niet losstaande softwareproducten —
-        ze zijn de digitale laag van het governance-systeem.
-      </p>
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <!-- Governance Compass — links, ingang -->
-        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-teal-300 transition-colors">
-          <p class="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-2">
-            Startpunt
+  <!-- ③ DE OBSERVATIE — waarom lukt het vaak niet? -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+             style="font-weight:600;">De observatie</p>
+          <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6"
+              style="font-weight:500;">
+            Waarom ontbreekt grip in de meeste organisaties?
+          </h2>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4" style="font-weight:400;">
+            Niet omdat de inspanning ontbreekt. Niet omdat de mensen het niet willen. Maar omdat bestuur, techniek, finance, informatie en uitvoering niet vanuit hetzelfde systeem werken.
           </p>
-          <h3 class="text-xl font-bold text-navy-900 mb-1">Governance Compass</h3>
-          <p class="text-sm text-gray-400 italic mb-4">Direction for asset-based decision making</p>
-          <p class="text-gray-600 text-sm leading-relaxed mb-5">
-            Geeft boards direct inzicht in waar governance ontbreekt —
-            en waar de grootste bestuurlijke risico's en kansen liggen.
+          <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">
+            Het gevolg is herkenbaar in elke sector: beslissingen op gevoel, investeringen zonder grondslag, risico's die pas zichtbaar worden als ze zich manifesteren.
           </p>
-          <a href="/governance-compass"
-             class="text-sm font-semibold text-teal-700 hover:text-teal-900 transition-colors">
-            Meer over Governance Compass →
+        </div>
+        <div class="flex flex-col gap-0 divide-y divide-gray-100">
+          {[
+            { kop: "Bestuur",    sub: "Stelt kaders maar heeft geen zicht op wat er werkelijk speelt." },
+            { kop: "Techniek",   sub: "Weet wat er is maar spreekt niet de taal van het bestuur." },
+            { kop: "Finance",    sub: "Beoordeelt investeringen zonder assetlogica als grondslag." },
+            { kop: "Informatie", sub: "Registreert wat er was, niet wat besluitvorming nodig heeft." },
+            { kop: "Uitvoering", sub: "Handelt op basis van gewoonten, niet op basis van prioriteiten." },
+          ].map((item) => (
+            <div class="flex items-start gap-4 py-4">
+              <span class="text-teal-700 text-xs uppercase tracking-widest min-w-24 mt-0.5 flex-shrink-0"
+                    style="font-weight:600;">{item.kop}</span>
+              <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAR STAAT UW ORGANISATIE VANDAAG -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-10"
+         style="font-weight:600;">Waar staat uw organisatie vandaag?</p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          {
+            situatie: "We weten dat grip ontbreekt, maar niet precies waar het zit.",
+            naar: "Compass",
+            href: "/governance-compass",
+            kleur: "#2D6A4F",
+            bg: "#F7F8F6",
+            border: "#C8EED8",
+          },
+          {
+            situatie: "We hebben veel data, maar kunnen er geen beslissingen op baseren.",
+            naar: "RELICORE",
+            href: "/relicore",
+            kleur: "#147878",
+            bg: "#f0fdfa",
+            border: "#9fe1cb",
+          },
+          {
+            situatie: "Beslissingen over assets zijn afhankelijk van personen in plaats van een duidelijke structuur.",
+            naar: "Atlas",
+            href: "/atlas",
+            kleur: "#7A4F1E",
+            bg: "#faf7f4",
+            border: "#e5ddd5",
+          },
+          {
+            situatie: "We weten niet waar we moeten beginnen.",
+            naar: "Compass",
+            href: "/governance-compass",
+            kleur: "#2D6A4F",
+            bg: "#F7F8F6",
+            border: "#C8EED8",
+          },
+        ].map((item) => (
+          <a href={item.href}
+             class="group flex flex-col justify-between rounded-xl p-7 transition-all
+                    hover:shadow-sm"
+             style={`background:${item.bg}; border:1px solid ${item.border};`}>
+            <p class="text-navy-900 text-base leading-snug mb-8"
+               style="font-weight:400;">
+              "{item.situatie}"
+            </p>
+            <span class="text-xs uppercase tracking-widest flex items-center gap-2"
+                  style={`font-weight:600; color:${item.kleur};`}>
+              → {item.naar}
+            </span>
           </a>
-        </div>
-
-        <!-- RELICORE — rechts, systeem -->
-        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-teal-300 transition-colors">
-          <p class="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-2">
-            Systeem
-          </p>
-          <h3 class="text-xl font-bold text-navy-900 mb-4">RELICORE</h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-5">
-            Het systeem waarin asset governance daadwerkelijk wordt ingericht en gestuurd.
-            Van positionering en beleid tot besluitvormingsstructuur en kennisborging.
-          </p>
-          <a href="/relicore"
-             class="text-sm font-semibold text-teal-700 hover:text-teal-900 transition-colors">
-            Meer over RELICORE →
-          </a>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- OVER ASSETWIZE -->
-  <section class="py-20 px-6">
-    <div class="max-w-4xl mx-auto border-l-4 border-teal-600 pl-10">
-      <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-4">
-        Wie is AssetWize
+
+  <!-- ③ DE AANPAK — vier werkwoorden als methode, niet als doel -->
+  <section id="aanpak" class="bg-gray-50 py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+         style="font-weight:600;">De aanpak</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-4"
+          style="font-weight:500;">
+        Bestuurbaarheid ontstaat niet vanzelf.<br />Het wordt ontworpen.
+      </h2>
+      <p class="text-gray-500 text-sm leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+        AssetWize verbindt bestuur, techniek, finance, informatie en uitvoering tot één samenhangend systeem — via vier samenhangende stappen.
       </p>
-      <p class="text-xl text-navy-900 font-semibold leading-relaxed mb-5">
-        AssetWize is opgericht door Dimitry van Dort, asset governance specialist
-        met meer dan vijftien jaar ervaring in complexe asset-intensieve omgevingen.
-      </p>
-      <p class="text-gray-600 leading-relaxed mb-4">
-        AssetWize opereert als onafhankelijke asset governance partner —
-        op het snijvlak van bestuur, techniek en finance.
-      </p>
-      <p class="text-gray-600 leading-relaxed">
-        Governance Compass en RELICORE zijn voortgekomen uit die praktijk.
-        Gebouwd op governance-expertise, niet op generieke softwarelogica.
-      </p>
+
+      <div class="grid md:grid-cols-4 gap-px bg-gray-200">
+        {[
+          {
+            werkwoord: "Begrijpen",
+            vraag: "Waar ontbreekt grip?",
+            instrument: "Compass",
+            omschrijving: "Compass maakt zichtbaar of assetmanagement daadwerkelijk werkt — niet of het ingericht is. Drie perspectieven op bestuurbaarheid.",
+            href: "/governance-compass",
+            kleur: "#2D6A4F",
+            border: "#2D6A4F",
+          },
+          {
+            werkwoord: "Ontwerpen",
+            vraag: "Hoe zou het moeten werken?",
+            instrument: "Governance Frameworks",
+            omschrijving: "AssetWize ontwerpt het besturingssysteem — eigenaarschap, besluitvorming, investeringslogica en overlegstructuren — op maat van de organisatie.",
+            href: "/over-ons",
+            kleur: "#0f1f35",
+            border: "#0f1f35",
+          },
+          {
+            werkwoord: "Inrichten",
+            vraag: "Welke informatie en structuren zijn nodig?",
+            instrument: "Blueprints & RELICORE",
+            omschrijving: "Blueprints vertalen governance naar informatiemodellen. RELICORE maakt die informatie digitaal beheerbaar en herleidbaar.",
+            href: "/relicore",
+            kleur: "#147878",
+            border: "#147878",
+          },
+          {
+            werkwoord: "Verankeren",
+            vraag: "Hoe blijft het werken?",
+            instrument: "Implementatie & organisatie",
+            omschrijving: "Governance werkt alleen als het landt in de organisatie — in processen, in CMMS-inrichting, in gedrag en in blijvende sturing op resultaat.",
+            href: "/contact",
+            kleur: "#1e3a5f",
+            border: "#1e3a5f",
+          },
+        ].map((stap) => (
+          <div class="bg-white px-7 py-8 flex flex-col"
+               style={`border-top:3px solid ${stap.border};`}>
+            <p class="text-xs uppercase tracking-widest mb-3"
+               style={`font-weight:600; color:${stap.kleur};`}>{stap.werkwoord}</p>
+            <p class="text-navy-900 text-base mb-1 leading-snug"
+               style="font-weight:500;">{stap.vraag}</p>
+            <p class="text-xs uppercase tracking-widest mb-4"
+               style={`font-weight:500; color:${stap.kleur};`}>{stap.instrument}</p>
+            <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1"
+               style="font-weight:400;">{stap.omschrijving}</p>
+            <a href={stap.href}
+               class="text-xs uppercase tracking-widest flex items-center gap-2"
+               style={`font-weight:600; color:${stap.kleur};`}>
+              Meer
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
+                   stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-24 px-6 bg-navy-900 text-white">
+  <!-- ④ COMPASS EN RELICORE — onderdeel van het systeem -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+         style="font-weight:600;">Instrumenten</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-4"
+          style="font-weight:500;">
+        Compass en RELICORE zijn geen losse producten.<br />Ze zijn onderdeel van hetzelfde systeem.
+      </h2>
+      <p class="text-gray-500 text-sm leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+        Elk instrument heeft zijn eigen bezoeker en zijn eigen moment in het traject — maar ze zijn ontworpen om samen te werken.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Compass -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <div class="px-8 py-7" style="background:#F7F8F6; border-bottom:1px solid #E0EBE4;">
+            <div class="flex items-center gap-3 mb-4">
+              <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
+                <polygon points="20,2 23,18 20,22 17,18" fill="#1A4A35"/>
+                <polygon points="20,38 17,24 20,20 23,24" fill="#C8CFC4"/>
+                <polygon points="2,20 18,17 22,20 18,23"  fill="#C8CFC4"/>
+                <polygon points="38,20 22,23 18,20 22,17" fill="#C8CFC4"/>
+                <circle cx="20" cy="20" r="2" fill="#2D6A4F"/>
+              </svg>
+              <span class="text-xs uppercase tracking-widest"
+                    style="font-weight:600; color:#2D6A4F;">Compass — Begrijpen</span>
+            </div>
+            <p class="text-lg leading-snug mb-2" style="font-weight:500; color:#1A2E22;">
+              Waar ontbreekt grip — en waarom?
+            </p>
+          </div>
+          <div class="px-8 py-6">
+            <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
+              Compass diagnosticeert het besturingssysteem. Niet door te vragen of processen aanwezig zijn, maar door te beoordelen of de organisatie daadwerkelijk in staat is risico, prestaties en investeringen te besturen.
+            </p>
+            <p class="text-gray-400 text-xs mb-5" style="font-weight:400;">
+              Compass kan concluderen dat RELICORE niet de eerste stap is. Eigenaarschap, besluitvorming of cultuur kunnen urgenter zijn. Dat maakt Compass onafhankelijk — en geloofwaardig.
+            </p>
+            <a href="/governance-compass"
+               class="text-xs uppercase tracking-widest flex items-center gap-2"
+               style="font-weight:600; color:#2D6A4F;">
+              Meer over Compass
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
+                   stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- RELICORE -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <div class="px-8 py-7 bg-navy-900" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <div class="flex items-center gap-3 mb-4">
+              <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
+                <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+                <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+                <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
+                <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
+                <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+                <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+              </svg>
+              <span class="text-xs uppercase tracking-widest text-teal-400"
+                    style="font-weight:600;">RELICORE — Inrichten</span>
+            </div>
+            <p class="text-white text-lg leading-snug" style="font-weight:500;">
+              Welke assetlogica en informatie zijn nodig?
+            </p>
+          </div>
+          <div class="px-8 py-6">
+            <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
+              RELICORE maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat investeringen, risicoacceptatie en besluitvorming gebaseerd zijn op dezelfde assetlogica.
+            </p>
+            <p class="text-gray-400 text-xs mb-5" style="font-weight:400;">
+              RELICORE ondersteunt de informatielaag van het besturingssysteem. Het lost eigenaarschaps- of besluitvormingsvraagstukken niet op — dat doet het governance framework.
+            </p>
+            <a href="/relicore"
+               class="text-teal-700 text-xs uppercase tracking-widest flex items-center gap-2"
+               style="font-weight:600;">
+              Meer over RELICORE
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
+                   stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⑤ VOOR WIE -->
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+         style="font-weight:600;">Voor wie</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-10 max-w-lg"
+          style="font-weight:500;">
+        AssetWize spreekt de taal van het bestuur.<br />Maar werkt op alle niveaus.
+      </h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        {[
+          {
+            rol: "Directie & bestuur",
+            kleur: "#0f1f35",
+            h: "Grip op risico, waarde en continuïteit",
+            p: "Voor bestuurlijk inzicht in de vraag of de organisatie daadwerkelijk in staat is waarde uit assets te realiseren — en welke besluiten daarvoor nodig zijn.",
+          },
+          {
+            rol: "Plant- & locatiemanagement",
+            kleur: "#2D6A4F",
+            h: "Van reactief naar voorspelbaar",
+            p: "Voor het begrijpen van de patronen die prestatieverbetering in de weg staan — en een verbeteragenda die aansluit op wat de organisatie werkelijk nodig heeft.",
+          },
+          {
+            rol: "Asset- & technisch management",
+            kleur: "#147878",
+            h: "Beslissingen die herleidbaar zijn",
+            p: "Voor het vertalen van technische bevindingen naar bestuurlijke taal — en voor investeringsbeslissingen die niet op gevoel maar op assetlogica zijn gebaseerd.",
+          },
+        ].map((item) => (
+          <div class="border border-gray-200 rounded-xl p-7 bg-white">
+            <p class="text-xs uppercase tracking-widest mb-3"
+               style={`font-weight:600; color:${item.kleur};`}>{item.rol}</p>
+            <p class="text-navy-900 text-sm mb-3 leading-snug"
+               style="font-weight:500;">{item.h}</p>
+            <p class="text-gray-500 text-sm leading-relaxed"
+               style="font-weight:400;">{item.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ CTA -->
+  <section class="bg-navy-900 text-white py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl font-bold mb-5">
-        De vraag is niet óf asset governance nodig is —<br />
-        maar of het al bestuurbaar is ingericht.
+      <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
+          style="font-weight:500;">
+        Grip begint met de juiste diagnose.
       </h2>
-      <p class="text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto">
-        In een eerste gesprek maken we zichtbaar waar de grootste
-        bestuurlijke risico's en kansen liggen.
+      <p class="text-white/60 text-base leading-relaxed mb-10 max-w-md mx-auto"
+         style="font-weight:400;">
+        In een eerste gesprek kijken we naar uw specifieke situatie — en welke stap het meeste oplevert.
       </p>
-      <a href="/contact"
-         class="inline-flex px-8 py-4 bg-teal-700 hover:bg-teal-600
-                text-white font-semibold rounded-lg transition-colors">
-        Start het gesprek
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact"
+           class="inline-flex px-10 py-4 bg-teal-700 hover:bg-teal-600
+                  text-white rounded-lg transition-colors"
+           style="font-weight:500;">Start het gesprek</a>
+        <a href="/governance-compass"
+           class="inline-flex px-10 py-4 border text-white/65 hover:text-white
+                  rounded-lg transition-colors"
+           style="font-weight:500; border-color:rgba(255,255,255,0.2);">Bekijk Compass</a>
+      </div>
     </div>
   </section>
 

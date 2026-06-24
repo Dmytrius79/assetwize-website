@@ -3,7 +3,7 @@ export interface Props {
   title: string;
   description?: string;
 }
-const { title, description = 'AssetWize — Structured asset governance' } = Astro.props;
+const { title, description = 'AssetWize — bestuurbaarheid van asset-intensieve organisaties' } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="nl">
@@ -14,9 +14,11 @@ const { title, description = 'AssetWize — Structured asset governance' } = Ast
   <title>{title} | AssetWize</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Zorgt dat de footer altijd aansluit zonder witte gap */
-    html, body { background-color: #0f1f35; }
-    main { background-color: white; }
+    /* Pagina-achtergrond wordt bepaald door de eerste sectie, niet door body */
+    html, body { background-color: #ffffff; margin: 0; }
+    /* Font-weight override — Inter 500 expliciet forceren */
+    .fw-medium { font-weight: 500 !important; }
+    .fw-normal { font-weight: 400 !important; }
   </style>
 </head>
 <body class="text-gray-900 font-sans">
@@ -27,13 +29,13 @@ const { title, description = 'AssetWize — Structured asset governance' } = Ast
         <img src="/assetwize_logo_cropped.png" alt="AssetWize" class="h-10 w-auto" />
       </a>
       <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-        <li><a href="/governance-compass" class="hover:text-teal-700 transition-colors">Governance Compass</a></li>
+        <li><a href="/governance-compass" class="hover:text-teal-700 transition-colors">Compass</a></li>
+        <li><a href="/atlas" class="hover:text-amber-700 transition-colors" style="color:inherit;">Atlas</a></li>
         <li><a href="/relicore" class="hover:text-teal-700 transition-colors">RELICORE</a></li>
-        <li><a href="/over-ons" class="hover:text-teal-700 transition-colors">Over ons</a></li>
-        <li><a href="/contact" class="hover:text-teal-700 transition-colors">Contact</a></li>
+        <li><a href="/over-ons" class="hover:text-teal-700 transition-colors">Waarom AssetWize</a></li>
       </ul>
       <a href="/contact" class="px-4 py-2 bg-teal-700 text-white text-sm font-medium rounded-lg hover:bg-teal-800 transition-colors">
-        Demo aanvragen
+        Start het gesprek
       </a>
     </nav>
   </header>
@@ -50,14 +52,15 @@ const { title, description = 'AssetWize — Structured asset governance' } = Ast
       <div>
         <div class="font-semibold text-gray-300 mb-3">Producten</div>
         <ul class="space-y-2 text-gray-400">
-          <li><a href="/governance-compass" class="hover:text-white transition-colors">Governance Compass</a></li>
-          <li><a href="/relicore" class="hover:text-white transition-colors">RELICORE</a></li>
+          <li><a href="/governance-compass" class="hover:text-white transition-colors">Compass by AssetWize</a></li>
+          <li><a href="/atlas" class="hover:text-white transition-colors">Atlas by AssetWize</a></li>
+          <li><a href="/relicore" class="hover:text-white transition-colors">RELICORE by AssetWize</a></li>
         </ul>
       </div>
       <div>
         <div class="font-semibold text-gray-300 mb-3">Bedrijf</div>
         <ul class="space-y-2 text-gray-400">
-          <li><a href="/over-ons" class="hover:text-white transition-colors">Over ons</a></li>
+          <li><a href="/over-ons" class="hover:text-white transition-colors">Waarom AssetWize</a></li>
           <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
         </ul>
       </div>

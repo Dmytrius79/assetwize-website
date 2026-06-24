@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+---
+<BaseLayout
+  title="Atlas by AssetWize"
+  description="Waar ISO 55000 stopt, begint Atlas. Een uitgewerkt governance-systeem met frameworks, blueprints en implementatierichtlijnen voor asset-intensieve organisaties."
+>
+
+  <!-- ① HERO -->
+  <section class="text-white pt-28 pb-20 px-6" style="background:#1C0F07;">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-10 pb-8"
+           style="border-bottom:0.5px solid rgba(176,125,58,0.3);">
+        <svg viewBox="0 0 40 40" width="52" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="16" fill="none" stroke="#B07D3A" stroke-width="1.5"/>
+          <line x1="20" y1="4"  x2="20" y2="36" stroke="#B07D3A" stroke-width="1.5"/>
+          <ellipse cx="20" cy="20" rx="8" ry="16" fill="none" stroke="#B07D3A" stroke-width="1" opacity="0.5"/>
+          <line x1="4"  y1="20" x2="36" y2="20" stroke="#B07D3A" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+        <div style="border-left:0.5px solid rgba(176,125,58,0.3); padding-left:12px;">
+          <div style="font-size:26px; font-weight:500; color:white; letter-spacing:0.02em; line-height:1.1;">Atlas</div>
+          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(176,125,58,0.72); margin-top:4px;">BY ASSETWIZE</div>
+        </div>
+      </div>
+      <h1 class="text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
+        Asset governance, uitgewerkt tot een werkend systeem.
+      </h1>
+      <p class="text-lg leading-relaxed max-w-xl mb-0"
+         style="font-weight:400; color:rgba(255,255,255,0.6);">
+        Niet alleen wat assetmanagement zou moeten zijn. Maar hoe eigenaarschap, besluitvorming, informatie, processen en systemen daadwerkelijk samenkomen in de praktijk.
+      </p>
+    </div>
+  </section>
+
+  <!-- ② ANKERZIN -->
+  <section class="py-9 px-6" style="background:white; border-left:4px solid #7A4F1E;">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-base leading-relaxed max-w-2xl" style="font-weight:500; color:#1C0F07;">
+        Waar ISO 55000 stopt, begint Atlas.
+        <span style="font-weight:400; color:#6b7280;">
+          Een uitgewerkt governance-systeem met frameworks, blueprints en implementatierichtlijnen — gebouwd vanuit vijftien jaar praktijk in asset-intensieve organisaties.
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ③ WAAROM ATLAS BESTAAT -->
+  <section class="py-20 px-6" style="background:#faf7f4;">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">Waarom Atlas bestaat</p>
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl leading-snug mb-6" style="font-weight:500; color:#1C0F07;">
+            Veel organisaties starten telkens opnieuw.
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="font-weight:400; color:#6b7280;">
+            Rollen worden opnieuw ontworpen. Besluitvorming wordt opnieuw ingericht. CMMS-structuren worden opnieuw bedacht. Governance wordt opnieuw gedefinieerd.
+          </p>
+          <p class="text-sm leading-relaxed" style="font-weight:400; color:#6b7280;">
+            Niet omdat kennis ontbreekt. Maar omdat die kennis verspreid zit over normen, projecten, leveranciers en individuele ervaring. Atlas brengt die kennis samen in één samenhangend systeem.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          {[
+            { kop: "Bestuurlijke implementatie", sub: "Hoe governance daadwerkelijk landt op directieniveau." },
+            { kop: "Procesmatige inrichting",   sub: "Hoe werkprocessen aansluiten op governance-principes." },
+            { kop: "Operationele verankering",  sub: "Hoe uitvoering structureel wordt gekoppeld aan strategie." },
+          ].map((item) => (
+            <div style="border-left:3px solid #7A4F1E; padding-left:16px;">
+              <p class="text-sm mb-1" style="font-weight:500; color:#1C0F07;">{item.kop}</p>
+              <p class="text-sm"     style="font-weight:400; color:#6b7280;">{item.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ ATLAS ALS REFERENTIEARCHITECTUUR -->
+  <section class="py-20 px-6" style="background:white;">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">Atlas als referentiearchitectuur</p>
+      <h2 class="text-2xl md:text-3xl leading-snug mb-6 max-w-lg" style="font-weight:500; color:#1C0F07;">
+        Atlas beschrijft hoe alle onderdelen samenhangen.
+      </h2>
+      <p class="text-sm leading-relaxed mb-10 max-w-xl" style="font-weight:400; color:#6b7280;">
+        Niet één proces. Maar hoe governance, risico, betrouwbaarheid, waarde, besluitvorming, organisatie en verandervermogen als één geïntegreerd systeem functioneren.
+      </p>
+
+      <!-- Zeven domeinen — globe -->
+      <div class="mb-12" style="background:#faf7f4; border-radius:12px; padding:32px;">
+        <svg width="100%" viewBox="0 0 680 560"
+             style="max-width:580px; display:block; margin:0 auto;"
+             xmlns="http://www.w3.org/2000/svg"
+             role="img" aria-label="Atlas — zeven thema's op de meridiaanbol">
+          <title>Atlas — zeven thema's</title>
+          <circle cx="340" cy="280" r="162" fill="#F5EDE0" stroke="#C49A5E" stroke-width="0.8" opacity="0.25"/>
+          <circle cx="340" cy="280" r="162" fill="none" stroke="#E8D5B5" stroke-width="0.5" opacity="0.5"/>
+          <line x1="340" y1="118" x2="340" y2="442" stroke="#C49A5E" stroke-width="0.7" opacity="0.18"/>
+          <ellipse cx="340" cy="280" rx="81" ry="162" fill="none" stroke="#C49A5E" stroke-width="0.6" opacity="0.14"/>
+          <ellipse cx="340" cy="280" rx="135" ry="162" fill="none" stroke="#C49A5E" stroke-width="0.4" opacity="0.09"/>
+          <ellipse cx="340" cy="280" rx="162" ry="40" fill="none" stroke="#C49A5E" stroke-width="0.6" opacity="0.14"/>
+          <ellipse cx="340" cy="226" rx="152" ry="27" fill="none" stroke="#C49A5E" stroke-width="0.4" opacity="0.08"/>
+          <ellipse cx="340" cy="348" rx="144" ry="23" fill="none" stroke="#C49A5E" stroke-width="0.4" opacity="0.08"/>
+          <path d="M340,140 Q300,195 232,208" fill="none" stroke="#8B6230" stroke-width="0.9" opacity="0.35"/>
+          <path d="M340,140 Q380,195 448,208" fill="none" stroke="#8B6230" stroke-width="0.9" opacity="0.35"/>
+          <path d="M232,208 Q216,262 198,308" fill="none" stroke="#8B6230" stroke-width="0.9" opacity="0.35"/>
+          <path d="M448,208 Q464,262 482,308" fill="none" stroke="#8B6230" stroke-width="0.9" opacity="0.35"/>
+          <path d="M198,308 Q222,370 256,392" fill="none" stroke="#8B6230" stroke-width="0.9" opacity="0.35"/>
+          <path d="M482,308 Q458,370 424,392" fill="none" stroke="#8B6230" stroke-width="0.9" opacity="0.35"/>
+          <path d="M256,392 Q340,412 424,392" fill="none" stroke="#8B6230" stroke-width="0.9" opacity="0.35"/>
+          <path d="M232,208 Q340,258 482,308" fill="none" stroke="#C49A5E" stroke-width="0.5" opacity="0.18"/>
+          <path d="M448,208 Q340,258 198,308" fill="none" stroke="#C49A5E" stroke-width="0.5" opacity="0.18"/>
+          <path d="M232,208 Q338,300 424,392" fill="none" stroke="#C49A5E" stroke-width="0.4" opacity="0.12"/>
+          <path d="M448,208 Q342,300 256,392" fill="none" stroke="#C49A5E" stroke-width="0.4" opacity="0.12"/>
+          <!-- T5 -->
+          <circle cx="340" cy="140" r="22" fill="#7A4F1E"/>
+          <text x="340" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T5</text>
+          <text x="340" y="97"  text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T5</text>
+          <text x="340" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Governance &amp; Eigenaarschap</text>
+          <!-- T1 -->
+          <circle cx="232" cy="208" r="22" fill="#7A4F1E"/>
+          <text x="232" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T1</text>
+          <text x="196" y="181" text-anchor="end" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T1</text>
+          <text x="196" y="196" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Risico, Veiligheid</text>
+          <text x="196" y="211" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Compliance</text>
+          <!-- T2 -->
+          <circle cx="448" cy="208" r="22" fill="#7A4F1E"/>
+          <text x="448" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T2</text>
+          <text x="484" y="181" text-anchor="start" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T2</text>
+          <text x="484" y="196" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Betrouwbaarheid</text>
+          <text x="484" y="211" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Continuïteit</text>
+          <!-- T7 -->
+          <circle cx="198" cy="308" r="22" fill="#7A4F1E"/>
+          <text x="198" y="313" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T7</text>
+          <text x="162" y="291" text-anchor="end" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T7</text>
+          <text x="162" y="306" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Organisatie, Mensen</text>
+          <text x="162" y="321" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Uitvoerbaarheid</text>
+          <!-- T3 -->
+          <circle cx="482" cy="308" r="22" fill="#7A4F1E"/>
+          <text x="482" y="313" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T3</text>
+          <text x="518" y="291" text-anchor="start" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T3</text>
+          <text x="518" y="306" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Waarde, Lifecycle</text>
+          <text x="518" y="321" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Investeringen</text>
+          <!-- T6 -->
+          <circle cx="256" cy="392" r="22" fill="#7A4F1E"/>
+          <text x="256" y="397" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T6</text>
+          <text x="220" y="420" text-anchor="end" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T6</text>
+          <text x="220" y="435" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Toekomstvastheid</text>
+          <text x="220" y="450" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Verandervermogen</text>
+          <!-- T4 -->
+          <circle cx="424" cy="392" r="22" fill="#7A4F1E"/>
+          <text x="424" y="397" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T4</text>
+          <text x="460" y="420" text-anchor="start" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T4</text>
+          <text x="460" y="435" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Besluitvorming</text>
+          <text x="460" y="450" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Stuurinformatie</text>
+        </svg>
+      </div>
+
+      <!-- Wat Atlas bevat -->
+      <p class="text-xs uppercase tracking-widest mb-5" style="font-weight:600; color:#7A4F1E;">Wat Atlas bevat</p>
+      <div class="grid md:grid-cols-3 gap-x-12 gap-y-2 max-w-2xl">
+        {[
+          "Governance Frameworks",
+          "Asset Management Operating Models",
+          "Asset Investment Standards",
+          "RACI-modellen",
+          "Lifecycle Frameworks",
+          "Data Governance Standards",
+          "CMMS Blueprint Architectures",
+          "Maintenance Governance Models",
+          "Maturity Assessments",
+          "ISO 55001 Reference Mappings",
+          "Decision-Making Frameworks",
+          "Implementation Guidelines",
+        ].map((item) => (
+          <div class="flex items-center gap-2 py-1.5" style="border-bottom:0.5px solid #e5ddd5;">
+            <span style="color:#7A4F1E; font-size:11px;">→</span>
+            <span class="text-sm" style="font-weight:400; color:#1C0F07;">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ OMVANG -->
+  <section class="py-12 px-6" style="background:#1C0F07;">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px" style="background:rgba(176,125,58,0.2);">
+        {[
+          { getal: "7",    label: "samenhangende domeinen" },
+          { getal: "50+",  label: "governance frameworks" },
+          { getal: "100+", label: "blueprints en standaarden" },
+          { getal: "15+",  label: "jaar praktijkervaring" },
+        ].map((item) => (
+          <div class="px-6 py-6 text-center" style="background:#1C0F07;">
+            <p style="font-size:28px; font-weight:500; color:#B07D3A; line-height:1;">{item.getal}</p>
+            <p style="font-size:11px; font-weight:400; color:rgba(255,255,255,0.4); margin-top:6px; line-height:1.4;">{item.label}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center mt-4 text-xs" style="color:rgba(255,255,255,0.3);">
+        Doorlopend verrijkt vanuit praktijkprojecten binnen industrie, utilities en agrochemie.
+      </p>
+    </div>
+  </section>
+
+  <!-- ⑥ SCREENSHOT PLACEHOLDER -->
+  <section class="py-20 px-6" style="background:#faf7f4;">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">Een kijkje in Atlas</p>
+      <h2 class="text-2xl leading-snug mb-4" style="font-weight:500; color:#1C0F07;">
+        Uitgewerkte bouwstenen, direct toepasbaar.
+      </h2>
+      <p class="text-sm leading-relaxed mb-8 max-w-lg" style="font-weight:400; color:#6b7280;">
+        Atlas bevat uitgewerkte governance-documenten, blueprints, referentiemodellen, RACI-structuren, maturity modellen en implementatierichtlijnen. Geen theorie — direct toepasbare bouwstenen voor de inrichting van assetmanagement.
+      </p>
+      <!-- Screenshot placeholder — vervang door echte afbeelding -->
+      <div class="rounded-xl overflow-hidden border"
+           style="border-color:#e5ddd5; background:white; padding:48px; text-align:center;">
+        <p class="text-xs uppercase tracking-widest mb-2" style="color:#7A4F1E; font-weight:600;">Screenshot</p>
+        <p class="text-sm" style="color:#6b7280;">
+          Voeg hier een afbeelding toe van het Atlas Organisation Model of een framework-pagina.<br/>
+          Formaat: breed, hoge resolutie PNG of JPEG.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ RELATIE MET COMPASS EN RELICORE -->
+  <section class="py-20 px-6" style="background:white;">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">De relatie met Compass en RELICORE</p>
+      <h2 class="text-2xl leading-snug mb-10 max-w-lg" style="font-weight:500; color:#1C0F07;">
+        Compass meet. RELICORE implementeert.<br />Atlas is het systeem waar beide op gebaseerd zijn.
+      </h2>
+      <div class="max-w-2xl flex flex-col divide-y" style="border-color:#e5ddd5;">
+        {[
+          { instrument:"Compass",            kleur:"#2D6A4F", sub:"Diagnosticeert of het governance-systeem werkt — toetst aan de normen die Atlas beschrijft." },
+          { instrument:"AssetWize expertise",kleur:"#0f1f35", sub:"Ontwerpt het besturingssysteem — gebruikt Atlas-frameworks als normatieve basis voor elk ontwerp." },
+          { instrument:"RELICORE",           kleur:"#147878", sub:"Borgt de assetlogica digitaal — implementeert de informatiemodellen en blueprints die Atlas beschrijft." },
+        ].map((item) => (
+          <div class="flex items-start gap-6 py-6">
+            <span class="text-xs uppercase tracking-widest min-w-36 mt-0.5 flex-shrink-0"
+                  style={`font-weight:600; color:${item.kleur};`}>{item.instrument}</span>
+            <p class="text-sm leading-relaxed" style="font-weight:400; color:#6b7280;">{item.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ CTA -->
+  <section class="py-20 px-6 text-center" style="background:#1C0F07;">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-3xl leading-snug mb-4 max-w-lg mx-auto"
+          style="font-weight:500; color:white;">
+        Wilt u weten hoe Atlas uw traject ondersteunt?
+      </h2>
+      <p class="text-base leading-relaxed mb-10 max-w-md mx-auto"
+         style="font-weight:400; color:rgba(255,255,255,0.6);">
+        In een eerste gesprek kijken we naar uw specifieke situatie — en welke frameworks en blueprints direct toepasbaar zijn.
+      </p>
+      <a href="/contact"
+         class="inline-flex px-10 py-4 text-white rounded-lg transition-colors"
+         style="background:#7A4F1E; font-weight:500;">
+        Start het gesprek
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -3,329 +3,401 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/global.css';
 ---
 <BaseLayout
-  title="RELICORE — Lifecycle Asset Intelligence Platform"
-  description="RELICORE is een engineering- en beslissingslaag boven CMMS-systemen. Gestructureerde asset intelligence voor reliability, lifecycle en strategische besluitvorming."
+  title="RELICORE"
+  description="RELICORE is de engineeringlaag boven uw CMMS — die ruwe assetdata omzet in een herleidbare basis voor reliability, lifecycle en investeringsbeslissingen."
 >
 
-  <!-- HERO -->
+  <!-- ① HERO -->
   <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="mb-8">
-        <img src="/relicore_logo.svg" alt="RELICORE" class="h-10 w-auto" />
+      <div class="flex items-center gap-4 mb-10 pb-8 border-b border-white/15">
+        <svg viewBox="0 0 40 40" width="52" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+          <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
+          <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
+          <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+          <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+        </svg>
+        <div style="border-left:0.5px solid rgba(45,212,191,0.3); padding-left:12px;">
+          <div style="font-size:26px; font-weight:500; color:white; letter-spacing:0.05em; line-height:1.1;">RELICORE</div>
+          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(45,212,191,0.72); line-height:1; margin-top:4px;">BY ASSETWIZE</div>
+        </div>
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-3xl">
-        Lifecycle Asset Intelligence Platform
+      <h1 class="text-4xl md:text-5xl leading-tight mb-5 max-w-xl" style="font-weight:500;">
+        Structuur in assets.<br />Grip op beslissingen.
       </h1>
-      <p class="text-white text-lg font-semibold mb-2 max-w-2xl">
-        RELICORE is geen CMMS-vervanging.
-      </p>
-      <p class="text-gray-300 text-lg leading-relaxed max-w-2xl mb-10">
-        Het is een engineering- en beslissingslaag bóven CMMS-systemen —
-        die ruwe assetdata omzet in gestructureerde intelligence voor
-        reliability, lifecycle en strategische besluitvorming.
+      <p class="text-white/65 text-lg leading-relaxed max-w-lg mb-10" style="font-weight:400;">
+        CMMS gevuld. Maar geen grip op structuur. RELICORE maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat beslissingen niet op gevoel genomen worden.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
-        <a href="/relicore-app"
+        <a href="https://relicore.app"
+           target="_blank" rel="noopener noreferrer"
            class="inline-flex px-7 py-3.5 bg-teal-700 hover:bg-teal-600
-                  text-white font-semibold rounded-lg transition-colors text-sm">
-          Open RELICORE
+                  text-white rounded-lg transition-colors text-sm"
+           style="font-weight:500;">
+          Bekijk pilotomgeving
         </a>
         <a href="/contact"
-           class="inline-flex px-7 py-3.5 border border-gray-600 hover:border-gray-400
-                  text-gray-300 hover:text-white font-semibold rounded-lg transition-colors text-sm">
-          Demo aanvragen
+           class="inline-flex px-7 py-3.5 border text-white/70 hover:text-white
+                  rounded-lg transition-colors text-sm"
+           style="font-weight:500; border-color:rgba(255,255,255,0.2);">
+          Plan een gesprek
         </a>
       </div>
     </div>
   </section>
 
+  <!-- ② ANKERZIN -->
+  <section class="bg-white border-l-4 border-teal-700 py-9 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-navy-900 text-base leading-relaxed max-w-2xl" style="font-weight:500;">
+        RELICORE vervangt uw CMMS niet.
+        <span class="text-gray-500" style="font-weight:400;">
+          Het maakt expliciet welke assets er zijn, wat ze doen, waaraan ze bijdragen — en op welke basis beslissingen over risico, waarde en continuïteit genomen kunnen worden.
+        </span>
+      </p>
+    </div>
+  </section>
 
-  <!-- HET PROBLEEM -->
-  <section class="py-20 px-6 bg-gray-50">
+
+  <!-- ③ HET PROBLEEM -->
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Het probleem</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3 max-w-lg" style="font-weight:500;">
+        CMMS gevuld. Maar geen grip op structuur.
+      </h2>
+      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+        Asset-intensieve organisaties vullen hun CMMS jarenlang. Toch ontbreekt de basis voor beslissingen.
+      </p>
+      <div class="max-w-2xl divide-y divide-gray-200">
+        {[
+          {
+            label: "Verkeerd perspectief",
+            tekst: "Assets worden geregistreerd vanuit wat er staat — niet vanuit wat er moet werken. Het register groeit organisch. Resultaat: technisch gevuld, strategisch onbruikbaar.",
+          },
+          {
+            label: "Beslissingen op gevoel",
+            tekst: "Zonder gedeelde assetlogica worden vervangings- en investeringsbeslissingen niet onderbouwd. Elke afdeling redeneert vanuit eigen aannames. Consensus is toevallig.",
+          },
+          {
+            label: "Risico niet herleidbaar",
+            tekst: "Wettelijk verplichte keuringen, criticality en eigenaarschap zijn niet expliciet gekoppeld aan assets. Risico is aanwezig — maar niet bestuurbaar.",
+          },
+        ].map((item) => (
+          <div class="flex items-start gap-6 py-6">
+            <span class="text-xs uppercase tracking-widest text-teal-700 min-w-36 mt-0.5 flex-shrink-0"
+                  style="font-weight:500;">{item.label}</span>
+            <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.tekst}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ HOE RELICORE WERKT -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Hoe RELICORE werkt</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
+        Van brondata naar geborgde assetstructuur.
+      </h2>
+      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+        Zes stappen — gebaseerd op de werkelijke applicatiestructuur.
+      </p>
+      <div class="relative max-w-lg">
+        <!-- Verticale lijn -->
+        <div class="absolute left-5 top-6 bottom-6 w-px bg-gray-200"></div>
+        {[
+          { num: "CMMS", label: "Brondata",           sub: "Ultimo · SAP · andere systemen",                         live: false },
+          { num: "01",   label: "Importeren",          sub: "Procesfunctiestructuur · Equipment · Stamdata",          live: true  },
+          { num: "02",   label: "Stamdata",            sub: "Assetsoorten · Naamgeving · Ruimtes · Gebouwen",         live: true  },
+          { num: "03",   label: "Assetregister",       sub: "Procesboom bouwen · Equipment koppelen · Verifiëren",    live: true  },
+          { num: "04",   label: "Data Kwaliteit",      sub: "Completeness-score · FK-status · lifecycle-koppeling",  live: true  },
+          { num: "05",   label: "Exporteren & Borgen", sub: "Terug naar CMMS · structuur actueel houden",            live: true  },
+        ].map((stap) => (
+          <div class="flex items-start gap-5 py-4 relative">
+            <div class={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center z-10
+                        text-xs tracking-wide
+                        ${stap.live ? 'bg-navy-900 text-teal-400' : 'bg-gray-200 text-gray-400'}`}
+                 style="font-weight:500; letter-spacing:0.05em;">
+              {stap.num}
+            </div>
+            <div class="pt-2">
+              <p class="text-navy-900 text-sm mb-1" style="font-weight:500;">{stap.label}</p>
+              <p class="text-gray-400 text-xs" style="font-weight:400;">{stap.sub}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⑤ APP SCHERMEN -->
+  <section class="bg-gray-50 py-20 px-6">
     <div class="max-w-5xl mx-auto">
-      <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-        Het probleem
-      </p>
-      <h2 class="text-2xl font-bold text-navy-900 mb-12 max-w-2xl">
-        Assetregisters zijn technisch gevuld — maar strategisch onbruikbaar.
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat u ziet in de applicatie</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
+        Drie schermen die het verhaal vertellen.
       </h2>
-      <div class="space-y-0 divide-y divide-gray-200">
+      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+        Elk scherm is afkomstig uit een werkelijk uitgevoerde RELICORE-implementatie.
+      </p>
 
-        <div class="py-8 grid md:grid-cols-4 gap-4 items-start">
-          <div class="text-teal-700 font-bold text-sm uppercase tracking-wide">
-            Verkeerd perspectief
+      <div class="grid md:grid-cols-3 gap-4">
+
+        <!-- Scherm 1: Assetregister / Procesboom -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="bg-navy-900 px-4 py-3 flex items-center gap-2">
+            <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
+              <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+            </svg>
+            <span class="text-white text-xs tracking-wide" style="font-weight:500;">RELICORE</span>
           </div>
-          <div class="md:col-span-3">
-            <p class="text-navy-900 font-semibold mb-1">
-              Assets worden geregistreerd vanuit wat er staat — niet vanuit wat er moet werken.
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Het register groeit organisch mee met de organisatie.
-              Resultaat: technisch gevuld, strategisch onbruikbaar.
-            </p>
+          <div class="flex border-b border-gray-100 text-xs overflow-x-auto">
+            {["Importeren","Stamdata","Assetregister","Data Kwaliteit"].map((t, i) => (
+              <span class={`px-3 py-2.5 whitespace-nowrap flex-shrink-0
+                ${i === 2
+                  ? 'text-navy-900 border-b-2 border-teal-700'
+                  : 'text-gray-400 border-b-2 border-transparent'}`}
+                    style="font-weight: i === 2 ? 500 : 400;">{t}</span>
+            ))}
+          </div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-widest text-gray-400 mb-3" style="font-weight:500;">Procesboom</p>
+            <div class="space-y-1 text-xs">
+              <div class="flex items-center gap-2 px-2 py-1.5 text-gray-600">
+                <span class="text-gray-400">▾</span> Enkhuizen
+                <span class="text-xs px-1.5 py-0.5 rounded bg-navy-900 text-white ml-auto" style="font-size:9px;">SITE</span>
+              </div>
+              <div class="flex items-center gap-2 px-4 py-1.5 text-gray-600">
+                <span class="text-gray-400">▾</span> PRODUCTIE
+                <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto" style="font-size:9px;">FUNCTIE</span>
+              </div>
+              <div class="flex items-center gap-2 px-8 py-1.5 rounded bg-blue-50 text-blue-700">
+                <span>·</span> Verpakking
+                <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 ml-auto" style="font-size:9px;">SUB</span>
+              </div>
+              <div class="flex items-center gap-2 px-8 py-1.5 text-gray-400">
+                <span>·</span> Zaadopslag
+                <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-400 ml-auto" style="font-size:9px;">SUB</span>
+              </div>
+              <div class="flex items-center gap-2 px-4 py-1.5 text-gray-600">
+                <span class="text-gray-400">▾</span> UTILITIES
+                <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto" style="font-size:9px;">FUNCTIE</span>
+              </div>
+            </div>
+            <div class="mt-3 p-2.5 bg-gray-50 rounded-lg">
+              <p class="text-xs text-gray-400">370 procesfuncties · 500 equipment</p>
+              <p class="text-xs text-amber-500 mt-0.5">496 nog te positioneren</p>
+            </div>
           </div>
         </div>
 
-        <div class="py-8 grid md:grid-cols-4 gap-4 items-start">
-          <div class="text-teal-700 font-bold text-sm uppercase tracking-wide">
-            Onbetrouwbaar onderhoud
+        <!-- Scherm 2: Data Kwaliteit -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="bg-navy-900 px-4 py-3 flex items-center gap-2">
+            <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
+              <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+            </svg>
+            <span class="text-white text-xs tracking-wide" style="font-weight:500;">RELICORE</span>
           </div>
-          <div class="md:col-span-3">
-            <p class="text-navy-900 font-semibold mb-1">
-              Onduidelijk wat een asset is en welke functie het vervult.
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Onderhoud wordt onbetrouwbaar. Compliance wordt een risico.
-              Wettelijk verplichte keuringen zijn niet herleidbaar.
-            </p>
+          <div class="flex border-b border-gray-100 text-xs overflow-x-auto">
+            {["Importeren","Stamdata","Assetregister","Data Kwaliteit"].map((t, i) => (
+              <span class={`px-3 py-2.5 whitespace-nowrap flex-shrink-0
+                ${i === 3
+                  ? 'text-navy-900 border-b-2 border-teal-700'
+                  : 'text-gray-400 border-b-2 border-transparent'}`}>{t}</span>
+            ))}
+          </div>
+          <div class="p-4">
+            <div class="grid grid-cols-3 gap-2 mb-4 bg-gray-50 rounded-lg p-2.5">
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">Filter-match</p>
+                <p class="text-sm text-navy-900" style="font-weight:500;">23.852</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">Completeness</p>
+                <p class="text-sm text-navy-900" style="font-weight:500;">40%</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">Ongekoppeld</p>
+                <p class="text-sm text-amber-500" style="font-weight:500;">23.848</p>
+              </div>
+            </div>
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="border-b border-gray-100">
+                  <th class="text-left py-1.5 text-gray-400 pr-2" style="font-weight:500;">Omschrijving</th>
+                  <th class="py-1.5 text-gray-400 text-center" style="font-weight:500;">FK</th>
+                  <th class="py-1.5 text-gray-400 text-right" style="font-weight:500;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { naam: "Koelkast economic Bosch", fk: [1,0,1,0,1], pct: "80%" },
+                  { naam: "Compressor",              fk: [1,0,0,0,0], pct: "40%" },
+                  { naam: "Slootpomp zelfaanzuigend",fk: [1,0,1,0,0], pct: "60%" },
+                  { naam: "Bassinwater aanvoerpomp", fk: [1,0,1,0,0], pct: "60%" },
+                ].map((r) => (
+                  <tr class="border-b border-gray-50">
+                    <td class="py-2 pr-2 text-navy-900 truncate max-w-24">{r.naam}</td>
+                    <td class="py-2 text-center">
+                      <div class="flex gap-0.5 justify-center">
+                        {r.fk.map((v) => (
+                          <span class={`w-2 h-2 rounded-full ${v ? 'bg-teal-700' : 'bg-gray-200'}`}></span>
+                        ))}
+                      </div>
+                    </td>
+                    <td class="py-2 text-teal-700 text-right" style="font-weight:500;">{r.pct}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <div class="py-8 grid md:grid-cols-4 gap-4 items-start">
-          <div class="text-teal-700 font-bold text-sm uppercase tracking-wide">
-            Lifecycle op gevoel
+        <!-- Scherm 3: Stamdata -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="bg-navy-900 px-4 py-3 flex items-center gap-2">
+            <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
+              <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+              <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+            </svg>
+            <span class="text-white text-xs tracking-wide" style="font-weight:500;">RELICORE</span>
           </div>
-          <div class="md:col-span-3">
-            <p class="text-navy-900 font-semibold mb-1">
-              Vervangingsbeslissingen zonder grondslag.
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Lifecycle-beslissingen verliezen hun fundament.
-              Investeringen worden gedaan op gevoel — niet op engineering intelligence.
-            </p>
+          <div class="flex border-b border-gray-100 text-xs overflow-x-auto">
+            {["Importeren","Stamdata","Assetregister","Data Kwaliteit"].map((t, i) => (
+              <span class={`px-3 py-2.5 whitespace-nowrap flex-shrink-0
+                ${i === 1
+                  ? 'text-navy-900 border-b-2 border-teal-700'
+                  : 'text-gray-400 border-b-2 border-transparent'}`}>{t}</span>
+            ))}
+          </div>
+          <div class="p-4">
+            <p class="text-xs uppercase tracking-widest text-gray-400 mb-3" style="font-weight:500;">Stamdata werkbanken</p>
+            <div class="grid grid-cols-2 gap-1.5">
+              {[
+                { naam: "Assetsoorten",    n: "109",   actief: true  },
+                { naam: "Naamgeving",      n: "v1",    actief: true  },
+                { naam: "Vakgroepen",      n: "30",    actief: true  },
+                { naam: "Leveranciers",    n: "1.312", actief: true  },
+                { naam: "Ruimtes",         n: "1.565", actief: true  },
+                { naam: "Afdelingen",      n: "73",    actief: true  },
+                { naam: "Kostenplaatsen",  n: "326",   actief: true  },
+                { naam: "Storingsoorzaken",n: "—",     actief: false },
+              ].map((w) => (
+                <div class={`p-2 rounded border text-xs ${w.actief ? 'border-gray-200 bg-white' : 'border-gray-100 bg-gray-50 opacity-60'}`}>
+                  <p class="text-navy-900 mb-0.5" style="font-weight:500;">{w.naam}</p>
+                  <p class="text-gray-400">{w.n} · {w.actief ? 'actief' : 'binnenkort'}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ARCHITECTUURDIAGRAM -->
-  <section class="py-20 px-6">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-        De architectuur
-      </p>
-      <h2 class="text-2xl font-bold text-navy-900 mb-4">
-        Een beslissingslaag boven uw CMMS
+
+  <!-- ⑥ WAT RELICORE OPLEVERT -->
+  <section class="bg-navy-900 text-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-400 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat RELICORE oplevert</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-white mb-10 max-w-lg" style="font-weight:500;">
+        Niet een schoner register.<br />Een gemeenschappelijke taal.
       </h2>
-      <p class="text-gray-500 mb-12 max-w-xl">
-        RELICORE vervangt uw CMMS niet — het voegt de engineeringlaag toe
-        die uw CMMS mist.
-      </p>
-
-      <!-- SVG Architectuurdiagram -->
-      <div class="bg-gray-50 rounded-2xl p-8 md:p-12">
-        <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-3xl mx-auto">
-          <!-- CMMS blok -->
-          <rect x="20" y="60" width="180" height="80" rx="8" fill="#0f1f35"/>
-          <text x="110" y="95" text-anchor="middle" fill="#2dd4bf" font-size="10" font-weight="600" letter-spacing="2" font-family="Inter,system-ui,sans-serif">CMMS</text>
-          <text x="110" y="113" text-anchor="middle" fill="#2dd4bf" font-size="9" font-weight="600" font-family="Inter,system-ui,sans-serif">Ultimo</text>
-          <text x="110" y="127" text-anchor="middle" fill="#4b5563" font-size="8" font-style="italic" font-family="Inter,system-ui,sans-serif">+ meer koppelingen in planning</text>
-
-          <!-- Pijl CMMS → RELICORE -->
-          <line x1="200" y1="100" x2="290" y2="100" stroke="#147878" stroke-width="2"/>
-          <polygon points="290,95 302,100 290,105" fill="#147878"/>
-          <text x="251" y="90" text-anchor="middle" fill="#6b7280" font-size="8" font-family="Inter,system-ui,sans-serif">import</text>
-
-          <!-- RELICORE blok -->
-          <rect x="302" y="40" width="196" height="120" rx="8" fill="#147878"/>
-          <text x="400" y="75" text-anchor="middle" fill="white" font-size="11" font-weight="700" letter-spacing="1" font-family="Inter,system-ui,sans-serif">RELICORE</text>
-          <text x="400" y="93" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8" font-family="Inter,system-ui,sans-serif">Structure · Criticality · FMECA</text>
-          <text x="400" y="108" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8" font-family="Inter,system-ui,sans-serif">Lifecycle · Spares · KPI Impact</text>
-          <text x="400" y="123" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="8" font-style="italic" font-family="Inter,system-ui,sans-serif">Engineering Intelligence Layer</text>
-          <text x="400" y="148" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="7.5" font-family="Inter,system-ui,sans-serif">publish</text>
-          <line x1="400" y1="138" x2="400" y2="160" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3,2"/>
-
-          <!-- Pijl RELICORE → Beslissingen -->
-          <line x1="498" y1="100" x2="578" y2="100" stroke="#147878" stroke-width="2"/>
-          <polygon points="578,95 590,100 578,105" fill="#147878"/>
-          <text x="534" y="90" text-anchor="middle" fill="#6b7280" font-size="8" font-family="Inter,system-ui,sans-serif">intelligence</text>
-
-          <!-- Beslissingen blok -->
-          <rect x="590" y="30" width="190" height="140" rx="8" fill="#0f1f35"/>
-          <text x="685" y="60" text-anchor="middle" fill="#2dd4bf" font-size="9" font-weight="600" letter-spacing="1.5" font-family="Inter,system-ui,sans-serif">BESLISSINGEN</text>
-          <text x="685" y="80" text-anchor="middle" fill="#9ca3af" font-size="8.5" font-family="Inter,system-ui,sans-serif">Reliability strategie</text>
-          <text x="685" y="96" text-anchor="middle" fill="#9ca3af" font-size="8.5" font-family="Inter,system-ui,sans-serif">Lifecycle planning</text>
-          <text x="685" y="112" text-anchor="middle" fill="#9ca3af" font-size="8.5" font-family="Inter,system-ui,sans-serif">Onderhoudsstrategie</text>
-          <text x="685" y="128" text-anchor="middle" fill="#9ca3af" font-size="8.5" font-family="Inter,system-ui,sans-serif">Reservedelen</text>
-          <text x="685" y="144" text-anchor="middle" fill="#9ca3af" font-size="8.5" font-family="Inter,system-ui,sans-serif">Business impact</text>
-        </svg>
+      <div class="divide-y divide-white/10 max-w-2xl">
+        {[
+          { kop: "Gedeelde assetlogica",       tekst: "Een procesfunctie-gebaseerde structuur die expliciet maakt wat er moet werken, wat er staat, en hoe die twee zich verhouden." },
+          { kop: "Herleidbare beslissingen",   tekst: "Vervangings-, investerings- en onderhoudsbeslissingen die niet op gevoel genomen worden — maar op een structuur die iedereen kan lezen en betwisten." },
+          { kop: "Bestuurbaar risico",          tekst: "Criticality, eigenaarschap en keuringen gekoppeld aan assets — zodat risico niet alleen aanwezig is, maar ook bestuurbaar." },
+          { kop: "Borging in de organisatie",  tekst: "Een exporteerbare structuur die teruggaat naar het CMMS — zodat de assetlogica ook operationeel werkt en niet opnieuw opgebouwd moet worden." },
+        ].map((punt, i) => (
+          <div class="flex items-start gap-5 py-5">
+            <span class="text-teal-400 text-xs flex-shrink-0 mt-0.5" style="font-weight:500;">{i + 1}</span>
+            <div>
+              <p class="text-white text-sm mb-1" style="font-weight:500;">{punt.kop}</p>
+              <p class="text-white/60 text-sm leading-relaxed" style="font-weight:400;">{punt.tekst}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-
-  <!-- SCREENSHOT STRUCTURE -->
-  <section class="py-20 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-          Structure module
-        </p>
-        <h2 class="text-2xl font-bold text-navy-900 mb-4">
-          Van registratie naar procesfunctie
-        </h2>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          RELICORE organiseert assets op basis van procesfuncties —
-          de functionele bijdrage van een asset, onafhankelijk van technische uitvoering.
-        </p>
-        <p class="text-gray-600 leading-relaxed">
-          De procesfunctie is het meest stabiele element in een assetstructuur.
-          Equipment wordt vervangen, technologie verandert —
-          maar de functie blijft. Dat is het ankerpunt.
-        </p>
-      </div>
-      <div class="w-full aspect-video bg-navy-900 rounded-xl flex items-center justify-center">
-        <span class="text-teal-400 text-sm font-medium">Screenshot volgt</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCREENSHOT GOVERNANCE -->
-  <section class="py-20 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div class="w-full aspect-video bg-navy-900 rounded-xl flex items-center justify-center order-2 md:order-1">
-        <span class="text-teal-400 text-sm font-medium">Screenshot volgt</span>
-      </div>
-      <div class="order-1 md:order-2">
-        <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-          Governance module
-        </p>
-        <h2 class="text-2xl font-bold text-navy-900 mb-4">
-          Datakwaliteit als besturingsinstrument
-        </h2>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          RELICORE maakt de kwaliteit van assetdata inzichtelijk en beheersbaar.
-          Niet als eenmalige opschoonactie — als continu governance instrument.
-        </p>
-        <p class="text-gray-600 leading-relaxed">
-          Volledigheid, structuurkoppeling en workflowstatus
-          zijn altijd zichtbaar — per asset, per veld, per verantwoordelijke.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODULES -->
-  <section class="py-20 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
-      <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-        Modules
-      </p>
-      <h2 class="text-2xl font-bold text-navy-900 mb-12">
-        Één platform. Zeven engineering modules.
+  <!-- ⑦ INTEGRATIES -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Integraties</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
+        Werkt met uw bestaande CMMS.
       </h2>
-      <div class="grid md:grid-cols-4 gap-4">
-
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-teal-700 font-bold text-xs uppercase tracking-widest mb-2">Foundation</div>
-          <p class="text-navy-900 font-semibold text-sm mb-1">Import & normalisatie</p>
-          <p class="text-gray-500 text-xs leading-relaxed">Asset import en master data normalisatie vanuit CMMS</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-teal-700 font-bold text-xs uppercase tracking-widest mb-2">Structure</div>
-          <p class="text-navy-900 font-semibold text-sm mb-1">Functioneel modelleren</p>
-          <p class="text-gray-500 text-xs leading-relaxed">Procesfunctie-gebaseerde assetstructuur</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-teal-700 font-bold text-xs uppercase tracking-widest mb-2">Criticality</div>
-          <p class="text-navy-900 font-semibold text-sm mb-1">Kritikaliteitsmodel</p>
-          <p class="text-gray-500 text-xs leading-relaxed">Kritikaliteitsmodellering per asset en systeem</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-teal-700 font-bold text-xs uppercase tracking-widest mb-2">FMECA</div>
-          <p class="text-navy-900 font-semibold text-sm mb-1">Faalmodus analyse</p>
-          <p class="text-gray-500 text-xs leading-relaxed">Faalmodus en effect modellering</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-teal-700 font-bold text-xs uppercase tracking-widest mb-2">Lifecycle</div>
-          <p class="text-navy-900 font-semibold text-sm mb-1">Levensduurmodellering</p>
-          <p class="text-gray-500 text-xs leading-relaxed">Resterende levensduur en vervangingsplanning</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-teal-700 font-bold text-xs uppercase tracking-widest mb-2">Spares</div>
-          <p class="text-navy-900 font-semibold text-sm mb-1">Reservedelen</p>
-          <p class="text-gray-500 text-xs leading-relaxed">Strategische reserveonderdelenoptimalisatie</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-teal-700 font-bold text-xs uppercase tracking-widest mb-2">KPI Impact</div>
-          <p class="text-navy-900 font-semibold text-sm mb-1">Business impact</p>
-          <p class="text-gray-500 text-xs leading-relaxed">Business impact modellering per asset</p>
-        </div>
-
-        <div class="bg-navy-900 rounded-xl p-6 border border-navy-800 flex items-center justify-center">
-          <p class="text-teal-400 text-sm font-semibold text-center">
-            Actief in pilotimplementatie bij Syngenta NL<br/>
-            <span class="text-gray-400 font-normal text-xs mt-1 block">29.872 assets</span>
-          </p>
-        </div>
-
+      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+        RELICORE vervangt uw CMMS niet. Import en export zijn bewuste stappen — engineering logica gaat altijd boven administratief gemak.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-lg">
+        {[
+          { naam: "Ultimo",    status: "Actief",      live: true  },
+          { naam: "SAP PM",    status: "In planning", live: false },
+          { naam: "Maximo",    status: "In planning", live: false },
+          { naam: "Infor EAM", status: "In planning", live: false },
+        ].map((int) => (
+          <div class={`p-4 text-center rounded-xl
+            ${int.live
+              ? 'border border-teal-700 bg-teal-50'
+              : 'border border-gray-200 bg-gray-50'}`}>
+            <p class={`text-sm mb-1 ${int.live ? 'text-navy-900' : 'text-gray-400'}`}
+               style="font-weight:500;">{int.naam}</p>
+            <p class={`text-xs uppercase tracking-wide
+              ${int.live ? 'text-teal-700' : 'text-gray-400'}`}
+               style="font-weight:500;">{int.status}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-
-  <!-- INTEGRATIES -->
-  <section class="py-20 px-6">
-    <div class="max-w-5xl mx-auto">
-      <p class="text-sm font-semibold text-teal-700 uppercase tracking-widest mb-3">
-        Integraties
-      </p>
-      <h2 class="text-2xl font-bold text-navy-900 mb-4">
-        Werkt samen met uw bestaande CMMS
-      </h2>
-      <p class="text-gray-500 mb-10 max-w-xl">
-        RELICORE vervangt uw CMMS niet. Import en export zijn bewuste acties —
-        engineering logica gaat altijd boven administratief gemak.
-      </p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-white rounded-xl p-6 text-center border-2 border-teal-600">
-          <div class="text-navy-900 font-bold text-sm mb-1">Ultimo</div>
-          <div class="text-teal-600 text-xs font-semibold uppercase tracking-wide">Actief</div>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200">
-          <div class="text-gray-400 font-bold text-sm mb-1">SAP PM</div>
-          <div class="text-gray-400 text-xs uppercase tracking-wide">In planning</div>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200">
-          <div class="text-gray-400 font-bold text-sm mb-1">Maximo</div>
-          <div class="text-gray-400 text-xs uppercase tracking-wide">In planning</div>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200">
-          <div class="text-gray-400 font-bold text-sm mb-1">Infor EAM</div>
-          <div class="text-gray-400 text-xs uppercase tracking-wide">In planning</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-24 px-6 bg-navy-900 text-white">
+  <!-- ⑧ CTA -->
+  <section class="bg-navy-900 text-white py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl font-bold mb-5">
-        Van assetregister naar engineering intelligence.
+      <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
+          style="font-weight:500;">
+        Van assetregister naar gedeelde assetlogica.
       </h2>
-      <p class="text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto">
-        In een eerste gesprek bekijken we hoe RELICORE aansluit op uw
-        huidige CMMS en assetstructuur — en wat dat concreet oplevert.
+      <p class="text-white/65 text-base leading-relaxed mb-10 max-w-md mx-auto"
+         style="font-weight:400;">
+        In een eerste gesprek bekijken we hoe RELICORE aansluit op uw huidige CMMS — en welke beslissingen daarna anders genomen kunnen worden.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/relicore-app"
+        <a href="https://relicore.app"
+           target="_blank" rel="noopener noreferrer"
            class="inline-flex px-8 py-4 bg-teal-700 hover:bg-teal-600
-                  text-white font-semibold rounded-lg transition-colors">
-          Open RELICORE
+                  text-white rounded-lg transition-colors"
+           style="font-weight:500;">
+          Bekijk pilotomgeving
         </a>
         <a href="/contact"
-           class="inline-flex px-8 py-4 border border-gray-600 hover:border-gray-400
-                  text-gray-300 hover:text-white font-semibold rounded-lg transition-colors">
-          Demo aanvragen
+           class="inline-flex px-8 py-4 border text-white/70 hover:text-white
+                  rounded-lg transition-colors"
+           style="font-weight:500; border-color:rgba(255,255,255,0.2);">
+          Plan een gesprek
         </a>
       </div>
     </div>

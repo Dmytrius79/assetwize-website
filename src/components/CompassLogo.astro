@@ -1,0 +1,45 @@
+---
+// CompassLogo.astro
+// Gebruik: <CompassLogo variant="light" | "dark" size="sm" | "md" | "lg" />
+
+interface Props {
+  variant?: 'light' | 'dark';
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { variant = 'light', size = 'md' } = Astro.props;
+
+const symbolSize = size === 'sm' ? 22 : size === 'xl' ? 52 : size === 'lg' ? 40 : 28;
+const fontSize   = size === 'sm' ? 14 : size === 'xl' ? 26 : size === 'lg' ? 20 : 17;
+const subSize    = size === 'sm' ? 5  : size === 'xl' ? 7  : size === 'lg' ? 6  : 5;
+
+const noord  = variant === 'dark' ? '#C8EED8' : '#1A4A35';
+const overig = variant === 'dark' ? '#3D7A5A' : '#C8CFC4';
+const kern   = variant === 'dark' ? '#C8EED8' : '#2D6A4F';
+const naam   = variant === 'dark' ? '#EDF4F0' : '#1A2E22';
+const sub    = variant === 'dark' ? 'rgba(200,238,216,0.6)' : '#8FA898';
+const lijn   = variant === 'dark' ? 'rgba(200,238,216,0.3)' : '#C8CFC4';
+---
+
+<div style={`display:flex; align-items:center; gap:10px;`}>
+  <svg viewBox="0 0 40 40" width={symbolSize} height={symbolSize}
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Noord — dominant, breder en dieper -->
+    <polygon points="20,1 24,17 20,22 16,17"  fill={noord}  />
+    <!-- Zuid, West, Oost — iets zwaarder dan voorheen -->
+    <polygon points="20,39 16,24 20,20 24,24" fill={overig} />
+    <polygon points="1,20 17,16 22,20 17,24"  fill={overig} />
+    <polygon points="39,20 23,24 18,20 23,16" fill={overig} />
+    <!-- Kern — groter voor meer presence -->
+    <circle cx="20" cy="20" r="3" fill={kern} />
+  </svg>
+  <div style={`width:0.5px; height:30px; background:${lijn};`}></div>
+  <div style="display:flex; flex-direction:column; gap:1px;">
+    <span style={`font-size:${fontSize}px; font-weight:500; color:${naam}; letter-spacing:-0.01em; line-height:1.2;`}>
+      Compass
+    </span>
+    <span style={`font-size:${subSize}px; font-weight:500; color:${sub}; letter-spacing:0.18em; text-transform:uppercase; line-height:1; margin-top:3px; display:block; opacity:0.72;`}>
+      BY ASSETWIZE
+    </span>
+  </div>
+</div>

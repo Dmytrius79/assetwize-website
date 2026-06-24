@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* AssetWize / RELICORE kleuren */
   --color-teal-50: #f0fdfa;
   --color-teal-400: #2dd4bf;
   --color-teal-500: #14b8a6;
@@ -12,6 +13,24 @@
   --color-navy-700: #1e3a5f;
   --color-navy-800: #162d4a;
   --color-navy-900: #0f1f35;
+
+  /* Compass app kleuren (Forest & Stone) */
+  --color-forest-900: #1A2E22;
+  --color-forest-700: #1A4A35;
+  --color-forest-600: #2D6A4F;
+  --color-forest-500: #3D7A5A;
+  --color-forest-400: #5A7A65;
+  --color-forest-200: #C8EED8;
+  --color-forest-100: #EDF4F0;
+  --color-forest-50:  #F7F8F6;
+
+  --color-stone-300: #C8CFC4;
+  --color-stone-200: #E0EBE4;
+  --color-stone-100: #F0F4F1;
+
+  --color-amber-700: #8B5E3C;
+  --color-amber-600: #6B3A1F;
+  --color-amber-100: #FDF3EC;
 
   --font-sans: 'Inter', system-ui, sans-serif;
 }
