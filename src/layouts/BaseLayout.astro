@@ -2,8 +2,16 @@
 export interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
-const { title, description = 'AssetWize — bestuurbaarheid van asset-intensieve organisaties' } = Astro.props;
+const {
+  title,
+  description = 'AssetWize ontwerpt het systeem waarmee asset-intensieve organisaties grip krijgen op risico, prestaties, investeringen en continuïteit.',
+  ogImage = '/og-image.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://www.assetwize.nl');
+const fullTitle = `${title} | AssetWize`;
 ---
 <!DOCTYPE html>
 <html lang="nl">
@@ -11,7 +19,35 @@ const { title, description = 'AssetWize — bestuurbaarheid van asset-intensieve
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <title>{title} | AssetWize</title>
+  <link rel="canonical" href={canonicalURL} />
+  <title>{fullTitle}</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <meta name="theme-color" content="#0f1f35" />
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site ?? 'https://www.assetwize.nl')} />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content="AssetWize" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, Astro.site ?? 'https://www.assetwize.nl')} />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     /* Pagina-achtergrond wordt bepaald door de eerste sectie, niet door body */
