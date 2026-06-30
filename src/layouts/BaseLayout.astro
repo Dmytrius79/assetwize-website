@@ -48,6 +48,10 @@ const fullTitle = `${title} | AssetWize`;
   <!-- Robots -->
   <meta name="robots" content="index, follow" />
 
+  <!-- Google Search Console verificatie -->
+  <!-- Vervang VERIFICATIE_CODE door de code uit search.google.com/search-console -->
+  <!-- <meta name="google-site-verification" content="VERIFICATIE_CODE" /> -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     /* Pagina-achtergrond wordt bepaald door de eerste sectie, niet door body */
@@ -56,6 +60,19 @@ const fullTitle = `${title} | AssetWize`;
     .fw-medium { font-weight: 500 !important; }
     .fw-normal { font-weight: 400 !important; }
   </style>
+
+  <!-- Structured data — Organization -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AssetWize",
+    "url": "https://www.assetwize.nl",
+    "logo": "https://www.assetwize.nl/icon-512.png",
+    "description": "AssetWize ontwerpt het systeem waarmee asset-intensieve organisaties grip krijgen op risico, prestaties, investeringen en continuïteit.",
+    "sameAs": [
+      "https://nl.linkedin.com/in/dimitryvandort"
+    ]
+  })}></script>
 </head>
 <body class="text-gray-900 font-sans">
 
