@@ -116,7 +116,7 @@ font-bold / font-weight:700 in src/                                             
   - `global.css` geïmporteerd voor de tokens
   - header `#071A30`
   - achtergrond Wolk
-- Cloudflare-preview: zie hieronder.
+- Cloudflare-preview groen voor `fc36b7b`: https://rebrand-paginas.assetwize-website.pages.dev
 
 ### Keuzes en open punten voor Dimitry
 - **Knoppen op Compass en Atlas** zijn AssetWize-turquoise (opdracht 5). Daarvoor waren ze forest/amber.
