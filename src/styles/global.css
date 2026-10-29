@@ -34,3 +34,21 @@
 
   --font-sans: 'Inter', system-ui, sans-serif;
 }
+
+/* AssetWize Brand Guidelines v2.0 — ontwerptokens (§10.3).
+   Bron: Drive 00-bedrijf/30-merk-en-marketing/merkidentiteit/BRAND_GUIDELINES.md */
+:root {
+  --aw-navy: #0F2D52;        /* koppen, logo */
+  --aw-turquoise: #048192;   /* accent op licht */
+  --aw-petrol: #2E7D86;
+  --aw-turquoise-light: #3FB6C2; /* accent op donker */
+  --aw-deep: #071A30;        /* donkere achtergrond */
+  --aw-white: #FFFFFF;
+  --aw-wolk: #F5F8FA;
+  --aw-mist: #E6F0F2;
+  --aw-line: #C9CED6;
+  --aw-ink: #1F2937;         /* lopende tekst */
+  --aw-slate: #5B6B7F;       /* secundaire tekst */
+  --aw-radius: 8px;
+  --aw-font: "Inter", Arial, sans-serif;
+}

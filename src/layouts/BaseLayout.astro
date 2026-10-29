@@ -7,11 +7,19 @@ export interface Props {
 const {
   title,
   description = 'AssetWize ontwerpt het systeem waarmee asset-intensieve organisaties grip krijgen op risico, prestaties, investeringen en continuïteit.',
-  ogImage = '/og-image.png',
+  ogImage = '/brand/og-image.png',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://www.assetwize.nl');
 const fullTitle = `${title} | AssetWize`;
+
+const navItems = [
+  { href: '/compass', label: 'Compass' },
+  { href: '/atlas', label: 'Atlas' },
+  { href: '/relicore', label: 'Relicore' },
+  { href: '/waarom', label: 'Waarom AssetWize' },
+];
+const isActive = (href: string) => Astro.url.pathname === href || Astro.url.pathname.startsWith(`${href}/`);
 ---
 <!DOCTYPE html>
 <html lang="nl">
@@ -23,12 +31,15 @@ const fullTitle = `${title} | AssetWize`;
   <title>{fullTitle}</title>
 
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-  <meta name="theme-color" content="#0f1f35" />
+  <link rel="icon" type="image/x-icon" href="/brand/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/brand/android-chrome-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/brand/android-chrome-512.png" />
+  <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website" />
@@ -52,7 +63,7 @@ const fullTitle = `${title} | AssetWize`;
   <!-- Vervang VERIFICATIE_CODE door de code uit search.google.com/search-console -->
   <!-- <meta name="google-site-verification" content="VERIFICATIE_CODE" /> -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     /* Pagina-achtergrond wordt bepaald door de eerste sectie, niet door body */
     html, body { background-color: #ffffff; margin: 0; }
@@ -67,7 +78,7 @@ const fullTitle = `${title} | AssetWize`;
     "@type": "Organization",
     "name": "AssetWize",
     "url": "https://www.assetwize.nl",
-    "logo": "https://www.assetwize.nl/icon-512.png",
+    "logo": "https://www.assetwize.nl/brand/android-chrome-512.png",
     "description": "AssetWize ontwerpt het systeem waarmee asset-intensieve organisaties grip krijgen op risico, prestaties, investeringen en continuïteit.",
     "sameAs": [
       "https://nl.linkedin.com/in/dimitryvandort"
@@ -76,18 +87,25 @@ const fullTitle = `${title} | AssetWize`;
 </head>
 <body class="text-gray-900 font-sans">
 
-  <header class="sticky top-0 z-50 bg-gray-50 shadow-sm">
+  <!-- Header — §10.1: wit, onderrand 1 px Lijn, logo 05 licht, nav Inkt, actieve link turquoise -->
+  <header class="sticky top-0 z-50 bg-white border-b border-[var(--aw-line)]">
     <nav class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
       <a href="/" class="flex items-center">
-        <img src="/assetwize_logo_cropped.png" alt="AssetWize" class="h-10 w-auto" />
+        <img src="/brand/assetwize-logo-licht.svg" alt="AssetWize" class="h-8 w-auto" />
       </a>
-      <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-        <li><a href="/compass" class="hover:text-teal-700 transition-colors">Compass</a></li>
-        <li><a href="/atlas" class="hover:text-amber-700 transition-colors" style="color:inherit;">Atlas</a></li>
-        <li><a href="/relicore" class="hover:text-teal-700 transition-colors">Relicore</a></li>
-        <li><a href="/waarom" class="hover:text-teal-700 transition-colors">Waarom AssetWize</a></li>
+      <ul class="hidden md:flex gap-8 text-sm font-medium">
+        {navItems.map(item => (
+          <li>
+            <a href={item.href}
+               aria-current={isActive(item.href) ? 'page' : undefined}
+               class={`transition-colors ${isActive(item.href) ? 'text-[var(--aw-turquoise)]' : 'text-[var(--aw-ink)] hover:text-[var(--aw-turquoise)]'}`}>
+              {item.label}
+            </a>
+          </li>
+        ))}
       </ul>
-      <a href="/contact" class="px-4 py-2 bg-teal-700 text-white text-sm font-medium rounded-lg hover:bg-teal-800 transition-colors">
+      <!-- Knop primair — §10.2: turquoise, witte tekst, hoek 8 px, hover merk-navy -->
+      <a href="/contact" class="px-4 py-2 bg-[var(--aw-turquoise)] text-white text-sm font-medium rounded-[var(--aw-radius)] hover:bg-[var(--aw-navy)] transition-colors">
         Start het gesprek
       </a>
     </nav>
@@ -97,28 +115,30 @@ const fullTitle = `${title} | AssetWize`;
     <slot />
   </main>
 
-  <footer class="bg-navy-900 text-white">
+  <!-- Footer — §10.1: diep navy, logo 05 donker (alleen op #071A30), links wit 72 %, kernbegrippen -->
+  <footer class="bg-[var(--aw-deep)] text-white">
     <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-sm">
       <div>
-        <img src="/assetwize_logo_cropped.png" alt="AssetWize" class="h-8 w-auto brightness-0 invert mb-2" />
+        <img src="/brand/assetwize-logo-donker.svg" alt="AssetWize" class="h-8 w-auto mb-4" />
+        <p class="text-xs uppercase tracking-[0.12em] text-white/72" style="font-weight:500;">INSIGHT. ALIGNMENT. IMPACT.</p>
       </div>
       <div>
-        <div class="font-semibold text-gray-300 mb-3">Producten</div>
-        <ul class="space-y-2 text-gray-400">
+        <div class="font-semibold text-white mb-3">Producten</div>
+        <ul class="space-y-2 text-white/72">
           <li><a href="/compass" class="hover:text-white transition-colors">Compass by AssetWize</a></li>
           <li><a href="/atlas" class="hover:text-white transition-colors">Atlas by AssetWize</a></li>
           <li><a href="/relicore" class="hover:text-white transition-colors">Relicore by AssetWize</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-gray-300 mb-3">Bedrijf</div>
-        <ul class="space-y-2 text-gray-400">
+        <div class="font-semibold text-white mb-3">Bedrijf</div>
+        <ul class="space-y-2 text-white/72">
           <li><a href="/waarom" class="hover:text-white transition-colors">Waarom AssetWize</a></li>
           <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-gray-800 max-w-6xl mx-auto px-6 py-4 text-xs text-gray-500">
+    <div class="border-t border-white/10 max-w-6xl mx-auto px-6 py-4 text-xs text-white/72">
       &copy; {new Date().getFullYear()} AssetWize Software Solutions
     </div>
   </footer>
