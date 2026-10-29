@@ -231,38 +231,3 @@ met de rest van het AssetWize-systeem.
 
 **Documentatiebeheer:** zie `docs/WERKAFSPRAKEN_DOCUMENTATIE.md`
 voor de volledige afspraken over wat waar wordt bewaard.
-
----
-
-## Borging (verplicht — niet overslaan)
-
-Dit project houdt zijn deliverables bij in de centrale bron `/dev/MASTER_OVERZICHT.md`.
-Dat is een totaaloverzicht van wat is uitgewerkt en waar het staat — geen changelog.
-Regels: `/dev/_assetwize/BORGING_SPELREGELS.md`.
-
-### Kritieke schrijfregel (lees dit eerst)
-- Bewerk UITSLUITEND de sectie van dit project, IN-PLACE, tussen
-  `<!-- PROJECT:assetwize-website START -->` en `... END -->`.
-- Regenereer of overschrijf NOOIT het hele bestand. Andere projectsecties raak je niet aan.
-- Schrijf DIRECT naar `/Users/drvandort/dev/MASTER_OVERZICHT.md` (Filesystem-tools op de Mac).
-  Lukt dat niet — je hebt alleen containertoegang, of de bestandsbrug is weg — dan
-  STOP je en meld je dat. Lever GEEN kopie op om te "downloaden en vervangen":
-  een hele-file-replace overschrijft de secties van alle andere projecten.
-
-**Bij het STARTEN van een sessie:**
-- Lees de sectie van dit project in `/dev/MASTER_OVERZICHT.md`.
-- Lees ook de relevante `/dev/_assetwize/`-documenten — verwijs ernaar, kopieer niet.
-
-**Zodra iets is OPGELEVERD of GESTART (een deliverable: document, feature, product, data):**
-1. Borg het werk zelf in dit project zoals gebruikelijk.
-2. Werk je eigen sectie in `/dev/MASTER_OVERZICHT.md` bij (zie Kritieke schrijfregel):
-   - Voeg de deliverable toe als één regel, MÉT locatie (pad/URL/tabel), getagd
-     `[opgeleverd]` of `[in ontwikkeling]`. Zet op `[opgeleverd]` zodra af.
-   - Zet de bijgewerkt-datum van de sectie.
-3. GEEN wijzigingen erin: geen bugfixes, refactors, "X gecorrigeerd", commit-hashes
-   of voortgangsnotities. Die horen in de changelog van dit project.
-4. Generieke AssetWize-kennis (merk/methode/design) til je op naar `/dev/_assetwize/`.
-
-**Bij het AFSLUITEN van een sessie:**
-- Staat elke opgeleverde of gestarte deliverable in je sectie, met locatie en tag?
-  Is alleen je eigen sectie gewijzigd? Zo nee: corrigeren.
