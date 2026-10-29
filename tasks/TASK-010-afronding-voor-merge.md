@@ -146,4 +146,4 @@ Uitzonderingen om te melden:
 3. Uit TASK-011: CTA-kleur, accentband, fotografie, visuals en de kleur van het Controle-perspectief.
 4. De getypte productlogo's (open sinds TASK-008).
 
-Preview: zie hieronder.
+Preview (Cloudflare-check groen voor 913daf5): https://rebrand-afronding.assetwize-website.pages.dev (commit-preview https://bebcdffb.assetwize-website.pages.dev)
