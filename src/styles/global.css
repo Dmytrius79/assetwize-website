@@ -1,36 +1,149 @@
 @import "tailwindcss";
 
 @theme {
-  /* AssetWize / RELICORE kleuren */
-  --color-teal-50: #f0fdfa;
-  --color-teal-400: #2dd4bf;
-  --color-teal-500: #14b8a6;
-  --color-teal-600: #0d9488;
-  --color-teal-700: #147878;
-  --color-teal-800: #115e59;
-  --color-teal-900: #134e4a;
+  /* AssetWize-kleuren: zie de v2.0-tokens (--aw-*) hieronder */
 
-  --color-navy-700: #1e3a5f;
-  --color-navy-800: #162d4a;
-  --color-navy-900: #0f1f35;
-
-  /* Compass app kleuren (Forest & Stone) */
-  --color-forest-900: #1A2E22;
-  --color-forest-700: #1A4A35;
-  --color-forest-600: #2D6A4F;
-  --color-forest-500: #3D7A5A;
-  --color-forest-400: #5A7A65;
-  --color-forest-200: #C8EED8;
-  --color-forest-100: #EDF4F0;
-  --color-forest-50:  #F7F8F6;
-
-  --color-stone-300: #C8CFC4;
-  --color-stone-200: #E0EBE4;
-  --color-stone-100: #F0F4F1;
-
-  --color-amber-700: #8B5E3C;
-  --color-amber-600: #6B3A1F;
-  --color-amber-100: #FDF3EC;
+  /* Productkleuren (TASK-009): alleen in datavlakken en als kleine identiteit */
+  --color-compass: #1A4A35;
+  --color-atlas: #7A4F1E;
+  --color-relicore: #0F2D52;
 
   --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* AssetWize Brand Guidelines v2.0 — ontwerptokens (§10.3).
+   Bron: Drive 00-bedrijf/30-merk-en-marketing/merkidentiteit/BRAND_GUIDELINES.md */
+:root {
+  --aw-navy: #0F2D52;        /* koppen, logo */
+  --aw-turquoise: #048192;   /* accent op licht */
+  --aw-petrol: #2E7D86;
+  --aw-turquoise-light: #3FB6C2; /* accent op donker */
+  --aw-deep: #071A30;        /* donkere achtergrond */
+  --aw-white: #FFFFFF;
+  --aw-wolk: #F5F8FA;
+  --aw-mist: #E6F0F2;
+  --aw-line: #C9CED6;
+  --aw-ink: #1F2937;         /* lopende tekst */
+  --aw-slate: #5B6B7F;       /* secundaire tekst */
+  --aw-radius: 8px;
+  --aw-font: "Inter", Arial, sans-serif;
+}
+
+/* Tokens als Tailwind-klassen: text-aw-navy, bg-aw-wolk, border-aw-line, … */
+@theme inline {
+  --color-aw-navy: var(--aw-navy);
+  --color-aw-turquoise: var(--aw-turquoise);
+  --color-aw-petrol: var(--aw-petrol);
+  --color-aw-turquoise-light: var(--aw-turquoise-light);
+  --color-aw-deep: var(--aw-deep);
+  --color-aw-wolk: var(--aw-wolk);
+  --color-aw-mist: var(--aw-mist);
+  --color-aw-line: var(--aw-line);
+  --color-aw-ink: var(--aw-ink);
+  --color-aw-slate: var(--aw-slate);
+  --radius-aw: var(--aw-radius);
+}
+
+/* Knoppen (§10.2). Primair: turquoise vlak, hover merk-navy. Secundair: 1,5 px turquoise rand. */
+.aw-btn-primary {
+  background: var(--aw-turquoise);
+  color: var(--aw-white);
+  border-radius: var(--aw-radius);
+  font-weight: 500;
+  transition: background-color 150ms;
+}
+.aw-btn-primary:hover { background: var(--aw-navy); }
+.aw-btn-secondary {
+  border: 1.5px solid var(--aw-turquoise);
+  color: var(--aw-turquoise);
+  border-radius: var(--aw-radius);
+  font-weight: 500;
+  transition: color 150ms, border-color 150ms;
+}
+.aw-btn-secondary:hover { border-color: var(--aw-navy); color: var(--aw-navy); }
+/* Secundair op diep navy: turquoise haalt daar geen contrast (§9.3), dus lichtturquoise */
+.aw-btn-secondary-dark {
+  border: 1.5px solid var(--aw-turquoise-light);
+  color: var(--aw-turquoise-light);
+  border-radius: var(--aw-radius);
+  font-weight: 500;
+  transition: color 150ms, border-color 150ms;
+}
+.aw-btn-secondary-dark:hover { border-color: var(--aw-white); color: var(--aw-white); }
+
+/* Link op Wolk of Mist (§9.3): merk-navy met turquoise onderlijn */
+.aw-link-tint {
+  color: var(--aw-navy);
+  text-decoration: underline;
+  text-decoration-color: var(--aw-turquoise);
+  text-underline-offset: 4px;
+}
+
+/* Container (TASK-009): header, inhoud en footer delen dezelfde breedte */
+.aw-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+/* Lopende tekst op leesbare regelbreedte */
+.aw-prose { max-width: 65ch; }
+/* Tekst naast kaarten, lijsten of statistieken: twee kolommen vanaf 1024 px */
+.aw-split {
+  display: grid;
+  gap: 3rem;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .aw-split { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+
+/* Ankerzin: gekleurde balk binnen de container, in de productkleur (--anker) */
+.aw-anker {
+  border-left: 4px solid var(--anker, var(--aw-turquoise));
+  padding-left: 1.5rem;
+}
+
+/* Datavlak (TASK-009): tabellen, matrices, schema's, diagrammen en app-schermen.
+   Kopband in de donkere productkleur met witte tekst, daaronder wit, rand 1 px Lijn, radius 8 px. */
+.datavlak {
+  background: var(--aw-white);
+  border: 1px solid var(--aw-line);
+  border-radius: var(--aw-radius);
+  overflow: hidden;
+}
+.datavlak--compass  { --datavlak-kleur: #1A4A35; }
+.datavlak--atlas    { --datavlak-kleur: #7A4F1E; }
+.datavlak--relicore { --datavlak-kleur: var(--aw-navy); }
+.datavlak__kop {
+  background: var(--datavlak-kleur);
+  color: var(--aw-white);
+  padding: 1rem 1.5rem;
+}
+/* Kopband zonder tekst, voor een diagram zonder titel */
+.datavlak__kop--smal { padding: 0; height: 6px; }
+.datavlak__label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Zichtbare focus voor toetsenbordgebruik (TASK-010) */
+.aw-focus:focus-visible {
+  outline: 2px solid var(--aw-turquoise);
+  outline-offset: 2px;
+}
+
+/* Statuskleuren (RAG, Brand Guidelines v2.0 §11.3) — alleen in tabellen en datavlakken.
+   Oranje haalt op wit geen 4,5 : 1; daarom tekst in een donkerdere tint van dezelfde kleur.
+   Chips: lichte vlaktint (12 %) met donkere tekst in dezelfde tint. */
+.status--groen  { --status: #2F7D4F; --status-tekst: color-mix(in srgb, #2F7D4F 80%, black); }
+.status--oranje { --status: #C77B12; --status-tekst: color-mix(in srgb, #C77B12 70%, black); }
+.status--rood   { --status: #B3261E; --status-tekst: #B3261E; }
+.status-tekst { color: var(--status-tekst); }
+.status-chip {
+  color: var(--status-tekst);
+  background: color-mix(in srgb, var(--status) 12%, white);
 }

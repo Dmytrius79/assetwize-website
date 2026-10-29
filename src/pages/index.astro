@@ -8,42 +8,38 @@ import '../styles/global.css';
 >
 
   <!-- ① HERO — uitkomst centraal -->
-  <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-teal-400 text-xs uppercase tracking-widest mb-6"
-         style="font-weight:600; letter-spacing:0.14em;">AssetWize</p>
-      <h1 class="text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
+  <section class="bg-white pt-28 pb-20">
+    <div class="aw-container">
+      <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-6"
+         style="font-weight:600;">AssetWize</p>
+      <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
         Grip op risico, prestaties,<br />investeringen en continuïteit.
       </h1>
-      <p class="text-white/60 text-lg leading-relaxed max-w-xl mb-10" style="font-weight:400;">
+      <p class="text-aw-slate text-lg leading-relaxed aw-prose mb-10" style="font-weight:400;">
         Assets bepalen de toekomst van uw organisatie. AssetWize helpt organisaties de systemen inrichten waarmee die toekomst bestuurbaar wordt.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="/contact"
-           class="inline-flex px-7 py-3.5 bg-teal-700 hover:bg-teal-600
-                  text-white rounded-lg transition-colors text-sm"
-           style="font-weight:500;">Start het gesprek</a>
+           class="aw-btn-primary inline-flex px-7 py-3.5 text-sm">Start het gesprek</a>
         <a href="#aanpak"
-           class="inline-flex px-7 py-3.5 border text-white/65 hover:text-white
-                  rounded-lg transition-colors text-sm"
-           style="font-weight:500; border-color:rgba(255,255,255,0.2);">Bekijk de aanpak</a>
+           class="aw-btn-secondary inline-flex px-7 py-3.5 text-sm">Bekijk de aanpak</a>
       </div>
     </div>
   </section>
 
   <!-- ② BEWIJS STRIP -->
-  <section class="bg-navy-900 py-8 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-navy-800">
+  <section class="bg-aw-wolk border-y border-aw-line py-8">
+    <div class="aw-container">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
         {[
           { label: "Gebouwd in de praktijk",       sub: "Twintig jaar. Geen theorie." },
           { label: "Van strategie tot uitvoering",  sub: "Boardroom tot werkvloer." },
           { label: "Sectoronafhankelijk",            sub: "Industrie · Farma · Utilities · Agri" },
           { label: "Ontworpen voor implementatie",  sub: "Niet voor rapporten." },
         ].map((item) => (
-          <div class="bg-navy-900 px-6 py-6 text-center">
-            <p style="font-size:15px; font-weight:600; color:#2dd4bf; line-height:1.4; letter-spacing:0.01em;">{item.label}</p>
-            <p style="font-size:12px; font-weight:400; color:#9ca3af; margin-top:6px; line-height:1.5;">{item.sub}</p>
+          <div class="bg-white px-6 py-6 text-center">
+            <p class="hyphens-auto" style="font-size:15px; font-weight:500; color:var(--aw-navy); line-height:1.4; letter-spacing:0.01em;">{item.label}</p>
+            <p style="font-size:12px; font-weight:400; color:var(--aw-slate); margin-top:6px; line-height:1.5;">{item.sub}</p>
           </div>
         ))}
       </div>
@@ -51,27 +47,27 @@ import '../styles/global.css';
   </section>
 
   <!-- ③ DE OBSERVATIE -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-6"
+  <section class="bg-white py-20">
+    <div class="aw-container">
+      <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-6"
          style="font-weight:600;">Twintig jaar praktijkervaring. Eén terugkerende observatie.</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-6 max-w-2xl"
           style="font-weight:500;">
         Organisaties worstelen zelden met een gebrek aan techniek.
       </h2>
-      <p class="text-gray-500 text-base leading-relaxed mb-4 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-base leading-relaxed mb-4 aw-prose" style="font-weight:400;">
         De uitdaging zit vrijwel altijd in de verbinding — tussen strategie en uitvoering, tussen data en beslissing, tussen techniek en bestuur. Investeringsbeslissingen zijn moeilijk te onderbouwen. De organisatie is afhankelijk van een handvol sleutelfiguren. En risico's worden pas zichtbaar als ze zich al hebben gemanifesteerd.
       </p>
-      <p class="text-gray-500 text-base leading-relaxed max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-base leading-relaxed aw-prose" style="font-weight:400;">
         AssetWize is ontwikkeld om precies dat vraagstuk op te lossen. Niet als adviesbureau. Als governance-systeem dat is ontstaan uit twintig jaar praktijkervaring — van petrochemie tot farma, van productiebedrijven tot utilities, van directiekamer tot werkvloer.
       </p>
     </div>
   </section>
 
   <!-- WAAR STAAT UW ORGANISATIE VANDAAG -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-10"
+  <section class="bg-aw-mist py-20">
+    <div class="aw-container">
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-10"
          style="font-weight:600;">Waar staat uw organisatie vandaag?</p>
       <div class="grid md:grid-cols-2 gap-4">
         {[
@@ -79,44 +75,39 @@ import '../styles/global.css';
             situatie: "We weten dat grip ontbreekt, maar niet precies waar het zit.",
             naar: "Compass",
             href: "/compass",
-            kleur: "#2D6A4F",
-            bg: "#F7F8F6",
-            border: "#C8EED8",
+            kleur: "var(--color-compass)",
+            bg: "var(--aw-white)",
           },
           {
             situatie: "We hebben veel data, maar kunnen er geen beslissingen op baseren.",
             naar: "Relicore",
             href: "/relicore",
-            kleur: "#147878",
-            bg: "#f0fdfa",
-            border: "#9fe1cb",
+            kleur: "var(--aw-turquoise)",
+            bg: "var(--aw-white)",
           },
           {
             situatie: "Beslissingen over assets zijn afhankelijk van personen in plaats van een duidelijke structuur.",
             naar: "Atlas",
             href: "/atlas",
-            kleur: "#7A4F1E",
-            bg: "#faf7f4",
-            border: "#e5ddd5",
+            kleur: "var(--color-atlas)",
+            bg: "var(--aw-white)",
           },
           {
             situatie: "We weten niet waar we moeten beginnen.",
             naar: "Compass",
             href: "/compass",
-            kleur: "#2D6A4F",
-            bg: "#F7F8F6",
-            border: "#C8EED8",
+            kleur: "var(--color-compass)",
+            bg: "var(--aw-white)",
           },
         ].map((item) => (
           <a href={item.href}
-             class="group flex flex-col justify-between rounded-xl p-7 transition-all
-                    hover:shadow-sm"
-             style={`background:${item.bg}; border:1px solid ${item.border};`}>
-            <p class="text-navy-900 text-base leading-snug mb-8"
+             class="group flex flex-col justify-between rounded-aw p-7 border border-aw-line hover:border-aw-turquoise transition-colors aw-focus"
+             style={`background:${item.bg};`}>
+            <p class="text-aw-navy text-base leading-snug mb-8"
                style="font-weight:400;">
               "{item.situatie}"
             </p>
-            <span class="text-xs uppercase tracking-widest flex items-center gap-2"
+            <span class="text-xs uppercase tracking-[0.12em] flex items-center gap-2"
                   style={`font-weight:600; color:${item.kleur};`}>
               → {item.naar}
             </span>
@@ -128,19 +119,19 @@ import '../styles/global.css';
 
 
   <!-- ③ DE AANPAK — vier werkwoorden als methode, niet als doel -->
-  <section id="aanpak" class="bg-gray-50 py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+  <section id="aanpak" class="bg-aw-wolk py-20">
+    <div class="aw-container">
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">De aanpak</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-4"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-4"
           style="font-weight:500;">
         Bestuurbaarheid ontstaat niet vanzelf.<br />Het wordt ontworpen.
       </h2>
-      <p class="text-gray-500 text-sm leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-sm leading-relaxed mb-12 aw-prose" style="font-weight:400;">
         AssetWize verbindt bestuur, techniek, finance, informatie en uitvoering tot één samenhangend systeem — via vier samenhangende stappen.
       </p>
 
-      <div class="grid md:grid-cols-4 gap-px bg-gray-200">
+      <div class="grid md:grid-cols-4 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
         {[
           {
             werkwoord: "Begrijpen",
@@ -148,8 +139,8 @@ import '../styles/global.css';
             instrument: "Compass",
             omschrijving: "Compass maakt zichtbaar of assetmanagement daadwerkelijk werkt — niet of het ingericht is. Drie perspectieven op bestuurbaarheid.",
             href: "/compass",
-            kleur: "#2D6A4F",
-            border: "#2D6A4F",
+            kleur: "var(--color-compass)",
+            border: "var(--color-compass)",
           },
           {
             werkwoord: "Ontwerpen",
@@ -157,8 +148,8 @@ import '../styles/global.css';
             instrument: "Governance Frameworks",
             omschrijving: "AssetWize ontwerpt het besturingssysteem — eigenaarschap, besluitvorming, investeringslogica en overlegstructuren — op maat van de organisatie.",
             href: "/waarom",
-            kleur: "#0f1f35",
-            border: "#0f1f35",
+            kleur: "var(--aw-navy)",
+            border: "var(--aw-navy)",
           },
           {
             werkwoord: "Inrichten",
@@ -166,8 +157,8 @@ import '../styles/global.css';
             instrument: "Blueprints & Relicore",
             omschrijving: "Blueprints vertalen governance naar informatiemodellen. Relicore maakt die informatie digitaal beheerbaar en herleidbaar.",
             href: "/relicore",
-            kleur: "#147878",
-            border: "#147878",
+            kleur: "var(--aw-turquoise)",
+            border: "var(--aw-turquoise)",
           },
           {
             werkwoord: "Verankeren",
@@ -175,22 +166,22 @@ import '../styles/global.css';
             instrument: "Implementatie & organisatie",
             omschrijving: "Governance werkt alleen als het landt in de organisatie — in processen, in CMMS-inrichting, in gedrag en in blijvende sturing op resultaat.",
             href: "/contact",
-            kleur: "#1e3a5f",
-            border: "#1e3a5f",
+            kleur: "var(--aw-slate)",
+            border: "var(--aw-slate)",
           },
         ].map((stap) => (
           <div class="bg-white px-7 py-8 flex flex-col"
                style={`border-top:3px solid ${stap.border};`}>
-            <p class="text-xs uppercase tracking-widest mb-3"
+            <p class="text-xs uppercase tracking-[0.12em] mb-3"
                style={`font-weight:600; color:${stap.kleur};`}>{stap.werkwoord}</p>
-            <p class="text-navy-900 text-base mb-1 leading-snug"
+            <p class="text-aw-navy text-base mb-1 leading-snug"
                style="font-weight:500;">{stap.vraag}</p>
-            <p class="text-xs uppercase tracking-widest mb-4"
+            <p class="text-xs uppercase tracking-[0.12em] mb-4"
                style={`font-weight:500; color:${stap.kleur};`}>{stap.instrument}</p>
-            <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1"
+            <p class="text-aw-slate text-sm leading-relaxed mb-6 flex-1"
                style="font-weight:400;">{stap.omschrijving}</p>
             <a href={stap.href}
-               class="text-xs uppercase tracking-widest flex items-center gap-2"
+               class="text-xs uppercase tracking-[0.12em] flex items-center gap-2"
                style={`font-weight:600; color:${stap.kleur};`}>
               Meer
               <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
@@ -205,47 +196,47 @@ import '../styles/global.css';
   </section>
 
   <!-- ④ COMPASS EN Relicore — onderdeel van het systeem -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+  <section class="bg-white py-20">
+    <div class="aw-container">
+      <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Instrumenten</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-4"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-4"
           style="font-weight:500;">
         Compass en Relicore zijn geen losse producten.<br />Ze zijn onderdeel van hetzelfde systeem.
       </h2>
-      <p class="text-gray-500 text-sm leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-sm leading-relaxed mb-12 aw-prose" style="font-weight:400;">
         Elk instrument heeft zijn eigen bezoeker en zijn eigen moment in het traject — maar ze zijn ontworpen om samen te werken.
       </p>
       <div class="grid md:grid-cols-2 gap-6">
 
         <!-- Compass -->
-        <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <div class="px-8 py-7" style="background:#F7F8F6; border-bottom:1px solid #E0EBE4;">
+        <div class="border border-aw-line rounded-aw overflow-hidden">
+          <div class="px-8 py-7 bg-aw-wolk border-b border-aw-line">
             <div class="flex items-center gap-3 mb-4">
               <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
                 <polygon points="20,2 23,18 20,22 17,18" fill="#1A4A35"/>
                 <polygon points="20,38 17,24 20,20 23,24" fill="#C8CFC4"/>
                 <polygon points="2,20 18,17 22,20 18,23"  fill="#C8CFC4"/>
                 <polygon points="38,20 22,23 18,20 22,17" fill="#C8CFC4"/>
-                <circle cx="20" cy="20" r="2" fill="#2D6A4F"/>
+                <circle cx="20" cy="20" r="2" fill="#1A4A35"/>
               </svg>
-              <span class="text-xs uppercase tracking-widest"
-                    style="font-weight:600; color:#2D6A4F;">Compass — Begrijpen</span>
+              <span class="text-xs uppercase tracking-[0.12em]"
+                    style="font-weight:600; color:var(--color-compass);">Compass — Begrijpen</span>
             </div>
-            <p class="text-lg leading-snug mb-2" style="font-weight:500; color:#1A2E22;">
+            <p class="text-aw-navy text-lg leading-snug mb-2" style="font-weight:500;">
               Waar ontbreekt grip — en waarom?
             </p>
           </div>
           <div class="px-8 py-6">
-            <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
+            <p class="text-aw-slate text-sm leading-relaxed mb-6" style="font-weight:400;">
               Compass diagnosticeert het besturingssysteem. Niet door te vragen of processen aanwezig zijn, maar door te beoordelen of de organisatie daadwerkelijk in staat is risico, prestaties en investeringen te besturen.
             </p>
-            <p class="text-gray-400 text-xs mb-5" style="font-weight:400;">
+            <p class="text-aw-slate text-sm leading-relaxed mb-5" style="font-weight:400;">
               Compass kan concluderen dat Relicore niet de eerste stap is. Eigenaarschap, besluitvorming of cultuur kunnen urgenter zijn. Dat maakt Compass onafhankelijk — en geloofwaardig.
             </p>
             <a href="/compass"
-               class="text-xs uppercase tracking-widest flex items-center gap-2"
-               style="font-weight:600; color:#2D6A4F;">
+               class="text-xs uppercase tracking-[0.12em] flex items-center gap-2"
+               style="font-weight:600; color:var(--color-compass);">
               Meer over Compass
               <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
                    stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -256,33 +247,33 @@ import '../styles/global.css';
         </div>
 
         <!-- Relicore -->
-        <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <div class="px-8 py-7 bg-navy-900" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <div class="border border-aw-line rounded-aw overflow-hidden">
+          <div class="px-8 py-7 bg-aw-wolk border-b border-aw-line">
             <div class="flex items-center gap-3 mb-4">
               <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
-                <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-                <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-                <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
-                <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
-                <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
-                <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+                <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+                <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+                <line x1="20" y1="4"  x2="20" y2="16" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+                <line x1="20" y1="24" x2="20" y2="36" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+                <line x1="4"  y1="20" x2="16" y2="20" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+                <line x1="24" y1="20" x2="36" y2="20" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
               </svg>
-              <span class="text-xs uppercase tracking-widest text-teal-400"
+              <span class="text-xs uppercase tracking-[0.12em] text-aw-navy"
                     style="font-weight:600;">Relicore — Inrichten</span>
             </div>
-            <p class="text-white text-lg leading-snug" style="font-weight:500;">
+            <p class="text-aw-navy text-lg leading-snug" style="font-weight:500;">
               Welke assetlogica en informatie zijn nodig?
             </p>
           </div>
           <div class="px-8 py-6">
-            <p class="text-gray-500 text-sm leading-relaxed mb-6" style="font-weight:400;">
+            <p class="text-aw-slate text-sm leading-relaxed mb-6" style="font-weight:400;">
               Relicore maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat investeringen, risicoacceptatie en besluitvorming gebaseerd zijn op dezelfde assetlogica.
             </p>
-            <p class="text-gray-400 text-xs mb-5" style="font-weight:400;">
+            <p class="text-aw-slate text-sm leading-relaxed mb-5" style="font-weight:400;">
               Relicore ondersteunt de informatielaag van het besturingssysteem. Het lost eigenaarschaps- of besluitvormingsvraagstukken niet op — dat doet het governance framework.
             </p>
             <a href="/relicore"
-               class="text-teal-700 text-xs uppercase tracking-widest flex items-center gap-2"
+               class="text-aw-turquoise text-xs uppercase tracking-[0.12em] flex items-center gap-2"
                style="font-weight:600;">
               Meer over Relicore
               <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
@@ -298,11 +289,11 @@ import '../styles/global.css';
 
 
   <!-- ⑤ VOOR WIE -->
-  <section class="bg-gray-50 py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container">
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Voor wie</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-10 max-w-lg"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-10 max-w-lg"
           style="font-weight:500;">
         AssetWize spreekt de taal van het bestuur.<br />Maar werkt op alle niveaus.
       </h2>
@@ -310,29 +301,29 @@ import '../styles/global.css';
         {[
           {
             rol: "Directie & bestuur",
-            kleur: "#0f1f35",
+            kleur: "var(--aw-navy)",
             h: "Grip op risico, waarde en continuïteit",
             p: "Voor bestuurlijk inzicht in de vraag of de organisatie daadwerkelijk in staat is waarde uit assets te realiseren — en welke besluiten daarvoor nodig zijn.",
           },
           {
             rol: "Plant- & locatiemanagement",
-            kleur: "#2D6A4F",
+            kleur: "var(--aw-petrol)",
             h: "Van reactief naar voorspelbaar",
             p: "Voor het begrijpen van de patronen die prestatieverbetering in de weg staan — en een verbeteragenda die aansluit op wat de organisatie werkelijk nodig heeft.",
           },
           {
             rol: "Asset- & technisch management",
-            kleur: "#147878",
+            kleur: "var(--aw-turquoise)",
             h: "Beslissingen die herleidbaar zijn",
             p: "Voor het vertalen van technische bevindingen naar bestuurlijke taal — en voor investeringsbeslissingen die niet op gevoel maar op assetlogica zijn gebaseerd.",
           },
         ].map((item) => (
-          <div class="border border-gray-200 rounded-xl p-7 bg-white">
-            <p class="text-xs uppercase tracking-widest mb-3"
+          <div class="border border-aw-line rounded-aw p-7 bg-white">
+            <p class="text-xs uppercase tracking-[0.12em] mb-3"
                style={`font-weight:600; color:${item.kleur};`}>{item.rol}</p>
-            <p class="text-navy-900 text-sm mb-3 leading-snug"
+            <p class="text-aw-navy text-sm mb-3 leading-snug"
                style="font-weight:500;">{item.h}</p>
-            <p class="text-gray-500 text-sm leading-relaxed"
+            <p class="text-aw-slate text-sm leading-relaxed"
                style="font-weight:400;">{item.p}</p>
           </div>
         ))}
@@ -341,25 +332,21 @@ import '../styles/global.css';
   </section>
 
   <!-- ⑥ CTA -->
-  <section class="bg-navy-900 text-white py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center">
+  <section class="bg-aw-deep text-white py-20">
+    <div class="aw-container text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
         Grip begint met de juiste diagnose.
       </h2>
-      <p class="text-white/60 text-base leading-relaxed mb-10 max-w-md mx-auto"
+      <p class="text-white/72 text-base leading-relaxed mb-10 max-w-md mx-auto"
          style="font-weight:400;">
         In een eerste gesprek kijken we naar uw specifieke situatie — en welke stap het meeste oplevert.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact"
-           class="inline-flex px-10 py-4 bg-teal-700 hover:bg-teal-600
-                  text-white rounded-lg transition-colors"
-           style="font-weight:500;">Start het gesprek</a>
+           class="aw-btn-primary inline-flex px-10 py-4">Start het gesprek</a>
         <a href="/compass"
-           class="inline-flex px-10 py-4 border text-white/65 hover:text-white
-                  rounded-lg transition-colors"
-           style="font-weight:500; border-color:rgba(255,255,255,0.2);">Bekijk Compass</a>
+           class="aw-btn-secondary-dark inline-flex px-10 py-4">Bekijk Compass</a>
       </div>
     </div>
   </section>

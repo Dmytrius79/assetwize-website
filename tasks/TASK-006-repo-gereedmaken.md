@@ -1,4 +1,4 @@
-# TASK-001 — Repo gereedmaken
+# TASK-006 — Repo gereedmaken
 
 ## Doel
 De repo gereedmaken voor de rebrand, zonder iets visueel of inhoudelijk te wijzigen.

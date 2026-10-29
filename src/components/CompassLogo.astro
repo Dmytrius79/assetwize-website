@@ -11,13 +11,14 @@ const { variant = 'light', size = 'md' } = Astro.props;
 
 const symbolSize = size === 'sm' ? 22 : size === 'xl' ? 52 : size === 'lg' ? 40 : 28;
 const fontSize   = size === 'sm' ? 14 : size === 'xl' ? 26 : size === 'lg' ? 20 : 17;
-const subSize    = size === 'sm' ? 5  : size === 'xl' ? 7  : size === 'lg' ? 6  : 5;
+// 'xl' staat in de hero: regel BY ASSETWIZE op 12 px zodat hij leesbaar is (TASK-009)
+const subSize    = size === 'sm' ? 5  : size === 'xl' ? 12 : size === 'lg' ? 6  : 5;
 
 const noord  = variant === 'dark' ? '#C8EED8' : '#1A4A35';
 const overig = variant === 'dark' ? '#3D7A5A' : '#C8CFC4';
 const kern   = variant === 'dark' ? '#C8EED8' : '#2D6A4F';
 const naam   = variant === 'dark' ? '#EDF4F0' : '#1A2E22';
-const sub    = variant === 'dark' ? 'rgba(200,238,216,0.6)' : '#8FA898';
+const sub    = variant === 'dark' ? 'rgba(200,238,216,0.6)' : '#1A4A35';
 const lijn   = variant === 'dark' ? 'rgba(200,238,216,0.3)' : '#C8CFC4';
 ---
 
@@ -38,7 +39,7 @@ const lijn   = variant === 'dark' ? 'rgba(200,238,216,0.3)' : '#C8CFC4';
     <span style={`font-size:${fontSize}px; font-weight:500; color:${naam}; letter-spacing:-0.01em; line-height:1.2;`}>
       Compass
     </span>
-    <span style={`font-size:${subSize}px; font-weight:500; color:${sub}; letter-spacing:0.18em; text-transform:uppercase; line-height:1; margin-top:3px; display:block; opacity:0.72;`}>
+    <span style={`font-size:${subSize}px; font-weight:500; color:${sub}; letter-spacing:0.18em; text-transform:uppercase; line-height:1; margin-top:3px; display:block;`}>
       BY ASSETWIZE
     </span>
   </div>
