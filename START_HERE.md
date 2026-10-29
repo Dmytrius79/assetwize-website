@@ -206,7 +206,10 @@ cd /Users/drvandort/dev/assetwize-website
 claude --dangerously-skip-permissions
 ```
 
-Daarna: `"Lees START_HERE.md en voer tasks/TASK-XXX.md uit"`
+Daarna: `"Lees START_HERE.md en tasks/TASK-XXX.md en voer de taak uit volgens tasks/README.md."`
+
+**Taken en opdrachten:** zie `tasks/README.md` voor de volledige werkwijze —
+taakbestanden, branches, build vóór commit, het sjabloon en de standaardopdracht.
 
 ---
 
