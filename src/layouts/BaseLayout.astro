@@ -85,10 +85,10 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
     ]
   })}></script>
 </head>
-<body class="text-gray-900 font-sans">
+<body class="text-aw-ink font-sans">
 
   <!-- Header — §10.1: wit, onderrand 1 px Lijn, logo 05 licht, nav Inkt, actieve link turquoise -->
-  <header class="sticky top-0 z-50 bg-white border-b border-[var(--aw-line)]">
+  <header class="sticky top-0 z-50 bg-white border-b border-aw-line">
     <nav class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
       <a href="/" class="flex items-center">
         <img src="/brand/assetwize-logo-licht.svg" alt="AssetWize" class="h-8 w-auto" />
@@ -98,14 +98,14 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
           <li>
             <a href={item.href}
                aria-current={isActive(item.href) ? 'page' : undefined}
-               class={`transition-colors ${isActive(item.href) ? 'text-[var(--aw-turquoise)]' : 'text-[var(--aw-ink)] hover:text-[var(--aw-turquoise)]'}`}>
+               class={`transition-colors ${isActive(item.href) ? 'text-aw-turquoise' : 'text-aw-ink hover:text-aw-turquoise'}`}>
               {item.label}
             </a>
           </li>
         ))}
       </ul>
       <!-- Knop primair — §10.2: turquoise, witte tekst, hoek 8 px, hover merk-navy -->
-      <a href="/contact" class="px-4 py-2 bg-[var(--aw-turquoise)] text-white text-sm font-medium rounded-[var(--aw-radius)] hover:bg-[var(--aw-navy)] transition-colors">
+      <a href="/contact" class="px-4 py-2 bg-aw-turquoise text-white text-sm font-medium rounded-aw hover:bg-aw-navy transition-colors">
         Start het gesprek
       </a>
     </nav>
@@ -115,15 +115,14 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
     <slot />
   </main>
 
-  <!-- Footer — §10.1: diep navy, logo 05 donker (alleen op #071A30), links wit 72 %, kernbegrippen -->
-  <footer class="bg-[var(--aw-deep)] text-white">
+  <!-- Footer — §10.1: diep navy, logo 06 donker met kernbegrippen (alleen op #071A30), links wit 72 % -->
+  <footer class="bg-aw-deep text-white">
     <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-sm">
       <div>
-        <img src="/brand/assetwize-logo-donker.svg" alt="AssetWize" class="h-8 w-auto mb-4" />
-        <p class="text-xs uppercase tracking-[0.12em] text-white/72" style="font-weight:500;">INSIGHT. ALIGNMENT. IMPACT.</p>
+        <img src="/brand/assetwize-logo-tagline-donker.svg" alt="AssetWize. Insight. Alignment. Impact." class="w-[300px] h-auto" />
       </div>
       <div>
-        <div class="font-semibold text-white mb-3">Producten</div>
+        <div class="font-medium text-white mb-3">Producten</div>
         <ul class="space-y-2 text-white/72">
           <li><a href="/compass" class="hover:text-white transition-colors">Compass by AssetWize</a></li>
           <li><a href="/atlas" class="hover:text-white transition-colors">Atlas by AssetWize</a></li>
@@ -131,7 +130,7 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-white mb-3">Bedrijf</div>
+        <div class="font-medium text-white mb-3">Bedrijf</div>
         <ul class="space-y-2 text-white/72">
           <li><a href="/waarom" class="hover:text-white transition-colors">Waarom AssetWize</a></li>
           <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>

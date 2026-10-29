@@ -8,40 +8,36 @@ import '../../styles/global.css';
 >
 
   <!-- ① HERO -->
-  <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
+  <section class="bg-white border-b border-aw-line pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-4 mb-10 pb-8 border-b border-white/15">
+      <div class="flex items-center gap-4 mb-10 pb-8 border-b border-aw-line">
         <svg viewBox="0 0 40 40" width="52" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-          <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-          <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
-          <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
-          <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
-          <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+          <line x1="20" y1="4"  x2="20" y2="16" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+          <line x1="20" y1="24" x2="20" y2="36" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+          <line x1="4"  y1="20" x2="16" y2="20" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
+          <line x1="24" y1="20" x2="36" y2="20" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
         </svg>
-        <div style="border-left:0.5px solid rgba(45,212,191,0.3); padding-left:12px;">
-          <div style="font-size:26px; font-weight:500; color:white; letter-spacing:0.05em; line-height:1.1;">Relicore</div>
-          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(45,212,191,0.72); line-height:1; margin-top:4px;">BY ASSETWIZE</div>
+        <div style="border-left:0.5px solid var(--aw-line); padding-left:12px;">
+          <div style="font-size:26px; font-weight:500; color:var(--aw-navy); letter-spacing:0.05em; line-height:1.1;">Relicore</div>
+          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--aw-navy); opacity:0.72; line-height:1; margin-top:4px;">BY ASSETWIZE</div>
         </div>
       </div>
-      <h1 class="text-4xl md:text-5xl leading-tight mb-5 max-w-xl" style="font-weight:500;">
+      <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-5 max-w-xl" style="font-weight:500;">
         Structuur in assets.<br />Grip op beslissingen.
       </h1>
-      <p class="text-white/65 text-lg leading-relaxed max-w-lg mb-10" style="font-weight:400;">
+      <p class="text-aw-slate text-lg leading-relaxed max-w-lg mb-10" style="font-weight:400;">
         CMMS gevuld. Maar geen grip op structuur. Relicore maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat beslissingen niet op gevoel genomen worden.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="https://relicore.app"
            target="_blank" rel="noopener noreferrer"
-           class="inline-flex px-7 py-3.5 bg-teal-700 hover:bg-teal-600
-                  text-white rounded-lg transition-colors text-sm"
-           style="font-weight:500;">
+           class="aw-btn-primary inline-flex px-7 py-3.5 text-sm">
           Bekijk pilotomgeving
         </a>
         <a href="/contact"
-           class="inline-flex px-7 py-3.5 border text-white/70 hover:text-white
-                  rounded-lg transition-colors text-sm"
-           style="font-weight:500; border-color:rgba(255,255,255,0.2);">
+           class="aw-btn-secondary inline-flex px-7 py-3.5 text-sm">
           Plan een gesprek
         </a>
       </div>
@@ -49,11 +45,11 @@ import '../../styles/global.css';
   </section>
 
   <!-- ② ANKERZIN -->
-  <section class="bg-white border-l-4 border-teal-700 py-9 px-6">
+  <section class="bg-white border-l-4 border-aw-turquoise py-9 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-navy-900 text-base leading-relaxed max-w-2xl" style="font-weight:500;">
+      <p class="text-aw-navy text-base leading-relaxed max-w-2xl" style="font-weight:500;">
         Relicore vervangt uw CMMS niet.
-        <span class="text-gray-500" style="font-weight:400;">
+        <span class="text-aw-slate" style="font-weight:400;">
           Het maakt expliciet welke assets er zijn, wat ze doen, waaraan ze bijdragen — en op welke basis beslissingen over risico, waarde en continuïteit genomen kunnen worden.
         </span>
       </p>
@@ -62,16 +58,16 @@ import '../../styles/global.css';
 
 
   <!-- ③ HET PROBLEEM -->
-  <section class="bg-gray-50 py-20 px-6">
+  <section class="bg-aw-wolk py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Het probleem</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3 max-w-lg" style="font-weight:500;">
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Het probleem</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3 max-w-lg" style="font-weight:500;">
         CMMS gevuld. Maar geen grip op structuur.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
         Asset-intensieve organisaties vullen hun CMMS jarenlang. Toch ontbreekt de basis voor beslissingen.
       </p>
-      <div class="max-w-2xl divide-y divide-gray-200">
+      <div class="max-w-2xl divide-y divide-aw-line">
         {[
           {
             label: "Verkeerd perspectief",
@@ -87,9 +83,9 @@ import '../../styles/global.css';
           },
         ].map((item) => (
           <div class="flex items-start gap-6 py-6">
-            <span class="text-xs uppercase tracking-widest text-teal-700 min-w-36 mt-0.5 flex-shrink-0"
+            <span class="text-xs uppercase tracking-[0.12em] text-aw-navy min-w-36 mt-0.5 flex-shrink-0"
                   style="font-weight:500;">{item.label}</span>
-            <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.tekst}</p>
+            <p class="text-aw-slate text-sm leading-relaxed" style="font-weight:400;">{item.tekst}</p>
           </div>
         ))}
       </div>
@@ -99,16 +95,16 @@ import '../../styles/global.css';
   <!-- ④ HOE Relicore WERKT -->
   <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Hoe Relicore werkt</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
+      <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Hoe Relicore werkt</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3" style="font-weight:500;">
         Van brondata naar geborgde assetstructuur.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
         Zes stappen — gebaseerd op de werkelijke applicatiestructuur.
       </p>
       <div class="relative max-w-lg">
         <!-- Verticale lijn -->
-        <div class="absolute left-5 top-6 bottom-6 w-px bg-gray-200"></div>
+        <div class="absolute left-5 top-6 bottom-6 w-px bg-aw-line"></div>
         {[
           { num: "CMMS", label: "Brondata",           sub: "Ultimo · SAP · andere systemen",                         live: false },
           { num: "01",   label: "Importeren",          sub: "Procesfunctiestructuur · Equipment · Stamdata",          live: true  },
@@ -120,13 +116,13 @@ import '../../styles/global.css';
           <div class="flex items-start gap-5 py-4 relative">
             <div class={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center z-10
                         text-xs tracking-wide
-                        ${stap.live ? 'bg-navy-900 text-teal-400' : 'bg-gray-200 text-gray-400'}`}
+                        ${stap.live ? 'bg-aw-navy text-aw-turquoise-light' : 'bg-aw-line text-aw-slate'}`}
                  style="font-weight:500; letter-spacing:0.05em;">
               {stap.num}
             </div>
             <div class="pt-2">
-              <p class="text-navy-900 text-sm mb-1" style="font-weight:500;">{stap.label}</p>
-              <p class="text-gray-400 text-xs" style="font-weight:400;">{stap.sub}</p>
+              <p class="text-aw-navy text-sm mb-1" style="font-weight:500;">{stap.label}</p>
+              <p class="text-aw-slate text-xs" style="font-weight:400;">{stap.sub}</p>
             </div>
           </div>
         ))}
@@ -136,113 +132,113 @@ import '../../styles/global.css';
 
 
   <!-- ⑤ APP SCHERMEN -->
-  <section class="bg-gray-50 py-20 px-6">
+  <section class="bg-aw-wolk py-20 px-6">
     <div class="max-w-5xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat u ziet in de applicatie</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat u ziet in de applicatie</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3" style="font-weight:500;">
         Drie schermen die het verhaal vertellen.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
         Elk scherm is afkomstig uit een werkelijk uitgevoerde Relicore-implementatie.
       </p>
 
       <div class="grid md:grid-cols-3 gap-4">
 
         <!-- Scherm 1: Assetregister / Procesboom -->
-        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
-          <div class="bg-navy-900 px-4 py-3 flex items-center gap-2">
+        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
+          <div class="bg-aw-navy px-4 py-3 flex items-center gap-2">
             <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
-              <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-              <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="20" y1="4"  x2="20" y2="16" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="20" y1="24" x2="20" y2="36" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="4"  y1="20" x2="16" y2="20" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="24" y1="20" x2="36" y2="20" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
             </svg>
             <span class="text-white text-xs tracking-wide" style="font-weight:500;">Relicore</span>
           </div>
-          <div class="flex border-b border-gray-100 text-xs overflow-x-auto">
+          <div class="flex border-b border-aw-line text-xs overflow-x-auto">
             {["Importeren","Stamdata","Assetregister","Data Kwaliteit"].map((t, i) => (
               <span class={`px-3 py-2.5 whitespace-nowrap flex-shrink-0
                 ${i === 2
-                  ? 'text-navy-900 border-b-2 border-teal-700'
-                  : 'text-gray-400 border-b-2 border-transparent'}`}
+                  ? 'text-aw-navy border-b-2 border-aw-turquoise'
+                  : 'text-aw-slate border-b-2 border-transparent'}`}
                     style="font-weight: i === 2 ? 500 : 400;">{t}</span>
             ))}
           </div>
           <div class="p-4">
-            <p class="text-xs uppercase tracking-widest text-gray-400 mb-3" style="font-weight:500;">Procesboom</p>
+            <p class="text-xs uppercase tracking-[0.12em] text-aw-slate mb-3" style="font-weight:500;">Procesboom</p>
             <div class="space-y-1 text-xs">
-              <div class="flex items-center gap-2 px-2 py-1.5 text-gray-600">
-                <span class="text-gray-400">▾</span> Enkhuizen
-                <span class="text-xs px-1.5 py-0.5 rounded bg-navy-900 text-white ml-auto" style="font-size:9px;">SITE</span>
+              <div class="flex items-center gap-2 px-2 py-1.5 text-aw-ink">
+                <span class="text-aw-slate">▾</span> Enkhuizen
+                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-navy text-white ml-auto" style="font-size:9px;">SITE</span>
               </div>
-              <div class="flex items-center gap-2 px-4 py-1.5 text-gray-600">
-                <span class="text-gray-400">▾</span> PRODUCTIE
+              <div class="flex items-center gap-2 px-4 py-1.5 text-aw-ink">
+                <span class="text-aw-slate">▾</span> PRODUCTIE
                 <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto" style="font-size:9px;">FUNCTIE</span>
               </div>
               <div class="flex items-center gap-2 px-8 py-1.5 rounded bg-blue-50 text-blue-700">
                 <span>·</span> Verpakking
-                <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 ml-auto" style="font-size:9px;">SUB</span>
+                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-wolk text-aw-slate ml-auto" style="font-size:9px;">SUB</span>
               </div>
-              <div class="flex items-center gap-2 px-8 py-1.5 text-gray-400">
+              <div class="flex items-center gap-2 px-8 py-1.5 text-aw-slate">
                 <span>·</span> Zaadopslag
-                <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-400 ml-auto" style="font-size:9px;">SUB</span>
+                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-wolk text-aw-slate ml-auto" style="font-size:9px;">SUB</span>
               </div>
-              <div class="flex items-center gap-2 px-4 py-1.5 text-gray-600">
-                <span class="text-gray-400">▾</span> UTILITIES
+              <div class="flex items-center gap-2 px-4 py-1.5 text-aw-ink">
+                <span class="text-aw-slate">▾</span> UTILITIES
                 <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto" style="font-size:9px;">FUNCTIE</span>
               </div>
             </div>
-            <div class="mt-3 p-2.5 bg-gray-50 rounded-lg">
-              <p class="text-xs text-gray-400">370 procesfuncties · 500 equipment</p>
+            <div class="mt-3 p-2.5 bg-aw-wolk rounded-aw">
+              <p class="text-xs text-aw-slate">370 procesfuncties · 500 equipment</p>
               <p class="text-xs text-amber-500 mt-0.5">496 nog te positioneren</p>
             </div>
           </div>
         </div>
 
         <!-- Scherm 2: Data Kwaliteit -->
-        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
-          <div class="bg-navy-900 px-4 py-3 flex items-center gap-2">
+        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
+          <div class="bg-aw-navy px-4 py-3 flex items-center gap-2">
             <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
-              <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-              <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="20" y1="4"  x2="20" y2="16" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="20" y1="24" x2="20" y2="36" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="4"  y1="20" x2="16" y2="20" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="24" y1="20" x2="36" y2="20" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
             </svg>
             <span class="text-white text-xs tracking-wide" style="font-weight:500;">Relicore</span>
           </div>
-          <div class="flex border-b border-gray-100 text-xs overflow-x-auto">
+          <div class="flex border-b border-aw-line text-xs overflow-x-auto">
             {["Importeren","Stamdata","Assetregister","Data Kwaliteit"].map((t, i) => (
               <span class={`px-3 py-2.5 whitespace-nowrap flex-shrink-0
                 ${i === 3
-                  ? 'text-navy-900 border-b-2 border-teal-700'
-                  : 'text-gray-400 border-b-2 border-transparent'}`}>{t}</span>
+                  ? 'text-aw-navy border-b-2 border-aw-turquoise'
+                  : 'text-aw-slate border-b-2 border-transparent'}`}>{t}</span>
             ))}
           </div>
           <div class="p-4">
-            <div class="grid grid-cols-3 gap-2 mb-4 bg-gray-50 rounded-lg p-2.5">
+            <div class="grid grid-cols-3 gap-2 mb-4 bg-aw-wolk rounded-aw p-2.5">
               <div>
-                <p class="text-xs text-gray-400 mb-0.5">Filter-match</p>
-                <p class="text-sm text-navy-900" style="font-weight:500;">23.852</p>
+                <p class="text-xs text-aw-slate mb-0.5">Filter-match</p>
+                <p class="text-sm text-aw-navy" style="font-weight:500;">23.852</p>
               </div>
               <div>
-                <p class="text-xs text-gray-400 mb-0.5">Completeness</p>
-                <p class="text-sm text-navy-900" style="font-weight:500;">40%</p>
+                <p class="text-xs text-aw-slate mb-0.5">Completeness</p>
+                <p class="text-sm text-aw-navy" style="font-weight:500;">40%</p>
               </div>
               <div>
-                <p class="text-xs text-gray-400 mb-0.5">Ongekoppeld</p>
+                <p class="text-xs text-aw-slate mb-0.5">Ongekoppeld</p>
                 <p class="text-sm text-amber-500" style="font-weight:500;">23.848</p>
               </div>
             </div>
             <table class="w-full text-xs">
               <thead>
-                <tr class="border-b border-gray-100">
-                  <th class="text-left py-1.5 text-gray-400 pr-2" style="font-weight:500;">Omschrijving</th>
-                  <th class="py-1.5 text-gray-400 text-center" style="font-weight:500;">FK</th>
-                  <th class="py-1.5 text-gray-400 text-right" style="font-weight:500;">%</th>
+                <tr class="border-b border-aw-line">
+                  <th class="text-left py-1.5 text-aw-slate pr-2" style="font-weight:500;">Omschrijving</th>
+                  <th class="py-1.5 text-aw-slate text-center" style="font-weight:500;">FK</th>
+                  <th class="py-1.5 text-aw-slate text-right" style="font-weight:500;">%</th>
                 </tr>
               </thead>
               <tbody>
@@ -252,16 +248,16 @@ import '../../styles/global.css';
                   { naam: "Slootpomp zelfaanzuigend",fk: [1,0,1,0,0], pct: "60%" },
                   { naam: "Bassinwater aanvoerpomp", fk: [1,0,1,0,0], pct: "60%" },
                 ].map((r) => (
-                  <tr class="border-b border-gray-50">
-                    <td class="py-2 pr-2 text-navy-900 truncate max-w-24">{r.naam}</td>
+                  <tr class="border-b border-aw-line">
+                    <td class="py-2 pr-2 text-aw-navy truncate max-w-24">{r.naam}</td>
                     <td class="py-2 text-center">
                       <div class="flex gap-0.5 justify-center">
                         {r.fk.map((v) => (
-                          <span class={`w-2 h-2 rounded-full ${v ? 'bg-teal-700' : 'bg-gray-200'}`}></span>
+                          <span class={`w-2 h-2 rounded-full ${v ? 'bg-aw-turquoise' : 'bg-aw-line'}`}></span>
                         ))}
                       </div>
                     </td>
-                    <td class="py-2 text-teal-700 text-right" style="font-weight:500;">{r.pct}</td>
+                    <td class="py-2 text-aw-turquoise text-right" style="font-weight:500;">{r.pct}</td>
                   </tr>
                 ))}
               </tbody>
@@ -270,28 +266,28 @@ import '../../styles/global.css';
         </div>
 
         <!-- Scherm 3: Stamdata -->
-        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
-          <div class="bg-navy-900 px-4 py-3 flex items-center gap-2">
+        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
+          <div class="bg-aw-navy px-4 py-3 flex items-center gap-2">
             <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
-              <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-              <circle cx="20" cy="20" r="4"  fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="20" y1="4"  x2="20" y2="16" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="20" y1="24" x2="20" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="4"  y1="20" x2="16" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
-              <line x1="24" y1="20" x2="36" y2="20" stroke="#2dd4bf" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="20" y1="4"  x2="20" y2="16" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="20" y1="24" x2="20" y2="36" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="4"  y1="20" x2="16" y2="20" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
+              <line x1="24" y1="20" x2="36" y2="20" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
             </svg>
             <span class="text-white text-xs tracking-wide" style="font-weight:500;">Relicore</span>
           </div>
-          <div class="flex border-b border-gray-100 text-xs overflow-x-auto">
+          <div class="flex border-b border-aw-line text-xs overflow-x-auto">
             {["Importeren","Stamdata","Assetregister","Data Kwaliteit"].map((t, i) => (
               <span class={`px-3 py-2.5 whitespace-nowrap flex-shrink-0
                 ${i === 1
-                  ? 'text-navy-900 border-b-2 border-teal-700'
-                  : 'text-gray-400 border-b-2 border-transparent'}`}>{t}</span>
+                  ? 'text-aw-navy border-b-2 border-aw-turquoise'
+                  : 'text-aw-slate border-b-2 border-transparent'}`}>{t}</span>
             ))}
           </div>
           <div class="p-4">
-            <p class="text-xs uppercase tracking-widest text-gray-400 mb-3" style="font-weight:500;">Stamdata werkbanken</p>
+            <p class="text-xs uppercase tracking-[0.12em] text-aw-slate mb-3" style="font-weight:500;">Stamdata werkbanken</p>
             <div class="grid grid-cols-2 gap-1.5">
               {[
                 { naam: "Assetsoorten",    n: "109",   actief: true  },
@@ -303,9 +299,9 @@ import '../../styles/global.css';
                 { naam: "Kostenplaatsen",  n: "326",   actief: true  },
                 { naam: "Storingsoorzaken",n: "—",     actief: false },
               ].map((w) => (
-                <div class={`p-2 rounded border text-xs ${w.actief ? 'border-gray-200 bg-white' : 'border-gray-100 bg-gray-50 opacity-60'}`}>
-                  <p class="text-navy-900 mb-0.5" style="font-weight:500;">{w.naam}</p>
-                  <p class="text-gray-400">{w.n} · {w.actief ? 'actief' : 'binnenkort'}</p>
+                <div class={`p-2 rounded border text-xs ${w.actief ? 'border-aw-line bg-white' : 'border-aw-line bg-aw-wolk opacity-60'}`}>
+                  <p class="text-aw-navy mb-0.5" style="font-weight:500;">{w.naam}</p>
+                  <p class="text-aw-slate">{w.n} · {w.actief ? 'actief' : 'binnenkort'}</p>
                 </div>
               ))}
             </div>
@@ -317,13 +313,13 @@ import '../../styles/global.css';
 
 
   <!-- ⑥ WAT Relicore OPLEVERT -->
-  <section class="bg-navy-900 text-white py-20 px-6">
+  <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal-400 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat Relicore oplevert</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-white mb-10 max-w-lg" style="font-weight:500;">
+      <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat Relicore oplevert</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-10 max-w-lg" style="font-weight:500;">
         Niet een schoner register.<br />Een gemeenschappelijke taal.
       </h2>
-      <div class="divide-y divide-white/10 max-w-2xl">
+      <div class="divide-y divide-aw-line max-w-2xl">
         {[
           { kop: "Gedeelde assetlogica",       tekst: "Een procesfunctie-gebaseerde structuur die expliciet maakt wat er moet werken, wat er staat, en hoe die twee zich verhouden." },
           { kop: "Herleidbare beslissingen",   tekst: "Vervangings-, investerings- en onderhoudsbeslissingen die niet op gevoel genomen worden — maar op een structuur die iedereen kan lezen en betwisten." },
@@ -331,10 +327,10 @@ import '../../styles/global.css';
           { kop: "Borging in de organisatie",  tekst: "Een exporteerbare structuur die teruggaat naar het CMMS — zodat de assetlogica ook operationeel werkt en niet opnieuw opgebouwd moet worden." },
         ].map((punt, i) => (
           <div class="flex items-start gap-5 py-5">
-            <span class="text-teal-400 text-xs flex-shrink-0 mt-0.5" style="font-weight:500;">{i + 1}</span>
+            <span class="text-aw-turquoise text-xs flex-shrink-0 mt-0.5" style="font-weight:500;">{i + 1}</span>
             <div>
-              <p class="text-white text-sm mb-1" style="font-weight:500;">{punt.kop}</p>
-              <p class="text-white/60 text-sm leading-relaxed" style="font-weight:400;">{punt.tekst}</p>
+              <p class="text-aw-navy text-sm mb-1" style="font-weight:500;">{punt.kop}</p>
+              <p class="text-aw-slate text-sm leading-relaxed" style="font-weight:400;">{punt.tekst}</p>
             </div>
           </div>
         ))}
@@ -343,13 +339,13 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑦ INTEGRATIES -->
-  <section class="bg-white py-20 px-6">
+  <section class="bg-aw-wolk py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Integraties</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Integraties</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3" style="font-weight:500;">
         Werkt met uw bestaande CMMS.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
         Relicore vervangt uw CMMS niet. Import en export zijn bewuste stappen — engineering logica gaat altijd boven administratief gemak.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-lg">
@@ -359,14 +355,14 @@ import '../../styles/global.css';
           { naam: "Maximo",    status: "In planning", live: false },
           { naam: "Infor EAM", status: "In planning", live: false },
         ].map((int) => (
-          <div class={`p-4 text-center rounded-xl
+          <div class={`p-4 text-center rounded-aw
             ${int.live
-              ? 'border border-teal-700 bg-teal-50'
-              : 'border border-gray-200 bg-gray-50'}`}>
-            <p class={`text-sm mb-1 ${int.live ? 'text-navy-900' : 'text-gray-400'}`}
+              ? 'border border-aw-turquoise bg-aw-mist'
+              : 'border border-aw-line bg-white'}`}>
+            <p class={`text-sm mb-1 ${int.live ? 'text-aw-navy' : 'text-aw-slate'}`}
                style="font-weight:500;">{int.naam}</p>
             <p class={`text-xs uppercase tracking-wide
-              ${int.live ? 'text-teal-700' : 'text-gray-400'}`}
+              ${int.live ? 'text-aw-navy' : 'text-aw-slate'}`}
                style="font-weight:500;">{int.status}</p>
           </div>
         ))}
@@ -375,28 +371,24 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑧ CTA -->
-  <section class="bg-navy-900 text-white py-20 px-6">
+  <section class="bg-aw-deep text-white py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
         Van assetregister naar gedeelde assetlogica.
       </h2>
-      <p class="text-white/65 text-base leading-relaxed mb-10 max-w-md mx-auto"
+      <p class="text-white/72 text-base leading-relaxed mb-10 max-w-md mx-auto"
          style="font-weight:400;">
         In een eerste gesprek bekijken we hoe Relicore aansluit op uw huidige CMMS — en welke beslissingen daarna anders genomen kunnen worden.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://relicore.app"
            target="_blank" rel="noopener noreferrer"
-           class="inline-flex px-8 py-4 bg-teal-700 hover:bg-teal-600
-                  text-white rounded-lg transition-colors"
-           style="font-weight:500;">
+           class="aw-btn-primary inline-flex px-8 py-4">
           Bekijk pilotomgeving
         </a>
         <a href="/contact"
-           class="inline-flex px-8 py-4 border text-white/70 hover:text-white
-                  rounded-lg transition-colors"
-           style="font-weight:500; border-color:rgba(255,255,255,0.2);">
+           class="aw-btn-secondary-dark inline-flex px-8 py-4">
           Plan een gesprek
         </a>
       </div>

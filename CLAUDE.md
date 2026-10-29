@@ -39,7 +39,7 @@ Kleuren, tagline en teksten staan daar, niet hier. Lees de richtlijn zelf.
 
 **Harde regels:**
 
-- Lettertype Inter, gewichten 400 en 500.
+- Lettertype Inter, gewichten 400 en 500. 600 alleen voor eyebrows in hoofdletters (spatiëring 0,12 em). Nooit 700.
 - Sentence case in koppen, knoppen en navigatie.
 - Geen uitroeptekens.
 - Logo's nooit natypen of nabouwen in tekst of CSS; gebruik altijd het logobestand.

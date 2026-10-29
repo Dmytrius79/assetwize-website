@@ -8,26 +8,26 @@ import '../../styles/global.css';
 >
 
   <!-- ① HERO -->
-  <section class="text-white pt-28 pb-20 px-6" style="background:#1C0F07;">
+  <section class="bg-white border-b border-aw-line pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
       <div class="flex items-center gap-4 mb-10 pb-8"
-           style="border-bottom:0.5px solid rgba(176,125,58,0.3);">
+           style="border-bottom:0.5px solid var(--aw-line);">
         <svg viewBox="0 0 40 40" width="52" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="20" cy="20" r="16" fill="none" stroke="#B07D3A" stroke-width="1.5"/>
-          <line x1="20" y1="4"  x2="20" y2="36" stroke="#B07D3A" stroke-width="1.5"/>
-          <ellipse cx="20" cy="20" rx="8" ry="16" fill="none" stroke="#B07D3A" stroke-width="1" opacity="0.5"/>
-          <line x1="4"  y1="20" x2="36" y2="20" stroke="#B07D3A" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="20" cy="20" r="16" fill="none" stroke="#7A4F1E" stroke-width="1.5"/>
+          <line x1="20" y1="4"  x2="20" y2="36" stroke="#7A4F1E" stroke-width="1.5"/>
+          <ellipse cx="20" cy="20" rx="8" ry="16" fill="none" stroke="#7A4F1E" stroke-width="1" opacity="0.5"/>
+          <line x1="4"  y1="20" x2="36" y2="20" stroke="#7A4F1E" stroke-width="0.5" opacity="0.4"/>
         </svg>
-        <div style="border-left:0.5px solid rgba(176,125,58,0.3); padding-left:12px;">
-          <div style="font-size:26px; font-weight:500; color:white; letter-spacing:0.02em; line-height:1.1;">Atlas</div>
-          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(176,125,58,0.72); margin-top:4px;">BY ASSETWIZE</div>
+        <div style="border-left:0.5px solid var(--aw-line); padding-left:12px;">
+          <div style="font-size:26px; font-weight:500; color:#1C0F07; letter-spacing:0.02em; line-height:1.1;">Atlas</div>
+          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#7A4F1E; opacity:0.72; margin-top:4px;">BY ASSETWIZE</div>
         </div>
       </div>
-      <h1 class="text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
+      <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
         Asset governance, uitgewerkt tot een werkend systeem.
       </h1>
       <p class="text-lg leading-relaxed max-w-xl mb-0"
-         style="font-weight:400; color:rgba(255,255,255,0.6);">
+         style="font-weight:400; color:var(--aw-slate);">
         Niet alleen wat assetmanagement zou moeten zijn. Maar hoe eigenaarschap, besluitvorming, informatie, processen en systemen daadwerkelijk samenkomen in de praktijk.
       </p>
     </div>
@@ -38,7 +38,7 @@ import '../../styles/global.css';
     <div class="max-w-4xl mx-auto">
       <p class="text-base leading-relaxed max-w-2xl" style="font-weight:500; color:#1C0F07;">
         Waar ISO 55000 stopt, begint Atlas.
-        <span style="font-weight:400; color:#6b7280;">
+        <span style="font-weight:400; color:var(--aw-slate);">
           Een uitgewerkt governance-systeem met frameworks, blueprints en implementatierichtlijnen — gebouwd vanuit vijftien jaar praktijk in asset-intensieve organisaties.
         </span>
       </p>
@@ -48,16 +48,16 @@ import '../../styles/global.css';
   <!-- ③ WAAROM ATLAS BESTAAT -->
   <section class="py-20 px-6" style="background:#faf7f4;">
     <div class="max-w-4xl mx-auto">
-      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">Waarom Atlas bestaat</p>
+      <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">Waarom Atlas bestaat</p>
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div>
           <h2 class="text-2xl md:text-3xl leading-snug mb-6" style="font-weight:500; color:#1C0F07;">
             Veel organisaties starten telkens opnieuw.
           </h2>
-          <p class="text-sm leading-relaxed mb-4" style="font-weight:400; color:#6b7280;">
+          <p class="text-sm leading-relaxed mb-4" style="font-weight:400; color:var(--aw-slate);">
             Rollen worden opnieuw ontworpen. Besluitvorming wordt opnieuw ingericht. CMMS-structuren worden opnieuw bedacht. Governance wordt opnieuw gedefinieerd.
           </p>
-          <p class="text-sm leading-relaxed" style="font-weight:400; color:#6b7280;">
+          <p class="text-sm leading-relaxed" style="font-weight:400; color:var(--aw-slate);">
             Niet omdat kennis ontbreekt. Maar omdat die kennis verspreid zit over normen, projecten, leveranciers en individuele ervaring. Atlas brengt die kennis samen in één samenhangend systeem.
           </p>
         </div>
@@ -69,7 +69,7 @@ import '../../styles/global.css';
           ].map((item) => (
             <div style="border-left:3px solid #7A4F1E; padding-left:16px;">
               <p class="text-sm mb-1" style="font-weight:500; color:#1C0F07;">{item.kop}</p>
-              <p class="text-sm"     style="font-weight:400; color:#6b7280;">{item.sub}</p>
+              <p class="text-sm"     style="font-weight:400; color:var(--aw-slate);">{item.sub}</p>
             </div>
           ))}
         </div>
@@ -80,11 +80,11 @@ import '../../styles/global.css';
   <!-- ④ ATLAS ALS REFERENTIEARCHITECTUUR -->
   <section class="py-20 px-6" style="background:white;">
     <div class="max-w-4xl mx-auto">
-      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">Atlas als referentiearchitectuur</p>
+      <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">Atlas als referentiearchitectuur</p>
       <h2 class="text-2xl md:text-3xl leading-snug mb-6 max-w-lg" style="font-weight:500; color:#1C0F07;">
         Atlas beschrijft hoe alle onderdelen samenhangen.
       </h2>
-      <p class="text-sm leading-relaxed mb-10 max-w-xl" style="font-weight:400; color:#6b7280;">
+      <p class="text-sm leading-relaxed mb-10 max-w-xl" style="font-weight:400; color:var(--aw-slate);">
         Niet één proces. Maar hoe governance, risico, betrouwbaarheid, waarde, besluitvorming, organisatie en verandervermogen als één geïntegreerd systeem functioneren.
       </p>
 
@@ -159,7 +159,7 @@ import '../../styles/global.css';
       </div>
 
       <!-- Wat Atlas bevat -->
-      <p class="text-xs uppercase tracking-widest mb-5" style="font-weight:600; color:#7A4F1E;">Wat Atlas bevat</p>
+      <p class="text-xs uppercase tracking-[0.12em] mb-5" style="font-weight:600; color:#7A4F1E;">Wat Atlas bevat</p>
       <div class="grid md:grid-cols-3 gap-x-12 gap-y-2 max-w-2xl">
         {[
           "Governance Frameworks",
@@ -185,22 +185,22 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑤ OMVANG -->
-  <section class="py-12 px-6" style="background:#1C0F07;">
+  <section class="py-12 px-6" style="background:white;">
     <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px" style="background:rgba(176,125,58,0.2);">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
         {[
           { getal: "7",    label: "samenhangende domeinen" },
           { getal: "50+",  label: "governance frameworks" },
           { getal: "100+", label: "blueprints en standaarden" },
           { getal: "15+",  label: "jaar praktijkervaring" },
         ].map((item) => (
-          <div class="px-6 py-6 text-center" style="background:#1C0F07;">
-            <p style="font-size:28px; font-weight:500; color:#B07D3A; line-height:1;">{item.getal}</p>
-            <p style="font-size:11px; font-weight:400; color:rgba(255,255,255,0.4); margin-top:6px; line-height:1.4;">{item.label}</p>
+          <div class="px-6 py-6 text-center" style="background:white;">
+            <p style="font-size:28px; font-weight:500; color:#7A4F1E; line-height:1;">{item.getal}</p>
+            <p style="font-size:11px; font-weight:400; color:var(--aw-slate); margin-top:6px; line-height:1.4;">{item.label}</p>
           </div>
         ))}
       </div>
-      <p class="text-center mt-4 text-xs" style="color:rgba(255,255,255,0.3);">
+      <p class="text-center mt-4 text-xs" style="color:var(--aw-slate);">
         Doorlopend verrijkt vanuit praktijkprojecten binnen industrie, utilities en agrochemie.
       </p>
     </div>
@@ -209,19 +209,19 @@ import '../../styles/global.css';
   <!-- ⑥ EEN KIJKJE IN ATLAS -->
   <section class="py-20 px-6" style="background:#faf7f4;">
     <div class="max-w-4xl mx-auto">
-      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">Een kijkje in Atlas</p>
+      <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">Een kijkje in Atlas</p>
       <h2 class="text-2xl leading-snug mb-4" style="font-weight:500; color:#1C0F07;">
         Uitgewerkte bouwstenen, direct toepasbaar.
       </h2>
-      <p class="text-sm leading-relaxed mb-12 max-w-lg" style="font-weight:400; color:#6b7280;">
+      <p class="text-sm leading-relaxed mb-12 max-w-lg" style="font-weight:400; color:var(--aw-slate);">
         Elk document in Atlas is volledig uitgewerkt — met normatieve grondslag, rolbeschrijvingen, RACI-structuren, competentie-eisen en maturity levels. Hieronder een fragment uit T5.1 — het Asset Management Organisation Model.
       </p>
 
       <!-- VOORBEELD 1: Rollenstructuur -->
-      <div class="mb-8 rounded-xl overflow-hidden" style="border:1px solid #e5ddd5;">
+      <div class="mb-8 rounded-aw overflow-hidden border border-aw-line">
         <div class="px-6 py-4 flex items-center justify-between" style="background:#7A4F1E;">
           <div>
-            <p class="text-xs uppercase tracking-widest" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Governance &amp; Eigenaarschap</p>
+            <p class="text-xs uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Governance &amp; Eigenaarschap</p>
             <p class="text-sm mt-1" style="color:white; font-weight:500;">Asset Management Organisation Model — Rollenstructuur</p>
           </div>
           <span class="text-xs px-2 py-1 rounded" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">ISO 55001 §5.3</span>
@@ -230,9 +230,9 @@ import '../../styles/global.css';
           <table style="width:100%; border-collapse:collapse; font-size:12px;">
             <thead>
               <tr style="background:#faf7f4;">
-                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.08em;">Laag</th>
-                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.08em;">Rollen</th>
-                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.08em;">Uitbesteding</th>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em;">Laag</th>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em;">Rollen</th>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em;">Uitbesteding</th>
               </tr>
             </thead>
             <tbody>
@@ -244,7 +244,7 @@ import '../../styles/global.css';
                 <tr style={i % 2 === 0 ? "background:white;" : "background:#fdfbf8;"}>
                   <td style="padding:10px 14px; color:#1C0F07; font-weight:500; border-bottom:1px solid #f0ebe3; vertical-align:top; white-space:nowrap;">{row.laag}</td>
                   <td style="padding:10px 14px; color:#4b3621; border-bottom:1px solid #f0ebe3; vertical-align:top; line-height:1.6;">{row.rollen}</td>
-                  <td style="padding:10px 14px; color:#6b7280; border-bottom:1px solid #f0ebe3; vertical-align:top; line-height:1.6;">{row.uitbesteding}</td>
+                  <td style="padding:10px 14px; color:var(--aw-slate); border-bottom:1px solid #f0ebe3; vertical-align:top; line-height:1.6;">{row.uitbesteding}</td>
                 </tr>
               ))}
             </tbody>
@@ -253,10 +253,10 @@ import '../../styles/global.css';
       </div>
 
       <!-- VOORBEELD 2: RACI-fragment -->
-      <div class="mb-8 rounded-xl overflow-hidden" style="border:1px solid #e5ddd5;">
+      <div class="mb-8 rounded-aw overflow-hidden border border-aw-line">
         <div class="px-6 py-4 flex items-center justify-between" style="background:#7A4F1E;">
           <div>
-            <p class="text-xs uppercase tracking-widest" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · RACI-matrix</p>
+            <p class="text-xs uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · RACI-matrix</p>
             <p class="text-sm mt-1" style="color:white; font-weight:500;">Verantwoordelijkheidsverdeling AM-processen (fragment)</p>
           </div>
           <span class="text-xs px-2 py-1 rounded" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">A · R · C · I</span>
@@ -265,9 +265,9 @@ import '../../styles/global.css';
           <table style="width:100%; border-collapse:collapse; font-size:11px;">
             <thead>
               <tr style="background:#faf7f4;">
-                <th style="padding:8px 12px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; min-width:180px;">AM-proces</th>
+                <th style="padding:8px 12px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em; min-width:180px;">AM-proces</th>
                 {["Asset Owner","Asset Manager","Maint. Engineer","Contractor Mgr","Planner","Teamlead"].map(h => (
-                  <th style="padding:8px 8px; text-align:center; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; min-width:72px;">{h}</th>
+                  <th style="padding:8px 8px; text-align:center; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em; min-width:72px;">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -284,22 +284,22 @@ import '../../styles/global.css';
                 <tr style={i % 2 === 0 ? "background:white;" : "background:#fdfbf8;"}>
                   <td style="padding:8px 12px; color:#1C0F07; font-weight:400; border-bottom:1px solid #f0ebe3;">{row.proc}</td>
                   {row.vals.map(v => (
-                    <td style={`padding:8px 8px; text-align:center; border-bottom:1px solid #f0ebe3; font-weight:600; font-size:11px; color:${v === "A" ? "#7A4F1E" : v === "R" ? "#B07D3A" : v === "A/R" ? "#8B6230" : v === "C" ? "#9ca3af" : "#e5e7eb"};`}>{v}</td>
+                    <td style={`padding:8px 8px; text-align:center; border-bottom:1px solid #f0ebe3; font-weight:500; font-size:11px; color:${v === "A" ? "#7A4F1E" : v === "R" ? "#B07D3A" : v === "A/R" ? "#8B6230" : v === "C" ? "var(--aw-slate)" : "var(--aw-line)"};`}>{v}</td>
                   ))}
                 </tr>
               ))}
             </tbody>
           </table>
-          <p style="padding:8px 12px; font-size:10px; color:#9ca3af; border-top:1px solid #f0ebe3;">
+          <p style="padding:8px 12px; font-size:10px; color:var(--aw-slate); border-top:1px solid #f0ebe3;">
             A = Accountable · R = Responsible · C = Consulted · I = Informed · — = geen betrokkenheid
           </p>
         </div>
       </div>
 
       <!-- VOORBEELD 3: Maturity levels -->
-      <div class="rounded-xl overflow-hidden" style="border:1px solid #e5ddd5;">
+      <div class="rounded-aw overflow-hidden border border-aw-line">
         <div class="px-6 py-4" style="background:#7A4F1E;">
-          <p class="text-xs uppercase tracking-widest" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Maturity Model</p>
+          <p class="text-xs uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Maturity Model</p>
           <p class="text-sm mt-1" style="color:white; font-weight:500;">Maturity Levels — Rolbezetting &amp; Eigenaarschap</p>
         </div>
         <div style="background:white;">
@@ -311,17 +311,17 @@ import '../../styles/global.css';
             { nr: "5", titel: "Optimaliserend", tekst: "Rollenstructuur continu geëvalueerd. Eigenaarschap zichtbaar in gedrag — niet alleen op papier." },
           ].map((level, i) => (
             <div class="flex items-start gap-4 px-6 py-4" style={`border-bottom:${i < 4 ? "1px solid #f0ebe3" : "none"};`}>
-              <span style={`min-width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; flex-shrink:0; margin-top:1px; background:${i < 2 ? "#f5f5f4" : i < 3 ? "#faf7f4" : i < 4 ? "#f0e8dc" : "#7A4F1E"}; color:${i < 4 ? "#7A4F1E" : "white"};`}>{level.nr}</span>
+              <span style={`min-width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:500; flex-shrink:0; margin-top:1px; background:${i < 2 ? "#f5f5f4" : i < 3 ? "#faf7f4" : i < 4 ? "#f0e8dc" : "#7A4F1E"}; color:${i < 4 ? "#7A4F1E" : "white"};`}>{level.nr}</span>
               <div>
-                <p style="font-size:12px; font-weight:600; color:#1C0F07; margin-bottom:2px;">{level.titel}</p>
-                <p style="font-size:12px; color:#6b7280; line-height:1.5;">{level.tekst}</p>
+                <p style="font-size:12px; font-weight:500; color:#1C0F07; margin-bottom:2px;">{level.titel}</p>
+                <p style="font-size:12px; color:var(--aw-slate); line-height:1.5;">{level.tekst}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <p class="mt-6 text-xs" style="color:#9ca3af; font-weight:400;">
+      <p class="mt-6 text-xs" style="color:var(--aw-slate); font-weight:400;">
         Dit is één document uit T5 — Governance &amp; Eigenaarschap. Atlas bevat vergelijkbare uitwerkingen voor alle zeven domeinen.
       </p>
     </div>
@@ -330,20 +330,20 @@ import '../../styles/global.css';
   <!-- ⑦ RELATIE MET COMPASS EN Relicore -->
   <section class="py-20 px-6" style="background:white;">
     <div class="max-w-4xl mx-auto">
-      <p class="text-xs uppercase tracking-widest mb-4" style="font-weight:600; color:#7A4F1E;">De relatie met Compass en Relicore</p>
+      <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">De relatie met Compass en Relicore</p>
       <h2 class="text-2xl leading-snug mb-10 max-w-lg" style="font-weight:500; color:#1C0F07;">
         Compass meet. Relicore implementeert.<br />Atlas is het systeem waar beide op gebaseerd zijn.
       </h2>
       <div class="max-w-2xl flex flex-col divide-y" style="border-color:#e5ddd5;">
         {[
           { instrument:"Compass",            kleur:"#2D6A4F", sub:"Diagnosticeert of het governance-systeem werkt — toetst aan de normen die Atlas beschrijft." },
-          { instrument:"AssetWize expertise",kleur:"#0f1f35", sub:"Ontwerpt het besturingssysteem — gebruikt Atlas-frameworks als normatieve basis voor elk ontwerp." },
-          { instrument:"Relicore",           kleur:"#147878", sub:"Borgt de assetlogica digitaal — implementeert de informatiemodellen en blueprints die Atlas beschrijft." },
+          { instrument:"AssetWize expertise",kleur:"var(--aw-navy)", sub:"Ontwerpt het besturingssysteem — gebruikt Atlas-frameworks als normatieve basis voor elk ontwerp." },
+          { instrument:"Relicore",           kleur:"var(--aw-turquoise)", sub:"Borgt de assetlogica digitaal — implementeert de informatiemodellen en blueprints die Atlas beschrijft." },
         ].map((item) => (
           <div class="flex items-start gap-6 py-6">
-            <span class="text-xs uppercase tracking-widest min-w-36 mt-0.5 flex-shrink-0"
+            <span class="text-xs uppercase tracking-[0.12em] min-w-36 mt-0.5 flex-shrink-0"
                   style={`font-weight:600; color:${item.kleur};`}>{item.instrument}</span>
-            <p class="text-sm leading-relaxed" style="font-weight:400; color:#6b7280;">{item.sub}</p>
+            <p class="text-sm leading-relaxed" style="font-weight:400; color:var(--aw-slate);">{item.sub}</p>
           </div>
         ))}
       </div>
@@ -358,12 +358,11 @@ import '../../styles/global.css';
         Wilt u weten hoe Atlas uw traject ondersteunt?
       </h2>
       <p class="text-base leading-relaxed mb-10 max-w-md mx-auto"
-         style="font-weight:400; color:rgba(255,255,255,0.6);">
+         style="font-weight:400; color:rgba(255,255,255,0.72);">
         In een eerste gesprek kijken we naar uw specifieke situatie — en welke frameworks en blueprints direct toepasbaar zijn.
       </p>
       <a href="/contact"
-         class="inline-flex px-10 py-4 text-white rounded-lg transition-colors"
-         style="background:#7A4F1E; font-weight:500;">
+         class="aw-btn-primary inline-flex px-10 py-4">
         Start het gesprek
       </a>
     </div>

@@ -9,32 +9,27 @@ import '../../styles/global.css';
 >
 
   <!-- ① HERO -->
-  <section class="bg-forest-700 text-white pt-28 pb-20 px-6">
+  <section class="bg-white border-b border-aw-line pt-28 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="mb-10 pb-8 border-b border-forest-200/20">
-        <CompassLogo variant="dark" size="xl" />
+      <div class="mb-10 pb-8 border-b border-aw-line">
+        <CompassLogo variant="light" size="xl" />
       </div>
-      <h1 class="text-4xl md:text-5xl fw-medium mb-6 max-w-xl"
+      <h1 class="text-aw-navy text-4xl md:text-5xl fw-medium mb-6 max-w-xl"
           style="font-weight:500; line-height:1.13;">
         Compass laat zien of assetmanagement daadwerkelijk werkt.
       </h1>
-      <p class="text-forest-200 text-lg leading-relaxed max-w-lg mb-10"
+      <p class="text-aw-slate text-lg leading-relaxed max-w-lg mb-10"
          style="font-weight:400;">
         Niet: is het ingericht?<br />
         Maar: werkt het — en leidt het tot de waarde die uw organisatie verwacht?
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="/contact"
-           class="inline-flex px-7 py-3.5 bg-forest-600 hover:bg-forest-500
-                  text-white rounded-lg transition-colors text-sm"
-           style="font-weight:500;">
+           class="aw-btn-primary inline-flex px-7 py-3.5 text-sm">
           Start het gesprek
         </a>
         <a href="#drie-perspectieven"
-           class="inline-flex px-7 py-3.5 border border-forest-200/30
-                  hover:border-forest-200/60 text-forest-200 hover:text-white
-                  rounded-lg transition-colors text-sm"
-           style="font-weight:500;">
+           class="aw-btn-secondary inline-flex px-7 py-3.5 text-sm">
           Meer over Compass
         </a>
       </div>
@@ -55,17 +50,17 @@ import '../../styles/global.css';
   </section>
 
   <!-- BEWIJS STRIP -->
-  <section class="bg-forest-900 py-8 px-6">
+  <section class="bg-white py-8 px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-forest-700">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
         {[
           { getal: "15+", label: "jaar praktijkervaring" },
           { getal: "28",  label: "bestuurlijke vragen per scan" },
           { getal: "100", label: "managementvragen · 25 vermogens" },
           { getal: "7",   label: "sectoren · industrie t/m utilities" },
         ].map((item) => (
-          <div class="bg-forest-900 px-6 py-5 text-center">
-            <p style="font-size:28px; font-weight:500; color:#C8EED8; line-height:1;">{item.getal}</p>
+          <div class="bg-white px-6 py-5 text-center">
+            <p style="font-size:28px; font-weight:500; color:#1A4A35; line-height:1;">{item.getal}</p>
             <p style="font-size:11px; font-weight:400; color:#5A7A65; margin-top:6px; line-height:1.4;">{item.label}</p>
           </div>
         ))}
@@ -76,7 +71,7 @@ import '../../styles/global.css';
   <!-- ③ HET PROBLEEM -->
   <section class="bg-forest-50 py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4"
+      <p class="text-forest-600 text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:500;">Het probleem</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-3 max-w-lg"
           style="font-weight:500;">
@@ -107,8 +102,8 @@ import '../../styles/global.css';
       </p>
 
       <!-- Wat Compass in de praktijk ziet -->
-      <div class="mt-10 bg-white border border-stone-300 rounded-xl p-8 max-w-xl">
-        <p class="text-xs uppercase tracking-widest mb-5" style="font-weight:600; color:#2D6A4F;">
+      <div class="mt-10 bg-white border border-aw-line rounded-aw p-8 max-w-xl">
+        <p class="text-xs uppercase tracking-[0.12em] mb-5" style="font-weight:600; color:#2D6A4F;">
           Wat Compass in de praktijk ziet
         </p>
         <p class="text-sm mb-4" style="font-weight:400; color:#5A7A65;">Veel organisaties beschikken over:</p>
@@ -142,7 +137,7 @@ import '../../styles/global.css';
   <!-- ④ WAAROM VASTLOPEN -->
   <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4"
+      <p class="text-forest-600 text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:500;">Waarom verbeterprogramma's vastlopen</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-8 max-w-lg"
           style="font-weight:500;">
@@ -172,7 +167,7 @@ import '../../styles/global.css';
   <!-- ⑤ AANWEZIG vs WERKEND -->
   <section class="bg-forest-50 py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4"
+      <p class="text-forest-600 text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:500;">Het fundamentele onderscheid</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10 max-w-lg"
           style="font-weight:500;">
@@ -180,9 +175,9 @@ import '../../styles/global.css';
       </h2>
       <div class="grid md:grid-cols-2 gap-4">
         <!-- Links: traditioneel — leesbaar maar visueel teruggedrongen -->
-        <div class="rounded-xl overflow-hidden" style="background:#f0f2f0; border:1px solid #C8CFC4;">
-          <div class="px-7 pt-6 pb-4" style="border-bottom:1px solid #C8CFC4;">
-            <p class="text-xs uppercase tracking-widest mb-1" style="font-weight:500; color:#8FA898;">Traditionele audits & assessments</p>
+        <div class="rounded-aw overflow-hidden border border-aw-line" style="background:#f0f2f0;">
+          <div class="px-7 pt-6 pb-4 border-b border-aw-line">
+            <p class="text-xs uppercase tracking-[0.12em] mb-1" style="font-weight:500; color:#8FA898;">Traditionele audits & assessments</p>
             <p class="text-lg" style="font-weight:500; color:#5A7A65;">Is het aanwezig?</p>
           </div>
           <div class="px-7 py-5 flex flex-col gap-3">
@@ -199,9 +194,9 @@ import '../../styles/global.css';
           </div>
         </div>
         <!-- Rechts: Compass — scherp -->
-        <div class="bg-forest-700 rounded-xl overflow-hidden">
+        <div class="bg-forest-700 rounded-aw overflow-hidden">
           <div class="px-7 pt-6 pb-4" style="border-bottom:1px solid rgba(200,238,216,0.15);">
-            <p class="text-xs uppercase tracking-widest text-forest-200 mb-1" style="font-weight:500;">Compass</p>
+            <p class="text-xs uppercase tracking-[0.12em] text-forest-200 mb-1" style="font-weight:500;">Compass</p>
             <p class="text-lg text-white" style="font-weight:500;">Werkt het?</p>
           </div>
           <div class="px-7 py-5 flex flex-col gap-3">
@@ -228,7 +223,7 @@ import '../../styles/global.css';
   <!-- ⑥ DRIE PERSPECTIEVEN -->
   <section id="drie-perspectieven" class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Drie perspectieven</p>
+      <p class="text-forest-600 text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Drie perspectieven</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-3" style="font-weight:500;">
         De diagnose. En wat u ermee doet.
       </h2>
@@ -236,19 +231,19 @@ import '../../styles/global.css';
         Koers en Controle zijn de twee diagnostische perspectieven. Groei is wat eruit volgt — de vertaling naar organisatieontwikkeling.
       </p>
 
-      <p class="text-xs uppercase tracking-widest mb-3" style="font-weight:500; color:#5A7A65;">De diagnose</p>
+      <p class="text-xs uppercase tracking-[0.12em] mb-3" style="font-weight:500; color:#5A7A65;">De diagnose</p>
       <div class="grid md:grid-cols-2 gap-4 mb-6">
 
         <!-- KOERS -->
-        <div class="rounded-xl overflow-hidden">
+        <div class="rounded-aw overflow-hidden">
           <div class="bg-forest-900 px-6 pt-7 pb-5">
-            <p class="text-xs uppercase tracking-widest text-forest-200 mb-3" style="font-weight:500;">01 — Koers</p>
+            <p class="text-xs uppercase tracking-[0.12em] text-forest-200 mb-3" style="font-weight:500;">01 — Koers</p>
             <p class="text-base text-white" style="font-weight:500;">"Hebben wij grip?"</p>
           </div>
           <div class="bg-forest-700 px-6 py-2.5">
             <p class="text-xs uppercase tracking-wide text-forest-200" style="font-weight:500;">Confronterend · bestuurlijk</p>
           </div>
-          <div class="bg-white border border-stone-300 border-t-0 px-6 py-5">
+          <div class="bg-white border border-aw-line border-t-0 px-6 py-5">
             <p class="text-sm text-forest-400 leading-relaxed mb-5" style="font-weight:400;">
               Het bestuurlijke perspectief. Beoordeelt of directie en management voldoende grip hebben op risico's, prestaties, investeringen en toekomstbestendigheid. Geen advies — wel een spiegel.
             </p>
@@ -264,15 +259,15 @@ import '../../styles/global.css';
         </div>
 
         <!-- CONTROLE -->
-        <div class="rounded-xl overflow-hidden">
+        <div class="rounded-aw overflow-hidden">
           <div class="px-6 pt-7 pb-5" style="background:#6B3A1F;">
-            <p class="text-xs uppercase tracking-widest mb-3" style="font-weight:500; color:#FDF3EC;">02 — Controle</p>
+            <p class="text-xs uppercase tracking-[0.12em] mb-3" style="font-weight:500; color:#FDF3EC;">02 — Controle</p>
             <p class="text-base" style="font-weight:500; color:#fff;">"Waarom hebben wij geen grip?"</p>
           </div>
           <div class="px-6 py-2.5" style="background:#8B5E3C;">
             <p class="text-xs uppercase tracking-wide" style="font-weight:500; color:#FDF3EC;">Diagnostisch · organisatorisch</p>
           </div>
-          <div class="bg-white border border-stone-300 border-t-0 px-6 py-5">
+          <div class="bg-white border border-aw-line border-t-0 px-6 py-5">
             <p class="text-sm text-forest-400 leading-relaxed mb-5" style="font-weight:400;">
               Het organisatorische perspectief. Onderzoekt of mensen, processen, informatie en middelen op elkaar aansluiten — of juist tegenwerken. Niet door procedures te tellen, maar door te beoordelen of het systeem functioneert.
             </p>
@@ -289,10 +284,10 @@ import '../../styles/global.css';
       </div>
 
       <!-- GROEI — uitkomstlaag -->
-      <p class="text-xs uppercase tracking-widest mb-3" style="font-weight:500; color:#5A7A65;">Het resultaat</p>
-      <div class="rounded-xl overflow-hidden border-2 border-forest-600">
+      <p class="text-xs uppercase tracking-[0.12em] mb-3" style="font-weight:500; color:#5A7A65;">Het resultaat</p>
+      <div class="rounded-aw overflow-hidden border border-aw-line">
         <div class="bg-forest-600 px-7 py-5">
-          <p class="text-xs uppercase tracking-widest text-forest-200 mb-2" style="font-weight:500;">03 — Groei</p>
+          <p class="text-xs uppercase tracking-[0.12em] text-forest-200 mb-2" style="font-weight:500;">03 — Groei</p>
           <p class="text-base text-white mb-1" style="font-weight:500;">"Wat moeten wij veranderen?"</p>
           <p class="text-xs uppercase tracking-wide text-forest-200" style="font-weight:500;">Constructief · toekomstgericht · halve dag – 1 dag</p>
         </div>
@@ -309,7 +304,7 @@ import '../../styles/global.css';
               { van: "Van kostenbeheer",      naar: "Naar waardesturing" },
               { van: "Van risicobewust",      naar: "Naar risicogestuurd" },
             ].map((item) => (
-              <div class="bg-white border border-stone-300 rounded-lg px-4 py-3">
+              <div class="bg-white border border-aw-line rounded-aw px-4 py-3">
                 <p class="text-xs text-forest-700 mb-1" style="font-weight:500;">{item.van} →</p>
                 <p class="text-xs text-forest-400" style="font-weight:400;">{item.naar}</p>
               </div>
@@ -324,7 +319,7 @@ import '../../styles/global.css';
   <!-- ⑦ WAT COMPASS ZICHTBAAR MAAKT -->
   <section class="bg-forest-50 py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat Compass zichtbaar maakt</p>
+      <p class="text-forest-600 text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat Compass zichtbaar maakt</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-3 max-w-lg" style="font-weight:500;">
         Niet een rapport over processen.<br />
         Een diagnose die het bestuur kan lezen.
@@ -336,9 +331,9 @@ import '../../styles/global.css';
       <div class="grid md:grid-cols-2 gap-4 mb-4">
 
         <!-- Koers profiel -->
-        <div class="bg-white border border-stone-300 rounded-xl overflow-hidden">
-          <div class="bg-forest-50 border-b border-stone-300 px-5 py-3">
-            <p class="text-xs uppercase tracking-widest mb-0.5" style="font-weight:500; color:#5A7A65;">Koers — bestuurlijk profiel</p>
+        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
+          <div class="bg-forest-50 border-b border-aw-line px-5 py-3">
+            <p class="text-xs uppercase tracking-[0.12em] mb-0.5" style="font-weight:500; color:#5A7A65;">Koers — bestuurlijk profiel</p>
             <p class="text-sm text-forest-900" style="font-weight:500;">Compass Profiel</p>
           </div>
           <div class="px-5 py-4 divide-y divide-stone-100">
@@ -367,9 +362,9 @@ import '../../styles/global.css';
         </div>
 
         <!-- Radar -->
-        <div class="bg-white border border-stone-300 rounded-xl overflow-hidden">
-          <div class="bg-forest-50 border-b border-stone-300 px-5 py-3">
-            <p class="text-xs uppercase tracking-widest mb-0.5" style="font-weight:500; color:#5A7A65;">Controle — ontwikkeldomeinen</p>
+        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
+          <div class="bg-forest-50 border-b border-aw-line px-5 py-3">
+            <p class="text-xs uppercase tracking-[0.12em] mb-0.5" style="font-weight:500; color:#5A7A65;">Controle — ontwikkeldomeinen</p>
             <p class="text-sm text-forest-900" style="font-weight:500;">Organisatie radar</p>
           </div>
           <div class="px-5 py-4 flex gap-5 items-start">
@@ -418,19 +413,19 @@ import '../../styles/global.css';
       </div>
 
       <!-- Diagnosekaart -->
-      <div class="bg-white border border-stone-300 rounded-xl overflow-hidden">
-        <div class="bg-forest-50 border-b border-stone-300 px-6 py-4">
-          <p class="text-xs uppercase tracking-widest mb-0.5" style="font-weight:500; color:#5A7A65;">Controle — diagnosekaart · werken & leren</p>
+      <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
+        <div class="bg-forest-50 border-b border-aw-line px-6 py-4">
+          <p class="text-xs uppercase tracking-[0.12em] mb-0.5" style="font-weight:500; color:#5A7A65;">Controle — diagnosekaart · werken & leren</p>
           <p class="text-sm text-forest-900" style="font-weight:500;">Waar breekt de verbetercyclus?</p>
         </div>
         <div class="px-6 py-5 overflow-x-auto">
           <table class="w-full border-collapse">
             <thead>
               <tr>
-                <th class="text-left py-3 pr-6 border-b border-stone-200 text-left"
+                <th class="text-left py-3 pr-6 border-b border-aw-line text-left"
                     style="font-size:11px; font-weight:500; color:#5A7A65;">Organisatievermogen</th>
                 {["Plannen","Uitvoeren","Controleren","Bijsturen"].map(h => (
-                  <th class="text-center py-3 px-4 border-b border-stone-200"
+                  <th class="text-center py-3 px-4 border-b border-aw-line"
                       style="font-size:11px; font-weight:500; color:#5A7A65;">{h}</th>
                 ))}
               </tr>
@@ -468,14 +463,14 @@ import '../../styles/global.css';
 
 
   <!-- ⑧ WAT HET OPLEVERT -->
-  <section class="bg-forest-700 text-white py-20 px-6">
+  <section class="bg-white py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-forest-200 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat Compass oplevert</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-white mb-10 max-w-lg" style="font-weight:500;">
+      <p class="text-forest-600 text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat Compass oplevert</p>
+      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10 max-w-lg" style="font-weight:500;">
         Geen rapport over processen.<br />
         Een diagnose die het gesprek mogelijk maakt.
       </h2>
-      <div class="divide-y divide-white/10 max-w-2xl">
+      <div class="divide-y divide-aw-line max-w-2xl">
         {[
           "Waar bestuurlijke grip ontbreekt — en in welke mate dit een risico vormt voor de waarderealisatie.",
           "Welke patronen dit veroorzaken — niet de symptomen, maar de onderliggende organisatorische condities.",
@@ -484,8 +479,8 @@ import '../../styles/global.css';
           "Wat dit vraagt van het bestuur — welke besluiten, welke investeringen, welke veranderingen.",
         ].map((punt, i) => (
           <div class="flex items-start gap-5 py-5">
-            <span class="text-forest-200 text-xs flex-shrink-0 mt-0.5" style="font-weight:500;">{i + 1}</span>
-            <p class="text-forest-200/75 text-sm leading-relaxed" style="font-weight:400;">{punt}</p>
+            <span class="text-forest-600 text-xs flex-shrink-0 mt-0.5" style="font-weight:500;">{i + 1}</span>
+            <p class="text-forest-400 text-sm leading-relaxed" style="font-weight:400;">{punt}</p>
           </div>
         ))}
       </div>
@@ -495,7 +490,7 @@ import '../../styles/global.css';
   <!-- ⑨ WAT NA COMPASS -->
   <section class="bg-forest-50 py-16 px-6">
     <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Na de diagnose</p>
+      <p class="text-forest-600 text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Na de diagnose</p>
       <h2 class="text-2xl leading-snug mb-3 max-w-xl" style="font-weight:500; color:#1A2E22;">
         Compass geeft richting. Niet één vaste vervolgstap.
       </h2>
@@ -526,7 +521,7 @@ import '../../styles/global.css';
             accent: "#1A4A35",
           },
         ].map((item) => (
-          <div class="bg-white border border-stone-200 rounded-xl p-5 flex flex-col gap-2">
+          <div class="bg-white border border-aw-line rounded-aw p-5 flex flex-col gap-2">
             <p style={`font-size:12px; font-weight:500; color:${item.accent};`}>{item.label}</p>
             <p style="font-size:12px; font-weight:400; color:#5A7A65; line-height:1.55;">{item.sub}</p>
             {item.link && (
@@ -544,29 +539,25 @@ import '../../styles/global.css';
     </div>
   </section>
 
-  <!-- ⑩ CTA -->
-  <section class="bg-white py-20 px-6">
+  <!-- ⑩ CTA — accentband in de donkere productkleur -->
+  <section class="bg-forest-900 text-white py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-4 max-w-lg mx-auto"
+      <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
         Klaar om het gesprek te voeren dat anders niet gevoerd wordt?
       </h2>
-      <p class="text-forest-400 text-base leading-relaxed mb-10 max-w-md mx-auto"
+      <p class="text-white/72 text-base leading-relaxed mb-10 max-w-md mx-auto"
          style="font-weight:400;">
         Compass maakt zichtbaar wat er werkelijk speelt — en geeft de taal om het bespreekbaar te maken zonder defensie te wekken.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact"
-           class="inline-flex px-10 py-4 bg-forest-700 hover:bg-forest-600
-                  text-white rounded-lg transition-colors text-base"
-           style="font-weight:500;">
+           class="aw-btn-primary inline-flex px-10 py-4 text-base">
           Start het gesprek
         </a>
         <a href="https://compass.assetwize.nl" target="_blank" rel="noopener"
-           class="inline-flex px-10 py-4 border border-forest-700/30
-                  hover:border-forest-700/60 text-forest-700 hover:text-forest-900
-                  rounded-lg transition-colors text-base"
-           style="font-weight:500;">
+           class="aw-btn-secondary-dark inline-flex px-10 py-4 text-base"
+           style="border-color:#C8EED8; color:#C8EED8;">
           Bekijk Compass live →
         </a>
       </div>
