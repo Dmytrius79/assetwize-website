@@ -139,4 +139,4 @@ Uitgevoerd op 2026-10-29 door Claude Code op branch `rebrand/layout`.
 4. De hero-lockups zijn nog getypt. Het voorstel uit TASK-008 blijft: een eigen taak om ze te vervangen door de bestanden uit Drive (Productlogo's v1.0).
 5. Het mobiele menu.
 
-Preview: zie hieronder.
+Preview (Cloudflare-check groen voor 1b21ae9): https://rebrand-layout.assetwize-website.pages.dev (commit-preview https://8994b825.assetwize-website.pages.dev)
