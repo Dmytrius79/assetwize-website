@@ -43,7 +43,7 @@ Voordat je begint met een website-sessie, lees in deze volgorde:
 |---|---|
 | ARCHITECTURE.md | Website technische architectuur |
 | ASSETWIZE_KB_START.md | Kennisbank-specifiek |
-| CLAUDE.md | Website Claude-instructies |
+| CLAUDE.md (repo-root) | Website Claude-instructies — verplaatst van `docs/` naar de root; oude versie in `docs/archief/` |
 | OPERATIONEEL_PROTOCOL.md | Website deployment en operaties |
 | TODO.md | Website-specifieke taken |
 | design/CONSULTANCY_WORKFLOW.md | Website-specifieke workflow |
