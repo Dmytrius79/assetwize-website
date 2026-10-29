@@ -107,7 +107,7 @@ font-bold / font-weight:700 in src/                                             
 ### Controle
 - `npm run build` slaagt zonder fouten.
 - Dev-server: alle 7 pagina's geven 200 en elke afbeelding, favicon en `og:image` geeft 200.
-  `/favicon.ico` geeft 200. Alle 7 pagina's zijn met headless Chrome als screenshot bekeken.
+  `/favicon.ico` geeft 200. Alle 7 pagina's zijn met headless Chrome als screenshot bekeken (screenshots staan niet in git).
 - **Tekstcontrole:** de zichtbare tekst en alt-teksten van alle 7 pagina's zijn vergeleken met de build
   van vóór deze taak. Het enige verschil is de footer: de getypte kernbegrippen zijn weg en de alt-tekst
   van het logo is aangepast. Verder is er geen tekst gewijzigd.

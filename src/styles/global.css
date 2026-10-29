@@ -129,3 +129,21 @@
   letter-spacing: 0.12em;
   color: rgba(255, 255, 255, 0.72);
 }
+
+/* Zichtbare focus voor toetsenbordgebruik (TASK-010) */
+.aw-focus:focus-visible {
+  outline: 2px solid var(--aw-turquoise);
+  outline-offset: 2px;
+}
+
+/* Statuskleuren (RAG, Brand Guidelines v2.0 §11.3) — alleen in tabellen en datavlakken.
+   Oranje haalt op wit geen 4,5 : 1; daarom tekst in een donkerdere tint van dezelfde kleur.
+   Chips: lichte vlaktint (12 %) met donkere tekst in dezelfde tint. */
+.status--groen  { --status: #2F7D4F; --status-tekst: color-mix(in srgb, #2F7D4F 80%, black); }
+.status--oranje { --status: #C77B12; --status-tekst: color-mix(in srgb, #C77B12 70%, black); }
+.status--rood   { --status: #B3261E; --status-tekst: #B3261E; }
+.status-tekst { color: var(--status-tekst); }
+.status-chip {
+  color: var(--status-tekst);
+  background: color-mix(in srgb, var(--status) 12%, white);
+}

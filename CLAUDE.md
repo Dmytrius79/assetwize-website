@@ -46,10 +46,11 @@ Kleuren, tagline en teksten staan daar, niet hier. Lees de richtlijn zelf.
 - Productnamen altijd met "by AssetWize": Compass by AssetWize, Atlas by AssetWize, Relicore by AssetWize.
 - Teksten op de site niet wijzigen zonder opdracht in een taakbestand.
 
-**Kleurgebruik: kader, datavlak, identiteit** (besluit Dimitry 29-10, TASK-009):
+**Kleurgebruik: kader, datavlak, identiteit** (besluit Dimitry 29-10, TASK-009/010):
 
-- Kader = AssetWize: achtergronden, lopende tekst, knoppen, accentband en footer alleen uit het v2.0-palet. Nooit getint in productkleur. Eén accentband per pagina, diep navy.
-- Datavlak = product: tabellen, matrices, schema's, diagrammen en app-schermen gebruiken `.datavlak` met `--compass`, `--atlas` of `--relicore` (kopband in productkleur, wit eronder, rand Lijn, radius 8 px).
-- Identiteit: productkleur verder alleen klein (eyebrow, pictogram, productlogo, dunne lijn of ankerzin-balk `.aw-anker`).
+- Kader = AssetWize-palet, productkleur alleen als identiteit en in datavlakken. Achtergronden, lopende tekst, knoppen, accentband en footer nooit getint in productkleur.
+- Datavlak (tabellen, matrices, schema's, diagrammen, app-schermen): `.datavlak` met `--compass`, `--atlas` of `--relicore`. Kopband in de donkere productkleur met witte tekst, witte body, 1 px Lijn, radius 8 px, geen schaduw.
+- Identiteit: productkleur verder alleen klein (eyebrow op wit, pictogram, productlogo, dunne lijn, ankerzin-balk `.aw-anker`).
+- Statuskleuren (RAG, §11.3) alleen in tabellen en datavlakken: groen `#2F7D4F`, oranje `#C77B12`, rood `#B3261E`. Gebruik `.status--groen/oranje/rood` met `.status-tekst` of `.status-chip`; die regelen het contrast.
 - Layout: alle inhoud in `.aw-container`, lopende tekst in `.aw-prose`, tekst naast kaarten of lijsten in `.aw-split`.
-- Uitzondering: scorekleuren (rood, oranje, groen) in de Compass-tabellen blijven, binnen het datavlak. Wacht op bevestiging Dimitry.
+- Werkregels en openstaande besluiten: Notion, productpagina AssetWize website, sectie "Ontwerpregels website".

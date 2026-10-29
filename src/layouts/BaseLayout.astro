@@ -98,18 +98,66 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
           <li>
             <a href={item.href}
                aria-current={isActive(item.href) ? 'page' : undefined}
-               class={`transition-colors ${isActive(item.href) ? 'text-aw-turquoise' : 'text-aw-ink hover:text-aw-turquoise'}`}>
+               class={`aw-focus rounded-sm transition-colors ${isActive(item.href) ? 'text-aw-turquoise' : 'text-aw-ink hover:text-aw-turquoise'}`}>
               {item.label}
             </a>
           </li>
         ))}
       </ul>
       <!-- Knop primair — §10.2: turquoise, witte tekst, hoek 8 px, hover merk-navy -->
-      <a href="/contact" class="px-4 py-2 bg-aw-turquoise text-white text-sm font-medium rounded-aw hover:bg-aw-navy transition-colors">
+      <a href="/contact" class="hidden md:inline-flex px-4 py-2 bg-aw-turquoise text-white text-sm font-medium rounded-aw hover:bg-aw-navy transition-colors">
         Start het gesprek
       </a>
+      <!-- Menuknop onder 768 px (TASK-010) -->
+      <button type="button" id="menu-knop" class="md:hidden aw-focus -mr-2 p-2 text-aw-navy rounded-aw"
+              aria-label="Menu" aria-expanded="false" aria-controls="mobiel-menu">
+        <svg data-icoon="open" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+        <svg data-icoon="dicht" class="hidden" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
     </nav>
+    <!-- Mobiel paneel: wit, 1 px Lijn, dezelfde links als de desktopnavigatie -->
+    <div id="mobiel-menu" class="md:hidden bg-white border-t border-aw-line" hidden>
+      <ul class="aw-container py-4 flex flex-col text-base font-medium">
+        {navItems.map(item => (
+          <li>
+            <a href={item.href}
+               aria-current={isActive(item.href) ? 'page' : undefined}
+               class={`aw-focus block py-3 rounded-aw ${isActive(item.href) ? 'text-aw-turquoise' : 'text-aw-ink'}`}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li class="pt-3 pb-2">
+          <a href="/contact" class="aw-btn-primary aw-focus inline-flex px-4 py-2.5 text-sm">
+            Start het gesprek
+          </a>
+        </li>
+      </ul>
+    </div>
   </header>
+  <script is:inline>
+    (() => {
+      const knop = document.getElementById('menu-knop');
+      const paneel = document.getElementById('mobiel-menu');
+      if (!knop || !paneel) return;
+      const zet = (open) => {
+        paneel.hidden = !open;
+        knop.setAttribute('aria-expanded', String(open));
+        knop.querySelector('[data-icoon="open"]').classList.toggle('hidden', open);
+        knop.querySelector('[data-icoon="dicht"]').classList.toggle('hidden', !open);
+      };
+      knop.addEventListener('click', () => zet(paneel.hidden));
+      paneel.addEventListener('click', (e) => { if (e.target.closest('a')) zet(false); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !paneel.hidden) { zet(false); knop.focus(); }
+      });
+      matchMedia('(min-width: 768px)').addEventListener('change', (e) => { if (e.matches) zet(false); });
+    })();
+  </script>
 
   <main>
     <slot />

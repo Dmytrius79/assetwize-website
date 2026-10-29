@@ -65,9 +65,9 @@ import '../styles/global.css';
   </section>
 
   <!-- WAAR STAAT UW ORGANISATIE VANDAAG -->
-  <section class="bg-white py-20">
+  <section class="bg-aw-mist py-20">
     <div class="aw-container">
-      <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-10"
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-10"
          style="font-weight:600;">Waar staat uw organisatie vandaag?</p>
       <div class="grid md:grid-cols-2 gap-4">
         {[
@@ -101,7 +101,7 @@ import '../styles/global.css';
           },
         ].map((item) => (
           <a href={item.href}
-             class="group flex flex-col justify-between rounded-aw p-7 border border-aw-line hover:border-aw-turquoise transition-colors"
+             class="group flex flex-col justify-between rounded-aw p-7 border border-aw-line hover:border-aw-turquoise transition-colors aw-focus"
              style={`background:${item.bg};`}>
             <p class="text-aw-navy text-base leading-snug mb-8"
                style="font-weight:400;">

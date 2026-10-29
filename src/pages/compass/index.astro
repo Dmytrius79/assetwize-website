@@ -2,6 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CompassLogo from '../../components/CompassLogo.astro';
 import '../../styles/global.css';
+
+// Scorecodes → statuskleur (§11.3)
+const status: Record<string, string> = { red: 'rood', amber: 'oranje', green: 'groen', r: 'rood', a: 'oranje', g: 'groen' };
 ---
 <BaseLayout
   title="Compass — diagnose van asset governance"
@@ -37,7 +40,7 @@ import '../../styles/global.css';
   </section>
 
   <!-- ② ISO-ANKERZIN -->
-  <section class="bg-white py-9">
+  <section class="bg-aw-wolk py-9">
     <div class="aw-container">
       <p class="aw-anker text-aw-navy text-base leading-relaxed max-w-2xl" style="--anker:var(--color-compass); font-weight:500;">
         Assetmanagement heeft één doel: waarde realiseren uit assets tegen een aanvaardbaar niveau van risico en kosten.
@@ -71,7 +74,7 @@ import '../../styles/global.css';
   <section class="bg-aw-wolk py-20">
     <div class="aw-container aw-split">
       <div>
-      <p class="text-compass text-xs uppercase tracking-[0.12em] mb-4"
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:500;">Het probleem</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3 max-w-lg"
           style="font-weight:500;">
@@ -126,7 +129,7 @@ import '../../styles/global.css';
             "Een gedeelde taal tussen bestuur en techniek",
           ].map((item) => (
             <div class="flex items-center gap-3">
-              <span style="color:#b91c1c; font-size:14px;">✕</span>
+              <span class="status--rood status-tekst" style="font-size:14px;">✕</span>
               <span class="text-sm" style="font-weight:400; color:var(--aw-ink);">{item}</span>
             </div>
           ))}
@@ -156,7 +159,7 @@ import '../../styles/global.css';
           { vet: "Meer audits",       rest: " lossen geen governanceprobleem op." },
         ].map((item) => (
           <li class="flex items-start gap-4 py-4">
-            <span class="text-red-700 text-sm flex-shrink-0 mt-0.5" style="font-weight:500;">✕</span>
+            <span class="status--rood status-tekst text-sm flex-shrink-0 mt-0.5" style="font-weight:500;">✕</span>
             <span class="text-aw-ink text-sm leading-relaxed" style="font-weight:400;">
               <span style="font-weight:500;">{item.vet}</span>{item.rest}
             </span>
@@ -173,7 +176,7 @@ import '../../styles/global.css';
   <!-- ⑤ AANWEZIG vs WERKEND -->
   <section class="bg-aw-wolk py-20">
     <div class="aw-container">
-      <p class="text-compass text-xs uppercase tracking-[0.12em] mb-4"
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:500;">Het fundamentele onderscheid</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-10 max-w-lg"
           style="font-weight:500;">
@@ -319,9 +322,9 @@ import '../../styles/global.css';
 
 
   <!-- ⑦ WAT COMPASS ZICHTBAAR MAAKT -->
-  <section class="bg-aw-wolk py-20">
+  <section class="bg-aw-mist py-20">
     <div class="aw-container">
-      <p class="text-compass text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat Compass zichtbaar maakt</p>
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat Compass zichtbaar maakt</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3 max-w-lg" style="font-weight:500;">
         Niet een rapport over processen.<br />
         Een diagnose die het bestuur kan lezen.
@@ -349,12 +352,10 @@ import '../../styles/global.css';
               <div class="flex justify-between items-center py-2.5 gap-4">
                 <span class="text-xs text-aw-ink leading-snug" style="font-weight:400;">{rij.label}</span>
                 <div class="flex items-center gap-2 flex-shrink-0">
-                  <span style={`font-size:12px; font-weight:500; color:${rij.kleur==='red'?'#b91c1c':rij.kleur==='amber'?'#92400e':'#1A4A35'}`}>
+                  <span class={`status--${status[rij.kleur]} status-tekst`} style="font-size:12px; font-weight:500;">
                     {rij.score}
                   </span>
-                  <span style={`font-size:12px; font-weight:500; padding:2px 8px; border-radius:100px;
-                    background:${rij.kleur==='red'?'#fef2f2':rij.kleur==='amber'?'#FDF3EC':'#EDF4F0'};
-                    color:${rij.kleur==='red'?'#b91c1c':rij.kleur==='amber'?'#92400e':'#1A4A35'}`}>
+                  <span class={`status--${status[rij.kleur]} status-chip`} style="font-size:12px; font-weight:500; padding:2px 8px; border-radius:100px;">
                     {rij.niveau}
                   </span>
                 </div>
@@ -373,15 +374,15 @@ import '../../styles/global.css';
             <svg viewBox="-65 0 350 220" width="270" height="170" class="flex-shrink-0 max-w-full h-auto">
               <g transform="translate(110,110)">
                 <!-- Grid ringen -->
-                <polygon points="0,-85 74,-26 46,69 -46,69 -74,-26" fill="none" stroke="#E0EBE4" stroke-width="1"/>
-                <polygon points="0,-60 52,-18 32,49 -32,49 -52,-18" fill="none" stroke="#E0EBE4" stroke-width="1"/>
-                <polygon points="0,-34 29,-10 18,28 -18,28 -29,-10" fill="none" stroke="#E0EBE4" stroke-width="1"/>
+                <polygon points="0,-85 74,-26 46,69 -46,69 -74,-26" fill="none" stroke="#C9CED6" stroke-opacity="0.6" stroke-width="1"/>
+                <polygon points="0,-60 52,-18 32,49 -32,49 -52,-18" fill="none" stroke="#C9CED6" stroke-opacity="0.6" stroke-width="1"/>
+                <polygon points="0,-34 29,-10 18,28 -18,28 -29,-10" fill="none" stroke="#C9CED6" stroke-opacity="0.6" stroke-width="1"/>
                 <!-- Assen -->
-                <line x1="0" y1="0" x2="0"   y2="-85" stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="74"  y2="-26" stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="46"  y2="69"  stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="-46" y2="69"  stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="-74" y2="-26" stroke="#E0EBE4" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="0"   y2="-85" stroke="#C9CED6" stroke-opacity="0.6" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="74"  y2="-26" stroke="#C9CED6" stroke-opacity="0.6" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="46"  y2="69"  stroke="#C9CED6" stroke-opacity="0.6" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="-46" y2="69"  stroke="#C9CED6" stroke-opacity="0.6" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="-74" y2="-26" stroke="#C9CED6" stroke-opacity="0.6" stroke-width="0.5"/>
                 <!-- Data polygon — scores: Governance 2.5/5, Organisatie 1.7/5, Risico 1.3/5, Ketenregie 2.4/5, Informatie 1.5/5 -->
                 <polygon points="0,-43 42,-15 16,34 -37,40 -31,-12"
                          fill="rgba(26,74,53,0.12)" stroke="#1A4A35" stroke-width="2"/>
@@ -404,7 +405,7 @@ import '../../styles/global.css';
               ].map((r) => (
                 <div class="flex justify-between">
                   <span class="text-xs text-aw-slate" style="font-weight:400;">{r.label}</span>
-                  <span style={`font-size:12px; font-weight:500; color:${r.kleur==='red'?'#b91c1c':r.kleur==='amber'?'#92400e':'#1A4A35'}`}>
+                  <span class={`status--${status[r.kleur]} status-tekst`} style="font-size:12px; font-weight:500;">
                     {r.score}
                   </span>
                 </div>
@@ -443,10 +444,8 @@ import '../../styles/global.css';
                   <td class="py-4 pr-6" style="font-size:14px; font-weight:400; color:var(--aw-ink);">{rij.naam}</td>
                   {rij.s.map((k) => (
                     <td class="text-center px-4 py-4">
-                      <span style={`display:inline-flex; align-items:center; justify-content:center;
-                        width:34px; height:34px; border-radius:6px; font-size:12px; font-weight:500;
-                        background:${k==='g'?'#EDF4F0':k==='a'?'#FDF3EC':'#fff1f1'};
-                        color:${k==='g'?'#1A4A35':k==='a'?'#8B5E3C':'#b91c1c'}`}>
+                      <span class={`status--${status[k]} status-chip`}
+                        style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:6px; font-size:12px; font-weight:500;">
                         {k==='g'?'3.0':k==='a'?'2.0':'1.0'}
                       </span>
                     </td>
@@ -494,7 +493,7 @@ import '../../styles/global.css';
   <!-- ⑨ WAT NA COMPASS -->
   <section class="bg-aw-wolk py-16">
     <div class="aw-container">
-      <p class="text-compass text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Na de diagnose</p>
+      <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Na de diagnose</p>
       <h2 class="text-2xl leading-snug text-aw-navy mb-3 max-w-xl" style="font-weight:500;">
         Compass geeft richting. Niet één vaste vervolgstap.
       </h2>

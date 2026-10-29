@@ -19,6 +19,7 @@ Dit document legt vast hoe dat werkt.
 7. **Merge naar `main` doet alleen Dimitry**, na controle van preview en pull request.
 8. **Brandregels staan in de repo:** in `CLAUDE.md` in de repo-root (met verwijzing naar
    `BRAND_GUIDELINES.md` v2.0). **Kennis en besluiten staan in Notion.**
+9. **Screenshots lokaal bewaren, niet committen.**
 
 ---
 

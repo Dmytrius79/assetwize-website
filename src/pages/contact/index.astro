@@ -22,14 +22,14 @@ import '../../styles/global.css';
   </section>
 
   <!-- CONTACT INHOUD -->
-  <section class="bg-white py-20">
+  <section class="bg-aw-wolk py-20">
     <div class="aw-container">
       <div class="aw-split">
 
         <!-- Links: context -->
         <div>
           <!-- Wanneer contact opnemen -->
-          <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4"
+          <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
              style="font-weight:600;">Neem contact op als</p>
           <div class="flex flex-col gap-3 mb-10">
             {[
@@ -41,13 +41,13 @@ import '../../styles/global.css';
               "U niet weet waar u moet beginnen",
             ].map((item) => (
               <div class="flex items-start gap-3">
-                <span class="text-aw-turquoise mt-0.5 flex-shrink-0">✓</span>
+                <span class="text-aw-navy mt-0.5 flex-shrink-0">✓</span>
                 <span class="text-aw-ink text-sm" style="font-weight:400;">{item}</span>
               </div>
             ))}
           </div>
 
-          <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4"
+          <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
              style="font-weight:600;">Wat u kunt verwachten</p>
           <div class="flex flex-col divide-y divide-aw-line">
             {[
@@ -68,7 +68,7 @@ import '../../styles/global.css';
               },
             ].map((item) => (
               <div class="flex items-start gap-5 py-6">
-                <span class="text-aw-turquoise text-xs uppercase tracking-[0.12em] flex-shrink-0 mt-0.5"
+                <span class="text-aw-navy text-xs uppercase tracking-[0.12em] flex-shrink-0 mt-0.5"
                       style="font-weight:600;">{item.num}</span>
                 <div>
                   <p class="text-aw-navy text-sm mb-1" style="font-weight:500;">{item.h}</p>
@@ -85,8 +85,8 @@ import '../../styles/global.css';
             <div class="flex flex-col gap-3">
               {[
                 { stap: "Compass",  sub: "Diagnose — waar ontbreekt grip en waarom?",          kleur: "var(--color-compass)", href: "/compass" },
-                { stap: "Atlas",    sub: "Governance ontwerp — hoe zou het systeem moeten werken?", kleur: "#7A4F1E", href: "/atlas" },
-                { stap: "Relicore", sub: "Informatie & structuur — hoe wordt governance geborgd?",  kleur: "var(--aw-turquoise)", href: "/relicore" },
+                { stap: "Atlas",    sub: "Governance ontwerp — hoe zou het systeem moeten werken?", kleur: "var(--color-atlas)", href: "/atlas" },
+                { stap: "Relicore", sub: "Informatie & structuur — hoe wordt governance geborgd?",  kleur: "var(--color-relicore)", href: "/relicore" },
               ].map((item) => (
                 <a href={item.href}
                    class="flex items-start gap-3 py-2.5 hover:opacity-80 transition-opacity">
@@ -104,7 +104,7 @@ import '../../styles/global.css';
 
           <!-- E-mail -->
           <a href="mailto:info@assetwize.nl"
-             class="group border border-aw-line rounded-aw p-7 hover:border-aw-turquoise
+             class="group bg-white border border-aw-line rounded-aw p-7 hover:border-aw-turquoise
                     transition-colors flex items-start gap-5">
             <div class="w-10 h-10 rounded-aw bg-aw-mist flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
@@ -124,7 +124,7 @@ import '../../styles/global.css';
           <!-- LinkedIn -->
           <a href="https://nl.linkedin.com/in/dimitryvandort"
              target="_blank" rel="noopener noreferrer"
-             class="group border border-aw-line rounded-aw p-7 hover:border-aw-turquoise
+             class="group bg-white border border-aw-line rounded-aw p-7 hover:border-aw-turquoise
                     transition-colors flex items-start gap-5">
             <div class="w-10 h-10 rounded-aw bg-aw-mist flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="var(--aw-turquoise)" aria-hidden="true">
@@ -145,7 +145,7 @@ import '../../styles/global.css';
           </a>
 
           <!-- Compass starten -->
-          <div class="bg-aw-wolk border border-aw-line rounded-aw p-7">
+          <div class="bg-white border border-aw-line rounded-aw p-7">
             <p class="text-xs uppercase tracking-[0.12em] mb-3"
                style="font-weight:600; color:var(--color-compass);">Direct starten met Compass?</p>
             <p class="text-aw-ink text-sm leading-relaxed mb-5" style="font-weight:400;">
@@ -163,7 +163,7 @@ import '../../styles/global.css';
           </div>
 
           <!-- Dimitry -->
-          <div class="border border-aw-line rounded-aw p-7">
+          <div class="bg-white border border-aw-line rounded-aw p-7">
             <p class="text-aw-slate text-xs uppercase tracking-[0.12em] mb-4"
                style="font-weight:500;">Direct contact</p>
             <p class="text-aw-navy text-sm mb-1" style="font-weight:500;">Dimitry van Dort</p>

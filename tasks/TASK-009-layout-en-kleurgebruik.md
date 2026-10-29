@@ -98,7 +98,7 @@ Uitgevoerd op 2026-10-29 door Claude Code op branch `rebrand/layout`.
    - Relicore in merk-navy
 
    Ik heb alleen maat, kleur en transparantie van de bestaande regel aangepast. Er is niets nagebouwd en het woordmerk is ongewijzigd. Let op: de lockups zelf zijn nog steeds getypte tekst en SVG, geen logobestanden (open punt uit TASK-008).
-9. **Screenshots.** 21 full-page screenshots (7 pagina's × 1440/768/375) via Playwright, in `tasks/screenshots/TASK-009/`. Afwijkingen hieronder.
+9. **Screenshots.** 21 full-page screenshots (7 pagina's × 1440/768/375) via Playwright, lokaal in `tasks/screenshots/TASK-009/` (staan niet in git, sinds TASK-010). Afwijkingen hieronder.
 10. **CLAUDE.md.** Een blok "Kleurgebruik: kader, datavlak, identiteit" van 5 regels, met de uitzondering voor de scorekleuren als "wacht op bevestiging Dimitry". Ik noem klassen, geen hexwaarden, zodat er geen kleuren uit de richtlijn in CLAUDE.md komen.
 
 ### Wat afwijkt op 768 en 375 px
