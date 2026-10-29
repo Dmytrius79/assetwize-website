@@ -17,8 +17,8 @@ Dit document legt vast hoe dat werkt.
 6. **Na afronding** vult Claude Code het onderdeel *Resultaat* in het taakbestand in,
    commit en pusht naar de branch.
 7. **Merge naar `main` doet alleen Dimitry**, na controle van preview en pull request.
-8. **Brandregels staan in de repo:** in `START_HERE.md` en straks in `CLAUDE.md` in de
-   repo-root (nog aan te maken). **Kennis en besluiten staan in Notion.**
+8. **Brandregels staan in de repo:** in `CLAUDE.md` in de repo-root (met verwijzing naar
+   `BRAND_GUIDELINES.md` v2.0). **Kennis en besluiten staan in Notion.**
 
 ---
 

@@ -1,7 +1,7 @@
 # OPERATIONEEL_PROTOCOL.md — AssetWize Platform
 
 > Hoe Claude Code én Claude.ai werken in dit project.
-> Lees dit samen met CLAUDE.md bij elke nieuwe sessie.
+> Lees dit samen met `CLAUDE.md` (repo-root) bij elke nieuwe sessie.
 
 ---
 
@@ -19,7 +19,7 @@ Dit is permanent ingesteld via `~/.claude/settings.json`.
 Geef daarna de taak:
 
 ```
-Lees /Users/drvandort/dev/assetwize-platform/docs/CLAUDE.md
+Lees /Users/drvandort/dev/assetwize-website/CLAUDE.md
 en voer daarna /Users/drvandort/dev/assetwize-platform/tasks/TASK-XXX.md uit
 ```
 
@@ -56,7 +56,7 @@ Alle taken staan in `/tasks/TASK-XXX.md`.
 Claude Code voert een taak volledig uit zonder tussenkomst.
 
 Volgorde binnen een taak:
-1. Lees CLAUDE.md
+1. Lees `CLAUDE.md` (repo-root)
 2. Lees taakbestand
 3. Voer uit
 4. Commit en push
@@ -76,7 +76,7 @@ code /Users/drvandort/dev/assetwize-platform
 claude
 
 # 4. Taak opgeven
-Lees /Users/drvandort/dev/assetwize-platform/docs/CLAUDE.md
+Lees /Users/drvandort/dev/assetwize-website/CLAUDE.md
 en voer daarna /Users/drvandort/dev/assetwize-platform/tasks/TASK-XXX.md uit
 ```
 
@@ -209,7 +209,7 @@ Claude.ai heeft via Desktop Commander directe toegang tot de projectmap op de Ma
 Claude.ai leest projectbestanden direct:
 ```
 /Users/drvandort/dev/assetwize-platform/docs/ARCHITECTURE.md
-/Users/drvandort/dev/assetwize-platform/docs/CLAUDE.md
+/Users/drvandort/dev/assetwize-website/CLAUDE.md
 /Users/drvandort/dev/assetwize-platform/docs/OPERATIONEEL_PROTOCOL.md
 /Users/drvandort/dev/assetwize-platform/tasks/TASK-XXX.md
 ```
@@ -376,7 +376,7 @@ Claude.ai heeft via Desktop Commander directe toegang tot de projectmap op de Ma
 Claude.ai leest projectbestanden direct:
 ```
 /Users/drvandort/dev/assetwize-platform/docs/ARCHITECTURE.md
-/Users/drvandort/dev/assetwize-platform/docs/CLAUDE.md
+/Users/drvandort/dev/assetwize-website/CLAUDE.md
 /Users/drvandort/dev/assetwize-platform/docs/OPERATIONEEL_PROTOCOL.md
 /Users/drvandort/dev/assetwize-platform/tasks/TASK-XXX.md
 ```
