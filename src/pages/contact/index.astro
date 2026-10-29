@@ -8,23 +8,23 @@ import '../../styles/global.css';
 >
 
   <!-- HERO -->
-  <section class="bg-white border-b border-aw-line pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white border-b border-aw-line pt-28 pb-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-5"
          style="font-weight:600;">Contact</p>
       <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-6 max-w-xl" style="font-weight:500;">
         Start het gesprek.
       </h1>
-      <p class="text-aw-slate text-lg leading-relaxed max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-lg leading-relaxed aw-prose" style="font-weight:400;">
         In een eerste gesprek kijken we naar uw specifieke situatie — zonder verplichtingen, zonder verkooppitch. Alleen de vraag of en hoe AssetWize relevant is.
       </p>
     </div>
   </section>
 
   <!-- CONTACT INHOUD -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-16 items-start">
+  <section class="bg-white py-20">
+    <div class="aw-container">
+      <div class="aw-split">
 
         <!-- Links: context -->
         <div>
@@ -84,7 +84,7 @@ import '../../styles/global.css';
                style="font-weight:500;">Typische eerste stap</p>
             <div class="flex flex-col gap-3">
               {[
-                { stap: "Compass",  sub: "Diagnose — waar ontbreekt grip en waarom?",          kleur: "#2D6A4F", href: "/compass" },
+                { stap: "Compass",  sub: "Diagnose — waar ontbreekt grip en waarom?",          kleur: "var(--color-compass)", href: "/compass" },
                 { stap: "Atlas",    sub: "Governance ontwerp — hoe zou het systeem moeten werken?", kleur: "#7A4F1E", href: "/atlas" },
                 { stap: "Relicore", sub: "Informatie & structuur — hoe wordt governance geborgd?",  kleur: "var(--aw-turquoise)", href: "/relicore" },
               ].map((item) => (
@@ -145,16 +145,15 @@ import '../../styles/global.css';
           </a>
 
           <!-- Compass starten -->
-          <div class="border border-aw-line rounded-aw p-7"
-               style="background:#F7F8F6;">
+          <div class="bg-aw-wolk border border-aw-line rounded-aw p-7">
             <p class="text-xs uppercase tracking-[0.12em] mb-3"
-               style="font-weight:600; color:#2D6A4F;">Direct starten met Compass?</p>
+               style="font-weight:600; color:var(--color-compass);">Direct starten met Compass?</p>
             <p class="text-aw-ink text-sm leading-relaxed mb-5" style="font-weight:400;">
               Als u al weet dat u een diagnose wil van de bestuurbaarheid van uw assetorganisatie, kunt u direct meer lezen over Compass.
             </p>
             <a href="/compass"
                class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.12em]"
-               style="font-weight:600; color:#2D6A4F;">
+               style="font-weight:600; color:var(--color-compass);">
               Meer over Compass
               <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
                    stroke="currentColor" stroke-width="1.5" aria-hidden="true">

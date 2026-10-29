@@ -8,14 +8,14 @@ import '../styles/global.css';
 >
 
   <!-- ① HERO — uitkomst centraal -->
-  <section class="bg-white pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white pt-28 pb-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-6"
          style="font-weight:600;">AssetWize</p>
       <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
         Grip op risico, prestaties,<br />investeringen en continuïteit.
       </h1>
-      <p class="text-aw-slate text-lg leading-relaxed max-w-xl mb-10" style="font-weight:400;">
+      <p class="text-aw-slate text-lg leading-relaxed aw-prose mb-10" style="font-weight:400;">
         Assets bepalen de toekomst van uw organisatie. AssetWize helpt organisaties de systemen inrichten waarmee die toekomst bestuurbaar wordt.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
@@ -28,8 +28,8 @@ import '../styles/global.css';
   </section>
 
   <!-- ② BEWIJS STRIP -->
-  <section class="bg-aw-wolk border-y border-aw-line py-8 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk border-y border-aw-line py-8">
+    <div class="aw-container">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
         {[
           { label: "Gebouwd in de praktijk",       sub: "Twintig jaar. Geen theorie." },
@@ -38,7 +38,7 @@ import '../styles/global.css';
           { label: "Ontworpen voor implementatie",  sub: "Niet voor rapporten." },
         ].map((item) => (
           <div class="bg-white px-6 py-6 text-center">
-            <p style="font-size:15px; font-weight:500; color:var(--aw-navy); line-height:1.4; letter-spacing:0.01em;">{item.label}</p>
+            <p class="hyphens-auto" style="font-size:15px; font-weight:500; color:var(--aw-navy); line-height:1.4; letter-spacing:0.01em;">{item.label}</p>
             <p style="font-size:12px; font-weight:400; color:var(--aw-slate); margin-top:6px; line-height:1.5;">{item.sub}</p>
           </div>
         ))}
@@ -47,26 +47,26 @@ import '../styles/global.css';
   </section>
 
   <!-- ③ DE OBSERVATIE -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-6"
          style="font-weight:600;">Twintig jaar praktijkervaring. Eén terugkerende observatie.</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-6 max-w-2xl"
           style="font-weight:500;">
         Organisaties worstelen zelden met een gebrek aan techniek.
       </h2>
-      <p class="text-aw-slate text-base leading-relaxed mb-4 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-base leading-relaxed mb-4 aw-prose" style="font-weight:400;">
         De uitdaging zit vrijwel altijd in de verbinding — tussen strategie en uitvoering, tussen data en beslissing, tussen techniek en bestuur. Investeringsbeslissingen zijn moeilijk te onderbouwen. De organisatie is afhankelijk van een handvol sleutelfiguren. En risico's worden pas zichtbaar als ze zich al hebben gemanifesteerd.
       </p>
-      <p class="text-aw-slate text-base leading-relaxed max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-base leading-relaxed aw-prose" style="font-weight:400;">
         AssetWize is ontwikkeld om precies dat vraagstuk op te lossen. Niet als adviesbureau. Als governance-systeem dat is ontstaan uit twintig jaar praktijkervaring — van petrochemie tot farma, van productiebedrijven tot utilities, van directiekamer tot werkvloer.
       </p>
     </div>
   </section>
 
   <!-- WAAR STAAT UW ORGANISATIE VANDAAG -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-10"
          style="font-weight:600;">Waar staat uw organisatie vandaag?</p>
       <div class="grid md:grid-cols-2 gap-4">
@@ -75,8 +75,8 @@ import '../styles/global.css';
             situatie: "We weten dat grip ontbreekt, maar niet precies waar het zit.",
             naar: "Compass",
             href: "/compass",
-            kleur: "#2D6A4F",
-            bg: "#F7F8F6",
+            kleur: "var(--color-compass)",
+            bg: "var(--aw-white)",
           },
           {
             situatie: "We hebben veel data, maar kunnen er geen beslissingen op baseren.",
@@ -89,15 +89,15 @@ import '../styles/global.css';
             situatie: "Beslissingen over assets zijn afhankelijk van personen in plaats van een duidelijke structuur.",
             naar: "Atlas",
             href: "/atlas",
-            kleur: "#7A4F1E",
-            bg: "#faf7f4",
+            kleur: "var(--color-atlas)",
+            bg: "var(--aw-white)",
           },
           {
             situatie: "We weten niet waar we moeten beginnen.",
             naar: "Compass",
             href: "/compass",
-            kleur: "#2D6A4F",
-            bg: "#F7F8F6",
+            kleur: "var(--color-compass)",
+            bg: "var(--aw-white)",
           },
         ].map((item) => (
           <a href={item.href}
@@ -119,15 +119,15 @@ import '../styles/global.css';
 
 
   <!-- ③ DE AANPAK — vier werkwoorden als methode, niet als doel -->
-  <section id="aanpak" class="bg-aw-wolk py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section id="aanpak" class="bg-aw-wolk py-20">
+    <div class="aw-container">
       <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">De aanpak</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-4"
           style="font-weight:500;">
         Bestuurbaarheid ontstaat niet vanzelf.<br />Het wordt ontworpen.
       </h2>
-      <p class="text-aw-slate text-sm leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-sm leading-relaxed mb-12 aw-prose" style="font-weight:400;">
         AssetWize verbindt bestuur, techniek, finance, informatie en uitvoering tot één samenhangend systeem — via vier samenhangende stappen.
       </p>
 
@@ -139,8 +139,8 @@ import '../styles/global.css';
             instrument: "Compass",
             omschrijving: "Compass maakt zichtbaar of assetmanagement daadwerkelijk werkt — niet of het ingericht is. Drie perspectieven op bestuurbaarheid.",
             href: "/compass",
-            kleur: "#2D6A4F",
-            border: "#2D6A4F",
+            kleur: "var(--color-compass)",
+            border: "var(--color-compass)",
           },
           {
             werkwoord: "Ontwerpen",
@@ -196,34 +196,34 @@ import '../styles/global.css';
   </section>
 
   <!-- ④ COMPASS EN Relicore — onderdeel van het systeem -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Instrumenten</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-4"
           style="font-weight:500;">
         Compass en Relicore zijn geen losse producten.<br />Ze zijn onderdeel van hetzelfde systeem.
       </h2>
-      <p class="text-aw-slate text-sm leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-sm leading-relaxed mb-12 aw-prose" style="font-weight:400;">
         Elk instrument heeft zijn eigen bezoeker en zijn eigen moment in het traject — maar ze zijn ontworpen om samen te werken.
       </p>
       <div class="grid md:grid-cols-2 gap-6">
 
         <!-- Compass -->
         <div class="border border-aw-line rounded-aw overflow-hidden">
-          <div class="px-8 py-7" style="background:#F7F8F6; border-bottom:1px solid #E0EBE4;">
+          <div class="px-8 py-7 bg-aw-wolk border-b border-aw-line">
             <div class="flex items-center gap-3 mb-4">
               <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
                 <polygon points="20,2 23,18 20,22 17,18" fill="#1A4A35"/>
                 <polygon points="20,38 17,24 20,20 23,24" fill="#C8CFC4"/>
                 <polygon points="2,20 18,17 22,20 18,23"  fill="#C8CFC4"/>
                 <polygon points="38,20 22,23 18,20 22,17" fill="#C8CFC4"/>
-                <circle cx="20" cy="20" r="2" fill="#2D6A4F"/>
+                <circle cx="20" cy="20" r="2" fill="#1A4A35"/>
               </svg>
               <span class="text-xs uppercase tracking-[0.12em]"
-                    style="font-weight:600; color:#2D6A4F;">Compass — Begrijpen</span>
+                    style="font-weight:600; color:var(--color-compass);">Compass — Begrijpen</span>
             </div>
-            <p class="text-lg leading-snug mb-2" style="font-weight:500; color:#1A2E22;">
+            <p class="text-aw-navy text-lg leading-snug mb-2" style="font-weight:500;">
               Waar ontbreekt grip — en waarom?
             </p>
           </div>
@@ -231,12 +231,12 @@ import '../styles/global.css';
             <p class="text-aw-slate text-sm leading-relaxed mb-6" style="font-weight:400;">
               Compass diagnosticeert het besturingssysteem. Niet door te vragen of processen aanwezig zijn, maar door te beoordelen of de organisatie daadwerkelijk in staat is risico, prestaties en investeringen te besturen.
             </p>
-            <p class="text-aw-slate text-xs mb-5" style="font-weight:400;">
+            <p class="text-aw-slate text-sm leading-relaxed mb-5" style="font-weight:400;">
               Compass kan concluderen dat Relicore niet de eerste stap is. Eigenaarschap, besluitvorming of cultuur kunnen urgenter zijn. Dat maakt Compass onafhankelijk — en geloofwaardig.
             </p>
             <a href="/compass"
                class="text-xs uppercase tracking-[0.12em] flex items-center gap-2"
-               style="font-weight:600; color:#2D6A4F;">
+               style="font-weight:600; color:var(--color-compass);">
               Meer over Compass
               <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
                    stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -248,7 +248,7 @@ import '../styles/global.css';
 
         <!-- Relicore -->
         <div class="border border-aw-line rounded-aw overflow-hidden">
-          <div class="px-8 py-7 bg-aw-mist border-b border-aw-line">
+          <div class="px-8 py-7 bg-aw-wolk border-b border-aw-line">
             <div class="flex items-center gap-3 mb-4">
               <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
                 <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
@@ -269,7 +269,7 @@ import '../styles/global.css';
             <p class="text-aw-slate text-sm leading-relaxed mb-6" style="font-weight:400;">
               Relicore maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat investeringen, risicoacceptatie en besluitvorming gebaseerd zijn op dezelfde assetlogica.
             </p>
-            <p class="text-aw-slate text-xs mb-5" style="font-weight:400;">
+            <p class="text-aw-slate text-sm leading-relaxed mb-5" style="font-weight:400;">
               Relicore ondersteunt de informatielaag van het besturingssysteem. Het lost eigenaarschaps- of besluitvormingsvraagstukken niet op — dat doet het governance framework.
             </p>
             <a href="/relicore"
@@ -289,8 +289,8 @@ import '../styles/global.css';
 
 
   <!-- ⑤ VOOR WIE -->
-  <section class="bg-aw-wolk py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container">
       <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Voor wie</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-10 max-w-lg"
@@ -307,7 +307,7 @@ import '../styles/global.css';
           },
           {
             rol: "Plant- & locatiemanagement",
-            kleur: "#2D6A4F",
+            kleur: "var(--aw-petrol)",
             h: "Van reactief naar voorspelbaar",
             p: "Voor het begrijpen van de patronen die prestatieverbetering in de weg staan — en een verbeteragenda die aansluit op wat de organisatie werkelijk nodig heeft.",
           },
@@ -332,8 +332,8 @@ import '../styles/global.css';
   </section>
 
   <!-- ⑥ CTA -->
-  <section class="bg-aw-deep text-white py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center">
+  <section class="bg-aw-deep text-white py-20">
+    <div class="aw-container text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
         Grip begint met de juiste diagnose.

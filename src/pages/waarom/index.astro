@@ -8,14 +8,14 @@ import '../../styles/global.css';
 >
 
   <!-- ① HERO -->
-  <section class="bg-white border-b border-aw-line pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white border-b border-aw-line pt-28 pb-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-6"
          style="font-weight:600;">Twintig jaar. Dezelfde observatie.</p>
       <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-8 max-w-2xl" style="font-weight:500;">
         Organisaties investeren in assetmanagement.<br />Toch blijft grip vaak uit.
       </h1>
-      <div class="max-w-xl">
+      <div class="aw-prose">
         <p class="text-aw-slate text-base leading-relaxed mb-8" style="font-weight:400;">
           In twintig jaar werken in asset-intensieve organisaties keerde steeds dezelfde observatie terug: prestaties, risico's, investeringen en verantwoordelijkheden waren aanwezig — maar onvoldoende met elkaar verbonden. Niet omdat mensen hun werk niet goed deden. Omdat het systeem ontbrak dat alles met elkaar verbindt.
         </p>
@@ -27,9 +27,9 @@ import '../../styles/global.css';
   </section>
 
   <!-- ② HET PATROON -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-16 items-start">
+  <section class="bg-white py-20">
+    <div class="aw-container">
+      <div class="aw-split">
         <div>
           <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4"
              style="font-weight:600;">Het patroon</p>
@@ -54,9 +54,9 @@ import '../../styles/global.css';
             { kop: "Niet een gebrek aan tools",     sub: "Het probleem was dat geen enkel instrument het governance-vraagstuk raakte." },
             { kop: "Niet een gebrek aan wil",       sub: "Het probleem was structureel — en vroeg een structurele oplossing." },
           ].map((item) => (
-            <div class="flex items-start gap-4 py-5">
+            <div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-4 py-5">
               <span class="text-aw-turquoise min-w-36 mt-0.5 flex-shrink-0 leading-relaxed"
-                    style="font-weight:600; font-size:10px; text-transform:uppercase; letter-spacing:0.12em;">{item.kop}</span>
+                    style="font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.12em;">{item.kop}</span>
               <p class="text-aw-slate text-sm leading-relaxed" style="font-weight:400;">{item.sub}</p>
             </div>
           ))}
@@ -66,15 +66,15 @@ import '../../styles/global.css';
   </section>
 
   <!-- ③ WAAROM BESTAANDE OPLOSSINGEN TEKORTSCHIETEN -->
-  <section class="bg-aw-wolk py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container">
       <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Waarom bestaande oplossingen tekortschieten</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-6 max-w-2xl"
           style="font-weight:500;">
         Er was al veel beschikbaar.<br />Maar niet het juiste.
       </h2>
-      <p class="text-aw-slate text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-base leading-relaxed mb-12 aw-prose" style="font-weight:400;">
         Normen, consultancybureaus, CMMS-software, verbeterprogramma's — ze zijn er. Maar ze raken elk een deel van het vraagstuk. Niet het geheel. En geen van alle beantwoordt de vraag waar het bestuur uiteindelijk om vraagt: is de organisatie werkelijk in control op haar assets?
       </p>
       <div class="grid md:grid-cols-3 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
@@ -102,15 +102,15 @@ import '../../styles/global.css';
   </section>
 
   <!-- ④ WAAROM ASSETWIZE IS GEBOUWD -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Waarom AssetWize is gebouwd</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-6 max-w-2xl"
           style="font-weight:500;">
         Losse oplossingen lossen het niet op.<br />Het systeem moest ontworpen worden.
       </h2>
-      <p class="text-aw-slate text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-base leading-relaxed mb-12 aw-prose" style="font-weight:400;">
         AssetWize is niet opgericht om te adviseren. Het is opgericht om het systeem te bouwen dat organisaties in staat stelt zelf te sturen — structureel, herleidbaar en duurzaam.
       </p>
       <div class="grid md:grid-cols-3 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
@@ -145,15 +145,15 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑤ COMPASS, ATLAS EN Relicore — als natuurlijke evolutie -->
-  <section class="bg-aw-wolk py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container">
       <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Wat daaruit is ontstaan</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-6 max-w-2xl"
           style="font-weight:500;">
         Elk instrument is een antwoord op een vraag die steeds terugkwam.
       </h2>
-      <p class="text-aw-slate text-base leading-relaxed mb-12 max-w-xl" style="font-weight:400;">
+      <p class="text-aw-slate text-base leading-relaxed mb-12 aw-prose" style="font-weight:400;">
         Compass, Atlas en Relicore zijn niet bedacht als producten. Ze zijn gebouwd omdat elke stap in de praktijk een nieuw gat blootlegde.
       </p>
       <div class="flex flex-col divide-y divide-aw-line">
@@ -162,7 +162,7 @@ import '../../styles/global.css';
             <p class="text-aw-slate text-xs uppercase tracking-[0.12em] mb-2" style="font-weight:500;">Eerste</p>
             <a href="/compass"
                class="text-xs uppercase tracking-[0.12em] flex items-center gap-2 mb-2"
-               style="font-weight:600; color:#2D6A4F;">Compass →</a>
+               style="font-weight:600; color:var(--color-compass);">Compass →</a>
           </div>
           <div class="md:col-span-2">
             <p class="text-aw-navy text-base mb-3 leading-snug" style="font-weight:500;">
@@ -210,11 +210,11 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑥ DIMITRY — resultaat van twintig jaar observaties -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-10"
          style="font-weight:600;">Twintig jaar observaties. Één systeem.</p>
-      <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="aw-prose">
         <div>
           <p class="text-aw-slate text-sm leading-relaxed mb-4" style="font-weight:400;">
             De ervaring achter AssetWize is opgebouwd in petrochemie, staal, farma, agrochemie, productie-industrie en utilities — in rollen variërend van consultant en engineer tot plantmanager en strategisch adviseur.
@@ -254,8 +254,8 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑦ CTA -->
-  <section class="bg-aw-deep text-white py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center">
+  <section class="bg-aw-deep text-white py-20">
+    <div class="aw-container text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
         Is uw organisatie asset-intensief<br />en ontbreekt bestuurlijke grip?

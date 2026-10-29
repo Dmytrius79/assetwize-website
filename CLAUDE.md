@@ -45,3 +45,11 @@ Kleuren, tagline en teksten staan daar, niet hier. Lees de richtlijn zelf.
 - Logo's nooit natypen of nabouwen in tekst of CSS; gebruik altijd het logobestand.
 - Productnamen altijd met "by AssetWize": Compass by AssetWize, Atlas by AssetWize, Relicore by AssetWize.
 - Teksten op de site niet wijzigen zonder opdracht in een taakbestand.
+
+**Kleurgebruik: kader, datavlak, identiteit** (besluit Dimitry 29-10, TASK-009):
+
+- Kader = AssetWize: achtergronden, lopende tekst, knoppen, accentband en footer alleen uit het v2.0-palet. Nooit getint in productkleur. Eén accentband per pagina, diep navy.
+- Datavlak = product: tabellen, matrices, schema's, diagrammen en app-schermen gebruiken `.datavlak` met `--compass`, `--atlas` of `--relicore` (kopband in productkleur, wit eronder, rand Lijn, radius 8 px).
+- Identiteit: productkleur verder alleen klein (eyebrow, pictogram, productlogo, dunne lijn of ankerzin-balk `.aw-anker`).
+- Layout: alle inhoud in `.aw-container`, lopende tekst in `.aw-prose`, tekst naast kaarten of lijsten in `.aw-split`.
+- Uitzondering: scorekleuren (rood, oranje, groen) in de Compass-tabellen blijven, binnen het datavlak. Wacht op bevestiging Dimitry.

@@ -8,8 +8,8 @@ import '../../styles/global.css';
 >
 
   <!-- ① HERO -->
-  <section class="bg-white border-b border-aw-line pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white border-b border-aw-line pt-28 pb-20">
+    <div class="aw-container">
       <div class="flex items-center gap-4 mb-10 pb-8"
            style="border-bottom:0.5px solid var(--aw-line);">
         <svg viewBox="0 0 40 40" width="52" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -20,13 +20,13 @@ import '../../styles/global.css';
         </svg>
         <div style="border-left:0.5px solid var(--aw-line); padding-left:12px;">
           <div style="font-size:26px; font-weight:500; color:#1C0F07; letter-spacing:0.02em; line-height:1.1;">Atlas</div>
-          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#7A4F1E; opacity:0.72; margin-top:4px;">BY ASSETWIZE</div>
+          <div style="font-size:12px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#7A4F1E; margin-top:4px;">BY ASSETWIZE</div>
         </div>
       </div>
       <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-6 max-w-2xl" style="font-weight:500;">
         Asset governance, uitgewerkt tot een werkend systeem.
       </h1>
-      <p class="text-lg leading-relaxed max-w-xl mb-0"
+      <p class="text-lg leading-relaxed aw-prose mb-0"
          style="font-weight:400; color:var(--aw-slate);">
         Niet alleen wat assetmanagement zou moeten zijn. Maar hoe eigenaarschap, besluitvorming, informatie, processen en systemen daadwerkelijk samenkomen in de praktijk.
       </p>
@@ -34,9 +34,9 @@ import '../../styles/global.css';
   </section>
 
   <!-- ② ANKERZIN -->
-  <section class="py-9 px-6" style="background:white; border-left:4px solid #7A4F1E;">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-base leading-relaxed max-w-2xl" style="font-weight:500; color:#1C0F07;">
+  <section class="bg-white py-9">
+    <div class="aw-container">
+      <p class="aw-anker text-aw-navy text-base leading-relaxed max-w-2xl" style="--anker:var(--color-atlas); font-weight:500;">
         Waar ISO 55000 stopt, begint Atlas.
         <span style="font-weight:400; color:var(--aw-slate);">
           Een uitgewerkt governance-systeem met frameworks, blueprints en implementatierichtlijnen — gebouwd vanuit vijftien jaar praktijk in asset-intensieve organisaties.
@@ -46,12 +46,12 @@ import '../../styles/global.css';
   </section>
 
   <!-- ③ WAAROM ATLAS BESTAAT -->
-  <section class="py-20 px-6" style="background:#faf7f4;">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container">
       <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">Waarom Atlas bestaat</p>
-      <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div class="aw-split">
         <div>
-          <h2 class="text-2xl md:text-3xl leading-snug mb-6" style="font-weight:500; color:#1C0F07;">
+          <h2 class="text-2xl md:text-3xl leading-snug mb-6" style="font-weight:500; color:var(--aw-navy);">
             Veel organisaties starten telkens opnieuw.
           </h2>
           <p class="text-sm leading-relaxed mb-4" style="font-weight:400; color:var(--aw-slate);">
@@ -67,8 +67,8 @@ import '../../styles/global.css';
             { kop: "Procesmatige inrichting",   sub: "Hoe werkprocessen aansluiten op governance-principes." },
             { kop: "Operationele verankering",  sub: "Hoe uitvoering structureel wordt gekoppeld aan strategie." },
           ].map((item) => (
-            <div style="border-left:3px solid #7A4F1E; padding-left:16px;">
-              <p class="text-sm mb-1" style="font-weight:500; color:#1C0F07;">{item.kop}</p>
+            <div style="border-left:3px solid var(--color-atlas); padding-left:16px;">
+              <p class="text-sm mb-1" style="font-weight:500; color:var(--aw-navy);">{item.kop}</p>
               <p class="text-sm"     style="font-weight:400; color:var(--aw-slate);">{item.sub}</p>
             </div>
           ))}
@@ -78,20 +78,22 @@ import '../../styles/global.css';
   </section>
 
   <!-- ④ ATLAS ALS REFERENTIEARCHITECTUUR -->
-  <section class="py-20 px-6" style="background:white;">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">Atlas als referentiearchitectuur</p>
-      <h2 class="text-2xl md:text-3xl leading-snug mb-6 max-w-lg" style="font-weight:500; color:#1C0F07;">
+      <h2 class="text-2xl md:text-3xl leading-snug mb-6 max-w-lg" style="font-weight:500; color:var(--aw-navy);">
         Atlas beschrijft hoe alle onderdelen samenhangen.
       </h2>
-      <p class="text-sm leading-relaxed mb-10 max-w-xl" style="font-weight:400; color:var(--aw-slate);">
+      <p class="text-sm leading-relaxed mb-10 aw-prose" style="font-weight:400; color:var(--aw-slate);">
         Niet één proces. Maar hoe governance, risico, betrouwbaarheid, waarde, besluitvorming, organisatie en verandervermogen als één geïntegreerd systeem functioneren.
       </p>
 
       <!-- Zeven domeinen — globe -->
-      <div class="mb-12" style="background:#faf7f4; border-radius:12px; padding:32px;">
+      <div class="datavlak datavlak--atlas mb-12">
+        <div class="datavlak__kop datavlak__kop--smal"></div>
+        <div class="bg-aw-wolk p-4 md:p-8">
         <svg width="100%" viewBox="0 0 680 560"
-             style="max-width:580px; display:block; margin:0 auto;"
+             style="max-width:680px; display:block; margin:0 auto;"
              xmlns="http://www.w3.org/2000/svg"
              role="img" aria-label="Atlas — zeven thema's op de meridiaanbol">
           <title>Atlas — zeven thema's</title>
@@ -116,51 +118,52 @@ import '../../styles/global.css';
           <path d="M448,208 Q342,300 256,392" fill="none" stroke="#C49A5E" stroke-width="0.4" opacity="0.12"/>
           <!-- T5 -->
           <circle cx="340" cy="140" r="22" fill="#7A4F1E"/>
-          <text x="340" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T5</text>
-          <text x="340" y="97"  text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T5</text>
-          <text x="340" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Governance &amp; Eigenaarschap</text>
+          <text x="340" y="146" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#FFFFFF">T5</text>
+          <text x="340" y="97"  text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#7A4F1E" letter-spacing="0.08em">T5</text>
+          <text x="340" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">Governance &amp; Eigenaarschap</text>
           <!-- T1 -->
           <circle cx="232" cy="208" r="22" fill="#7A4F1E"/>
-          <text x="232" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T1</text>
-          <text x="196" y="181" text-anchor="end" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T1</text>
-          <text x="196" y="196" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Risico, Veiligheid</text>
-          <text x="196" y="211" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Compliance</text>
+          <text x="232" y="214" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#FFFFFF">T1</text>
+          <text x="196" y="181" text-anchor="end" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#7A4F1E" letter-spacing="0.08em">T1</text>
+          <text x="196" y="196" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">Risico, Veiligheid</text>
+          <text x="196" y="211" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">&amp; Compliance</text>
           <!-- T2 -->
           <circle cx="448" cy="208" r="22" fill="#7A4F1E"/>
-          <text x="448" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T2</text>
-          <text x="484" y="181" text-anchor="start" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T2</text>
-          <text x="484" y="196" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Betrouwbaarheid</text>
-          <text x="484" y="211" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Continuïteit</text>
+          <text x="448" y="214" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#FFFFFF">T2</text>
+          <text x="484" y="181" text-anchor="start" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#7A4F1E" letter-spacing="0.08em">T2</text>
+          <text x="484" y="196" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">Betrouwbaarheid</text>
+          <text x="484" y="211" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">&amp; Continuïteit</text>
           <!-- T7 -->
           <circle cx="198" cy="308" r="22" fill="#7A4F1E"/>
-          <text x="198" y="313" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T7</text>
-          <text x="162" y="291" text-anchor="end" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T7</text>
-          <text x="162" y="306" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Organisatie, Mensen</text>
-          <text x="162" y="321" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Uitvoerbaarheid</text>
+          <text x="198" y="314" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#FFFFFF">T7</text>
+          <text x="162" y="291" text-anchor="end" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#7A4F1E" letter-spacing="0.08em">T7</text>
+          <text x="162" y="306" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">Organisatie, Mensen</text>
+          <text x="162" y="321" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">&amp; Uitvoerbaarheid</text>
           <!-- T3 -->
           <circle cx="482" cy="308" r="22" fill="#7A4F1E"/>
-          <text x="482" y="313" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T3</text>
-          <text x="518" y="291" text-anchor="start" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T3</text>
-          <text x="518" y="306" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Waarde, Lifecycle</text>
-          <text x="518" y="321" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Investeringen</text>
+          <text x="482" y="314" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#FFFFFF">T3</text>
+          <text x="518" y="291" text-anchor="start" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#7A4F1E" letter-spacing="0.08em">T3</text>
+          <text x="518" y="306" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">Waarde, Lifecycle</text>
+          <text x="518" y="321" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">&amp; Investeringen</text>
           <!-- T6 -->
           <circle cx="256" cy="392" r="22" fill="#7A4F1E"/>
-          <text x="256" y="397" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T6</text>
-          <text x="220" y="420" text-anchor="end" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T6</text>
-          <text x="220" y="435" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Toekomstvastheid</text>
-          <text x="220" y="450" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Verandervermogen</text>
+          <text x="256" y="398" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#FFFFFF">T6</text>
+          <text x="220" y="420" text-anchor="end" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#7A4F1E" letter-spacing="0.08em">T6</text>
+          <text x="220" y="435" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">Toekomstvastheid</text>
+          <text x="220" y="450" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">&amp; Verandervermogen</text>
           <!-- T4 -->
           <circle cx="424" cy="392" r="22" fill="#7A4F1E"/>
-          <text x="424" y="397" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#FBF7F2">T4</text>
-          <text x="460" y="420" text-anchor="start" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="#B07D3A" letter-spacing="0.08em">T4</text>
-          <text x="460" y="435" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">Besluitvorming</text>
-          <text x="460" y="450" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#3D2008">&amp; Stuurinformatie</text>
+          <text x="424" y="398" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#FFFFFF">T4</text>
+          <text x="460" y="420" text-anchor="start" font-family="Inter,sans-serif" font-size="12" font-weight="500" fill="#7A4F1E" letter-spacing="0.08em">T4</text>
+          <text x="460" y="435" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">Besluitvorming</text>
+          <text x="460" y="450" text-anchor="start" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="#1F2937">&amp; Stuurinformatie</text>
         </svg>
+        </div>
       </div>
 
       <!-- Wat Atlas bevat -->
       <p class="text-xs uppercase tracking-[0.12em] mb-5" style="font-weight:600; color:#7A4F1E;">Wat Atlas bevat</p>
-      <div class="grid md:grid-cols-3 gap-x-12 gap-y-2 max-w-2xl">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2">
         {[
           "Governance Frameworks",
           "Asset Management Operating Models",
@@ -175,9 +178,9 @@ import '../../styles/global.css';
           "Decision-Making Frameworks",
           "Implementation Guidelines",
         ].map((item) => (
-          <div class="flex items-center gap-2 py-1.5" style="border-bottom:0.5px solid #e5ddd5;">
-            <span style="color:#7A4F1E; font-size:11px;">→</span>
-            <span class="text-sm" style="font-weight:400; color:#1C0F07;">{item}</span>
+          <div class="flex items-center gap-2 py-1.5" style="border-bottom:1px solid var(--aw-line);">
+            <span style="color:var(--color-atlas); font-size:12px;">→</span>
+            <span class="text-sm" style="font-weight:400; color:var(--aw-navy);">{item}</span>
           </div>
         ))}
       </div>
@@ -185,8 +188,8 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑤ OMVANG -->
-  <section class="py-12 px-6" style="background:white;">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-12">
+    <div class="aw-container">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-aw-line border border-aw-line rounded-aw overflow-hidden">
         {[
           { getal: "7",    label: "samenhangende domeinen" },
@@ -196,7 +199,7 @@ import '../../styles/global.css';
         ].map((item) => (
           <div class="px-6 py-6 text-center" style="background:white;">
             <p style="font-size:28px; font-weight:500; color:#7A4F1E; line-height:1;">{item.getal}</p>
-            <p style="font-size:11px; font-weight:400; color:var(--aw-slate); margin-top:6px; line-height:1.4;">{item.label}</p>
+            <p style="font-size:12px; font-weight:400; color:var(--aw-slate); margin-top:6px; line-height:1.4;">{item.label}</p>
           </div>
         ))}
       </div>
@@ -207,32 +210,32 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑥ EEN KIJKJE IN ATLAS -->
-  <section class="py-20 px-6" style="background:#faf7f4;">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container">
       <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">Een kijkje in Atlas</p>
-      <h2 class="text-2xl leading-snug mb-4" style="font-weight:500; color:#1C0F07;">
+      <h2 class="text-2xl leading-snug mb-4" style="font-weight:500; color:var(--aw-navy);">
         Uitgewerkte bouwstenen, direct toepasbaar.
       </h2>
-      <p class="text-sm leading-relaxed mb-12 max-w-lg" style="font-weight:400; color:var(--aw-slate);">
+      <p class="text-sm leading-relaxed mb-12 aw-prose" style="font-weight:400; color:var(--aw-slate);">
         Elk document in Atlas is volledig uitgewerkt — met normatieve grondslag, rolbeschrijvingen, RACI-structuren, competentie-eisen en maturity levels. Hieronder een fragment uit T5.1 — het Asset Management Organisation Model.
       </p>
 
       <!-- VOORBEELD 1: Rollenstructuur -->
-      <div class="mb-8 rounded-aw overflow-hidden border border-aw-line">
-        <div class="px-6 py-4 flex items-center justify-between" style="background:#7A4F1E;">
+      <div class="datavlak datavlak--atlas mb-8">
+        <div class="datavlak__kop flex items-center justify-between gap-4">
           <div>
-            <p class="text-xs uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Governance &amp; Eigenaarschap</p>
+            <p class="datavlak__label">T5.1 Blueprint · Governance &amp; Eigenaarschap</p>
             <p class="text-sm mt-1" style="color:white; font-weight:500;">Asset Management Organisation Model — Rollenstructuur</p>
           </div>
-          <span class="text-xs px-2 py-1 rounded" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">ISO 55001 §5.3</span>
+          <span class="text-xs px-2 py-1 rounded flex-shrink-0" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">ISO 55001 §5.3</span>
         </div>
         <div style="background:white; overflow-x:auto;">
           <table style="width:100%; border-collapse:collapse; font-size:12px;">
             <thead>
-              <tr style="background:#faf7f4;">
-                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em;">Laag</th>
-                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em;">Rollen</th>
-                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em;">Uitbesteding</th>
+              <tr>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid var(--aw-line); font-size:12px; text-transform:uppercase; letter-spacing:0.12em;">Laag</th>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid var(--aw-line); font-size:12px; text-transform:uppercase; letter-spacing:0.12em;">Rollen</th>
+                <th style="padding:10px 14px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid var(--aw-line); font-size:12px; text-transform:uppercase; letter-spacing:0.12em;">Uitbesteding</th>
               </tr>
             </thead>
             <tbody>
@@ -241,10 +244,10 @@ import '../../styles/global.css';
                 { laag: "Uitvoeringsrollen", rollen: "Maintenance Engineer · Contractor Manager · Werkvoorbereider · Planner · Teamlead · Technician", uitbesteding: "Engineer + Contractor Manager: eigen organisatie · Overige: beschikbaar voor uitbesteding" },
                 { laag: "Stakeholderrollen", rollen: "Finance · SHE · Quality/Food Safety · Data Owner · Operations", uitbesteding: "Co-verantwoordelijken — geen klanten van assetmanagement" },
               ].map((row, i) => (
-                <tr style={i % 2 === 0 ? "background:white;" : "background:#fdfbf8;"}>
-                  <td style="padding:10px 14px; color:#1C0F07; font-weight:500; border-bottom:1px solid #f0ebe3; vertical-align:top; white-space:nowrap;">{row.laag}</td>
-                  <td style="padding:10px 14px; color:#4b3621; border-bottom:1px solid #f0ebe3; vertical-align:top; line-height:1.6;">{row.rollen}</td>
-                  <td style="padding:10px 14px; color:var(--aw-slate); border-bottom:1px solid #f0ebe3; vertical-align:top; line-height:1.6;">{row.uitbesteding}</td>
+                <tr>
+                  <td style="padding:10px 14px; color:var(--aw-ink); font-weight:500; border-bottom:1px solid var(--aw-mist); vertical-align:top; white-space:nowrap;">{row.laag}</td>
+                  <td style="padding:10px 14px; color:var(--aw-ink); border-bottom:1px solid var(--aw-mist); vertical-align:top; line-height:1.6;">{row.rollen}</td>
+                  <td style="padding:10px 14px; color:var(--aw-slate); border-bottom:1px solid var(--aw-mist); vertical-align:top; line-height:1.6;">{row.uitbesteding}</td>
                 </tr>
               ))}
             </tbody>
@@ -253,21 +256,21 @@ import '../../styles/global.css';
       </div>
 
       <!-- VOORBEELD 2: RACI-fragment -->
-      <div class="mb-8 rounded-aw overflow-hidden border border-aw-line">
-        <div class="px-6 py-4 flex items-center justify-between" style="background:#7A4F1E;">
+      <div class="datavlak datavlak--atlas mb-8">
+        <div class="datavlak__kop flex items-center justify-between gap-4">
           <div>
-            <p class="text-xs uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · RACI-matrix</p>
+            <p class="datavlak__label">T5.1 Blueprint · RACI-matrix</p>
             <p class="text-sm mt-1" style="color:white; font-weight:500;">Verantwoordelijkheidsverdeling AM-processen (fragment)</p>
           </div>
-          <span class="text-xs px-2 py-1 rounded" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">A · R · C · I</span>
+          <span class="text-xs px-2 py-1 rounded flex-shrink-0" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.8); font-weight:400;">A · R · C · I</span>
         </div>
         <div style="background:white; overflow-x:auto;">
-          <table style="width:100%; border-collapse:collapse; font-size:11px;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px;">
             <thead>
-              <tr style="background:#faf7f4;">
-                <th style="padding:8px 12px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em; min-width:180px;">AM-proces</th>
+              <tr>
+                <th style="padding:8px 12px; text-align:left; font-weight:600; color:#7A4F1E; border-bottom:1px solid var(--aw-line); font-size:12px; text-transform:uppercase; letter-spacing:0.12em; min-width:180px;">AM-proces</th>
                 {["Asset Owner","Asset Manager","Maint. Engineer","Contractor Mgr","Planner","Teamlead"].map(h => (
-                  <th style="padding:8px 8px; text-align:center; font-weight:600; color:#7A4F1E; border-bottom:1px solid #e5ddd5; font-size:10px; text-transform:uppercase; letter-spacing:0.12em; min-width:72px;">{h}</th>
+                  <th style="padding:8px 8px; text-align:center; font-weight:600; color:#7A4F1E; border-bottom:1px solid var(--aw-line); font-size:12px; text-transform:uppercase; letter-spacing:0.12em; min-width:72px;">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -281,25 +284,25 @@ import '../../styles/global.css';
                 { proc: "Contractormanagement",          vals: ["I","A","—","R","—","—"] },
                 { proc: "Datakwaliteit systeem",         vals: ["I","A","C","C","—","—"] },
               ].map((row, i) => (
-                <tr style={i % 2 === 0 ? "background:white;" : "background:#fdfbf8;"}>
-                  <td style="padding:8px 12px; color:#1C0F07; font-weight:400; border-bottom:1px solid #f0ebe3;">{row.proc}</td>
+                <tr>
+                  <td style="padding:8px 12px; color:var(--aw-ink); font-weight:400; border-bottom:1px solid var(--aw-mist);">{row.proc}</td>
                   {row.vals.map(v => (
-                    <td style={`padding:8px 8px; text-align:center; border-bottom:1px solid #f0ebe3; font-weight:500; font-size:11px; color:${v === "A" ? "#7A4F1E" : v === "R" ? "#B07D3A" : v === "A/R" ? "#8B6230" : v === "C" ? "var(--aw-slate)" : "var(--aw-line)"};`}>{v}</td>
+                    <td style={`padding:8px 8px; text-align:center; border-bottom:1px solid var(--aw-mist); font-weight:500; font-size:12px; color:${v === "A" ? "#7A4F1E" : v === "R" ? "#B07D3A" : v === "A/R" ? "#8B6230" : v === "C" ? "var(--aw-slate)" : "var(--aw-line)"};`}>{v}</td>
                   ))}
                 </tr>
               ))}
             </tbody>
           </table>
-          <p style="padding:8px 12px; font-size:10px; color:var(--aw-slate); border-top:1px solid #f0ebe3;">
+          <p style="padding:8px 12px; font-size:12px; color:var(--aw-slate); border-top:1px solid var(--aw-mist);">
             A = Accountable · R = Responsible · C = Consulted · I = Informed · — = geen betrokkenheid
           </p>
         </div>
       </div>
 
       <!-- VOORBEELD 3: Maturity levels -->
-      <div class="rounded-aw overflow-hidden border border-aw-line">
-        <div class="px-6 py-4" style="background:#7A4F1E;">
-          <p class="text-xs uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.6); font-weight:500;">T5.1 Blueprint · Maturity Model</p>
+      <div class="datavlak datavlak--atlas">
+        <div class="datavlak__kop">
+          <p class="datavlak__label">T5.1 Blueprint · Maturity Model</p>
           <p class="text-sm mt-1" style="color:white; font-weight:500;">Maturity Levels — Rolbezetting &amp; Eigenaarschap</p>
         </div>
         <div style="background:white;">
@@ -310,11 +313,11 @@ import '../../styles/global.css';
             { nr: "4", titel: "Proactief", tekst: "Functies actief ingevuld conform AM Operating Model. Competentie getoetst bij aanstelling. RACI is sturingsinstrument." },
             { nr: "5", titel: "Optimaliserend", tekst: "Rollenstructuur continu geëvalueerd. Eigenaarschap zichtbaar in gedrag — niet alleen op papier." },
           ].map((level, i) => (
-            <div class="flex items-start gap-4 px-6 py-4" style={`border-bottom:${i < 4 ? "1px solid #f0ebe3" : "none"};`}>
-              <span style={`min-width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:500; flex-shrink:0; margin-top:1px; background:${i < 2 ? "#f5f5f4" : i < 3 ? "#faf7f4" : i < 4 ? "#f0e8dc" : "#7A4F1E"}; color:${i < 4 ? "#7A4F1E" : "white"};`}>{level.nr}</span>
+            <div class="flex items-start gap-4 px-6 py-4" style={`border-bottom:${i < 4 ? "1px solid var(--aw-mist)" : "none"};`}>
+              <span style={`min-width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:500; flex-shrink:0; margin-top:1px; background:${i < 2 ? "#f5f5f4" : i < 3 ? "#F3EBDF" : i < 4 ? "#f0e8dc" : "#7A4F1E"}; color:${i < 4 ? "#7A4F1E" : "white"};`}>{level.nr}</span>
               <div>
-                <p style="font-size:12px; font-weight:500; color:#1C0F07; margin-bottom:2px;">{level.titel}</p>
-                <p style="font-size:12px; color:var(--aw-slate); line-height:1.5;">{level.tekst}</p>
+                <p style="font-size:14px; font-weight:500; color:var(--aw-ink); margin-bottom:2px;">{level.titel}</p>
+                <p style="font-size:14px; color:var(--aw-slate); line-height:1.5;">{level.tekst}</p>
               </div>
             </div>
           ))}
@@ -328,19 +331,21 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑦ RELATIE MET COMPASS EN Relicore -->
-  <section class="py-20 px-6" style="background:white;">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container aw-split">
+      <div>
       <p class="text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:600; color:#7A4F1E;">De relatie met Compass en Relicore</p>
-      <h2 class="text-2xl leading-snug mb-10 max-w-lg" style="font-weight:500; color:#1C0F07;">
+      <h2 class="text-2xl leading-snug mb-10 max-w-lg" style="font-weight:500; color:var(--aw-navy);">
         Compass meet. Relicore implementeert.<br />Atlas is het systeem waar beide op gebaseerd zijn.
       </h2>
-      <div class="max-w-2xl flex flex-col divide-y" style="border-color:#e5ddd5;">
+      </div>
+      <div class="flex flex-col divide-y divide-aw-line">
         {[
-          { instrument:"Compass",            kleur:"#2D6A4F", sub:"Diagnosticeert of het governance-systeem werkt — toetst aan de normen die Atlas beschrijft." },
+          { instrument:"Compass",            kleur:"var(--color-compass)", sub:"Diagnosticeert of het governance-systeem werkt — toetst aan de normen die Atlas beschrijft." },
           { instrument:"AssetWize expertise",kleur:"var(--aw-navy)", sub:"Ontwerpt het besturingssysteem — gebruikt Atlas-frameworks als normatieve basis voor elk ontwerp." },
           { instrument:"Relicore",           kleur:"var(--aw-turquoise)", sub:"Borgt de assetlogica digitaal — implementeert de informatiemodellen en blueprints die Atlas beschrijft." },
         ].map((item) => (
-          <div class="flex items-start gap-6 py-6">
+          <div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-6 py-6">
             <span class="text-xs uppercase tracking-[0.12em] min-w-36 mt-0.5 flex-shrink-0"
                   style={`font-weight:600; color:${item.kleur};`}>{item.instrument}</span>
             <p class="text-sm leading-relaxed" style="font-weight:400; color:var(--aw-slate);">{item.sub}</p>
@@ -351,8 +356,8 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑧ CTA -->
-  <section class="py-20 px-6 text-center" style="background:#1C0F07;">
-    <div class="max-w-3xl mx-auto">
+  <section class="bg-aw-deep py-20 text-center">
+    <div class="aw-container">
       <h2 class="text-2xl md:text-3xl leading-snug mb-4 max-w-lg mx-auto"
           style="font-weight:500; color:white;">
         Wilt u weten hoe Atlas uw traject ondersteunt?

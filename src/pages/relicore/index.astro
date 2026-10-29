@@ -8,8 +8,8 @@ import '../../styles/global.css';
 >
 
   <!-- ① HERO -->
-  <section class="bg-white border-b border-aw-line pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white border-b border-aw-line pt-28 pb-20">
+    <div class="aw-container">
       <div class="flex items-center gap-4 mb-10 pb-8 border-b border-aw-line">
         <svg viewBox="0 0 40 40" width="52" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise)" stroke-width="1.5"/>
@@ -21,13 +21,13 @@ import '../../styles/global.css';
         </svg>
         <div style="border-left:0.5px solid var(--aw-line); padding-left:12px;">
           <div style="font-size:26px; font-weight:500; color:var(--aw-navy); letter-spacing:0.05em; line-height:1.1;">Relicore</div>
-          <div style="font-size:7px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--aw-navy); opacity:0.72; line-height:1; margin-top:4px;">BY ASSETWIZE</div>
+          <div style="font-size:12px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--aw-navy); line-height:1; margin-top:4px;">BY ASSETWIZE</div>
         </div>
       </div>
       <h1 class="text-aw-navy text-4xl md:text-5xl leading-tight mb-5 max-w-xl" style="font-weight:500;">
         Structuur in assets.<br />Grip op beslissingen.
       </h1>
-      <p class="text-aw-slate text-lg leading-relaxed max-w-lg mb-10" style="font-weight:400;">
+      <p class="text-aw-slate text-lg leading-relaxed aw-prose mb-10" style="font-weight:400;">
         CMMS gevuld. Maar geen grip op structuur. Relicore maakt expliciet hoe assets bijdragen aan waarde, risico en continuïteit — zodat beslissingen niet op gevoel genomen worden.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
@@ -45,9 +45,9 @@ import '../../styles/global.css';
   </section>
 
   <!-- ② ANKERZIN -->
-  <section class="bg-white border-l-4 border-aw-turquoise py-9 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-aw-navy text-base leading-relaxed max-w-2xl" style="font-weight:500;">
+  <section class="bg-white py-9">
+    <div class="aw-container">
+      <p class="aw-anker text-aw-navy text-base leading-relaxed max-w-2xl" style="--anker:var(--color-relicore); font-weight:500;">
         Relicore vervangt uw CMMS niet.
         <span class="text-aw-slate" style="font-weight:400;">
           Het maakt expliciet welke assets er zijn, wat ze doen, waaraan ze bijdragen — en op welke basis beslissingen over risico, waarde en continuïteit genomen kunnen worden.
@@ -58,16 +58,18 @@ import '../../styles/global.css';
 
 
   <!-- ③ HET PROBLEEM -->
-  <section class="bg-aw-wolk py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container aw-split">
+      <div>
       <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Het probleem</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3 max-w-lg" style="font-weight:500;">
         CMMS gevuld. Maar geen grip op structuur.
       </h2>
-      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 aw-prose" style="font-weight:400;">
         Asset-intensieve organisaties vullen hun CMMS jarenlang. Toch ontbreekt de basis voor beslissingen.
       </p>
-      <div class="max-w-2xl divide-y divide-aw-line">
+      </div>
+      <div class="divide-y divide-aw-line">
         {[
           {
             label: "Verkeerd perspectief",
@@ -82,7 +84,7 @@ import '../../styles/global.css';
             tekst: "Wettelijk verplichte keuringen, criticality en eigenaarschap zijn niet expliciet gekoppeld aan assets. Risico is aanwezig — maar niet bestuurbaar.",
           },
         ].map((item) => (
-          <div class="flex items-start gap-6 py-6">
+          <div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-6 py-6">
             <span class="text-xs uppercase tracking-[0.12em] text-aw-navy min-w-36 mt-0.5 flex-shrink-0"
                   style="font-weight:500;">{item.label}</span>
             <p class="text-aw-slate text-sm leading-relaxed" style="font-weight:400;">{item.tekst}</p>
@@ -93,16 +95,18 @@ import '../../styles/global.css';
   </section>
 
   <!-- ④ HOE Relicore WERKT -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container aw-split">
+      <div>
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Hoe Relicore werkt</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3" style="font-weight:500;">
         Van brondata naar geborgde assetstructuur.
       </h2>
-      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 aw-prose" style="font-weight:400;">
         Zes stappen — gebaseerd op de werkelijke applicatiestructuur.
       </p>
-      <div class="relative max-w-lg">
+      </div>
+      <div class="relative">
         <!-- Verticale lijn -->
         <div class="absolute left-5 top-6 bottom-6 w-px bg-aw-line"></div>
         {[
@@ -132,21 +136,21 @@ import '../../styles/global.css';
 
 
   <!-- ⑤ APP SCHERMEN -->
-  <section class="bg-aw-wolk py-20 px-6">
-    <div class="max-w-5xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container">
       <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat u ziet in de applicatie</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3" style="font-weight:500;">
         Drie schermen die het verhaal vertellen.
       </h2>
-      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 aw-prose" style="font-weight:400;">
         Elk scherm is afkomstig uit een werkelijk uitgevoerde Relicore-implementatie.
       </p>
 
-      <div class="grid md:grid-cols-3 gap-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- Scherm 1: Assetregister / Procesboom -->
-        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
-          <div class="bg-aw-navy px-4 py-3 flex items-center gap-2">
+        <div class="datavlak datavlak--relicore">
+          <div class="datavlak__kop px-4 py-3 flex items-center gap-2">
             <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
               <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
               <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
@@ -171,35 +175,35 @@ import '../../styles/global.css';
             <div class="space-y-1 text-xs">
               <div class="flex items-center gap-2 px-2 py-1.5 text-aw-ink">
                 <span class="text-aw-slate">▾</span> Enkhuizen
-                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-navy text-white ml-auto" style="font-size:9px;">SITE</span>
+                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-navy text-white ml-auto">SITE</span>
               </div>
               <div class="flex items-center gap-2 px-4 py-1.5 text-aw-ink">
                 <span class="text-aw-slate">▾</span> PRODUCTIE
-                <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto" style="font-size:9px;">FUNCTIE</span>
+                <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto">FUNCTIE</span>
               </div>
               <div class="flex items-center gap-2 px-8 py-1.5 rounded bg-blue-50 text-blue-700">
                 <span>·</span> Verpakking
-                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-wolk text-aw-slate ml-auto" style="font-size:9px;">SUB</span>
+                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-wolk text-aw-slate ml-auto">SUB</span>
               </div>
               <div class="flex items-center gap-2 px-8 py-1.5 text-aw-slate">
                 <span>·</span> Zaadopslag
-                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-wolk text-aw-slate ml-auto" style="font-size:9px;">SUB</span>
+                <span class="text-xs px-1.5 py-0.5 rounded bg-aw-wolk text-aw-slate ml-auto">SUB</span>
               </div>
               <div class="flex items-center gap-2 px-4 py-1.5 text-aw-ink">
                 <span class="text-aw-slate">▾</span> UTILITIES
-                <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto" style="font-size:9px;">FUNCTIE</span>
+                <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 ml-auto">FUNCTIE</span>
               </div>
             </div>
             <div class="mt-3 p-2.5 bg-aw-wolk rounded-aw">
               <p class="text-xs text-aw-slate">370 procesfuncties · 500 equipment</p>
-              <p class="text-xs text-amber-500 mt-0.5">496 nog te positioneren</p>
+              <p class="text-xs text-amber-700 mt-0.5">496 nog te positioneren</p>
             </div>
           </div>
         </div>
 
         <!-- Scherm 2: Data Kwaliteit -->
-        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
-          <div class="bg-aw-navy px-4 py-3 flex items-center gap-2">
+        <div class="datavlak datavlak--relicore">
+          <div class="datavlak__kop px-4 py-3 flex items-center gap-2">
             <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
               <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
               <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
@@ -230,7 +234,7 @@ import '../../styles/global.css';
               </div>
               <div>
                 <p class="text-xs text-aw-slate mb-0.5">Ongekoppeld</p>
-                <p class="text-sm text-amber-500" style="font-weight:500;">23.848</p>
+                <p class="text-sm text-amber-700" style="font-weight:500;">23.848</p>
               </div>
             </div>
             <table class="w-full text-xs">
@@ -266,8 +270,8 @@ import '../../styles/global.css';
         </div>
 
         <!-- Scherm 3: Stamdata -->
-        <div class="bg-white border border-aw-line rounded-aw overflow-hidden">
-          <div class="bg-aw-navy px-4 py-3 flex items-center gap-2">
+        <div class="datavlak datavlak--relicore">
+          <div class="datavlak__kop px-4 py-3 flex items-center gap-2">
             <svg viewBox="0 0 40 40" width="16" height="16" aria-hidden="true">
               <circle cx="20" cy="20" r="16" fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
               <circle cx="20" cy="20" r="4"  fill="none" stroke="var(--aw-turquoise-light)" stroke-width="1.5"/>
@@ -313,13 +317,15 @@ import '../../styles/global.css';
 
 
   <!-- ⑥ WAT Relicore OPLEVERT -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container aw-split">
+      <div>
       <p class="text-aw-turquoise text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Wat Relicore oplevert</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-10 max-w-lg" style="font-weight:500;">
         Niet een schoner register.<br />Een gemeenschappelijke taal.
       </h2>
-      <div class="divide-y divide-aw-line max-w-2xl">
+      </div>
+      <div class="divide-y divide-aw-line">
         {[
           { kop: "Gedeelde assetlogica",       tekst: "Een procesfunctie-gebaseerde structuur die expliciet maakt wat er moet werken, wat er staat, en hoe die twee zich verhouden." },
           { kop: "Herleidbare beslissingen",   tekst: "Vervangings-, investerings- en onderhoudsbeslissingen die niet op gevoel genomen worden — maar op een structuur die iedereen kan lezen en betwisten." },
@@ -339,16 +345,18 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑦ INTEGRATIES -->
-  <section class="bg-aw-wolk py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-aw-wolk py-20">
+    <div class="aw-container aw-split">
+      <div>
       <p class="text-aw-navy text-xs uppercase tracking-[0.12em] mb-4" style="font-weight:500;">Integraties</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-aw-navy mb-3" style="font-weight:500;">
         Werkt met uw bestaande CMMS.
       </h2>
-      <p class="text-aw-slate text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-aw-slate text-sm mb-10 aw-prose" style="font-weight:400;">
         Relicore vervangt uw CMMS niet. Import en export zijn bewuste stappen — engineering logica gaat altijd boven administratief gemak.
       </p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-lg">
+      </div>
+      <div class="grid grid-cols-2 gap-3">
         {[
           { naam: "Ultimo",    status: "Actief",      live: true  },
           { naam: "SAP PM",    status: "In planning", live: false },
@@ -371,8 +379,8 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑧ CTA -->
-  <section class="bg-aw-deep text-white py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center">
+  <section class="bg-aw-deep text-white py-20">
+    <div class="aw-container text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
         Van assetregister naar gedeelde assetlogica.

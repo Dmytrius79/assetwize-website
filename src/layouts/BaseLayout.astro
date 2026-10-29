@@ -89,7 +89,7 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
 
   <!-- Header — §10.1: wit, onderrand 1 px Lijn, logo 05 licht, nav Inkt, actieve link turquoise -->
   <header class="sticky top-0 z-50 bg-white border-b border-aw-line">
-    <nav class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+    <nav class="aw-container py-3 flex items-center justify-between">
       <a href="/" class="flex items-center">
         <img src="/brand/assetwize-logo-licht.svg" alt="AssetWize" class="h-8 w-auto" />
       </a>
@@ -117,7 +117,7 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
 
   <!-- Footer — §10.1: diep navy, logo 06 donker met kernbegrippen (alleen op #071A30), links wit 72 % -->
   <footer class="bg-aw-deep text-white">
-    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-sm">
+    <div class="aw-container py-10 grid md:grid-cols-3 gap-8 text-sm">
       <div>
         <img src="/brand/assetwize-logo-tagline-donker.svg" alt="AssetWize. Insight. Alignment. Impact." class="w-[300px] h-auto" />
       </div>
@@ -137,7 +137,7 @@ const isActive = (href: string) => Astro.url.pathname === href || Astro.url.path
         </ul>
       </div>
     </div>
-    <div class="border-t border-white/10 max-w-6xl mx-auto px-6 py-4 text-xs text-white/72">
+    <div class="border-t border-white/10 aw-container py-4 text-xs text-white/72">
       &copy; {new Date().getFullYear()} AssetWize Software Solutions
     </div>
   </footer>

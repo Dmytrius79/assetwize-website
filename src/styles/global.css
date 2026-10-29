@@ -3,23 +3,10 @@
 @theme {
   /* AssetWize-kleuren: zie de v2.0-tokens (--aw-*) hieronder */
 
-  /* Compass app kleuren (Forest & Stone) */
-  --color-forest-900: #1A2E22;
-  --color-forest-700: #1A4A35;
-  --color-forest-600: #2D6A4F;
-  --color-forest-500: #3D7A5A;
-  --color-forest-400: #5A7A65;
-  --color-forest-200: #C8EED8;
-  --color-forest-100: #EDF4F0;
-  --color-forest-50:  #F7F8F6;
-
-  --color-stone-300: #C8CFC4;
-  --color-stone-200: #E0EBE4;
-  --color-stone-100: #F0F4F1;
-
-  --color-amber-700: #8B5E3C;
-  --color-amber-600: #6B3A1F;
-  --color-amber-100: #FDF3EC;
+  /* Productkleuren (TASK-009): alleen in datavlakken en als kleine identiteit */
+  --color-compass: #1A4A35;
+  --color-atlas: #7A4F1E;
+  --color-relicore: #0F2D52;
 
   --font-sans: 'Inter', system-ui, sans-serif;
 }
@@ -90,4 +77,55 @@
   text-decoration: underline;
   text-decoration-color: var(--aw-turquoise);
   text-underline-offset: 4px;
+}
+
+/* Container (TASK-009): header, inhoud en footer delen dezelfde breedte */
+.aw-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+/* Lopende tekst op leesbare regelbreedte */
+.aw-prose { max-width: 65ch; }
+/* Tekst naast kaarten, lijsten of statistieken: twee kolommen vanaf 1024 px */
+.aw-split {
+  display: grid;
+  gap: 3rem;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .aw-split { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+
+/* Ankerzin: gekleurde balk binnen de container, in de productkleur (--anker) */
+.aw-anker {
+  border-left: 4px solid var(--anker, var(--aw-turquoise));
+  padding-left: 1.5rem;
+}
+
+/* Datavlak (TASK-009): tabellen, matrices, schema's, diagrammen en app-schermen.
+   Kopband in de donkere productkleur met witte tekst, daaronder wit, rand 1 px Lijn, radius 8 px. */
+.datavlak {
+  background: var(--aw-white);
+  border: 1px solid var(--aw-line);
+  border-radius: var(--aw-radius);
+  overflow: hidden;
+}
+.datavlak--compass  { --datavlak-kleur: #1A4A35; }
+.datavlak--atlas    { --datavlak-kleur: #7A4F1E; }
+.datavlak--relicore { --datavlak-kleur: var(--aw-navy); }
+.datavlak__kop {
+  background: var(--datavlak-kleur);
+  color: var(--aw-white);
+  padding: 1rem 1.5rem;
+}
+/* Kopband zonder tekst, voor een diagram zonder titel */
+.datavlak__kop--smal { padding: 0; height: 6px; }
+.datavlak__label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.72);
 }
