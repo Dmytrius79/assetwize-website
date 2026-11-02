@@ -129,4 +129,7 @@ De productlogo's hebben ±17 % lege ruimte boven en onder en ±7 % links. Die co
 
 ### Commits en preview
 
-Zie hieronder.
+- `41db76a` — TASK-012 (Cloudflare-check groen)
+- het volgende commit voegt alleen deze regels toe
+- Preview: https://rebrand-merk-op-live.assetwize-website.pages.dev; commit-preview https://94b2c16a.assetwize-website.pages.dev
+- Niet gemerged, geen PR.
