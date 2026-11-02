@@ -22,3 +22,6 @@ dist/
 # Editor
 .vscode/
 .idea/
+
+# Screenshots lokaal bewaren, niet committen
+tasks/screenshots/

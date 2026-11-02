@@ -8,8 +8,8 @@ import '../../styles/global.css';
 >
 
   <!-- ① HERO -->
-  <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-navy-900 text-white pt-28 pb-20">
+    <div class="aw-container">
       <div class="flex items-center gap-4 mb-10 pb-8 border-b border-white/15">
         <svg viewBox="0 0 40 40" width="52" height="52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
@@ -49,9 +49,9 @@ import '../../styles/global.css';
   </section>
 
   <!-- ② ANKERZIN -->
-  <section class="bg-white border-l-4 border-teal-700 py-9 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-navy-900 text-base leading-relaxed max-w-2xl" style="font-weight:500;">
+  <section class="bg-white border-l-4 border-teal-700 py-9">
+    <div class="aw-container">
+      <p class="text-navy-900 text-base leading-relaxed aw-prose" style="font-weight:500;">
         Relicore vervangt uw CMMS niet.
         <span class="text-gray-500" style="font-weight:400;">
           Het maakt expliciet welke assets er zijn, wat ze doen, waaraan ze bijdragen — en op welke basis beslissingen over risico, waarde en continuïteit genomen kunnen worden.
@@ -62,13 +62,13 @@ import '../../styles/global.css';
 
 
   <!-- ③ HET PROBLEEM -->
-  <section class="bg-gray-50 py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-gray-50 py-20">
+    <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Het probleem</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3 max-w-lg" style="font-weight:500;">
         CMMS gevuld. Maar geen grip op structuur.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-gray-500 text-sm mb-10 aw-prose" style="font-weight:400;">
         Asset-intensieve organisaties vullen hun CMMS jarenlang. Toch ontbreekt de basis voor beslissingen.
       </p>
       <div class="max-w-2xl divide-y divide-gray-200">
@@ -89,7 +89,7 @@ import '../../styles/global.css';
           <div class="flex items-start gap-6 py-6">
             <span class="text-xs uppercase tracking-widest text-teal-700 min-w-36 mt-0.5 flex-shrink-0"
                   style="font-weight:500;">{item.label}</span>
-            <p class="text-gray-500 text-sm leading-relaxed" style="font-weight:400;">{item.tekst}</p>
+            <p class="text-gray-500 text-sm leading-relaxed min-w-0 hyphens-auto" style="font-weight:400;">{item.tekst}</p>
           </div>
         ))}
       </div>
@@ -97,13 +97,13 @@ import '../../styles/global.css';
   </section>
 
   <!-- ④ HOE Relicore WERKT -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Hoe Relicore werkt</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
         Van brondata naar geborgde assetstructuur.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-gray-500 text-sm mb-10 aw-prose" style="font-weight:400;">
         Zes stappen — gebaseerd op de werkelijke applicatiestructuur.
       </p>
       <div class="relative max-w-lg">
@@ -136,13 +136,13 @@ import '../../styles/global.css';
 
 
   <!-- ⑤ APP SCHERMEN -->
-  <section class="bg-gray-50 py-20 px-6">
-    <div class="max-w-5xl mx-auto">
+  <section class="bg-gray-50 py-20">
+    <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat u ziet in de applicatie</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
         Drie schermen die het verhaal vertellen.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-gray-500 text-sm mb-10 aw-prose" style="font-weight:400;">
         Elk scherm is afkomstig uit een werkelijk uitgevoerde Relicore-implementatie.
       </p>
 
@@ -317,8 +317,8 @@ import '../../styles/global.css';
 
 
   <!-- ⑥ WAT Relicore OPLEVERT -->
-  <section class="bg-navy-900 text-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-navy-900 text-white py-20">
+    <div class="aw-container">
       <p class="text-teal-400 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat Relicore oplevert</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-10 max-w-lg" style="font-weight:500;">
         Niet een schoner register.<br />Een gemeenschappelijke taal.
@@ -334,7 +334,7 @@ import '../../styles/global.css';
             <span class="text-teal-400 text-xs flex-shrink-0 mt-0.5" style="font-weight:500;">{i + 1}</span>
             <div>
               <p class="text-white text-sm mb-1" style="font-weight:500;">{punt.kop}</p>
-              <p class="text-white/60 text-sm leading-relaxed" style="font-weight:400;">{punt.tekst}</p>
+              <p class="text-white/60 text-sm leading-relaxed aw-prose" style="font-weight:400;">{punt.tekst}</p>
             </div>
           </div>
         ))}
@@ -343,13 +343,13 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑦ INTEGRATIES -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Integraties</p>
       <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-3" style="font-weight:500;">
         Werkt met uw bestaande CMMS.
       </h2>
-      <p class="text-gray-500 text-sm mb-10 max-w-lg" style="font-weight:400;">
+      <p class="text-gray-500 text-sm mb-10 aw-prose" style="font-weight:400;">
         Relicore vervangt uw CMMS niet. Import en export zijn bewuste stappen — engineering logica gaat altijd boven administratief gemak.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-lg">
@@ -375,8 +375,8 @@ import '../../styles/global.css';
   </section>
 
   <!-- ⑧ CTA -->
-  <section class="bg-navy-900 text-white py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center">
+  <section class="bg-navy-900 text-white py-20">
+    <div class="aw-container text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
         Van assetregister naar gedeelde assetlogica.

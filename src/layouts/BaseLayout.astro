@@ -7,7 +7,7 @@ export interface Props {
 const {
   title,
   description = 'AssetWize ontwerpt het systeem waarmee asset-intensieve organisaties grip krijgen op risico, prestaties, investeringen en continuïteit.',
-  ogImage = '/og-image.png',
+  ogImage = '/brand/og-image.png',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://www.assetwize.nl');
@@ -23,11 +23,14 @@ const fullTitle = `${title} | AssetWize`;
   <title>{fullTitle}</title>
 
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="icon" type="image/x-icon" href="/brand/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/brand/android-chrome-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/brand/android-chrome-512.png" />
   <meta name="theme-color" content="#0f1f35" />
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
@@ -52,7 +55,7 @@ const fullTitle = `${title} | AssetWize`;
   <!-- Vervang VERIFICATIE_CODE door de code uit search.google.com/search-console -->
   <!-- <meta name="google-site-verification" content="VERIFICATIE_CODE" /> -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     /* Pagina-achtergrond wordt bepaald door de eerste sectie, niet door body */
     html, body { background-color: #ffffff; margin: 0; }
@@ -67,7 +70,7 @@ const fullTitle = `${title} | AssetWize`;
     "@type": "Organization",
     "name": "AssetWize",
     "url": "https://www.assetwize.nl",
-    "logo": "https://www.assetwize.nl/icon-512.png",
+    "logo": "https://www.assetwize.nl/brand/android-chrome-512.png",
     "description": "AssetWize ontwerpt het systeem waarmee asset-intensieve organisaties grip krijgen op risico, prestaties, investeringen en continuïteit.",
     "sameAs": [
       "https://nl.linkedin.com/in/dimitryvandort"
@@ -77,9 +80,9 @@ const fullTitle = `${title} | AssetWize`;
 <body class="text-gray-900 font-sans">
 
   <header class="sticky top-0 z-50 bg-gray-50 shadow-sm">
-    <nav class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+    <nav class="aw-container py-3 flex items-center justify-between">
       <a href="/" class="flex items-center">
-        <img src="/assetwize_logo_cropped.png" alt="AssetWize" class="h-10 w-auto" />
+        <img src="/brand/assetwize-logo-licht.svg" alt="AssetWize" class="h-8 w-auto" />
       </a>
       <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
         <li><a href="/compass" class="hover:text-teal-700 transition-colors">Compass</a></li>
@@ -98,12 +101,12 @@ const fullTitle = `${title} | AssetWize`;
   </main>
 
   <footer class="bg-navy-900 text-white">
-    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-sm">
+    <div class="aw-container py-10 grid md:grid-cols-3 gap-8 text-sm">
       <div>
         <img src="/assetwize_logo_cropped.png" alt="AssetWize" class="h-8 w-auto brightness-0 invert mb-2" />
       </div>
       <div>
-        <div class="font-semibold text-gray-300 mb-3">Producten</div>
+        <div class="font-medium text-gray-300 mb-3">Producten</div>
         <ul class="space-y-2 text-gray-400">
           <li><a href="/compass" class="hover:text-white transition-colors">Compass by AssetWize</a></li>
           <li><a href="/atlas" class="hover:text-white transition-colors">Atlas by AssetWize</a></li>
@@ -111,14 +114,14 @@ const fullTitle = `${title} | AssetWize`;
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-gray-300 mb-3">Bedrijf</div>
+        <div class="font-medium text-gray-300 mb-3">Bedrijf</div>
         <ul class="space-y-2 text-gray-400">
           <li><a href="/waarom" class="hover:text-white transition-colors">Waarom AssetWize</a></li>
           <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-gray-800 max-w-6xl mx-auto px-6 py-4 text-xs text-gray-500">
+    <div class="border-t border-gray-800 aw-container py-4 text-xs text-gray-500">
       &copy; {new Date().getFullYear()} AssetWize Software Solutions
     </div>
   </footer>

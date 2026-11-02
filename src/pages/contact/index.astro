@@ -8,10 +8,10 @@ import '../../styles/global.css';
 >
 
   <!-- HERO -->
-  <section class="bg-navy-900 text-white pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-teal-400 text-xs uppercase tracking-widest mb-5"
-         style="font-weight:600; letter-spacing:0.14em;">Contact</p>
+  <section class="bg-navy-900 text-white pt-28 pb-20">
+    <div class="aw-container">
+      <p class="text-teal-400 text-xs uppercase tracking-[0.12em] mb-5"
+         style="font-weight:600;">Contact</p>
       <h1 class="text-4xl md:text-5xl leading-tight mb-6 max-w-xl" style="font-weight:500;">
         Start het gesprek.
       </h1>
@@ -22,14 +22,14 @@ import '../../styles/global.css';
   </section>
 
   <!-- CONTACT INHOUD -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="bg-white py-20">
+    <div class="aw-container">
       <div class="grid md:grid-cols-2 gap-16 items-start">
 
         <!-- Links: context -->
         <div>
           <!-- Wanneer contact opnemen -->
-          <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+          <p class="text-teal-700 text-xs uppercase tracking-[0.12em] mb-4"
              style="font-weight:600;">Neem contact op als</p>
           <div class="flex flex-col gap-3 mb-10">
             {[
@@ -47,7 +47,7 @@ import '../../styles/global.css';
             ))}
           </div>
 
-          <p class="text-teal-700 text-xs uppercase tracking-widest mb-4"
+          <p class="text-teal-700 text-xs uppercase tracking-[0.12em] mb-4"
              style="font-weight:600;">Wat u kunt verwachten</p>
           <div class="flex flex-col divide-y divide-gray-100">
             {[
@@ -68,7 +68,7 @@ import '../../styles/global.css';
               },
             ].map((item) => (
               <div class="flex items-start gap-5 py-6">
-                <span class="text-teal-700 text-xs uppercase tracking-widest flex-shrink-0 mt-0.5"
+                <span class="text-teal-700 text-xs uppercase tracking-[0.12em] flex-shrink-0 mt-0.5"
                       style="font-weight:600;">{item.num}</span>
                 <div>
                   <p class="text-navy-900 text-sm mb-1" style="font-weight:500;">{item.h}</p>
@@ -90,7 +90,7 @@ import '../../styles/global.css';
               ].map((item) => (
                 <a href={item.href}
                    class="flex items-start gap-3 py-2.5 hover:opacity-80 transition-opacity">
-                  <span class="text-xs uppercase tracking-widest min-w-20 mt-0.5 flex-shrink-0"
+                  <span class="text-xs uppercase tracking-[0.12em] min-w-20 mt-0.5 flex-shrink-0"
                         style={`font-weight:600; color:${item.kleur};`}>{item.stap}</span>
                   <span class="text-gray-500 text-sm" style="font-weight:400;">{item.sub}</span>
                 </a>
@@ -147,13 +147,13 @@ import '../../styles/global.css';
           <!-- Compass starten -->
           <div class="border border-gray-200 rounded-xl p-7"
                style="background:#F7F8F6;">
-            <p class="text-xs uppercase tracking-widest mb-3"
+            <p class="text-xs uppercase tracking-[0.12em] mb-3"
                style="font-weight:600; color:#2D6A4F;">Direct starten met Compass?</p>
             <p class="text-gray-600 text-sm leading-relaxed mb-5" style="font-weight:400;">
               Als u al weet dat u een diagnose wil van de bestuurbaarheid van uw assetorganisatie, kunt u direct meer lezen over Compass.
             </p>
             <a href="/compass"
-               class="inline-flex items-center gap-2 text-xs uppercase tracking-widest"
+               class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.12em]"
                style="font-weight:600; color:#2D6A4F;">
               Meer over Compass
               <svg viewBox="0 0 16 16" width="12" height="12" fill="none"
