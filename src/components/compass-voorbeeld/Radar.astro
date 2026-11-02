@@ -1,6 +1,6 @@
 ---
 // Profiel over 7 thema's — port van Radar() in KoersZoneA.tsx: nummers op de assen, namen in de legenda.
-import { THEMAS, fmt2 } from './voorbeeld-data';
+import { THEMAS, fmt1 } from './voorbeeld-data';
 import { AW } from './stijl';
 
 const size = 280, c = size / 2, R = 100, n = THEMAS.length;
@@ -11,7 +11,7 @@ const pt = (i: number, r: number) => {
 const rOf = (v: number) => ((v - 1) / 4) * R;
 const ring = (lvl: number) => THEMAS.map((_, i) => pt(i, rOf(lvl)).join(',')).join(' ');
 const poly = THEMAS.map((t, i) => pt(i, rOf(t.avg)).join(',')).join(' ');
-const label = `Radar van de zeven themascores: ${THEMAS.map((t) => `${t.naam} ${fmt2(t.avg)}`).join(', ')}`;
+const label = `Radar van de zeven themascores: ${THEMAS.map((t) => `${t.naam} ${fmt1(t.avg)}`).join(', ')}`;
 ---
 <svg viewBox={`0 0 ${size} ${size}`} width="100%" style="max-width:280px; display:block; margin:0 auto;" role="img" aria-label={label}>
   {[1, 2, 3, 4, 5].map((lvl) => (

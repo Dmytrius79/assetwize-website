@@ -5,10 +5,6 @@ export const AW = {
   forest: "#2D6A4F", forestDark: "#1A4A35", forestLight: "#EDF4F0", forest900: "#1A2E22",
 };
 
-// Eén neutrale niveauschaal (lib/labels/dimensions.ts)
-export const NIVEAU_RAMP = ["", "#DCEBE2", "#A8CDB8", "#6FA588", "#3D7A5A", "#1A4A35"];
-export const NIVEAU_TEKST = ["", "#0F2D52", "#0F2D52", "#0F2D52", "#FFFFFF", "#FFFFFF"];
-
 // Controle-diagnosekaart (L2ReportView.tsx): scoreColor / scoreBg
 export const scoreColor = (v: number) => (v < 2.0 ? "#E24B4A" : v < 3.0 ? "#EF9F27" : "#639922");
 export const scoreBg = (v: number) =>

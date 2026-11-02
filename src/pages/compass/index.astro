@@ -4,9 +4,7 @@ import '../../styles/global.css';
 import HeroScherm from '../../components/compass-voorbeeld/HeroScherm.astro';
 import BestuurlijkOordeel from '../../components/compass-voorbeeld/BestuurlijkOordeel.astro';
 import Spiegel from '../../components/compass-voorbeeld/Spiegel.astro';
-import Onderbouwing from '../../components/compass-voorbeeld/Onderbouwing.astro';
 import Diagnosekaart from '../../components/compass-voorbeeld/Diagnosekaart.astro';
-import Onderschrift from '../../components/compass-voorbeeld/Onderschrift.astro';
 import PerspectiefSymbool from '../../components/compass-voorbeeld/PerspectiefSymbool.astro';
 
 const verschil = [
@@ -17,8 +15,8 @@ const verschil = [
 ];
 
 const perspectieven = [
-  { soort: 'koers' as const, label: "Koers", tekst: "28 vragen in zeven thema's, voor directie en bestuur." },
-  { soort: 'controle' as const, label: "Controle", tekst: "Verdieping op 25 organisatievermogens, met management en proceseigenaren." },
+  { soort: 'koers' as const, label: "Koers", titel: "Waar staat het bestuur?", tekst: "Voor directie en bestuur." },
+  { soort: 'controle' as const, label: "Controle", titel: "Waar zit het in de organisatie?", tekst: "Verdieping met management en proceseigenaren." },
   { soort: 'groei' as const, label: "Groei", badge: "Binnenkort" },
 ];
 
@@ -34,7 +32,7 @@ const anders = [
 >
 
   <!-- ① HERO -->
-  <section class="bg-aw-deep text-white pt-28 pb-20">
+  <section class="bg-forest-700 text-white pt-28 pb-20">
     <div class="aw-container">
       <div class="mb-10 pb-8 border-b border-white/15">
         <img src="/brand/producten/compass-donker.svg" alt="Compass" width="208" height="78" style="margin:-13px 0 -13px -13px;" />
@@ -50,14 +48,14 @@ const anders = [
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/contact"
-               class="inline-flex justify-center px-7 py-3.5 bg-forest-600 hover:bg-forest-500
-                      text-white rounded-lg transition-colors text-sm"
+               class="inline-flex justify-center px-7 py-3.5 bg-white hover:bg-forest-100
+                      text-forest-700 rounded-lg transition-colors text-sm"
                style="font-weight:500;">
               Plan een gesprek
             </a>
             <a href="https://compass.assetwize.nl" target="_blank" rel="noopener"
-               class="inline-flex justify-center px-7 py-3.5 border border-white/30
-                      hover:border-white/60 text-white/80 hover:text-white
+               class="inline-flex justify-center px-7 py-3.5 border border-white/60
+                      hover:border-white text-white/80 hover:text-white
                       rounded-lg transition-colors text-sm"
                style="font-weight:500;">
               Bekijk Compass live
@@ -66,7 +64,6 @@ const anders = [
         </div>
         <div class="min-w-0">
           <HeroScherm />
-          <Onderschrift donker />
         </div>
       </div>
     </div>
@@ -101,7 +98,7 @@ const anders = [
   <section id="drie-perspectieven" class="bg-forest-50 py-20">
     <div class="aw-container">
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10" style="font-weight:500;">
-        Drie perspectieven
+        Begin bij het bestuur. Ga dan de organisatie in.
       </h2>
       <div class="grid md:grid-cols-3 gap-4">
         {perspectieven.map((p) => (
@@ -114,6 +111,7 @@ const anders = [
                   <span style="font-size:10px; font-weight:500; letter-spacing:0.04em; color:#5B6B7F; border:1px solid #C9CED6; border-radius:3px; padding:0 6px; line-height:16px;">{p.badge}</span>
                 )}
               </div>
+              {p.titel && <p style="font-size:15px; font-weight:500; color:#1A2E22; margin:0 0 6px; line-height:1.3;">{p.titel}</p>}
               {p.tekst && <p style="font-size:14px; color:#5B6B7F; line-height:1.6; margin:0;">{p.tekst}</p>}
             </div>
           </div>
@@ -130,22 +128,14 @@ const anders = [
       </h2>
 
       <div class="flex flex-col gap-10">
-        <div>
-          <BestuurlijkOordeel />
-          <Onderschrift />
-        </div>
-        <div>
-          <Spiegel />
-          <Onderschrift />
-        </div>
-        <Onderbouwing />
+        <BestuurlijkOordeel />
+        <Spiegel />
       </div>
 
       <h3 class="text-xl md:text-2xl leading-snug text-forest-900 mt-16 mb-6" style="font-weight:500;">
         Controle: de diagnosekaart
       </h3>
       <Diagnosekaart />
-      <Onderschrift />
     </div>
   </section>
 

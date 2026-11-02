@@ -1,6 +1,6 @@
 ---
 // Bestuurlijke stand en score per thema — port van rij 2 van KoersZoneA.tsx (zonder radar; die staat in de hero).
-import { ORGANISATIE, THEMAS, TOTAAL, BAND, LAAG_12, AANTAL_ANTWOORDEN, STERKSTE, LEVEL_DESCRIPTIONS, fmt2 } from './voorbeeld-data';
+import { ORGANISATIE, THEMAS, TOTAAL, BAND, LAAG_12, AANTAL_ANTWOORDEN, STERKSTE, LEVEL_DESCRIPTIONS, fmt1 } from './voorbeeld-data';
 import { AW, kader, eyebrow, zoneLabel } from './stijl';
 
 const markerPct = ((TOTAAL - 1) / 4) * 100;
@@ -14,7 +14,7 @@ const markerPct = ((TOTAAL - 1) / 4) * 100;
     <div class="border-b md:border-b-0 md:border-r" style={`padding:20px 24px; border-color:${AW.hair};`}>
       <p style={eyebrow}>Bestuurlijke stand</p>
       <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
-        <span style="font-size:44px; font-weight:500; line-height:1; letter-spacing:-0.02em; font-variant-numeric:tabular-nums;">{fmt2(TOTAAL)}</span>
+        <span style="font-size:44px; font-weight:500; line-height:1; letter-spacing:-0.02em; font-variant-numeric:tabular-nums;">{fmt1(TOTAAL)}</span>
         {BAND && (
           <span style={`display:inline-flex; align-items:center; height:26px; padding:0 12px; border-radius:13px; background-color:${AW.forestLight}; color:${AW.forestDark}; font-size:13px; font-weight:500;`}>
             Niveau {BAND.levelInt} · {BAND.label}
@@ -38,7 +38,7 @@ const markerPct = ((TOTAAL - 1) / 4) * 100;
       </div>
 
       <div style={`margin-top:16px; padding-top:14px; border-top:1px solid ${AW.hair}; display:flex; flex-direction:column; gap:6px; font-size:13px; color:${AW.ink};`}>
-        <p style="margin:0;"><span style={`color:${AW.forest}; font-weight:500;`}>Relatief sterk:</span> {STERKSTE.naam} ({fmt2(STERKSTE.avg)})</p>
+        <p style="margin:0;"><span style={`color:${AW.forest}; font-weight:500;`}>Relatief sterk:</span> {STERKSTE.naam} ({fmt1(STERKSTE.avg)})</p>
         <p style={`margin:0; color:${AW.slate};`}>{LAAG_12} van {AANTAL_ANTWOORDEN} antwoorden op niveau 1–2</p>
       </div>
     </div>
@@ -57,7 +57,7 @@ const markerPct = ((TOTAAL - 1) / 4) * 100;
                   <div style={`height:4px; width:${Math.max(2, pct)}%; background-color:${AW.forest};`} />
                 </div>
               </div>
-              <span style="font-size:14px; font-weight:500; text-align:right; font-variant-numeric:tabular-nums;">{fmt2(t.avg)}</span>
+              <span style="font-size:14px; font-weight:500; text-align:right; font-variant-numeric:tabular-nums;">{fmt1(t.avg)}</span>
             </li>
           );
         })}
