@@ -229,4 +229,9 @@ Er zijn geen gradients en geen `rgb(15, 31, 53)` in de bron. Er zijn geen andere
 - **Breedtes:** geen horizontale scroll en niets buiten beeld op 390, 768, 1440 en 1920 px.
 - **Screenshots:** lokaal bijgewerkt in `tasks/screenshots/TASK-011/`, niet gecommit.
 
-**Commits en preview Vervolg 1:** zie hieronder.
+**Commits en preview Vervolg 1**
+
+- `2cd7208` — Vervolg 1 (Cloudflare-check groen)
+- het volgende commit voegt alleen deze regels toe
+- Preview: https://rebrand-merk-op-live.assetwize-website.pages.dev; commit-preview https://88ad627f.assetwize-website.pages.dev
+- Niet gemerged, geen PR.
