@@ -81,8 +81,8 @@ const CONTROLE_ANTWOORDEN: Record<string, [number, number, number, number]> = {
 };
 
 // Uittreksel van de diagnosekaart op de website: acht van de 25 rijen, waarden ongewijzigd.
-// Zwak (Governance, Waarde), midden (Risico, Besluitvorming) en sterk (Betrouwbaarheid), zodat het Koers-beeld niet wordt tegengesproken.
-const UITTREKSEL = ["T5.1", "T5.2", "T3.2", "T3.4", "T1.1", "T4.2", "T2.1", "T2.5"];
+// Laag (Governance), midden (Waarde) en hoog (Betrouwbaarheid), zodat het Koers-beeld niet wordt tegengesproken.
+const UITTREKSEL = ["T5.1", "T3.4", "T2.5"];
 
 // ── Vaste illustraties bij déze dataset (zie LET OP bovenaan) ────────────────
 export const KERNCONCLUSIE = "Volgens de antwoorden werkt de uitvoering overwegend goed, maar hangen keuzes af van wie erbij betrokken is.";
@@ -183,6 +183,6 @@ export const themaNaam = (id: string) => THEME_NAMES[id] ?? id;
   const getoond = THEMAS.map((t) => fmt1(t.avg)).join(" / ") + ` · totaal ${fmt1(TOTAAL)}`;
   if (getoond !== "2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0 · totaal 2,5") fouten.push(`weergave wijkt af van TASK-013: ${getoond}`);
   if (LAAG_12 !== 14 || VERDELING.join("/") !== "2/12/11/3/0" || BAND?.levelInt !== 2) fouten.push(`controlewaarden wijken af: ${LAAG_12} op niveau 1–2, verdeling ${VERDELING.join("/")}`);
-  if (AANTAL_SUBTHEMAS !== 25 || CONTROLE_UITTREKSEL.reduce((n, t) => n + t.subs.length, 0) !== 8) fouten.push("diagnosekaart: verwacht 25 rijen in de dataset en 8 in het uittreksel");
+  if (AANTAL_SUBTHEMAS !== 25 || CONTROLE_UITTREKSEL.reduce((n, t) => n + t.subs.length, 0) !== 3) fouten.push("diagnosekaart: verwacht 25 rijen in de dataset en 3 in het uittreksel");
   if (fouten.length) throw new Error(`voorbeeld-data.ts: ${fouten.join("; ")}. Pas de spiegelkaarten en de kernconclusie aan de dataset aan.`);
 }

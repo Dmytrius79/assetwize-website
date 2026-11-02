@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/global.css';
 import HeroScherm from '../../components/compass-voorbeeld/HeroScherm.astro';
-import ScorePerThema from '../../components/compass-voorbeeld/ScorePerThema.astro';
 import Spiegel from '../../components/compass-voorbeeld/Spiegel.astro';
 import Diagnosekaart from '../../components/compass-voorbeeld/Diagnosekaart.astro';
 import PerspectiefSymbool from '../../components/compass-voorbeeld/PerspectiefSymbool.astro';
@@ -155,8 +154,8 @@ const werkwijze = [
         De uitkomst verbindt scores met hun betekenis: waar kunt u op bouwen, en waar vragen keuzes om betere onderbouwing? Elke bevinding is terug te voeren op de antwoorden.
       </p>
 
+      <p class="mb-4 text-sm text-forest-600" style="font-weight:500;">Voorbeeld met de Voorbeeldorganisatie.</p>
       <div class="flex flex-col gap-10">
-        <ScorePerThema />
         <Spiegel />
         <div>
           <p class="text-forest-900 text-base leading-relaxed aw-prose mb-6" style="font-weight:400;">
@@ -165,7 +164,6 @@ const werkwijze = [
           <Diagnosekaart />
         </div>
       </div>
-      <p class="mt-4 text-xs text-forest-400" style="font-weight:400;">Voorbeeld met de Voorbeeldorganisatie.</p>
     </div>
   </section>
 
