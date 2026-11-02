@@ -85,12 +85,12 @@ const CONTROLE_ANTWOORDEN: Record<string, [number, number, number, number]> = {
 const UITTREKSEL = ["T5.1", "T3.4", "T2.5"];
 
 // ── Vaste illustraties bij déze dataset (zie LET OP bovenaan) ────────────────
-export const KERNCONCLUSIE = "Volgens de antwoorden werkt de uitvoering overwegend goed, maar hangen keuzes af van wie erbij betrokken is.";
+export const KERNCONCLUSIE = "Betrouwbaar vandaag, onzeker over morgen: wat het huidige niveau op termijn vraagt aan investeringen, en wie daarover beslist, blijft grotendeels buiten beeld.";
 
 export const SPIEGELKAARTEN: Array<{ themaId: string; kop: string; tekst: string }> = [
   {
     themaId: "T5",
-    kop: "Keuzes hangen af van wie erbij betrokken is.",
+    kop: "Eindverantwoordelijkheid is niet overal helder.",
     tekst: "Volgens de antwoorden is eindverantwoordelijkheid niet overal helder en hanteren afdelingen verschillende uitgangspunten voor besluiten over bedrijfsmiddelen. De gevolgen van strategische plannen worden vaak pas later duidelijk.",
   },
   {
