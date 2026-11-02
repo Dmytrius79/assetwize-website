@@ -1,26 +1,23 @@
-# TASK-013 — Compass-pagina herschrijven
+# TASK-013 — Compass-pagina (definitief)
 
 ## Doel
-De pagina `/compass` wordt korter en scherper, sluit aan bij de propositie en toont de echte Compass-schermen met fictieve gegevens. Alleen `/compass` verandert. Andere pagina's, layout, kleuren en merkelementen blijven zoals ze zijn.
+`/compass` is een korte, scherpe marketingpagina met de echte Compass-schermen als bewijs van wat de uitkomst is. Herkenning ontstaat uit de vraagstukken (investeringen onderbouwen, risico's afwegen, verantwoordelijkheden verduidelijken, afspraken laten werken), niet uit het steeds benoemen van "het bestuur". Alleen `/compass` verandert, plus CLAUDE.md (punt 2 hieronder).
 
 ## Uitgangspunten
-- Branch `content/compass-pagina`, afgesplitst van `rebrand/merk-op-live`. Push de branch. Verwachte preview: `https://content-compass-pagina.assetwize-website.pages.dev` (controleer de werkelijke URL).
-- Live layout, `#071A30` als enige donkere vlak, Inter, huidige containerbreedte en de productlogo's uit TASK-012 blijven ongewijzigd.
-- Zichtbare tekst op de pagina: ongeveer 350 woorden, exclusief de tekst binnen de voorbeeldschermen.
-- Verboden op de pagina: elke vorm van duur of tijdsindicatie, het woord "AI", klantnamen (ook geen "Syngenta" of "Enkhuizen"), uitroeptekens, de claims "15+", "100" en "7 sectoren", het woord "bewezen".
+- Branch `content/compass-pagina` (gebaseerd op `rebrand/merk-op-live`). Preview: `https://content-compass-pagina.assetwize-website.pages.dev/compass/`.
+- Verboden op de pagina: elke vorm van duur of tijdsindicatie, het woord "AI", klantnamen, uitroeptekens, de claims "15+", "100" en "7 sectoren", het woord "bewezen". Geen getallen als 28 of 25 in de lopende tekst.
+- Geen element (conclusie, radar, stand, kaart, heatmap) staat twee keer op de pagina.
+- Bron alleen lezen: `~/dev/compass`. Statische Astro-componenten in `src/components/compass-voorbeeld/`, alle data in `voorbeeld-data.ts`. Afgeleide waarden worden berekend uit de antwoorden met de rekenregels van de app.
+- Het zes-assen- of dimensiepaneel en de Controle-radar ("Ontwikkeldomeinen": tien assen, blauw in de app) worden niet opgenomen.
 
-## Bron (alleen lezen)
-`~/dev/compass` (Next.js). Wijzig daar niets. Zoek in de code naar: "Bestuurlijk oordeel", "Profiel over 7 thema", "Score per thema", "Wat de antwoorden samen laten zien", "Antwoorden per vraag", "Spreiding per thema", "Antwoordverdeling" en `app/page.tsx` (de drie perspectiefkaarten met symbolen). Neem thema-namen, volgorde, niveaulabels (Reactief, Fragmentarisch, Ingericht, Geborgd, Lerend) en vaste UI-teksten letterlijk over uit de app. Het zes-assen-paneel "dimensies" (Inzicht, Uitvoerbaarheid, Besluitvorming, Beheersing, Voorspelbaarheid, Leren) wordt NIET overgenomen.
-
-## Techniek
-- Poort de schermen naar statische Astro-componenten in `src/components/compass-voorbeeld/`. Geen React, geen Clerk, geen API-calls, geen client-side data.
-- Alle data staat in één bestand `src/components/compass-voorbeeld/voorbeeld-data.ts`. Afgeleide waarden (themascores, totaalscore, aantal antwoorden op niveau 1–2, niveauverdeling, spreiding) worden berekend uit de antwoorden met de rekenregels van de app, niet handmatig ingevuld.
-- Gebruik de huidige stijl van de app voor de schermen. Alle drie de perspectieven (Koers, Controle, Groei) staan in dezelfde groene stijl, zoals in de app (besluit Dimitry, 30-10). Pas hier niets aan op basis van Brand Guidelines v2.0 §9.6. Die afwijking leg ik apart vast in Notion.
+## Kleur en CLAUDE.md
+1. Hero: donker vlak is Compass-forest `#1A4A35` (productkleur, Brand Guidelines §9.6), met het donkere Compass-logo uit TASK-012. Controleer contrast (WCAG AA) van alle tekst en knoppen in de hero en meld het resultaat. Alle drie de perspectieven staan in dezelfde groene stijl als de app (besluit Dimitry 30-10). Pas niets aan op basis van §9.6 voor Controle; die afwijking wordt apart in Notion vastgelegd.
+2. CLAUDE.md: vervang de regel "Het enige donkere vlak is `#071A30`..." door: "Het enige donkere vlak van de site zelf is `#071A30` (`--aw-deep`), exact, zonder varianten of tolerantie. Een productpagina mag in haar hero de productkleur uit Brand Guidelines §9.6 gebruiken (Compass `#1A4A35`, Atlas en Relicore zoals nu). Verder geen uitzonderingen."
 
 ## Dummy-data
-Organisatie: "Voorbeeldorganisatie". Zeven thema's in de vaste volgorde van de app. Antwoordniveaus per thema (4 vragen per thema, 28 totaal):
+Organisatie "Voorbeeldorganisatie", zichtbaar in elk voorbeeldscherm waar de app een organisatienaam toont. Zeven thema's in de vaste volgorde van de app. Antwoordniveaus per thema (4 vragen, 28 totaal):
 
-| Thema (volgorde app) | Antwoorden | Themascore |
+| Thema (volgorde app) | Antwoorden | Ongeronde score |
 |---|---|---|
 | T1 | 2, 2, 3, 2 | 2,25 |
 | T2 | 3, 4, 3, 3 | 3,25 |
@@ -30,103 +27,78 @@ Organisatie: "Voorbeeldorganisatie". Zeven thema's in de vaste volgorde van de a
 | T6 | 4, 2, 2, 2 | 2,50 |
 | T7 | 3, 3, 2, 4 | 3,00 |
 
-Controlewaarden: totaal 71 uit 28 antwoorden, gemiddelde 2,54. 14 van 28 antwoorden op niveau 1–2. Niveauverdeling niveau 1 t/m 5: 2 / 12 / 11 / 3 / 0.
+Ongeronde controlewaarden: totaal 71 van 28 antwoorden, gemiddelde 2,54; 14 van 28 antwoorden op niveau 1–2; niveauverdeling 1 t/m 5: 2/12/11/3/0. T3 en T5 zijn "Waarde, Lifecycle & Investeringen" en "Governance & Eigenaarschap" (de toewijzing in de app klopte al), T2 is "Betrouwbaarheid & Continuïteit".
+Weergave: alle Koers-waarden met één decimaal (radar-labels, score per thema, hero, totaal), met de afrondingsregel van de app. Verwacht: 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0, totaal 2,5. Berekeningen en de build-controle blijven op ongeronde waarden.
 
-Toewijzing aan de echte thema's: de twee thema's met score 2,00 (T3 en T5) moeten "Governance & Eigenaarschap" en "Waarde, Lifecycle & Investeringen" zijn. Het thema met 3,25 (T2) moet "Betrouwbaarheid & Continuïteit" zijn. Staan die thema's in de app op andere posities, verplaats dan de antwoordrijen (de rijen blijven intact als set) zodat deze drie voorwaarden gelden. Vermeld de uiteindelijke toewijzing in het Resultaat.
-
-## Opbouw en tekst (letterlijk overnemen waar tussen aanhalingstekens)
+## Opbouw en tekst (letterlijk)
 
 ### Blok 1 — Hero
-- Eyebrow: "Compass · bestuurlijke diagnose"
-- H1: "Een assessment vraagt of iets aanwezig is. Compass vraagt of het werkt."
-- Subtekst: "Een begeleide diagnose voor directie en management van asset-intensieve organisaties: waar grip ontbreekt, waarom, en wat het bestuur moet beslissen."
-- Knoppen: "Plan een gesprek" (naar `/contact`) en "Bekijk Compass live" (naar `https://compass.assetwize.nl`).
-- Rechts, compact, alleen twee elementen: de kernconclusie en het themaprofiel (radar over zeven thema's). Geen bestuurlijke stand, geen scorelijst. Kop van de kernconclusie: "Volgens de antwoorden kan het bestuur bouwen op de uitvoering, maar rusten de afwegingen op personen." Gebruik het label uit de app ("Wat de antwoorden samen laten zien"). Voeg geen extra lopende tekst toe.
+- Eyebrow: "Compass · diagnose van assetmanagement"
+- H1: "Processen ingericht. Maar werkt het ook in de praktijk?"
+- Subtekst: "Compass maakt zichtbaar waar de samenhang ontbreekt tussen keuzes, verantwoordelijkheden en uitvoering rondom bedrijfsmiddelen. In begeleide gesprekken met directie en management onderzoeken we wat goed werkt, waar het vastloopt en welke besluiten nodig zijn."
+- Knoppen: "Plan een gesprek" (`/contact`) en "Bekijk Compass live" (`https://compass.assetwize.nl`). Controleer eerst of die URL een bruikbare productomgeving of publieke startpagina opent (HTTP-status en inhoud). Opent hij alleen een inlogmuur of fout, gebruik dan "Bekijk Compass" en meld dat in het Resultaat.
+- Rechts, compact, alleen twee elementen: kernconclusie en themaprofiel (radar, zeven thema's). Kernconclusie, label uit de app ("Wat de antwoorden samen laten zien"), kop: "Volgens de antwoorden werkt de uitvoering overwegend goed, maar hangen keuzes af van wie erbij betrokken is." Geen stand, geen scorelijst, geen extra lopende tekst.
 
-### Blok 2 — Het verschil
-- Kop: "Aanwezig is niet hetzelfde als bestuurbaar."
-- Tabel met twee kolommen "Aanwezig" | "Maar ontbreekt":
+### Blok 2 — Herkent u dit?
+- Kop: "Herkent u dit?"
+- Tabel "Wat er ligt" | "Wat daarmee nog niet geregeld is":
   - onderhoudsprocessen en een CMMS | eigenaarschap voor assets
-  - KPI-rapportage | risico's die het bestuur kan sturen
+  - KPI-rapportage | risico's waar daadwerkelijk op wordt gestuurd
   - investeringsplannen | een afweging waarom juist deze prioriteit
-  - verbeterprogramma's | een gedeelde taal tussen bestuur en techniek
+  - verbeterprogramma's | een gedeelde taal tussen directie en techniek
 
-### Blok 3 — Drie perspectieven
-- Kop: "Drie perspectieven"
-- Drie kaarten met de drie symbolen en de tekststijl uit `app/page.tsx`, alle drie in dezelfde groene stijl:
-  - Koers: "28 vragen in zeven thema's, voor directie en bestuur."
-  - Controle: "Verdieping op 25 organisatievermogens, met management en proceseigenaren."
-  - Groei: alleen het label "Binnenkort". Geen beschrijving, geen verwijzing naar Polaris of een ontwikkelpad.
-- Geen duur of tijdsindicatie, geen uitleg over de relatie tussen de perspectieven.
+### Blok 3 — Van overzicht naar inzicht
+Kop: "Van overzicht naar inzicht". Drie kaarten met de drie symbolen en de stijl uit `app/page.tsx`, alle drie groen, elk met vraag en één regel:
+- Koers: "Waar is meer grip nodig?" / "Maakt zichtbaar hoe keuzes over bedrijfsmiddelen, risico's en investeringen worden onderbouwd en waar samenhang ontbreekt."
+- Controle: "Wat werkt goed en waar loopt het vast?" / "Onderzoekt hoe verantwoordelijkheden, informatie en processen in de praktijk functioneren, samen met management en proceseigenaren."
+- Groei: alleen het label "Binnenkort", visueel gelijk aan de app.
+Geen doelgroep per kaart, geen getallen, geen duur, geen uitleg over de onderlinge relatie.
 
 ### Blok 4 — Zo ziet de uitkomst eruit.
-Kop: "Zo ziet de uitkomst eruit." Gelaagd:
-- Zichtbaar: de bestuurlijke stand met de score per thema; drie spiegelkaarten; onder een eigen subkop "Controle: de diagnosekaart" de heatmap (25 subthema's × 4 PDCA-fasen) met dummy-gegevens.
-- Spiegelkaarten (korte tekst, maximaal twee zinnen, elk beginnend met "Volgens de antwoorden"):
-  1. Label "Governance & Eigenaarschap", kop "Afwegingen rusten op personen". Schrijf de tekst zelf, consistent met de dataset, en neem hem op in het Resultaat ter beoordeling.
-  2. Label "Waarde, Lifecycle & Investeringen", kop "Investeringen worden vooral op de huidige behoefte beoordeeld", tekst: "Volgens de antwoorden is de bijdrage van bedrijfsmiddelen aan de doelen slechts voor een deel in beeld. Investeringskeuzes kijken vooral naar de huidige behoefte en aanschafkosten; toekomstige mogelijkheden en beperkingen blijven grotendeels buiten beeld."
-  3. Label "Betrouwbaarheid & Continuïteit", kop "De uitvoering is de stabiele basis". Schrijf de tekst zelf, consistent met de dataset, en neem hem op in het Resultaat ter beoordeling.
-- Uitklapbaar, standaard dicht, met `<details>` en de samenvatting "Meer onderbouwing": "Antwoorden per vraag", "Spreiding per thema" en "Antwoordverdeling". Toetsenbordbediening moet werken (focus zichtbaar, Enter/Spatie).
-- Controle-radar met zes assen: alleen in een `<details>` "Ontwikkeldomeinen", en alleen als hij overeenkomt met de huidige Controle-UI in `~/dev/compass` (zoek de component, controleer de assen). Komt hij niet overeen of vind je hem niet, laat hem dan weg en meld dat in het Resultaat.
-- Onderschrift bij elk voorbeeldscherm: "Voorbeeld met fictieve gegevens · beeld van één respondent, onderbouwd in het begeleide gesprek."
-- Conclusie en spiegelkaarten zijn vaste illustraties bij déze dataset. Zet dat als opmerking in `voorbeeld-data.ts` en voeg een controle toe die de build laat falen als kaart 1 en 2 niet bij de twee laagste thema's horen, of kaart 3 niet bij het hoogste thema.
+Kop: "Zo ziet de uitkomst eruit." Zichtbaar:
+- De score per thema, compact (één decimaal).
+- Drie spiegelkaarten (label, kop, tekst):
+  1. "Governance & Eigenaarschap" / "Keuzes hangen af van wie erbij betrokken is." / "Volgens de antwoorden is eindverantwoordelijkheid niet overal helder en hanteren afdelingen verschillende uitgangspunten voor besluiten over bedrijfsmiddelen. De gevolgen van strategische plannen worden vaak pas later duidelijk."
+  2. "Waarde, Lifecycle & Investeringen" / "Investeringen worden vooral op de huidige behoefte beoordeeld" / "Volgens de antwoorden is de bijdrage van bedrijfsmiddelen aan de doelen slechts voor een deel in beeld. Investeringskeuzes kijken vooral naar de huidige behoefte en aanschafkosten; toekomstige mogelijkheden en beperkingen blijven grotendeels buiten beeld."
+  3. "Betrouwbaarheid & Continuïteit" / "De dagelijkse uitvoering werkt overwegend goed." / "Volgens de antwoorden leveren de belangrijkste bedrijfsmiddelen meestal voorspelbaar de prestaties die nodig zijn en worden belangrijke afspraken betrouwbaar nagekomen. Kwetsbaar blijven enkele kritieke werkzaamheden en gepland werk dat door onverwacht werk wordt verdrongen."
+- Subkop "Controle: uittreksel van de diagnosekaart" met de heatmap als uittreksel van acht rijen. Selecteer acht representatieve rijen uit de bestaande fictieve dataset. Behoud de waarden ongewijzigd en toon zowel sterke als zwakke onderdelen. Het uittreksel hoeft het Koers-beeld niet te bevestigen, maar mag het niet tegenspreken (groepeert de app subthema's onder thema's, laat dan de rijen van Governance en Waarde niet uitsluitend sterk scoren). Cellen moeten zonder kleur leesbaar zijn (cijfer of niveaulabel). Legenda: gebruik op de website een beschrijvende legenda ("hogere score", "middelste score", "lagere score", of de kleuren van de app als die dat zijn), geen oordeel als "Groen is op orde". Registreer het verschil met de app in het Resultaat voor de app-backlog.
+- Geen uitklapblokken, geen onderschrift "Voorbeeld met fictieve gegevens"; de naam "Voorbeeldorganisatie" blijft zichtbaar in de schermen.
+- Een opmerking in `voorbeeld-data.ts` dat conclusie en kaarten vaste illustraties bij déze dataset zijn, en een build-controle die faalt als kaart 1 en 2 niet bij de twee laagste thema's horen of kaart 3 niet bij het hoogste.
+- Verwijder de eerder gebouwde `<details>`-componenten (Antwoorden per vraag, Spreiding per thema, Antwoordverdeling) als ze nergens anders gebruikt worden.
 
-### Blok 5 — Waarom dit anders is.
-Kop: "Waarom dit anders is." Drie korte punten:
-1. "Elke vraag vraagt een uitspraak. Overslaan kan niet. Onvoldoende zicht op een onderwerp is zelf een signaal: de consultant onderzoekt samen met u waarom."
-2. Begeleid door een consultant in gesprekken met directie en management; geen zelftest. Schrijf maximaal twee zinnen.
+### Blok 5 — Zo werkt de diagnose.
+Kop: "Zo werkt de diagnose." Drie korte punten:
+1. "Elke vraag krijgt een antwoord. Is er onvoldoende zicht op een onderwerp, dan is dat zelf een bevinding: we onderzoeken samen waar het aan ligt."
+2. "Een consultant begeleidt de diagnose. Compass is geen zelftest: de uitkomst wordt samen besproken en onderbouwd."
 3. "Compass staat los van onze andere instrumenten en kan concluderen dat software niet de eerste stap is."
 
 ### Blok 6 — Afsluiting
-- Kop: "Wilt u weten waar uw organisatie staat?"
-- Tekst: "Een eerste gesprek laat zien of Compass bij uw situatie past."
-- Knop: "Plan een gesprek" (naar `/contact`).
+Kop "Wilt u weten waar uw organisatie staat?" Tekst "Een eerste gesprek laat zien of Compass bij uw situatie past." Knop "Plan een gesprek" (`/contact`).
 
-## Verwijderen van de huidige pagina
-De statistiekenrij (15+, 28, 100, 7), de drie probleemsecties, "fundamenteel verschil", "Wat Compass oplevert" en "Na de diagnose". Haal de claims 15+/100/7 sectoren ook uit title, description, og-tags en JSON-LD van deze pagina.
+## Verwijderen van de oude pagina
+Statistiekenrij, de drie probleemsecties, "fundamenteel verschil", "Wat Compass oplevert", "Na de diagnose".
 
 ## Meta
-- Meta description: "Compass is een begeleide diagnose van bestuurlijke grip voor asset-intensieve organisaties."
-- Title en og-tags in dezelfde lijn, zonder verboden claims.
-
-## Regel
-Elk element (conclusie, radar, stand, scorelijst, kaart, heatmap) komt maximaal één keer op de pagina voor.
+Meta description: "Compass is een begeleide diagnose van grip op assetmanagement voor asset-intensieve organisaties." Title en og-tags in dezelfde lijn, zonder de verboden claims. JSON-LD van deze pagina zonder 15+/100/7 sectoren.
 
 ## Acceptatiecriteria
-1. `npm run build` slaagt, inclusief de spiegelkaart-controle. Test de controle ook negatief (tijdelijk een kaart verwisselen, build moet falen, daarna terugzetten).
-2. Alle afgeleide waarden uit de tabel hierboven worden berekend en gecontroleerd op de ongeronde waarden (2,25 / 3,25 / 2,00 / 2,75 / 2,00 / 2,50 / 3,00; totaal 2,536; 14 van 28; 2/12/11/3/0). De pagina toont Koers-waarden met één decimaal volgens de afrondingsregel van de app: 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0, totaal 2,5 (Vervolg 1, punt 4).
-3. De hero toont alleen kernconclusie en radar.
-4. Geen element staat twee keer op de pagina.
-5. Alle `<details>` zijn standaard dicht en met het toetsenbord te bedienen. (Vervalt na Vervolg 1, punt 5: er staan geen `<details>` meer op de pagina.)
-6. Zichtbare tekst (exclusief voorbeeldschermen) ligt rond 350 woorden. Meld het werkelijke aantal.
-7. De pagina bevat niets van de verboden lijst (duur, "AI", klantnamen, uitroeptekens, 15+/100/7 sectoren, "bewezen"). Controleer met een zoekopdracht op de gebouwde HTML en meld het resultaat.
-8. Controleer breedtes 390, 768, 1440 en 1920 px: geen horizontale scroll, containerbreedte gelijk aan de rest van de site, schermen leesbaar op 390 px.
-9. Alleen `/compass` en de nieuwe componenten zijn gewijzigd. Controleer met `git diff --stat` ten opzichte van `rebrand/merk-op-live`.
-10. Branch gepusht. Geef de preview-URL.
+1. `npm run build` slaagt. De kaart-controle faalt aantoonbaar bij een tijdelijke verwisseling (negatieve test), daarna teruggezet.
+2. Alle weergegeven Koers-waarden hebben één decimaal en kloppen met de tabel (2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0, totaal 2,5); de achterliggende berekening is ongerond.
+3. Hero toont alleen kernconclusie en radar; geen element dubbel.
+4. Geen `<details>` of onderschrift "Voorbeeld met fictieve gegevens" meer op de pagina.
+5. Verboden lijst: 0 treffers in de gebouwde HTML, ook in title, description, og en JSON-LD.
+6. Tel alle voorkomens van "bestuur" en "bestuurlijk" in zichtbare tekst (inclusief schermen) en meld de lijst. Behoud ze alleen waar ze letterlijk uit de app komen of inhoudelijk nodig zijn.
+7. Zichtbare tekst tellen, met en zonder spiegelkaarten. Niet bijvullen.
+8. Contrast hero gecontroleerd; heatmapcellen zonder kleur leesbaar; geen horizontale scroll op 390, 768, 1440 en 1920 px; container even breed als de rest van de site.
+9. Alleen `/compass`, de componenten, CLAUDE.md en het taakbestand gewijzigd (`git diff --stat` tegen `rebrand/merk-op-live`).
+10. Screenshots in `tasks/screenshots/TASK-013/`, niet committen. Controleer ook volgorde en visuele nadruk: staat het belangrijkste (H1, conclusie, kaarten) boven de vouw en leest de pagina op 390 px in een logische volgorde?
 
-## Uitvoering
-1. Maak de branch, lees de bron in `~/dev/compass`, bouw, test lokaal (`npm run dev -- --port 4322`, poort 4321 is bezet).
-2. Commit in logische stappen, push, controleer dat de Cloudflare preview werkt.
-3. Merge niet. Open geen PR.
+## Resultaat run 2
+(Door Claude Code in te vullen: commits, preview-URL, uitkomst van de "live"-linkcontrole, woordtelling, contrastresultaat, lijst met "bestuur"-voorkomens, lijst met afwijkingen tussen website en app voor de app-backlog (legenda, "zelfevaluatie", twee decimalen vervallen, radar tien assen en blauw), eventuele afwijkingen van de opdracht.)
 
-## Vervolg 1 — van rapport naar marketingpagina
+## Resultaat run 1
 
-1. Hero: donker vlak wordt Compass-forest `#1A4A35` (productkleur, Brand Guidelines §9.6), met het donkere Compass-logo uit TASK-012. Dit overschrijft de eerdere keuze voor `#071A30` in de hero. Controleer contrast van alle tekst en knoppen (WCAG AA) en meld het resultaat. Andere donkere vlakken op de pagina blijven zoals ze zijn.
-2. CLAUDE.md: pas de regel "Het enige donkere vlak is `#071A30`" aan naar: "Het enige donkere vlak van de site zelf is `#071A30` (`--aw-deep`), exact, zonder varianten of tolerantie. Een productpagina mag in haar hero de productkleur uit Brand Guidelines §9.6 gebruiken (Compass `#1A4A35`, Atlas en Relicore zoals nu). Verder geen uitzonderingen."
-3. Blok 3 herschrijven:
-   - Kop: "Begin bij het bestuur. Ga dan de organisatie in."
-   - Koers: titel "Waar staat het bestuur?", regel "Voor directie en bestuur."
-   - Controle: titel "Waar zit het in de organisatie?", regel "Verdieping met management en proceseigenaren."
-   - Groei: alleen "Binnenkort".
-   - Symbolen en groene stijl blijven. Geen getallen (geen 28, geen 25, geen "zeven"), geen duur.
-4. Koers-waarden met één decimaal overal waar ze getoond worden (radar-labels, score per thema, hero, totaal). Gebruik de afrondingsregel van de app. Bereken en controleer op de ongeronde waarden; alleen de weergave wordt afgerond. Verwacht: 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0, totaal 2,5. De build-controle op de spiegelkaarten blijft op ongeronde waarden werken. Pas de acceptatiecriteria in het taakbestand hierop aan.
-5. Blok 4 inkorten: verwijder alle `<details>`-blokken ("Meer onderbouwing": Antwoorden per vraag, Spreiding per thema, Antwoordverdeling) en de bijbehorende componenten als ze nergens anders gebruikt worden. Blijven: score per thema (compact), de drie spiegelkaarten en "Controle: de diagnosekaart". Controleer dat de heatmapcellen ook zonder kleur te lezen zijn (cijfer of niveaulabel); zo niet, voeg dat toe.
-6. Het onderschrift "Voorbeeld met fictieve gegevens · beeld van één respondent, onderbouwd in het begeleide gesprek." vervalt overal. De organisatienaam "Voorbeeldorganisatie" blijft zichtbaar in elk voorbeeldscherm waar de app een organisatienaam toont.
-7. Zichtbare tekst opnieuw tellen (met en zonder spiegelkaarten) en rapporteren. Geen tekst toevoegen om bij te vullen.
-8. Acceptatie: build slaagt, inclusief de negatieve test van de spiegelkaart-controle; verboden lijst nog steeds 0 treffers; alleen `/compass`, de componenten, CLAUDE.md en het taakbestand gewijzigd; geen horizontale scroll op 390, 768, 1440 en 1920 px; screenshots in `tasks/screenshots/TASK-013/` (niet committen).
-9. Resultaat aanvullen met: commits, preview-URL, woordtelling, contrastresultaat hero, en wat je niet kon uitvoeren.
-
-## Resultaat
+Resultaat van de eerste uitvoering en van Vervolg 1, ongewijzigd bewaard.
 
 **Branch:** `content/compass-pagina`, afgesplitst van `rebrand/merk-op-live` (8c8a13b). Niet gemerged, geen PR.
 
@@ -252,7 +224,7 @@ Hij gebruikt bovendien blauw (#378ADD). Daarom is hij niet opgenomen.
 2. **Woordtelling:** 253 woorden ligt onder de ±350. Is dat akkoord, of wil je ergens tekst bij?
 3. **Spiegelkaarten 1 en 3:** graag je beoordeling van de teksten hierboven.
 
-### Resultaat Vervolg 1
+### Resultaat Vervolg 1 (specificatie vervallen door de definitieve versie)
 
 **Commits** op `content/compass-pagina` (nieuwe commits, geen force-push):
 - `2f3cb30` taakbestand en CLAUDE.md
