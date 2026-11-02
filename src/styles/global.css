@@ -10,9 +10,6 @@
   --color-teal-800: #115e59;
   --color-teal-900: #134e4a;
 
-  --color-navy-700: #1e3a5f;
-  --color-navy-800: #162d4a;
-  --color-navy-900: #0f1f35;
 
   /* Compass app kleuren (Forest & Stone) */
   --color-forest-900: #1A2E22;
@@ -32,5 +29,27 @@
   --color-amber-600: #6B3A1F;
   --color-amber-100: #FDF3EC;
 
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: var(--aw-font);
 }
+
+/* Lettertype (Brand Guidelines v2.0 §9.4): Inter 400/500, 600 alleen voor eyebrows; terugval Arial */
+:root {
+  --aw-font: "Inter", Arial, sans-serif;
+  /* Het enige donkere vlak (Brand Guidelines v2.0, diep navy): exact, geen varianten */
+  --aw-deep: #071A30;
+}
+
+/* --aw-deep als Tailwind-klasse: bg-aw-deep, text-aw-deep */
+@theme inline {
+  --color-aw-deep: var(--aw-deep);
+}
+
+/* Eén container voor header, content en footer (TASK-011): max-w-6xl met px-6 */
+.aw-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+/* Lopende tekst op leesbare regelbreedte (ca. 75 tekens) */
+.aw-prose { max-width: 35em; }

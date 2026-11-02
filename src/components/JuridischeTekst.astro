@@ -1,0 +1,49 @@
+---
+// Juridische pagina's (disclaimer, privacy, algemene voorwaarden): tekst letterlijk uit src/data/juridisch.ts.
+import { juridisch } from '../data/juridisch';
+
+interface Props { doc: 'disclaimer' | 'privacy' | 'voorwaarden'; }
+const { doc } = Astro.props;
+const blokken = juridisch[doc];
+
+const titel = blokken.find((b) => b.t === 'h1');
+const koppen = blokken.filter((b) => b.t === 'h2') as { t: 'h2'; x: string }[];
+const slug = (s: string) =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const inhoud = blokken.filter((b) => b.t !== 'h1');
+const laatste = inhoud[inhoud.length - 1];
+const slotregel = laatste.t === 'p' && /^(Laatste wijziging|Opgesteld op)/.test(laatste.x) ? laatste.x : null;
+const body = slotregel ? inhoud.slice(0, -1) : inhoud;
+---
+<section class="bg-aw-deep text-white pt-28 pb-16">
+  <div class="aw-container">
+    <p class="text-teal-400 text-xs uppercase tracking-[0.12em] mb-5" style="font-weight:600;">Juridisch</p>
+    <h1 class="text-3xl md:text-4xl leading-tight" style="font-weight:500;">{titel && 'x' in titel ? titel.x : ''}</h1>
+    {slotregel && <p class="text-white/60 text-sm mt-4" style="font-weight:400;">{slotregel}</p>}
+  </div>
+</section>
+
+<section class="bg-white py-16">
+  <div class="aw-container grid lg:grid-cols-4 gap-12">
+    {koppen.length >= 6 && (
+      <nav aria-label="Inhoud" class="lg:col-span-1 lg:sticky lg:top-24 self-start">
+        <p class="uppercase tracking-[0.12em] mb-4" style="font-size:11px; font-weight:600; color:#5B6B7F;">Inhoud</p>
+        <ul class="space-y-2" style="font-size:14px; line-height:1.4;">
+          {koppen.map((k) => (
+            <li><a href={`#${slug(k.x)}`} style="color:#2D4A3E;" class="hover:underline">{k.x}</a></li>
+          ))}
+        </ul>
+      </nav>
+    )}
+    <article class={koppen.length >= 6 ? 'lg:col-span-3' : 'lg:col-span-4'} style="max-width:46rem;">
+      {body.map((b) => {
+        if (b.t === 'h2') return <h2 id={slug(b.x)} class="scroll-mt-24 text-xl md:text-2xl leading-snug mt-12 mb-4 first:mt-0" style="font-weight:500; color:#071A30;">{b.x}</h2>;
+        if (b.t === 'p') return <p class="text-base leading-relaxed mb-4" style="font-weight:400; color:#1A2E22;">{b.x}</p>;
+        if (b.t === 'ul') return <ul class="list-disc pl-6 mb-4 space-y-1.5 text-base leading-relaxed" style="color:#1A2E22;">{b.items.map((t) => <li>{t}</li>)}</ul>;
+        if (b.t === 'ol') return <ol class="list-decimal pl-6 mb-4 space-y-3 text-base leading-relaxed" style="color:#1A2E22;">{b.items.map((t) => <li class="pl-1">{t}</li>)}</ol>;
+        return null;
+      })}
+      {slotregel && <p class="mt-12 pt-6 border-t text-sm" style="border-color:#C9CED6; color:#5B6B7F;">{slotregel}</p>}
+    </article>
+  </div>
+</section>

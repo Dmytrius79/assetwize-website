@@ -45,3 +45,10 @@ Kleuren, tagline en teksten staan daar, niet hier. Lees de richtlijn zelf.
 - Logo's nooit natypen of nabouwen in tekst of CSS; gebruik altijd het logobestand.
 - Productnamen altijd met "by AssetWize": Compass by AssetWize, Atlas by AssetWize, Relicore by AssetWize.
 - Teksten op de site niet wijzigen zonder opdracht in een taakbestand.
+
+## Merk
+
+- **Logo:** altijd een bestand uit `public/brand/`, nooit als tekst gezet. Licht logo (05 licht) op wit en lichte vlakken; donker logo (05/06 donker) alleen op diep navy `#071A30`, nooit op `#0F2D52`.
+- **Lettertype:** Inter via `--aw-font` (terugval Arial). Gewichten 400 en 500; 600 alleen voor eyebrows in hoofdletters met spatiëring 0,12 em. Nooit 700.
+- **Donker vlak:** het enige donkere vlak van de site zelf is `#071A30` (`--aw-deep`), exact, zonder varianten of tolerantie. Een productpagina mag in haar hero de productkleur uit Brand Guidelines §9.6 gebruiken (Compass `#1A4A35`, Atlas en Relicore zoals nu). Verder geen uitzonderingen.
+- **Tekst:** geen tekstwijzigingen zonder opdracht in een taakbestand.

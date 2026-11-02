@@ -1,0 +1,20 @@
+---
+// Hero: alleen de kernconclusie en het themaprofiel (rij 1 en de radar uit KoersZoneA.tsx), onder de kop van zone A met de organisatienaam.
+import Radar from './Radar.astro';
+import { KERNCONCLUSIE, ORGANISATIE } from './voorbeeld-data';
+import { AW, kader, eyebrow, zoneLabel } from './stijl';
+---
+<section aria-label="Voorbeeld: kernconclusie en themaprofiel" style={kader}>
+  <div style={`padding:18px 24px 14px; border-bottom:1px solid ${AW.hair};`}>
+    <p style={zoneLabel}>Koers</p>
+    <p style="margin:0; font-size:18px; font-weight:500; letter-spacing:-0.01em;">{ORGANISATIE}</p>
+  </div>
+  <div style={`padding:20px 24px 22px; border-bottom:1px solid ${AW.hair}; background-color:${AW.wolk};`}>
+    <p style={`${eyebrow} margin-bottom:8px;`}>Wat de antwoorden samen laten zien</p>
+    <p style={`margin:0; font-size:19px; line-height:1.35; font-weight:500; letter-spacing:-0.01em; color:${AW.navy};`}>{KERNCONCLUSIE}</p>
+  </div>
+  <div style="padding:20px 24px 22px;">
+    <p style={eyebrow}>Profiel over 7 thema's</p>
+    <Radar />
+  </div>
+</section>

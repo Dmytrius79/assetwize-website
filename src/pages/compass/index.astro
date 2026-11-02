@@ -1,573 +1,205 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CompassLogo from '../../components/CompassLogo.astro';
 import '../../styles/global.css';
+import HeroScherm from '../../components/compass-voorbeeld/HeroScherm.astro';
+import ScorePerThema from '../../components/compass-voorbeeld/ScorePerThema.astro';
+import Spiegel from '../../components/compass-voorbeeld/Spiegel.astro';
+import Diagnosekaart from '../../components/compass-voorbeeld/Diagnosekaart.astro';
+import PerspectiefSymbool from '../../components/compass-voorbeeld/PerspectiefSymbool.astro';
+
+// Tekst: TASK-014, letterlijk
+const zesVragen = [
+  "Is duidelijk wie eindverantwoordelijk is en ingrijpt als belangrijke prestaties of risico's tekortschieten?",
+  "Kunt u onderbouwen welke risico's uw organisatie bewust accepteert, waarom, en wie daarover beslist?",
+  "Kunt u aan een toezichthouder laten zien hoe belangrijke risicoafwegingen tot stand kwamen?",
+  "Weet u welke aannames achter uw belangrijkste cijfers zitten, en hoe onzeker die zijn?",
+  "Weet u welke bedrijfsmiddelen voldoende bijdragen aan uw doelen en welke achterblijven?",
+  "Weegt u bij strategische plannen mee wat uw bedrijfsmiddelen mogelijk maken en beperken?",
+];
 ---
 <BaseLayout
-  title="Compass — diagnose van asset governance"
-  description="Compass maakt zichtbaar waarom prestaties achterblijven, investeringsbeslissingen moeilijk te onderbouwen zijn en de organisatie afhankelijk is van sleutelfiguren. Diagnose-instrument voor bestuurbaarheid van asset-intensieve organisaties."
+  title="Compass — bestuurbaarheid in beeld"
+  description="Compass maakt zichtbaar waar besluiten over bedrijfsmiddelen niet aansluiten op verantwoordelijkheid, informatie en uitvoering. Begeleide diagnose."
 >
 
   <!-- ① HERO -->
-  <section class="bg-forest-700 text-white pt-28 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="mb-10 pb-8 border-b border-forest-200/20">
-        <CompassLogo variant="dark" size="xl" />
+  <section class="bg-forest-700 text-white pt-28 pb-20">
+    <div class="aw-container">
+      <div class="mb-10 pb-8 border-b border-white/15">
+        <img src="/brand/producten/compass-donker.svg" alt="Compass" width="208" height="78" style="margin:-13px 0 -13px -13px;" />
       </div>
-      <h1 class="text-4xl md:text-5xl fw-medium mb-6 max-w-xl"
-          style="font-weight:500; line-height:1.13;">
-        Compass laat zien of assetmanagement daadwerkelijk werkt.
-      </h1>
-      <p class="text-forest-200 text-lg leading-relaxed max-w-lg mb-10"
-         style="font-weight:400;">
-        Niet: is het ingericht?<br />
-        Maar: werkt het — en leidt het tot de waarde die uw organisatie verwacht?
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="/contact"
-           class="inline-flex px-7 py-3.5 bg-forest-600 hover:bg-forest-500
-                  text-white rounded-lg transition-colors text-sm"
-           style="font-weight:500;">
-          Start het gesprek
-        </a>
-        <a href="#drie-perspectieven"
-           class="inline-flex px-7 py-3.5 border border-forest-200/30
-                  hover:border-forest-200/60 text-forest-200 hover:text-white
-                  rounded-lg transition-colors text-sm"
-           style="font-weight:500;">
-          Meer over Compass
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ② ISO-ANKERZIN -->
-  <section class="bg-white border-l-4 border-forest-600 py-9 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-900 text-base leading-relaxed max-w-2xl"
-         style="font-weight:500;">
-        Assetmanagement heeft één doel: waarde realiseren uit assets tegen een aanvaardbaar niveau van risico en kosten.
-        <span class="text-forest-400" style="font-weight:400;">
-          Compass maakt zichtbaar of uw organisatie daartoe daadwerkelijk in staat is.
-        </span>
-      </p>
-    </div>
-  </section>
-
-  <!-- BEWIJS STRIP -->
-  <section class="bg-forest-900 py-8 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-forest-700">
-        {[
-          { getal: "15+", label: "jaar praktijkervaring" },
-          { getal: "28",  label: "bestuurlijke vragen per scan" },
-          { getal: "100", label: "managementvragen · 25 vermogens" },
-          { getal: "7",   label: "sectoren · industrie t/m utilities" },
-        ].map((item) => (
-          <div class="bg-forest-900 px-6 py-5 text-center">
-            <p style="font-size:28px; font-weight:500; color:#C8EED8; line-height:1;">{item.getal}</p>
-            <p style="font-size:11px; font-weight:400; color:#5A7A65; margin-top:6px; line-height:1.4;">{item.label}</p>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div class="min-w-0">
+          <p class="text-xs uppercase tracking-[0.12em] text-forest-200 mb-5" style="font-weight:600;">Compass · bestuurbaarheid in beeld</p>
+          <h1 class="text-4xl md:text-5xl mb-6" style="font-weight:500; line-height:1.13;">
+            Kunt u uw belangrijkste investeringen en risicoafwegingen onderbouwen?
+          </h1>
+          <p class="text-white/65 text-lg leading-relaxed aw-prose mb-4" style="font-weight:400;">
+            Besluiten over bedrijfsmiddelen bepalen de prestaties, de risico's en de continuïteit van uw organisatie. Maar is duidelijk waarop die besluiten rusten, wie ervoor verantwoordelijk is en of de uitvoering erbij aansluit?
+          </p>
+          <p class="text-white/65 text-lg leading-relaxed aw-prose mb-10" style="font-weight:400;">
+            Compass maakt zichtbaar waar informatie, verantwoordelijkheid en besluitvorming los van elkaar raken. In begeleide gesprekken met directie en management onderzoeken we wat werkt, waar de samenhang ontbreekt en welke keuzes nu aandacht verdienen.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact"
+               class="inline-flex justify-center px-7 py-3.5 bg-white hover:bg-forest-100
+                      text-forest-700 rounded-lg transition-colors text-sm"
+               style="font-weight:500;">
+              Plan een gesprek
+            </a>
+            <a href="https://compass.assetwize.nl" target="_blank" rel="noopener"
+               class="inline-flex justify-center px-7 py-3.5 border border-white/60
+                      hover:border-white text-white/80 hover:text-white
+                      rounded-lg transition-colors text-sm"
+               style="font-weight:500;">
+              Bekijk Compass live
+            </a>
           </div>
-        ))}
+        </div>
+        <div class="min-w-0">
+          <HeroScherm />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ③ HET PROBLEEM -->
-  <section class="bg-forest-50 py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:500;">Het probleem</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-3 max-w-lg"
-          style="font-weight:500;">
-        Dezelfde vragen blijven terugkomen.<br />
-        Ongeacht sector, schaal of inspanning.
+  <!-- ② ZES VRAGEN -->
+  <section class="bg-white py-20">
+    <div class="aw-container">
+      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10" style="font-weight:500;">
+        Zes vragen waar u een antwoord op moet hebben
       </h2>
-      <p class="text-forest-400 text-base mb-10 max-w-lg" style="font-weight:400;">
-        Asset-intensieve organisaties investeren structureel in onderhoud, systemen en processen. Toch blijft grip uit.
-      </p>
-      <ul class="max-w-xl divide-y divide-stone-300">
-        {[
-          "Waarom blijven prestaties achter ondanks alle inspanningen?",
-          "Waarom zijn investeringsbeslissingen moeilijk te onderbouwen?",
-          "Waarom is de organisatie afhankelijk van een handvol sleutelfiguren?",
-          "Waarom leiden verbeterprogramma's niet tot blijvende resultaten?",
-          "Waarom ontbreekt het overzicht over risico's, prestaties en waardecreatie?",
-        ].map((vraag) => (
-          <li class="flex items-start gap-4 py-4">
-            <span class="mt-1.5 w-4 h-4 flex-shrink-0 rounded-full border-2 border-forest-600 flex items-center justify-center">
-              <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
-            </span>
-            <span class="text-forest-900 text-sm leading-relaxed" style="font-weight:400;">{vraag}</span>
+      <ol class="grid md:grid-cols-2 gap-x-10 gap-y-6" style="list-style:none; padding:0; margin:0;">
+        {zesVragen.map((vraag, i) => (
+          <li class="flex gap-4 border-t border-stone-300 pt-5">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full border border-forest-600 text-forest-600 text-xs inline-flex items-center justify-center" style="font-weight:500;">{i + 1}</span>
+            <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400;">{vraag}</p>
           </li>
         ))}
-      </ul>
-      <p class="text-forest-400 text-sm mt-6 max-w-xl" style="font-weight:400;">
-        Het probleem is bijna nooit een gebrek aan processen of systemen. De samenhang werkt niet.
+      </ol>
+      <p class="text-forest-400 text-base leading-relaxed mt-10" style="font-weight:400; max-width:none;">
+        Lukt het u om alle zes direct te beantwoorden, én aan te geven waarop dat antwoord rust? Dan staat u sterk. Zo niet, dan weet u waar u moet beginnen. Compass stelt vragen als deze. We bespreken waarop uw antwoorden zijn gebaseerd en toetsen ze aan concrete voorbeelden uit de organisatie.
       </p>
+    </div>
+  </section>
 
-      <!-- Wat Compass in de praktijk ziet -->
-      <div class="mt-10 bg-white border border-stone-300 rounded-xl p-8 max-w-xl">
-        <p class="text-xs uppercase tracking-widest mb-5" style="font-weight:600; color:#2D6A4F;">
-          Wat Compass in de praktijk ziet
+  <!-- ③ + ④ AANWEZIG ≠ WERKEND · KEURINGSBEWIJZEN ≠ GRIP -->
+  <section class="bg-forest-50 py-20">
+    <div class="aw-container grid md:grid-cols-2 gap-12 md:gap-16">
+      <div>
+        <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-5" style="font-weight:500;">
+          Aanwezig is nog niet hetzelfde als werkend.
+        </h2>
+        <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400;">
+          Veel assessments tellen wat er is: procedures, systemen, rollen. Compass vraagt of het werkt: hoe besluiten worden genomen, wie ze draagt en of de organisatie ervan leert. Elk antwoord valt op een ladder van vijf stadia: <strong style="font-weight:500;">Reactief · Fragmentarisch · Ingericht · Geborgd · Lerend</strong>.
         </p>
-        <p class="text-sm mb-4" style="font-weight:400; color:#5A7A65;">Veel organisaties beschikken over:</p>
-        <div class="flex flex-col gap-2 mb-6">
-          {["Onderhoudsprocessen", "Een CMMS", "KPI-rapportages"].map((item) => (
-            <div class="flex items-center gap-3">
-              <span style="color:#2D6A4F; font-size:13px;">✓</span>
-              <span class="text-sm" style="font-weight:400; color:#1A2E22;">{item}</span>
-            </div>
-          ))}
-        </div>
-        <p class="text-sm mb-4" style="font-weight:400; color:#5A7A65;">Maar missen:</p>
-        <div class="flex flex-col gap-2">
-          {[
-            "Expliciet eigenaarschap over assets",
-            "Bestuurbare risico's op directieniveau",
-            "Onderbouwde investeringslogica",
-            "Een gedeelde taal tussen bestuur en techniek",
-          ].map((item) => (
-            <div class="flex items-center gap-3">
-              <span style="color:#b91c1c; font-size:13px;">✕</span>
-              <span class="text-sm" style="font-weight:400; color:#1A2E22;">{item}</span>
-            </div>
-          ))}
-        </div>
+      </div>
+      <div>
+        <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-5" style="font-weight:500;">
+          Een map vol keuringsbewijzen is nog geen bewijs van grip.
+        </h2>
+        <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400;">
+          Bij een incident of een toezichthouder aan tafel telt niet of de documenten er zijn, maar of u kunt laten zien hoe risico's zijn afgewogen en wie besliste. Compass is geen juridische toets en geen certificering.
+        </p>
       </div>
     </div>
   </section>
 
-
-  <!-- ④ WAAROM VASTLOPEN -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:500;">Waarom verbeterprogramma's vastlopen</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-8 max-w-lg"
-          style="font-weight:500;">
-        Meer van hetzelfde lost het verkeerde probleem op.
+  <!-- ⑤ KOERS: zeven thema's, één eerlijk beeld -->
+  <section id="drie-perspectieven" class="bg-white py-20">
+    <div class="aw-container">
+      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-5" style="font-weight:500;">
+        Van oordeel naar verklaring.
       </h2>
-      <ul class="max-w-xl divide-y divide-stone-300">
-        {[
-          { vet: "Meer onderhoud",    rest: " lost geen eigenaarschapsprobleem op." },
-          { vet: "Betere software",   rest: " lost geen besluitvormingsprobleem op." },
-          { vet: "Meer KPI's",        rest: " lossen geen informatieprobleem op." },
-          { vet: "Meer audits",       rest: " lossen geen governanceprobleem op." },
-        ].map((item) => (
-          <li class="flex items-start gap-4 py-4">
-            <span class="text-red-700 text-sm flex-shrink-0 mt-0.5" style="font-weight:500;">✕</span>
-            <span class="text-forest-900 text-sm leading-relaxed" style="font-weight:400;">
-              <span style="font-weight:500;">{item.vet}</span>{item.rest}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <p class="text-forest-900 text-sm mt-6 max-w-xl" style="font-weight:500;">
-        Compass maakt zichtbaar welk probleem werkelijk opgelost moet worden.
+      <p class="text-forest-900 text-base leading-relaxed mb-3" style="font-weight:400; max-width:none;">
+        Compass werkt in stappen. Elke stap beantwoordt een andere vraag en bouwt voort op de vorige.
       </p>
-    </div>
-  </section>
+      <p class="mb-12 text-sm text-forest-600" style="font-weight:500;">Voorbeeld met de Voorbeeldorganisatie.</p>
 
-  <!-- ⑤ AANWEZIG vs WERKEND -->
-  <section class="bg-forest-50 py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4"
-         style="font-weight:500;">Het fundamentele onderscheid</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10 max-w-lg"
-          style="font-weight:500;">
-        Traditionele assessments en Compass stellen een fundamenteel andere vraag.
-      </h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <!-- Links: traditioneel — leesbaar maar visueel teruggedrongen -->
-        <div class="rounded-xl overflow-hidden" style="background:#f0f2f0; border:1px solid #C8CFC4;">
-          <div class="px-7 pt-6 pb-4" style="border-bottom:1px solid #C8CFC4;">
-            <p class="text-xs uppercase tracking-widest mb-1" style="font-weight:500; color:#8FA898;">Traditionele audits & assessments</p>
-            <p class="text-lg" style="font-weight:500; color:#5A7A65;">Is het aanwezig?</p>
+      <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <PerspectiefSymbool soort="koers" />
+            <p class="uppercase tracking-[0.12em]" style="font-size:11px; font-weight:600; color:#2D6A4F; margin:0;">1 · Koers</p>
           </div>
-          <div class="px-7 py-5 flex flex-col gap-3">
-            {[
-              "Toetsen aanwezigheid van processen",
-              "Toetsen compliance met normen",
-              "Toetsen documentatie en procedures",
-            ].map((item) => (
-              <div class="flex items-start gap-3">
-                <span style="color:#C8CFC4; font-size:13px; margin-top:1px;">—</span>
-                <span style="font-weight:400; color:#5A7A65; font-size:13px;">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <!-- Rechts: Compass — scherp -->
-        <div class="bg-forest-700 rounded-xl overflow-hidden">
-          <div class="px-7 pt-6 pb-4" style="border-bottom:1px solid rgba(200,238,216,0.15);">
-            <p class="text-xs uppercase tracking-widest text-forest-200 mb-1" style="font-weight:500;">Compass</p>
-            <p class="text-lg text-white" style="font-weight:500;">Werkt het?</p>
-          </div>
-          <div class="px-7 py-5 flex flex-col gap-3">
-            {[
-              "Toetst bestuurbaarheid van de organisatie",
-              "Toetst of besluitvorming daadwerkelijk werkt",
-              "Toetst of waarderealisatie uit assets plaatsvindt",
-            ].map((item) => (
-              <div class="flex items-start gap-3">
-                <span style="color:#C8EED8; font-size:13px; margin-top:1px; flex-shrink:0;">→</span>
-                <span style="font-weight:400; color:#C8EED8; font-size:13px;">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <p class="text-forest-400 text-sm mt-6 max-w-xl" style="font-weight:400;">
-        In de organisaties waarop Compass is ontwikkeld en getest, bleek steeds hetzelfde patroon zichtbaar: processen, systemen en rollen waren aanwezig. Grip was er niet. De samenhang werkte niet.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- ⑥ DRIE PERSPECTIEVEN -->
-  <section id="drie-perspectieven" class="bg-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Drie perspectieven</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-3" style="font-weight:500;">
-        De diagnose. En wat u ermee doet.
-      </h2>
-      <p class="text-forest-400 text-sm mb-10 max-w-xl" style="font-weight:400;">
-        Koers en Controle zijn de twee diagnostische perspectieven. Groei is wat eruit volgt — de vertaling naar organisatieontwikkeling.
-      </p>
-
-      <p class="text-xs uppercase tracking-widest mb-3" style="font-weight:500; color:#5A7A65;">De diagnose</p>
-      <div class="grid md:grid-cols-2 gap-4 mb-6">
-
-        <!-- KOERS -->
-        <div class="rounded-xl overflow-hidden">
-          <div class="bg-forest-900 px-6 pt-7 pb-5">
-            <p class="text-xs uppercase tracking-widest text-forest-200 mb-3" style="font-weight:500;">01 — Koers</p>
-            <p class="text-base text-white" style="font-weight:500;">"Hebben wij grip?"</p>
-          </div>
-          <div class="bg-forest-700 px-6 py-2.5">
-            <p class="text-xs uppercase tracking-wide text-forest-200" style="font-weight:500;">Confronterend · bestuurlijk</p>
-          </div>
-          <div class="bg-white border border-stone-300 border-t-0 px-6 py-5">
-            <p class="text-sm text-forest-400 leading-relaxed mb-5" style="font-weight:400;">
-              Het bestuurlijke perspectief. Beoordeelt of directie en management voldoende grip hebben op risico's, prestaties, investeringen en toekomstbestendigheid. Geen advies — wel een spiegel.
-            </p>
-            <div class="flex flex-col gap-1.5">
-              <span class="flex items-center gap-2 text-xs" style="font-weight:400; color:#5A7A65;">
-                <span class="w-1.5 h-1.5 rounded-full bg-forest-700 flex-shrink-0"></span>28 vragen · 7 thema's
-              </span>
-              <span class="flex items-center gap-2 text-xs" style="font-weight:400; color:#5A7A65;">
-                <span class="w-1.5 h-1.5 rounded-full bg-forest-700 flex-shrink-0"></span>Halve dag · directie
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CONTROLE -->
-        <div class="rounded-xl overflow-hidden">
-          <div class="px-6 pt-7 pb-5" style="background:#6B3A1F;">
-            <p class="text-xs uppercase tracking-widest mb-3" style="font-weight:500; color:#FDF3EC;">02 — Controle</p>
-            <p class="text-base" style="font-weight:500; color:#fff;">"Waarom hebben wij geen grip?"</p>
-          </div>
-          <div class="px-6 py-2.5" style="background:#8B5E3C;">
-            <p class="text-xs uppercase tracking-wide" style="font-weight:500; color:#FDF3EC;">Diagnostisch · organisatorisch</p>
-          </div>
-          <div class="bg-white border border-stone-300 border-t-0 px-6 py-5">
-            <p class="text-sm text-forest-400 leading-relaxed mb-5" style="font-weight:400;">
-              Het organisatorische perspectief. Onderzoekt of mensen, processen, informatie en middelen op elkaar aansluiten — of juist tegenwerken. Niet door procedures te tellen, maar door te beoordelen of het systeem functioneert.
-            </p>
-            <div class="flex flex-col gap-1.5">
-              <span class="flex items-center gap-2 text-xs" style="font-weight:400; color:#5A7A65;">
-                <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#8B5E3C;"></span>100 vragen · 25 vermogens
-              </span>
-              <span class="flex items-center gap-2 text-xs" style="font-weight:400; color:#5A7A65;">
-                <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#8B5E3C;"></span>1–2 dagen · management
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- GROEI — uitkomstlaag -->
-      <p class="text-xs uppercase tracking-widest mb-3" style="font-weight:500; color:#5A7A65;">Het resultaat</p>
-      <div class="rounded-xl overflow-hidden border-2 border-forest-600">
-        <div class="bg-forest-600 px-7 py-5">
-          <p class="text-xs uppercase tracking-widest text-forest-200 mb-2" style="font-weight:500;">03 — Groei</p>
-          <p class="text-base text-white mb-1" style="font-weight:500;">"Wat moeten wij veranderen?"</p>
-          <p class="text-xs uppercase tracking-wide text-forest-200" style="font-weight:500;">Constructief · toekomstgericht · halve dag – 1 dag</p>
-        </div>
-        <div class="bg-forest-100 px-7 py-6">
-          <p class="text-sm text-forest-400 leading-relaxed mb-6 max-w-2xl" style="font-weight:400;">
-            Groei vertaalt de bevindingen van Koers en Controle naar concrete organisatieontwikkeling. Niet vanuit losse verbeterlijsten — vanuit herkenbare vraagstukken die asset-intensieve organisaties kennen.
-          </p>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              { van: "Van reactief",          naar: "Naar voorspelbaar" },
-              { van: "Van persoonsafhankelijk", naar: "Naar georganiseerd" },
-              { van: "Van aannames",          naar: "Naar feiten" },
-              { van: "Van eilanden",          naar: "Naar integrale sturing" },
-              { van: "Van kostenbeheer",      naar: "Naar waardesturing" },
-              { van: "Van risicobewust",      naar: "Naar risicogestuurd" },
-            ].map((item) => (
-              <div class="bg-white border border-stone-300 rounded-lg px-4 py-3">
-                <p class="text-xs text-forest-700 mb-1" style="font-weight:500;">{item.van} →</p>
-                <p class="text-xs text-forest-400" style="font-weight:400;">{item.naar}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ⑦ WAT COMPASS ZICHTBAAR MAAKT -->
-  <section class="bg-forest-50 py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat Compass zichtbaar maakt</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-3 max-w-lg" style="font-weight:500;">
-        Niet een rapport over processen.<br />
-        Een diagnose die het bestuur kan lezen.
-      </h2>
-      <p class="text-forest-400 text-sm mb-8 max-w-lg" style="font-weight:400;">
-        Onderstaande output is afkomstig uit een werkelijk uitgevoerde Compass-scan.
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-4 mb-4">
-
-        <!-- Koers profiel -->
-        <div class="bg-white border border-stone-300 rounded-xl overflow-hidden">
-          <div class="bg-forest-50 border-b border-stone-300 px-5 py-3">
-            <p class="text-xs uppercase tracking-widest mb-0.5" style="font-weight:500; color:#5A7A65;">Koers — bestuurlijk profiel</p>
-            <p class="text-sm text-forest-900" style="font-weight:500;">Compass Profiel</p>
-          </div>
-          <div class="px-5 py-4 divide-y divide-stone-100">
-            {[
-              { label: "Toekomstvastheid & Verandervermogen", score: "1.8", niveau: "Niet aantoonbaar", kleur: "red"   },
-              { label: "Betrouwbaarheid & Continuïteit",      score: "2.0", niveau: "Incidenteel",      kleur: "amber" },
-              { label: "Besluitvorming & Stuurinformatie",    score: "2.5", niveau: "Incidenteel",      kleur: "amber" },
-              { label: "Governance & Eigenaarschap",          score: "2.5", niveau: "Incidenteel",      kleur: "amber" },
-              { label: "Waarde, Lifecycle & Investeringen",   score: "3.3", niveau: "Systematisch",     kleur: "green" },
-            ].map((rij) => (
-              <div class="flex justify-between items-center py-2.5 gap-4">
-                <span class="text-xs text-forest-900 leading-snug" style="font-weight:400;">{rij.label}</span>
-                <div class="flex items-center gap-2 flex-shrink-0">
-                  <span style={`font-size:12px; font-weight:500; color:${rij.kleur==='red'?'#b91c1c':rij.kleur==='amber'?'#92400e':'#1A4A35'}`}>
-                    {rij.score}
-                  </span>
-                  <span style={`font-size:10px; font-weight:500; padding:2px 8px; border-radius:100px;
-                    background:${rij.kleur==='red'?'#fef2f2':rij.kleur==='amber'?'#FDF3EC':'#EDF4F0'};
-                    color:${rij.kleur==='red'?'#b91c1c':rij.kleur==='amber'?'#92400e':'#1A4A35'}`}>
-                    {rij.niveau}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Radar -->
-        <div class="bg-white border border-stone-300 rounded-xl overflow-hidden">
-          <div class="bg-forest-50 border-b border-stone-300 px-5 py-3">
-            <p class="text-xs uppercase tracking-widest mb-0.5" style="font-weight:500; color:#5A7A65;">Controle — ontwikkeldomeinen</p>
-            <p class="text-sm text-forest-900" style="font-weight:500;">Organisatie radar</p>
-          </div>
-          <div class="px-5 py-4 flex gap-5 items-start">
-            <svg viewBox="0 0 220 220" width="170" height="170" class="flex-shrink-0">
-              <g transform="translate(110,110)">
-                <!-- Grid ringen -->
-                <polygon points="0,-85 74,-26 46,69 -46,69 -74,-26" fill="none" stroke="#E0EBE4" stroke-width="1"/>
-                <polygon points="0,-60 52,-18 32,49 -32,49 -52,-18" fill="none" stroke="#E0EBE4" stroke-width="1"/>
-                <polygon points="0,-34 29,-10 18,28 -18,28 -29,-10" fill="none" stroke="#E0EBE4" stroke-width="1"/>
-                <!-- Assen -->
-                <line x1="0" y1="0" x2="0"   y2="-85" stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="74"  y2="-26" stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="46"  y2="69"  stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="-46" y2="69"  stroke="#E0EBE4" stroke-width="0.5"/>
-                <line x1="0" y1="0" x2="-74" y2="-26" stroke="#E0EBE4" stroke-width="0.5"/>
-                <!-- Data polygon — scores: Governance 2.5/5, Organisatie 1.7/5, Risico 1.3/5, Ketenregie 2.4/5, Informatie 1.5/5 -->
-                <polygon points="0,-43 42,-15 16,34 -37,40 -31,-12"
-                         fill="rgba(45,106,79,0.12)" stroke="#2D6A4F" stroke-width="2"/>
-                <!-- Labels -->
-                <text x="0"   y="-96"  text-anchor="middle" font-size="9.5" fill="#5A7A65" font-family="Inter,sans-serif" font-weight="400">Governance</text>
-                <text x="84"  y="-23"  text-anchor="start"  font-size="9.5" fill="#5A7A65" font-family="Inter,sans-serif" font-weight="400">Organisatie</text>
-                <text x="53"  y="82"   text-anchor="middle" font-size="9.5" fill="#5A7A65" font-family="Inter,sans-serif" font-weight="400">Risico</text>
-                <text x="-53" y="82"   text-anchor="middle" font-size="9.5" fill="#5A7A65" font-family="Inter,sans-serif" font-weight="400">Ketenregie</text>
-                <text x="-84" y="-23"  text-anchor="end"    font-size="9.5" fill="#5A7A65" font-family="Inter,sans-serif" font-weight="400">Informatie</text>
-              </g>
-            </svg>
-            <div class="flex flex-col gap-1.5 flex-1">
-              {[
-                { label: "Risico",      score: "1.3", kleur: "red"   },
-                { label: "Informatie",  score: "1.5", kleur: "red"   },
-                { label: "Organisatie", score: "1.7", kleur: "amber" },
-                { label: "Engineering", score: "1.8", kleur: "amber" },
-                { label: "Ketenregie",  score: "2.4", kleur: "green" },
-                { label: "Governance",  score: "2.5", kleur: "green" },
-              ].map((r) => (
-                <div class="flex justify-between">
-                  <span class="text-xs text-forest-400" style="font-weight:400;">{r.label}</span>
-                  <span style={`font-size:11px; font-weight:500; color:${r.kleur==='red'?'#b91c1c':r.kleur==='amber'?'#92400e':'#1A4A35'}`}>
-                    {r.score}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Diagnosekaart -->
-      <div class="bg-white border border-stone-300 rounded-xl overflow-hidden">
-        <div class="bg-forest-50 border-b border-stone-300 px-6 py-4">
-          <p class="text-xs uppercase tracking-widest mb-0.5" style="font-weight:500; color:#5A7A65;">Controle — diagnosekaart · werken & leren</p>
-          <p class="text-sm text-forest-900" style="font-weight:500;">Waar breekt de verbetercyclus?</p>
-        </div>
-        <div class="px-6 py-5 overflow-x-auto">
-          <table class="w-full border-collapse">
-            <thead>
-              <tr>
-                <th class="text-left py-3 pr-6 border-b border-stone-200 text-left"
-                    style="font-size:11px; font-weight:500; color:#5A7A65;">Organisatievermogen</th>
-                {["Plannen","Uitvoeren","Controleren","Bijsturen"].map(h => (
-                  <th class="text-center py-3 px-4 border-b border-stone-200"
-                      style="font-size:11px; font-weight:500; color:#5A7A65;">{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { naam: "Cross-functional Alignment", s: ["g","g","g","a"] },
-                { naam: "Maintenance Strategy",       s: ["g","g","r","a"] },
-                { naam: "Work Management",            s: ["a","g","r","r"] },
-                { naam: "Asset Performance",          s: ["r","r","r","r"] },
-              ].map((rij) => (
-                <tr style="border-bottom:0.5px solid #F0F4F1;">
-                  <td class="py-4 pr-6" style="font-size:13px; font-weight:400; color:#1A2E22;">{rij.naam}</td>
-                  {rij.s.map((k) => (
-                    <td class="text-center px-4 py-4">
-                      <span style={`display:inline-flex; align-items:center; justify-content:center;
-                        width:34px; height:34px; border-radius:6px; font-size:12px; font-weight:500;
-                        background:${k==='g'?'#EDF4F0':k==='a'?'#FDF3EC':'#fff1f1'};
-                        color:${k==='g'?'#1A4A35':k==='a'?'#8B5E3C':'#b91c1c'}`}>
-                        {k==='g'?'3.0':k==='a'?'2.0':'1.0'}
-                      </span>
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p class="mt-4" style="font-size:11px; font-weight:400; color:#5A7A65;">
-            Rood = aandacht nodig · Oranje = in ontwikkeling · Groen = op orde
+          <h3 class="text-xl md:text-2xl leading-snug text-forest-900 mb-4" style="font-weight:500;">Zeven thema's, één eerlijk beeld.</h3>
+          <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400;">
+            Koers brengt de zeven thema's in beeld waarop een directie stuurt, van risico en investeringen tot governance en betrouwbaarheid. U ziet waar u op kunt bouwen en waar keuzes om betere onderbouwing vragen. Ook "dat weten we niet" telt: onvoldoende zicht is zelf een bevinding.
           </p>
         </div>
+        <div class="lg:col-span-3"><ScorePerThema /></div>
       </div>
+      <div class="mt-10"><Spiegel /></div>
     </div>
   </section>
 
-
-  <!-- ⑧ WAT HET OPLEVERT -->
-  <section class="bg-forest-700 text-white py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-200 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Wat Compass oplevert</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-white mb-10 max-w-lg" style="font-weight:500;">
-        Geen rapport over processen.<br />
-        Een diagnose die het gesprek mogelijk maakt.
-      </h2>
-      <div class="divide-y divide-white/10 max-w-2xl">
-        {[
-          "Waar bestuurlijke grip ontbreekt — en in welke mate dit een risico vormt voor de waarderealisatie.",
-          "Welke patronen dit veroorzaken — niet de symptomen, maar de onderliggende organisatorische condities.",
-          "Of het assetmanagementsysteem daadwerkelijk werkt — niet of het ingericht is, maar of het functioneert.",
-          "Welke ontwikkelrichting de grootste impact heeft — gebaseerd op uw specifieke situatie.",
-          "Wat dit vraagt van het bestuur — welke besluiten, welke investeringen, welke veranderingen.",
-        ].map((punt, i) => (
-          <div class="flex items-start gap-5 py-5">
-            <span class="text-forest-200 text-xs flex-shrink-0 mt-0.5" style="font-weight:500;">{i + 1}</span>
-            <p class="text-forest-200/75 text-sm leading-relaxed" style="font-weight:400;">{punt}</p>
+  <!-- ⑥ CONTROLE: de werkprocessen erachter -->
+  <section class="bg-forest-50 py-20">
+    <div class="aw-container">
+      <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <PerspectiefSymbool soort="controle" />
+            <p class="uppercase tracking-[0.12em]" style="font-size:11px; font-weight:600; color:#2D6A4F; margin:0;">2 · Controle</p>
           </div>
-        ))}
+          <h3 class="text-xl md:text-2xl leading-snug text-forest-900 mb-4" style="font-weight:500;">De werkprocessen erachter.</h3>
+          <p class="text-forest-900 text-base leading-relaxed mb-4" style="font-weight:400;">
+            Koers wijst aan waar u moet kijken, Controle gaat de diepte in. Per thema worden de onderliggende werkprocessen beoordeeld, in vier fasen: plannen, uitvoeren, controleren en bijsturen. Zo ziet u welke processen goed lopen, hoe goed de organisatie ervan leert en of ze zich kan aanpassen.
+          </p>
+          <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400;">
+            Controle werkt en wordt op dit moment volledig herzien.
+          </p>
+        </div>
+        <div class="lg:col-span-3"><Diagnosekaart /></div>
       </div>
     </div>
   </section>
 
-  <!-- ⑨ WAT NA COMPASS -->
-  <section class="bg-forest-50 py-16 px-6">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-forest-600 text-xs uppercase tracking-widest mb-4" style="font-weight:500;">Na de diagnose</p>
-      <h2 class="text-2xl leading-snug mb-3 max-w-xl" style="font-weight:500; color:#1A2E22;">
-        Compass geeft richting. Niet één vaste vervolgstap.
-      </h2>
-      <p class="text-sm leading-relaxed mb-10 max-w-xl" style="font-weight:400; color:#5A7A65;">
-        De uitkomst van Compass bepaalt welke interventie het meeste oplevert. Dat kan Relicore zijn — maar ook governance-ontwerp, organisatieontwikkeling of procesverbetering.
-      </p>
-      <div class="grid md:grid-cols-4 gap-3">
-        {[
-          {
-            label: "Governance framework",
-            sub: "Als eigenaarschap, besluitvorming of investeringslogica de kern is.",
-            accent: "#1A4A35",
-          },
-          {
-            label: "Organisatieontwikkeling",
-            sub: "Als leiderschap, cultuur of samenwerking de belemmerende factor is.",
-            accent: "#1A4A35",
-          },
-          {
-            label: "Blueprints & Relicore",
-            sub: "Als informatie, assetstructuur en lifecycle-inzicht ontbreken.",
-            accent: "#2D6A4F",
-            link: "/relicore",
-          },
-          {
-            label: "Procesverbetering",
-            sub: "Als uitvoering, werkmanagement of prestatiesturing de zwakste schakel is.",
-            accent: "#1A4A35",
-          },
-        ].map((item) => (
-          <div class="bg-white border border-stone-200 rounded-xl p-5 flex flex-col gap-2">
-            <p style={`font-size:12px; font-weight:500; color:${item.accent};`}>{item.label}</p>
-            <p style="font-size:12px; font-weight:400; color:#5A7A65; line-height:1.55;">{item.sub}</p>
-            {item.link && (
-              <a href={item.link}
-                 style={`font-size:11px; font-weight:500; color:${item.accent}; margin-top:auto; padding-top:8px;`}>
-                Meer over Relicore →
-              </a>
-            )}
+  <!-- ⑦ GROEI: nog leeg -->
+  <section class="bg-white py-20">
+    <div class="aw-container">
+      <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <PerspectiefSymbool soort="groei" gedempt={true} />
+            <p class="uppercase tracking-[0.12em]" style="font-size:11px; font-weight:600; color:#5B6B7F; margin:0;">3 · Groei</p>
           </div>
-        ))}
+          <h3 class="text-xl md:text-2xl leading-snug text-forest-900 mb-4" style="font-weight:500;">Van verklaring naar ontwikkelpad.</h3>
+          <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400;">
+            Op basis van wat Koers en Controle laten zien, stelt u samen een ontwikkelpad vast. Groei is in ontwikkeling.
+          </p>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="flex items-center justify-center rounded-lg" style="border:1px dashed #C9CED6; background-color:#F7F8F7; min-height:200px;">
+            <p class="uppercase tracking-[0.12em]" style="font-size:12px; font-weight:600; color:#5B6B7F; margin:0;">Binnenkort</p>
+          </div>
+        </div>
       </div>
-      <p class="text-xs mt-8 max-w-xl" style="font-weight:400; color:#8FA898;">
-        Compass is onafhankelijk van Relicore. Een Compass-diagnose kan concluderen dat datastructuur niet de prioriteit is — en dan is Relicore niet de aanbevolen volgende stap.
-      </p>
     </div>
   </section>
 
-  <!-- ⑩ CTA -->
-  <section class="bg-white py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-4 max-w-lg mx-auto"
-          style="font-weight:500;">
-        Klaar om het gesprek te voeren dat anders niet gevoerd wordt?
+  <!-- ⑧ AFSLUITING -->
+  <section class="bg-forest-50 py-20">
+    <div class="aw-container">
+      <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-6" style="font-weight:500;">
+        Een diagnose is geen doel. Het is het begin van meer grip.
       </h2>
-      <p class="text-forest-400 text-base leading-relaxed mb-10 max-w-md mx-auto"
-         style="font-weight:400;">
-        Compass maakt zichtbaar wat er werkelijk speelt — en geeft de taal om het bespreekbaar te maken zonder defensie te wekken.
+      <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400; max-width:none;">
+        Compass laat zien waar het knelt: de eerste stap naar meer grip op uw bedrijfsmiddelen. Wij leveren geen software en geen methode, maar een oplossing: per verandering, met uw eigen mensen, en klaar zodra het zonder ons werkt.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+      <div class="mt-16 pt-16 border-t border-stone-300 text-center">
+        <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-4" style="font-weight:500;">
+          Welk besluit wilt u terugzien in de praktijk?
+        </h2>
+        <p class="text-forest-400 text-base leading-relaxed mb-10 aw-prose mx-auto" style="font-weight:400;">
+          Neem het mee naar een eerste gesprek. Dan zien we samen of Compass bij uw situatie past.
+        </p>
         <a href="/contact"
            class="inline-flex px-10 py-4 bg-forest-700 hover:bg-forest-600
                   text-white rounded-lg transition-colors text-base"
            style="font-weight:500;">
-          Start het gesprek
-        </a>
-        <a href="https://compass.assetwize.nl" target="_blank" rel="noopener"
-           class="inline-flex px-10 py-4 border border-forest-700/30
-                  hover:border-forest-700/60 text-forest-700 hover:text-forest-900
-                  rounded-lg transition-colors text-base"
-           style="font-weight:500;">
-          Bekijk Compass live →
+          Plan een gesprek
         </a>
       </div>
     </div>
