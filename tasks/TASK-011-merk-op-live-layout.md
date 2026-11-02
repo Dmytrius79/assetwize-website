@@ -154,4 +154,7 @@ De aanname klopt: de bovenste navigatiebalk (1104 px) is breder dan de content (
 
 ### Commits en preview
 
-Zie hieronder.
+- `ab012e0` — TASK-011: de wijzigingen (Cloudflare-check groen)
+- het volgende commit voegt alleen deze regels toe
+- Preview: https://rebrand-merk-op-live.assetwize-website.pages.dev (klopt met de verwachte URL); commit-preview https://ec045fd3.assetwize-website.pages.dev
+- Geen PR aangemaakt, niet gemerged.
