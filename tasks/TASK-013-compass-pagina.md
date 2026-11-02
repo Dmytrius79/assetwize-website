@@ -94,7 +94,116 @@ Meta description: "Compass is een begeleide diagnose van grip op assetmanagement
 10. Screenshots in `tasks/screenshots/TASK-013/`, niet committen. Controleer ook volgorde en visuele nadruk: staat het belangrijkste (H1, conclusie, kaarten) boven de vouw en leest de pagina op 390 px in een logische volgorde?
 
 ## Resultaat run 2
-(Door Claude Code in te vullen: commits, preview-URL, uitkomst van de "live"-linkcontrole, woordtelling, contrastresultaat, lijst met "bestuur"-voorkomens, lijst met afwijkingen tussen website en app voor de app-backlog (legenda, "zelfevaluatie", twee decimalen vervallen, radar tien assen en blauw), eventuele afwijkingen van de opdracht.)
+
+**Commits** op `content/compass-pagina` (nieuwe commits, geen force-push):
+- `6c4bc0d` definitieve specificatie; het resultaat van run 1 staat onderaan
+- `dd44f40` pagina en componenten
+- plus de commit met dit Resultaat
+- CLAUDE.md had de nieuwe regel al sinds `2f3cb30` en is in deze run niet gewijzigd.
+
+**Preview:**
+- Branch: https://content-compass-pagina.assetwize-website.pages.dev/compass/
+- Commit `dd44f40`: https://978e01f2.assetwize-website.pages.dev/compass/
+- Cloudflare-check geslaagd; de preview toont de definitieve H1 en het uittreksel van de diagnosekaart.
+
+**"Live"-link:** `https://compass.assetwize.nl` geeft HTTP 200 zonder redirect. Het is een publieke startpagina (title "Compass — AssetWize") met de kop "Waar heeft u grip — en waar vraagt uw organisatie aandacht?", de drie perspectieven en een knop naar de assessments of het inloggen. Er is geen inlogmuur of fout, dus de knop blijft "Bekijk Compass live".
+
+**Woordtelling** (zichtbare tekst in `main`, zonder header en footer):
+- Zonder voorbeeldschermen: **241**.
+- Met de spiegelkaarten: **368**.
+- Alles inclusief de schermen: **540**.
+- Er is niet bijgevuld.
+
+**Contrast hero** op `#1A4A35`: alles voldoet aan WCAG AA. Kleuren en knoppen zijn sinds Vervolg 1 ongewijzigd; alleen de teksten zijn nieuw.
+
+| Element | Contrast | Eis |
+|---|---|---|
+| H1 wit | 10,12:1 | 3:1 |
+| Eyebrow `#C8EED8` | 8,04:1 | 4,5:1 |
+| Subtekst wit 65 % | 5,33:1 | 4,5:1 |
+| "Plan een gesprek" (`#1A4A35` op wit) | 10,12:1 | 4,5:1 |
+| Idem, hover op `#EDF4F0` | 9,06:1 | 4,5:1 |
+| Knopvlak wit tegen de hero | 10,12:1 | 3:1 |
+| "Bekijk Compass live" (wit 80 %) | 7,15:1 | 4,5:1 |
+| Rand van die knop (wit 60 %) | 4,79:1 | 3:1 |
+
+**"Bestuur" in de zichtbare tekst, inclusief schermen:** 3 keer, alle drie letterlijke zonelabels uit de app:
+1. "Koers · Bestuurlijk oordeel": kop van het heroscherm (zone A, met de organisatienaam)
+2. "Koers · Bestuurlijk oordeel": kop van het scherm Score per thema (zone A)
+3. "Koers · Bestuurlijke spiegel": kop van de spiegelkaarten (zone B)
+
+In de lopende tekst staat "bestuur" niet meer. In de tabel is "bestuur" vervangen door "directie", zoals de specificatie zegt.
+
+**Controles:**
+1. **Build:** slaagt. Negatieve test: met kaart 1 (T5) en kaart 3 (T2) verwisseld faalt de build met exit 1 ("spiegelkaart 1 (T2) hoort niet bij de twee laagste thema's (T3, T5); spiegelkaart 3 (T5) hoort niet bij het hoogste thema (T2)"). Daarna teruggezet; de build slaagt weer.
+2. **Weergave:**
+   - De score per thema toont 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0. Afgerond met `round1()` van de app; de berekening is ongerond.
+   - `voorbeeld-data.ts` controleert bij de build ook:
+     - dat de weergave exact "2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0 · totaal 2,5" oplevert
+     - de controlewaarden: 14 op niveau 1–2, verdeling 2/12/11/3/0, niveau 2
+     - 25 rijen in de dataset en 8 in het uittreksel
+3. **Hero:** toont alleen de kernconclusie en het themaprofiel. Elk element staat één keer op de pagina:
+   - één radar
+   - één scorelijst
+   - drie spiegelkaarten
+   - één diagnosekaart
+   - geen stand
+4. **Onderdelen weg:** 0 `<details>`, 0 onderschriften "fictieve gegevens". "Voorbeeldorganisatie" staat 2 keer, in beide zone-A-schermen.
+5. **Verboden lijst:** 0 treffers in zichtbare tekst, title, description, og/twitter-meta en JSON-LD. Gezocht op:
+   - `\bAI\b`, `!`, `15+`, `\b100\b`, `sector`, `bewezen`, Syngenta, Enkhuizen
+   - duur- en tijdswoorden
+   - `\b28\b`/`\b25\b`
+
+   De JSON-LD is alleen het site-brede Organization-blok, zonder claims.
+6. **Bestuur:** zie de lijst hierboven.
+7. **Woordtelling:** zie hierboven.
+8. **Contrast, heatmap en breedtes:**
+   - Het contrast is gecontroleerd (zie de tabel).
+   - De heatmapcellen tonen altijd het cijfer en hebben een `aria-label` met fase en cijfer, dus ze zijn zonder kleur leesbaar.
+   - Geen horizontale scroll op 390, 768, 1440 en 1920 px.
+   - De container is 1152 px vanaf 1440 px, gelijk aan de rest van de site.
+9. **Gewijzigde bestanden:** `git diff --stat rebrand/merk-op-live` toont alleen CLAUDE.md, `src/pages/compass/index.astro`, `src/components/compass-voorbeeld/` (acht bestanden) en dit taakbestand.
+10. **Screenshots:** `tasks/screenshots/TASK-013/run2-compass-*.png` (volledige pagina en vouw per breedte), niet gecommit.
+    - **Boven de vouw:**
+      - Op 1440×900 en 1920×1080: eyebrow, H1, subtekst, beide knoppen, kernconclusie en radar.
+      - Op 768×1024: H1, knoppen en kernconclusie.
+      - Op 390×844: alleen de H1. De knoppen vallen er deels onder (onderkant op 858 px), de kernconclusie volgt direct na de hero-tekst. Oorzaak is het logoblok met ruime bovenmarge, zoals op de andere productpagina's. Dat heb ik niet aangepast.
+    - **Volgorde op 390 px:** logisch. H1 → kernconclusie en radar → Herkent u dit? → Van overzicht naar inzicht → Zo ziet de uitkomst eruit (score per thema, spiegelkaarten) → uittreksel van de diagnosekaart → Zo werkt de diagnose → afsluiting.
+
+**Uittreksel diagnosekaart** (8 van de 25 rijen, waarden ongewijzigd, groepering en volgorde als in de app):
+
+| Thema | Rij | Plannen / Uitvoeren / Controleren / Bijsturen |
+|---|---|---|
+| Governance & Eigenaarschap | Rollen en verantwoordelijkheden | 2 / 2 / 1 / 1 |
+| Governance & Eigenaarschap | Strategische afstemming en besluitkader | 2 / 1 / 2 / 1 |
+| Waarde, Lifecycle & Investeringen | Levenscyclus- en investeringsplanning | 2 / 2 / 2 / 1 |
+| Waarde, Lifecycle & Investeringen | Sturing op investeringen | 3 / 2 / 1 / 2 |
+| Risico, Veiligheid & Compliance | Risico's in beeld en beoordeeld | 3 / 2 / 2 / 2 |
+| Besluitvorming & Stuurinformatie | Prestatierapportage en inzicht | 3 / 3 / 3 / 2 |
+| Betrouwbaarheid & Continuïteit | Onderhoudsstrategie en uitvoering | 4 / 3 / 3 / 3 |
+| Betrouwbaarheid & Continuïteit | Werkbeheer en uitvoering | 4 / 4 / 3 / 3 |
+
+Governance en Waarde scoren zwak tot gemengd, Betrouwbaarheid sterk. Dat spreekt het Koers-beeld niet tegen.
+
+**Verschillen tussen website en app (voor de app-backlog):**
+1. **Legenda diagnosekaart:** de app schrijft "Toont waar de verbetercyclus consistent zwak is: rood vraagt aandacht, groen is op orde." De website toont een beschrijvende legenda met de kleuren van de app: "lagere score" (< 2,0), "middelste score" (2,0 tot 3,0), "hogere score" (≥ 3,0).
+2. **"Zelfevaluatie":** de app toont in de kop van zone A "Eén respondent · zelfevaluatie". De website laat dat weg, omdat het botst met "geen zelftest".
+3. **Decimalen:** twee decimalen zijn vervallen. De website toont Koers-waarden nu met één decimaal, net als de app (besluit 30-10); hier is geen verschil meer.
+4. **Controle-radar:** de radar "Ontwikkeldomeinen" in de app heeft tien assen (D1–D10) en is blauw (`#378ADD`). Hij past niet bij de zes assen die eerder werden genoemd en staat niet op de website.
+5. **Decimaalteken diagnosekaart:** de app toont "2.0" (`toFixed(1)`), de website "2,0".
+6. **Uittreksel:** de website toont 8 van de 25 rijen; de app toont altijd alle 25.
+7. **Labels Koers:** het label van de kernconclusie is in de app "Kernconclusie · spiegel van bestuurbaarheid". Op de website is het "Wat de antwoorden samen laten zien"; in de app is dat de kop van zone B.
+8. **Spiegelkaarten:** in de app heeft een patroonkaart als label "{dimensie} · raakt …". Op de website is het label de themanaam.
+9. **Perspectiefkaarten:** de website gebruikt eigen vragen en regels. In de app zijn dat "Doen we de juiste dingen?", "Hebben we het in de hand?" en "Wat verbeteren we als eerste?". Het badge van Groei is in de app "Gepland", op de website "Binnenkort".
+10. **Kleurgebruik in de app:** de diagnosekaart gebruikt stoplichtkleuren, terwijl de Koers-bijlage bewust een groene niveauschaal zonder stoplicht gebruikt. De website volgt de app per scherm.
+11. **Typografie:** gewicht 600 alleen voor eyebrows in hoofdletters met 0,12 em (huisregel van de site). In de app staat 600 ook op cijfers en badges, en heeft een deel van de eyebrows 0,14 em.
+
+**Afwijkingen van de opdracht:**
+- **Totaal 2,5 niet zichtbaar:** de specificatie noemt het totaal onder Weergave en in criterium 2, maar Blok 4 vraagt alleen de score per thema en de hero sluit de stand uit. Daarom staat het totaal nergens op de pagina. Het wordt wel berekend, en de build controleert dat de weergave 2,5 is. Wil je het totaal zichtbaar, dan kan het als één regel boven de scorelijst.
+- **Radar-labels:** de radar toont op de assen themanummers, zoals de app. De waarden met één decimaal staan in het `aria-label` en in de scorelijst.
+- **Groei-kaart:** label en badge "Binnenkort" in de badge-stijl van de app; zonder vraag en regel, zoals de specificatie vraagt.
+- **Opgeschoond:** `BestuurlijkOordeel.astro` is vervangen door `ScorePerThema.astro`. Ongebruikte data (niveaubeschrijvingen, "relatief sterk") is uit `voorbeeld-data.ts` gehaald.
+- **Testpoort:** lokaal getest op poort 4323, omdat 4322 bezet is door de dev-server van `atlas-ui-review`.
 
 ## Resultaat run 1
 
