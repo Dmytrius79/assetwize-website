@@ -12,7 +12,7 @@ import { AW, kader, zoneLabel } from './stijl';
       <article class={i < SPIEGELKAARTEN.length - 1 ? 'border-b lg:border-b-0 lg:border-r' : ''} style={`padding:20px 24px 22px; border-color:${AW.hair};`}>
         <p style={`margin:0 0 8px; font-size:11px; font-weight:600; letter-spacing:0.12em; color:${AW.slate}; text-transform:uppercase;`}>{themaNaam(k.themaId)}</p>
         <h3 style={`margin:0 0 10px; font-size:17px; font-weight:500; line-height:1.35; color:${AW.navy};`}>{k.kop}</h3>
-        <p style={`margin:0; font-size:14px; line-height:1.65; color:${AW.ink};`}>{k.tekst.split(/(?<=\.)\s/)[0]}</p>
+        <p style={`margin:0; font-size:14px; line-height:1.65; color:${AW.ink};`}>{k.tekst}</p>
       </article>
     ))}
   </div>
