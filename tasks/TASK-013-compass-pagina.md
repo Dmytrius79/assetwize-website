@@ -251,3 +251,73 @@ Hij gebruikt bovendien blauw (#378ADD). Daarom is hij niet opgenomen.
 1. **Stoplichtkleuren:** de diagnosekaart gebruikt de stoplichtkleuren van de app (rood, oranje, groen; `scoreColor`/`scoreBg`). De Koers-bijlage gebruikt bewust geen stoplichtkleuren. Houden zo, of naar de groene niveauschaal?
 2. **Woordtelling:** 253 woorden ligt onder de ±350. Is dat akkoord, of wil je ergens tekst bij?
 3. **Spiegelkaarten 1 en 3:** graag je beoordeling van de teksten hierboven.
+
+### Resultaat Vervolg 1
+
+**Commits** op `content/compass-pagina` (nieuwe commits, geen force-push):
+- `2f3cb30` taakbestand en CLAUDE.md
+- `00ed6f4` pagina en componenten
+- plus de commit met dit Resultaat
+
+**Preview:** https://content-compass-pagina.assetwize-website.pages.dev/compass/ (commit `00ed6f4`: https://f9f1fcd8.assetwize-website.pages.dev/compass/). Cloudflare-check: geslaagd; de preview toont de nieuwe hero op forest en het nieuwe blok 3.
+
+**1. Hero op Compass-forest `#1A4A35`** (`bg-forest-700`), met `compass-donker.svg` uit TASK-012. Contrast volgens WCAG 2.1 AA:
+
+| Element | Contrast | Eis | Uitslag |
+|---|---|---|---|
+| H1, wit | 10,12:1 | 3:1 (grote tekst) | voldoet |
+| Eyebrow `#C8EED8` (12 px, 600) | 8,04:1 | 4,5:1 | voldoet |
+| Subtekst wit 65 % (18 px) | 5,33:1 | 4,5:1 | voldoet |
+| Knop "Plan een gesprek": `#1A4A35` op wit | 10,12:1 | 4,5:1 | voldoet |
+| Idem, hover op `#EDF4F0` | 9,06:1 | 4,5:1 | voldoet |
+| Knopvlak wit tegen de hero | 10,12:1 | 3:1 (niet-tekst) | voldoet |
+| Knop "Bekijk Compass live": wit 80 % | 7,15:1 | 4,5:1 | voldoet |
+| Rand van die knop, wit 60 % | 4,79:1 | 3:1 (niet-tekst) | voldoet |
+
+- Voor de aanpassing faalden de knopranden op de 3:1 voor niet-tekst:
+  - de groene knop `#2D6A4F` had 1,58:1 tegen de hero
+  - de rand van de tweede knop (wit 30 %) had 2,32:1
+- Om die reden is de primaire knop nu wit met forest-tekst en is de rand van de tweede knop 60 % wit (hover: 100 %). De tekst van beide knoppen voldeed al.
+- Het voorbeeldscherm in de hero is wit met de app-kleuren en staat los van het forest-vlak.
+- De andere donkere vlakken (footer `#071A30`) zijn ongewijzigd.
+
+**2. CLAUDE.md:** de regel over het donkere vlak is vervangen door de opgegeven tekst.
+
+**3. Blok 3:**
+- Kop: "Begin bij het bestuur. Ga dan de organisatie in."
+- De kaarten hebben titel en regel zoals opgegeven. De titel heeft de stijl van de vraagregel in de app (15 px, 500).
+- Groei toont alleen "Binnenkort". Er staan geen getallen in.
+
+**4. Eén decimaal:** `fmt1` rondt af met `round1()` van de app (`Math.round(v * 10) / 10`), daarna komma.
+- Getoond: 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0, totaal 2,5 en "Relatief sterk: … (3,3)". Gecontroleerd in de gebouwde HTML.
+- Berekening, niveaubepaling en spiegelkaart-controle werken op de ongeronde waarden.
+- De radar toont op de assen themanummers, zoals de app; de waarden staan in het `aria-label`, nu met één decimaal.
+- Acceptatiecriterium 2 is aangepast en criterium 5 vervalt.
+
+**5. Blok 4:**
+- `Onderbouwing.astro` (alle `<details>`) is verwijderd. In de gebouwde HTML staan 0 `<details>`.
+- Met de componenten zijn ook de nu ongebruikte vraag- en antwoordteksten, de spreiding, `NIVEAU_LABEL` en `NIVEAU_RAMP`/`NIVEAU_TEKST` uit de data en stijl verwijderd.
+- Blijven: het bestuurlijk oordeel (stand en score per thema), de drie spiegelkaarten en de diagnosekaart.
+- De stand heb ik laten staan, omdat punt 4 het totaal nog als getoonde waarde noemt.
+- De heatmapcellen tonen altijd het cijfer (bijv. "2,0") en hebben een `aria-label` met fase en cijfer. Ze zijn dus zonder kleur te lezen; toevoegen was niet nodig.
+
+**6. Onderschrift en organisatienaam:**
+- Het onderschrift staat nergens meer (0 keer in de HTML) en `Onderschrift.astro` is verwijderd.
+- In de app toont alleen zone A (Bestuurlijk oordeel) een organisatienaam. Kernconclusie en radar in de hero komen ook uit zone A. Daarom heeft het heroscherm nu dezelfde kop "Koers · Bestuurlijk oordeel / Voorbeeldorganisatie".
+- De spiegel (zone B) en de diagnosekaart tonen in de app geen organisatienaam, en hier ook niet.
+
+**7. Woordtelling** (zichtbare tekst in `main`, zonder header en footer):
+- Zonder voorbeeldschermen: **210 woorden**.
+- Met de spiegelkaarten erbij (inclusief zonelabel en themalabels): **343 woorden**.
+- Er is geen tekst toegevoegd.
+
+**8. Acceptatie:**
+- **Build en controle:** de build slaagt. Negatieve test herhaald: met kaart 1 (T5) en kaart 3 (T2) verwisseld faalt de build met exit 1 en dezelfde melding. Na terugzetten slaagt hij weer.
+- **Verboden lijst:** 0 treffers in zichtbare tekst en `<head>` (zelfde zoekpatronen als hierboven).
+- **Gewijzigde bestanden:** `git diff --stat rebrand/merk-op-live` toont alleen `CLAUDE.md`, `src/pages/compass/index.astro`, `src/components/compass-voorbeeld/` (nu acht bestanden) en dit taakbestand.
+- **Breedtes:** geen horizontale scroll op 390, 768, 1440 en 1920 px; de container is 1152 px vanaf 1440, gelijk aan de rest van de site.
+- **Screenshots:** `tasks/screenshots/TASK-013/vervolg1-compass-*.png`, niet gecommit.
+
+**Niet uitgevoerd:** niets. Opmerkingen:
+- De radar heeft geen waardelabels op de assen; zie punt 4.
+- Lokaal getest op poort 4323, omdat 4322 bezet is door de dev-server van `atlas-ui-review`.
