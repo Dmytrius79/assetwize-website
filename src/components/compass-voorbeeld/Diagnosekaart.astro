@@ -1,8 +1,15 @@
 ---
-// Controle · diagnosekaart werken & leren — port van Visual E in L2ReportView.tsx (25 organisatievermogens × 4 PDCA-fasen).
+// Controle · uittreksel van de diagnosekaart werken & leren — port van Visual E in L2ReportView.tsx (rijen × 4 PDCA-fasen).
+// Afwijking van de app: beschrijvende legenda (lagere / middelste / hogere score) in plaats van "rood vraagt aandacht, groen is op orde".
 // Onder 640 px staan de vier fasen onder de naam, zodat de kaart zonder horizontaal scrollen leesbaar blijft.
-import { CONTROLE_THEMAS, PDCA_STEPS, fmt1 } from './voorbeeld-data';
+import { CONTROLE_UITTREKSEL, PDCA_STEPS, fmt1 } from './voorbeeld-data';
 import { AW, kader, scoreColor, scoreBg } from './stijl';
+
+const legenda = [
+  { label: 'lagere score', v: 1 },
+  { label: 'middelste score', v: 2 },
+  { label: 'hogere score', v: 3 },
+];
 ---
 <section aria-label="Voorbeeld: diagnosekaart werken en leren" class="p-4 sm:p-6" style={kader}>
   <table class="cv-kaart" style="width:100%; border-collapse:collapse;">
@@ -15,7 +22,7 @@ import { AW, kader, scoreColor, scoreBg } from './stijl';
       </tr>
     </thead>
     <tbody>
-      {CONTROLE_THEMAS.map((thema) => (
+      {CONTROLE_UITTREKSEL.map((thema) => (
         <Fragment>
           <tr class="cv-groep">
             <th colspan="5" scope="colgroup" style={`text-align:left; padding-top:14px; padding-bottom:4px; font-size:12px; font-weight:500; color:${AW.forestDark};`}>{thema.naam}</th>
@@ -34,9 +41,13 @@ import { AW, kader, scoreColor, scoreBg } from './stijl';
       ))}
     </tbody>
   </table>
-  <p style={`font-size:11px; color:${AW.slate}; margin:12px 0 0;`}>
-    Toont waar de verbetercyclus consistent zwak is: rood vraagt aandacht, groen is op orde.
-  </p>
+  <ul style={`list-style:none; margin:14px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px 16px; font-size:11px; color:${AW.slate};`}>
+    {legenda.map((l) => (
+      <li style="display:inline-flex; align-items:center; gap:6px;">
+        <span aria-hidden="true" style={`display:inline-block; width:22px; height:12px; border-radius:99px; background-color:${scoreBg(l.v)}; box-shadow:inset 0 0 0 1px ${scoreColor(l.v)};`}></span>{l.label}
+      </li>
+    ))}
+  </ul>
 </section>
 
 <style>

@@ -1,0 +1,31 @@
+---
+// Score per thema, compact — de scorelijst uit rij 2 van KoersZoneA.tsx, onder de kop van zone A met de organisatienaam.
+import { ORGANISATIE, THEMAS, fmt1 } from './voorbeeld-data';
+import { AW, kader, eyebrow, zoneLabel } from './stijl';
+---
+<section aria-label="Voorbeeld: score per thema" style={`${kader} max-width:560px;`}>
+  <div style={`padding:18px 24px 14px; border-bottom:1px solid ${AW.hair};`}>
+    <p style={zoneLabel}>Koers · Bestuurlijk oordeel</p>
+    <h3 style="margin:0; font-size:18px; font-weight:500; letter-spacing:-0.01em;">{ORGANISATIE}</h3>
+  </div>
+  <div style="padding:18px 24px 20px;">
+    <p style={eyebrow}>Score per thema</p>
+    <ol style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
+      {THEMAS.map((t) => {
+        const pct = ((t.avg - 1) / 4) * 100;
+        return (
+          <li style="display:grid; grid-template-columns:22px minmax(0,1fr) 34px; align-items:center; gap:10px;">
+            <span aria-hidden="true" style={`width:22px; height:22px; border-radius:50%; border:1px solid ${AW.line}; font-size:11px; font-weight:500; color:${AW.ink}; display:inline-flex; align-items:center; justify-content:center;`}>{t.nr}</span>
+            <div style="min-width:0;">
+              <p style={`margin:0 0 5px; font-size:13px; color:${AW.navy}; line-height:1.3;`}>{t.naam}</p>
+              <div style="height:4px; border-radius:2px; background-color:#E6ECEF; overflow:hidden;">
+                <div style={`height:4px; width:${Math.max(2, pct)}%; background-color:${AW.forest};`} />
+              </div>
+            </div>
+            <span style="font-size:14px; font-weight:500; text-align:right; font-variant-numeric:tabular-nums;">{fmt1(t.avg)}</span>
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</section>

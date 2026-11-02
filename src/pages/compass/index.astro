@@ -2,33 +2,33 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/global.css';
 import HeroScherm from '../../components/compass-voorbeeld/HeroScherm.astro';
-import BestuurlijkOordeel from '../../components/compass-voorbeeld/BestuurlijkOordeel.astro';
+import ScorePerThema from '../../components/compass-voorbeeld/ScorePerThema.astro';
 import Spiegel from '../../components/compass-voorbeeld/Spiegel.astro';
 import Diagnosekaart from '../../components/compass-voorbeeld/Diagnosekaart.astro';
 import PerspectiefSymbool from '../../components/compass-voorbeeld/PerspectiefSymbool.astro';
 
 const verschil = [
   { aanwezig: "onderhoudsprocessen en een CMMS", ontbreekt: "eigenaarschap voor assets" },
-  { aanwezig: "KPI-rapportage", ontbreekt: "risico's die het bestuur kan sturen" },
+  { aanwezig: "KPI-rapportage", ontbreekt: "risico's waar daadwerkelijk op wordt gestuurd" },
   { aanwezig: "investeringsplannen", ontbreekt: "een afweging waarom juist deze prioriteit" },
-  { aanwezig: "verbeterprogramma's", ontbreekt: "een gedeelde taal tussen bestuur en techniek" },
+  { aanwezig: "verbeterprogramma's", ontbreekt: "een gedeelde taal tussen directie en techniek" },
 ];
 
 const perspectieven = [
-  { soort: 'koers' as const, label: "Koers", titel: "Waar staat het bestuur?", tekst: "Voor directie en bestuur." },
-  { soort: 'controle' as const, label: "Controle", titel: "Waar zit het in de organisatie?", tekst: "Verdieping met management en proceseigenaren." },
+  { soort: 'koers' as const, label: "Koers", titel: "Waar is meer grip nodig?", tekst: "Maakt zichtbaar hoe keuzes over bedrijfsmiddelen, risico's en investeringen worden onderbouwd en waar samenhang ontbreekt." },
+  { soort: 'controle' as const, label: "Controle", titel: "Wat werkt goed en waar loopt het vast?", tekst: "Onderzoekt hoe verantwoordelijkheden, informatie en processen in de praktijk functioneren, samen met management en proceseigenaren." },
   { soort: 'groei' as const, label: "Groei", badge: "Binnenkort" },
 ];
 
-const anders = [
-  "Elke vraag vraagt een uitspraak. Overslaan kan niet. Onvoldoende zicht op een onderwerp is zelf een signaal: de consultant onderzoekt samen met u waarom.",
-  "Een consultant begeleidt de diagnose in gesprekken met directie en management. Compass is geen zelftest: de uitkomst wordt samen besproken en onderbouwd.",
+const werkwijze = [
+  "Elke vraag krijgt een antwoord. Is er onvoldoende zicht op een onderwerp, dan is dat zelf een bevinding: we onderzoeken samen waar het aan ligt.",
+  "Een consultant begeleidt de diagnose. Compass is geen zelftest: de uitkomst wordt samen besproken en onderbouwd.",
   "Compass staat los van onze andere instrumenten en kan concluderen dat software niet de eerste stap is.",
 ];
 ---
 <BaseLayout
-  title="Compass — begeleide diagnose van bestuurlijke grip"
-  description="Compass is een begeleide diagnose van bestuurlijke grip voor asset-intensieve organisaties."
+  title="Compass — begeleide diagnose van grip op assetmanagement"
+  description="Compass is een begeleide diagnose van grip op assetmanagement voor asset-intensieve organisaties."
 >
 
   <!-- ① HERO -->
@@ -39,12 +39,12 @@ const anders = [
       </div>
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         <div class="min-w-0">
-          <p class="text-xs uppercase tracking-[0.12em] text-forest-200 mb-5" style="font-weight:600;">Compass · bestuurlijke diagnose</p>
+          <p class="text-xs uppercase tracking-[0.12em] text-forest-200 mb-5" style="font-weight:600;">Compass · diagnose van assetmanagement</p>
           <h1 class="text-4xl md:text-5xl mb-6" style="font-weight:500; line-height:1.13;">
-            Een assessment vraagt of iets aanwezig is. Compass vraagt of het werkt.
+            Processen ingericht. Maar werkt het ook in de praktijk?
           </h1>
           <p class="text-white/65 text-lg leading-relaxed aw-prose mb-10" style="font-weight:400;">
-            Een begeleide diagnose voor directie en management van asset-intensieve organisaties: waar grip ontbreekt, waarom, en wat het bestuur moet beslissen.
+            Compass maakt zichtbaar waar de samenhang ontbreekt tussen keuzes, verantwoordelijkheden en uitvoering rondom bedrijfsmiddelen. In begeleide gesprekken met directie en management onderzoeken we wat goed werkt, waar het vastloopt en welke besluiten nodig zijn.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/contact"
@@ -69,17 +69,17 @@ const anders = [
     </div>
   </section>
 
-  <!-- ② HET VERSCHIL -->
+  <!-- ② HERKENT U DIT? -->
   <section class="bg-white py-20">
     <div class="aw-container">
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10" style="font-weight:500;">
-        Aanwezig is niet hetzelfde als bestuurbaar.
+        Herkent u dit?
       </h2>
       <table class="w-full max-w-3xl border-collapse text-sm sm:text-base">
         <thead>
           <tr class="border-b border-stone-300">
-            <th scope="col" class="text-left py-3 pr-4 w-1/2 text-xs uppercase tracking-[0.12em] text-forest-400" style="font-weight:600;">Aanwezig</th>
-            <th scope="col" class="text-left py-3 pl-4 w-1/2 text-xs uppercase tracking-[0.12em] text-forest-600" style="font-weight:600;">Maar ontbreekt</th>
+            <th scope="col" class="text-left py-3 pr-4 w-1/2 text-xs uppercase tracking-[0.12em] text-forest-400" style="font-weight:600;">Wat er ligt</th>
+            <th scope="col" class="text-left py-3 pl-4 w-1/2 text-xs uppercase tracking-[0.12em] text-forest-600" style="font-weight:600;">Wat daarmee nog niet geregeld is</th>
           </tr>
         </thead>
         <tbody>
@@ -98,7 +98,7 @@ const anders = [
   <section id="drie-perspectieven" class="bg-forest-50 py-20">
     <div class="aw-container">
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10" style="font-weight:500;">
-        Begin bij het bestuur. Ga dan de organisatie in.
+        Van overzicht naar inzicht
       </h2>
       <div class="grid md:grid-cols-3 gap-4">
         {perspectieven.map((p) => (
@@ -128,25 +128,25 @@ const anders = [
       </h2>
 
       <div class="flex flex-col gap-10">
-        <BestuurlijkOordeel />
+        <ScorePerThema />
         <Spiegel />
       </div>
 
       <h3 class="text-xl md:text-2xl leading-snug text-forest-900 mt-16 mb-6" style="font-weight:500;">
-        Controle: de diagnosekaart
+        Controle: uittreksel van de diagnosekaart
       </h3>
       <Diagnosekaart />
     </div>
   </section>
 
-  <!-- ⑤ WAAROM DIT ANDERS IS -->
+  <!-- ⑤ ZO WERKT DE DIAGNOSE -->
   <section class="bg-forest-50 py-20">
     <div class="aw-container">
       <h2 class="text-2xl md:text-3xl leading-snug text-forest-900 mb-10" style="font-weight:500;">
-        Waarom dit anders is.
+        Zo werkt de diagnose.
       </h2>
       <ol class="grid md:grid-cols-3 gap-8" style="list-style:none; padding:0; margin:0;">
-        {anders.map((tekst, i) => (
+        {werkwijze.map((tekst, i) => (
           <li class="border-t-2 border-forest-600 pt-5">
             <p class="text-xs text-forest-600 mb-3" style="font-weight:500;">{i + 1}</p>
             <p class="text-forest-900 text-base leading-relaxed" style="font-weight:400;">{tekst}</p>

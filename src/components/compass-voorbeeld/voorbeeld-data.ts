@@ -5,8 +5,8 @@
  * (themascores, totaalscore, niveau, antwoorden op niveau 1–2, niveauverdeling, Controle-volgorde) wordt hieronder berekend met de rekenregels van de app (~/dev/compass:
  * lib/maturityContract.ts, components/report/KoersZoneA.tsx, L2ReportView.tsx).
  *
- * Thema-namen, volgorde, niveaulabels en niveaubeschrijvingen zijn letterlijk overgenomen uit de app
- * (lib/labels/taxonomy.ts, lib/labels/levelDescriptions.ts).
+ * Thema-namen, subthema-namen, volgorde en niveaulabels zijn letterlijk overgenomen uit de app
+ * (lib/labels/taxonomy.ts, lib/maturityContract.ts).
  *
  * Berekenen en controleren gebeurt op de ongeronde waarden; alleen de weergave rondt af (fmt1).
  *
@@ -26,14 +26,6 @@ export const THEME_NAMES: Record<string, string> = {
   T5: "Governance & Eigenaarschap",
   T6: "Toekomstvastheid & Verandervermogen",
   T7: "Organisatie, Mensen & Uitvoerbaarheid",
-};
-
-export const LEVEL_DESCRIPTIONS: Record<number, string> = {
-  1: "Sturing volgt op incidenten; een gedeeld overzicht ontbreekt en besluiten worden per geval genomen.",
-  2: "Op onderdelen ingericht, maar niet organisatiebreed; de kwaliteit hangt af van personen en verschilt per onderdeel.",
-  3: "Gezamenlijke kaders, processen en overzichten zijn vastgelegd en werken in de dagelijkse praktijk.",
-  4: "Werkwijzen worden consequent toegepast en getoetst; besluiten rusten aantoonbaar op actuele informatie.",
-  5: "De organisatie evalueert en verbetert structureel en stuurt vooruitkijkend op veranderende omstandigheden.",
 };
 
 export const SUBTHEME_NAMES_NL: Record<string, string> = {
@@ -88,14 +80,18 @@ const CONTROLE_ANTWOORDEN: Record<string, [number, number, number, number]> = {
   "T7.1": [3, 3, 3, 2], "T7.2": [3, 3, 2, 3], "T7.3": [3, 2, 2, 2],
 };
 
+// Uittreksel van de diagnosekaart op de website: acht van de 25 rijen, waarden ongewijzigd.
+// Zwak (Governance, Waarde), midden (Risico, Besluitvorming) en sterk (Betrouwbaarheid), zodat het Koers-beeld niet wordt tegengesproken.
+const UITTREKSEL = ["T5.1", "T5.2", "T3.2", "T3.4", "T1.1", "T4.2", "T2.1", "T2.5"];
+
 // ── Vaste illustraties bij déze dataset (zie LET OP bovenaan) ────────────────
-export const KERNCONCLUSIE = "Volgens de antwoorden kan het bestuur bouwen op de uitvoering, maar rusten de afwegingen op personen.";
+export const KERNCONCLUSIE = "Volgens de antwoorden werkt de uitvoering overwegend goed, maar hangen keuzes af van wie erbij betrokken is.";
 
 export const SPIEGELKAARTEN: Array<{ themaId: string; kop: string; tekst: string }> = [
   {
     themaId: "T5",
-    kop: "Afwegingen rusten op personen",
-    tekst: "Volgens de antwoorden is eindverantwoordelijkheid niet overal helder en hanteren afdelingen verschillende uitgangspunten voor besluiten over bedrijfsmiddelen. Afwegingen hangen daardoor af van wie erbij betrokken is, en de gevolgen van strategische plannen worden vaak pas later duidelijk.",
+    kop: "Keuzes hangen af van wie erbij betrokken is.",
+    tekst: "Volgens de antwoorden is eindverantwoordelijkheid niet overal helder en hanteren afdelingen verschillende uitgangspunten voor besluiten over bedrijfsmiddelen. De gevolgen van strategische plannen worden vaak pas later duidelijk.",
   },
   {
     themaId: "T3",
@@ -104,7 +100,7 @@ export const SPIEGELKAARTEN: Array<{ themaId: string; kop: string; tekst: string
   },
   {
     themaId: "T2",
-    kop: "De uitvoering is de stabiele basis",
+    kop: "De dagelijkse uitvoering werkt overwegend goed.",
     tekst: "Volgens de antwoorden leveren de belangrijkste bedrijfsmiddelen meestal voorspelbaar de prestaties die nodig zijn en worden belangrijke afspraken betrouwbaar nagekomen. Kwetsbaar blijven enkele kritieke werkzaamheden en gepland werk dat door onverwacht werk wordt verdrongen.",
   },
 ];
@@ -144,7 +140,6 @@ export const BAND = bandFromRoundedAvg(round1(TOTAAL));
 export const VERDELING = [1, 2, 3, 4, 5].map((n) => alleNiveaus.filter((x) => x === n).length);
 export const AANTAL_ANTWOORDEN = alleNiveaus.length;
 export const LAAG_12 = VERDELING[0] + VERDELING[1];
-export const STERKSTE = [...THEMAS].sort((a, b) => b.avg - a.avg)[0];
 
 // ── Afgeleid: Controle (diagnosekaart) ───────────────────────────────────────
 export const PDCA_STEPS = ["Plannen", "Uitvoeren", "Controleren", "Bijsturen"];
@@ -160,6 +155,11 @@ export const CONTROLE_THEMAS = Object.keys(THEME_NAMES)
   .sort((a, b) => a.avg - b.avg);
 
 export const AANTAL_SUBTHEMAS = CONTROLE_THEMAS.reduce((n, t) => n + t.subs.length, 0);
+
+/** Uittreksel voor de website: zelfde groepering en volgorde als de volledige kaart, alleen de rijen uit UITTREKSEL. */
+export const CONTROLE_UITTREKSEL = CONTROLE_THEMAS
+  .map((t) => ({ ...t, subs: t.subs.filter((s) => UITTREKSEL.includes(s.code)) }))
+  .filter((t) => t.subs.length > 0);
 
 // ── Weergave ─────────────────────────────────────────────────────────────────
 /** Eén decimaal met komma, afgerond met round1() van de app (TASK-013 Vervolg 1: 2,3 / 2,5). */
@@ -179,5 +179,10 @@ export const themaNaam = (id: string) => THEME_NAMES[id] ?? id;
   if (!laagste.includes(k1.themaId)) fouten.push(`spiegelkaart 1 (${k1.themaId}) hoort niet bij de twee laagste thema's (${laagste.join(", ")})`);
   if (!laagste.includes(k2.themaId) || k2.themaId === k1.themaId) fouten.push(`spiegelkaart 2 (${k2.themaId}) hoort niet bij de twee laagste thema's (${laagste.join(", ")})`);
   if (k3.themaId !== hoogste) fouten.push(`spiegelkaart 3 (${k3.themaId}) hoort niet bij het hoogste thema (${hoogste})`);
+  // Weergave met één decimaal moet de verwachte waarden uit TASK-013 opleveren
+  const getoond = THEMAS.map((t) => fmt1(t.avg)).join(" / ") + ` · totaal ${fmt1(TOTAAL)}`;
+  if (getoond !== "2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0 · totaal 2,5") fouten.push(`weergave wijkt af van TASK-013: ${getoond}`);
+  if (LAAG_12 !== 14 || VERDELING.join("/") !== "2/12/11/3/0" || BAND?.levelInt !== 2) fouten.push(`controlewaarden wijken af: ${LAAG_12} op niveau 1–2, verdeling ${VERDELING.join("/")}`);
+  if (AANTAL_SUBTHEMAS !== 25 || CONTROLE_UITTREKSEL.reduce((n, t) => n + t.subs.length, 0) !== 8) fouten.push("diagnosekaart: verwacht 25 rijen in de dataset en 8 in het uittreksel");
   if (fouten.length) throw new Error(`voorbeeld-data.ts: ${fouten.join("; ")}. Pas de spiegelkaarten en de kernconclusie aan de dataset aan.`);
 }
