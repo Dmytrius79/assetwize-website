@@ -94,10 +94,10 @@ Elk element (conclusie, radar, stand, scorelijst, kaart, heatmap) komt maximaal 
 
 ## Acceptatiecriteria
 1. `npm run build` slaagt, inclusief de spiegelkaart-controle. Test de controle ook negatief (tijdelijk een kaart verwisselen, build moet falen, daarna terugzetten).
-2. Alle afgeleide waarden uit de tabel hierboven kloppen met wat de pagina toont (2,25 / 3,25 / 2,00 / 2,75 / 2,00 / 2,50 / 3,00; totaal 2,54; 14 van 28; 2/12/11/3/0).
+2. Alle afgeleide waarden uit de tabel hierboven worden berekend en gecontroleerd op de ongeronde waarden (2,25 / 3,25 / 2,00 / 2,75 / 2,00 / 2,50 / 3,00; totaal 2,536; 14 van 28; 2/12/11/3/0). De pagina toont Koers-waarden met één decimaal volgens de afrondingsregel van de app: 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0, totaal 2,5 (Vervolg 1, punt 4).
 3. De hero toont alleen kernconclusie en radar.
 4. Geen element staat twee keer op de pagina.
-5. Alle `<details>` zijn standaard dicht en met het toetsenbord te bedienen.
+5. Alle `<details>` zijn standaard dicht en met het toetsenbord te bedienen. (Vervalt na Vervolg 1, punt 5: er staan geen `<details>` meer op de pagina.)
 6. Zichtbare tekst (exclusief voorbeeldschermen) ligt rond 350 woorden. Meld het werkelijke aantal.
 7. De pagina bevat niets van de verboden lijst (duur, "AI", klantnamen, uitroeptekens, 15+/100/7 sectoren, "bewezen"). Controleer met een zoekopdracht op de gebouwde HTML en meld het resultaat.
 8. Controleer breedtes 390, 768, 1440 en 1920 px: geen horizontale scroll, containerbreedte gelijk aan de rest van de site, schermen leesbaar op 390 px.
@@ -108,6 +108,23 @@ Elk element (conclusie, radar, stand, scorelijst, kaart, heatmap) komt maximaal 
 1. Maak de branch, lees de bron in `~/dev/compass`, bouw, test lokaal (`npm run dev -- --port 4322`, poort 4321 is bezet).
 2. Commit in logische stappen, push, controleer dat de Cloudflare preview werkt.
 3. Merge niet. Open geen PR.
+
+## Vervolg 1 — van rapport naar marketingpagina
+
+1. Hero: donker vlak wordt Compass-forest `#1A4A35` (productkleur, Brand Guidelines §9.6), met het donkere Compass-logo uit TASK-012. Dit overschrijft de eerdere keuze voor `#071A30` in de hero. Controleer contrast van alle tekst en knoppen (WCAG AA) en meld het resultaat. Andere donkere vlakken op de pagina blijven zoals ze zijn.
+2. CLAUDE.md: pas de regel "Het enige donkere vlak is `#071A30`" aan naar: "Het enige donkere vlak van de site zelf is `#071A30` (`--aw-deep`), exact, zonder varianten of tolerantie. Een productpagina mag in haar hero de productkleur uit Brand Guidelines §9.6 gebruiken (Compass `#1A4A35`, Atlas en Relicore zoals nu). Verder geen uitzonderingen."
+3. Blok 3 herschrijven:
+   - Kop: "Begin bij het bestuur. Ga dan de organisatie in."
+   - Koers: titel "Waar staat het bestuur?", regel "Voor directie en bestuur."
+   - Controle: titel "Waar zit het in de organisatie?", regel "Verdieping met management en proceseigenaren."
+   - Groei: alleen "Binnenkort".
+   - Symbolen en groene stijl blijven. Geen getallen (geen 28, geen 25, geen "zeven"), geen duur.
+4. Koers-waarden met één decimaal overal waar ze getoond worden (radar-labels, score per thema, hero, totaal). Gebruik de afrondingsregel van de app. Bereken en controleer op de ongeronde waarden; alleen de weergave wordt afgerond. Verwacht: 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0, totaal 2,5. De build-controle op de spiegelkaarten blijft op ongeronde waarden werken. Pas de acceptatiecriteria in het taakbestand hierop aan.
+5. Blok 4 inkorten: verwijder alle `<details>`-blokken ("Meer onderbouwing": Antwoorden per vraag, Spreiding per thema, Antwoordverdeling) en de bijbehorende componenten als ze nergens anders gebruikt worden. Blijven: score per thema (compact), de drie spiegelkaarten en "Controle: de diagnosekaart". Controleer dat de heatmapcellen ook zonder kleur te lezen zijn (cijfer of niveaulabel); zo niet, voeg dat toe.
+6. Het onderschrift "Voorbeeld met fictieve gegevens · beeld van één respondent, onderbouwd in het begeleide gesprek." vervalt overal. De organisatienaam "Voorbeeldorganisatie" blijft zichtbaar in elk voorbeeldscherm waar de app een organisatienaam toont.
+7. Zichtbare tekst opnieuw tellen (met en zonder spiegelkaarten) en rapporteren. Geen tekst toevoegen om bij te vullen.
+8. Acceptatie: build slaagt, inclusief de negatieve test van de spiegelkaart-controle; verboden lijst nog steeds 0 treffers; alleen `/compass`, de componenten, CLAUDE.md en het taakbestand gewijzigd; geen horizontale scroll op 390, 768, 1440 en 1920 px; screenshots in `tasks/screenshots/TASK-013/` (niet committen).
+9. Resultaat aanvullen met: commits, preview-URL, woordtelling, contrastresultaat hero, en wat je niet kon uitvoeren.
 
 ## Resultaat
 
