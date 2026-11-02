@@ -17,9 +17,7 @@ c. Meet de breedte (max-width en werkelijke breedte op 1440 px en 1920 px viewpo
 Zet de uitkomst in het Resultaat, als tabel.
 
 ## Stap 2 — Logo en kleur
-Regel uit de richtlijn: het donkere logo (06 donker) alleen op diep navy `#071A30`, nooit op `#0F2D52`. Het lichte logo (05 licht) op wit en lichte vlakken.
-- Wijkt het live donkerblauw per kleurkanaal minder dan 8 af van `#071A30`: zet dat vlak op `#071A30` en gebruik het donkere logo. Vermeld de oude en nieuwe waarde in het Resultaat.
-- Wijkt het meer af: pas de kleur NIET aan. Plaats het logo nog niet op dat vlak, stop en rapporteer de gemeten waarde, zodat Dimitry kiest.
+Het donkere logo (06 donker) staat alleen op `#071A30`. Er is geen tolerantie en geen uitzondering voor kleine verschillen. Het donkerblauw van de site (hero, CTA's, footer en andere donkere vlakken) wordt exact `#071A30`.
 
 ## Stap 3 — Merkelementen
 - Logo in header en footer vervangen door de nieuwe bestanden uit `public/brand/`. Het woordmerk wordt nooit als tekst gezet.
@@ -42,6 +40,7 @@ Dimitry's observatie: de header is breder dan de rest van de pagina, waardoor de
 5. De live layout en het donkerblauw zijn visueel behouden, op de uitkomst van stap 2 na.
 6. Content en header hebben dezelfde breedte op 1440 en 1920 px; lopende tekst blijft binnen ca. 75 tekens.
 7. Screenshots lokaal bewaren, niet committen (map is gitignored).
+8. Alle donkere achtergronden gebruiken `#071A30` via één variabele `--aw-deep`. Er staat nergens een andere donkerblauwe hex (zoek ook op `#0F1F35` en vergelijkbare tinten).
 
 ## Afronden
 Branch pushen, Cloudflare-preview-URL in het Resultaat zetten (`https://rebrand-merk-op-live.assetwize-website.pages.dev`, controleer of dat klopt). Geen PR aanmaken zonder opdracht van Dimitry.
@@ -158,3 +157,76 @@ De aanname klopt: de bovenste navigatiebalk (1104 px) is breder dan de content (
 - het volgende commit voegt alleen deze regels toe
 - Preview: https://rebrand-merk-op-live.assetwize-website.pages.dev (klopt met de verwachte URL); commit-preview https://ec045fd3.assetwize-website.pages.dev
 - Geen PR aangemaakt, niet gemerged.
+
+### Vervolg 1 — exact `#071A30` en logo 06 in de footer
+
+Uitgevoerd op 2026-11-02 op dezelfde branch. Stap 2 en acceptatiecriterium 8 zijn in dit taakbestand aangepast. CLAUDE.md, sectie "Merk", heeft de regel over het donkere vlak erbij.
+
+**1. Gevonden donkerblauwe waarden** (`src` en `public`, vóór de vervanging)
+
+| Bestand | Regel(s) | Waarde |
+|---|---|---|
+| `src/styles/global.css` | 13–15 | `--color-navy-700: #1e3a5f`, `--color-navy-800: #162d4a`, `--color-navy-900: #0f1f35` |
+| `src/layouts/BaseLayout.astro` | 34 | `theme-color` `#0f1f35` |
+| `src/layouts/BaseLayout.astro` | 103 | footer `bg-navy-900` |
+| `src/pages/index.astro` | 11, 35, 44, 260, 344 | `bg-navy-900` (hero, bewijsstrip, cellen, Relicore-kaartkop, CTA) |
+| `src/pages/index.astro` | 37 | `bg-navy-800` (scheidingslijnen bewijsstrip) |
+| `src/pages/index.astro` | 160–161, 313 | `#0f1f35` (stap "Ontwerpen", rol "Directie & bestuur") |
+| `src/pages/index.astro` | 178–179 | `#1e3a5f` (stap "Verankeren") |
+| `src/pages/index.astro` | 58, 115, 135, 186, 212, 305, 333 | `text-navy-900` |
+| `src/pages/atlas/index.astro` | 340 | `#0f1f35` ("AssetWize expertise") |
+| `src/pages/contact/index.astro` | 11 | `bg-navy-900` (hero) |
+| `src/pages/contact/index.astro` | 74, 117, 137, 170 | `text-navy-900` |
+| `src/pages/waarom/index.astro` | 11, 257 | `bg-navy-900` (hero, CTA) |
+| `src/pages/waarom/index.astro` | 36, 73, 96, 109, 137, 152, 168, 184, 200, 233, 244 | `text-navy-900` |
+| `src/pages/relicore/index.astro` | 11, 123, 153, 178, 206, 274, 320, 378 | `bg-navy-900` (hero, stappen, app-kopbalken, SITE-label, band, CTA) |
+| `src/pages/relicore/index.astro` | 54, 68, 103, 128, 142, 168, 221, 229, 233, 256, 289, 307, 349, 366 | `text-navy-900` |
+| `src/pages/relicore-app/index.astro` | 13, 19, 48, 58 | `#0f1f35` (body-tekst, header-achtergrond, h1, kaartkop) |
+| `public/relicore_logo_dark.svg` | 7× | `#0f1f35`; oud logobestand, nergens gebruikt, niet aangepast |
+
+Er zijn geen gradients en geen `rgb(15, 31, 53)` in de bron. Er zijn geen andere donkere Tailwind-klassen (slate/blue/indigo 700–900). `text-blue-700` in de Relicore-mockup is een middenblauw accent en is ongewijzigd.
+
+**2. Vervanging door één variabele**
+
+- `global.css`: de navy-700/800/900-tokens zijn weg. In `:root` staat nu `--aw-deep: #071A30`, met `@theme inline { --color-aw-deep: var(--aw-deep); }` voor `bg-aw-deep` en `text-aw-deep`. Dat is de enige plek waar de hex staat.
+- `bg-navy-900` → `bg-aw-deep` en `text-navy-900` → `text-aw-deep`, op alle pagina's en in de footer.
+- Inline `#0f1f35` en `#1e3a5f` → `var(--aw-deep)`.
+- **Bewijsstrip homepage:** de scheidingslijnen waren `bg-navy-800`, een tweede donkerblauw. Ze zijn nu `bg-white/10`: wit op 10 % over `#071A30`, dus geen eigen hex.
+- **Stappen "Ontwerpen" (#0f1f35) en "Verankeren" (#1e3a5f)** zijn nu beide `--aw-deep`. Het kleurverschil tussen die twee stappen is daarmee weg; label en tekst onderscheiden ze nog.
+- **/relicore-app** importeert nu `global.css` om de variabele te kunnen gebruiken. Op het screenshot is de weergave gelijk gebleven.
+- **Uitzondering:** `<meta name="theme-color" content="#071A30">` in BaseLayout. Een meta-attribuut kan geen CSS-variabele lezen, dus de waarde staat daar letterlijk. Het is wel exact `#071A30`.
+- **Niet aangepast:**
+  - `#0F2D52` (merk-navy) in de logobestanden in `public/brand/`, omdat dat logobestanden zijn
+  - `public/relicore_logo_dark.svg`, een oud en ongebruikt bestand
+- **Grep na de vervanging:** in `src` staat `#071A30` alleen in `global.css` (de variabele) en in de theme-color-meta. Er staan geen `navy-`, `#0f1f35`, `#162d4a` of `#1e3a5f` meer.
+- **Berekend in de browser:** hero en footer zijn `rgb(7, 26, 48)`.
+
+**3. Logo 06 in de footer**
+
+- In `BaseLayout.astro` is één regel veranderd: `<img src="/brand/assetwize-logo-tagline-donker.svg" alt="AssetWize" class="w-[300px] max-w-full h-auto mb-2" />` op `bg-aw-deep`. De alt-tekst is ongewijzigd.
+- Gecontroleerd op 390 en 1440 px (2× pixeldichtheid):
+  - het SVG laadt volledig (natuurlijke breedte 2287 px, getoond op 300 × 80 px)
+  - het logo is scherp en valt binnen beeld (rechterrand 324 px bij 390 px viewport)
+- Het lichte logo (05) in de header is ongewijzigd, op 168 × 32 px.
+
+**4. `public/favicon.ico`**
+
+- Opnieuw opgebouwd uit `public/brand/favicon-16.png`, `-32.png` en `-48.png`: een ICO met drie PNG-afbeeldingen (16, 32 en 48 px), 5099 bytes.
+- /relicore-app heeft geen eigen icon-links, dus de browser haalt `/favicon.ico` op.
+- Gecontroleerd: vanaf /relicore-app geeft `/favicon.ico` status 200 en het nieuwe bestand (3 afbeeldingen). `dist/favicon.ico` is identiek aan het nieuwe bestand.
+- Headless Chrome vraagt zelf geen favicon op, dus het tabbladicoon heb ik niet visueel gezien.
+
+**5. Lichte kleuren.** Lichte kleuren, accenten (teal, forest, amber) en neutrale tinten (gray) zijn ongewijzigd.
+
+**Ook meegenomen**
+
+- **H1 op /relicore-app:** die had nog `font-weight: 700`. Mijn controle in stap 3 sloeg tags met een cijfer in de naam (`h1`, `h2`) over. Na correctie van het patroon bleek dit de enige; hij staat nu op 500.
+
+**6. Controles**
+
+- `npm run build` slaagt. De enige waarschuwing is de bestaande Node-melding `DEP0205`.
+- **Tekst:** de zichtbare tekst en alt-teksten zijn identiek aan `main`. In de meta verschillen alleen de `og:image`-URL (stap 3) en `theme-color` (`#0f1f35` → `#071A30`).
+- **Breedtes:** geen horizontale scroll en niets buiten beeld op 390, 768, 1440 en 1920 px.
+- **Screenshots:** lokaal bijgewerkt in `tasks/screenshots/TASK-011/`, niet gecommit.
+
+**Commits en preview Vervolg 1:** zie hieronder.

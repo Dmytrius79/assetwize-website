@@ -8,7 +8,7 @@ import '../styles/global.css';
 >
 
   <!-- ① HERO — uitkomst centraal -->
-  <section class="bg-navy-900 text-white pt-28 pb-20">
+  <section class="bg-aw-deep text-white pt-28 pb-20">
     <div class="aw-container">
       <p class="text-teal-400 text-xs uppercase tracking-[0.12em] mb-6"
          style="font-weight:600;">AssetWize</p>
@@ -32,16 +32,16 @@ import '../styles/global.css';
   </section>
 
   <!-- ② BEWIJS STRIP -->
-  <section class="bg-navy-900 py-8">
+  <section class="bg-aw-deep py-8">
     <div class="aw-container">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-navy-800">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
         {[
           { label: "Gebouwd in de praktijk",       sub: "Twintig jaar. Geen theorie." },
           { label: "Van strategie tot uitvoering",  sub: "Boardroom tot werkvloer." },
           { label: "Sectoronafhankelijk",            sub: "Industrie · Farma · Utilities · Agri" },
           { label: "Ontworpen voor implementatie",  sub: "Niet voor rapporten." },
         ].map((item) => (
-          <div class="bg-navy-900 px-6 py-6 text-center">
+          <div class="bg-aw-deep px-6 py-6 text-center">
             <p style="font-size:15px; font-weight:500; color:#2dd4bf; line-height:1.4; letter-spacing:0.01em;">{item.label}</p>
             <p style="font-size:12px; font-weight:400; color:#9ca3af; margin-top:6px; line-height:1.5;">{item.sub}</p>
           </div>
@@ -55,7 +55,7 @@ import '../styles/global.css';
     <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-[0.12em] mb-6"
          style="font-weight:600;">Twintig jaar praktijkervaring. Eén terugkerende observatie.</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-6 max-w-2xl"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-deep mb-6 max-w-2xl"
           style="font-weight:500;">
         Organisaties worstelen zelden met een gebrek aan techniek.
       </h2>
@@ -112,7 +112,7 @@ import '../styles/global.css';
              class="group flex flex-col justify-between rounded-xl p-7 transition-all
                     hover:shadow-sm"
              style={`background:${item.bg}; border:1px solid ${item.border};`}>
-            <p class="text-navy-900 text-base leading-snug mb-8"
+            <p class="text-aw-deep text-base leading-snug mb-8"
                style="font-weight:400;">
               "{item.situatie}"
             </p>
@@ -132,7 +132,7 @@ import '../styles/global.css';
     <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">De aanpak</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-4"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-deep mb-4"
           style="font-weight:500;">
         Bestuurbaarheid ontstaat niet vanzelf.<br />Het wordt ontworpen.
       </h2>
@@ -157,8 +157,8 @@ import '../styles/global.css';
             instrument: "Governance Frameworks",
             omschrijving: "AssetWize ontwerpt het besturingssysteem — eigenaarschap, besluitvorming, investeringslogica en overlegstructuren — op maat van de organisatie.",
             href: "/waarom",
-            kleur: "#0f1f35",
-            border: "#0f1f35",
+            kleur: "var(--aw-deep)",
+            border: "var(--aw-deep)",
           },
           {
             werkwoord: "Inrichten",
@@ -175,15 +175,15 @@ import '../styles/global.css';
             instrument: "Implementatie & organisatie",
             omschrijving: "Governance werkt alleen als het landt in de organisatie — in processen, in CMMS-inrichting, in gedrag en in blijvende sturing op resultaat.",
             href: "/contact",
-            kleur: "#1e3a5f",
-            border: "#1e3a5f",
+            kleur: "var(--aw-deep)",
+            border: "var(--aw-deep)",
           },
         ].map((stap) => (
           <div class="bg-white px-7 py-8 flex flex-col"
                style={`border-top:3px solid ${stap.border};`}>
             <p class="text-xs uppercase tracking-[0.12em] mb-3"
                style={`font-weight:600; color:${stap.kleur};`}>{stap.werkwoord}</p>
-            <p class="text-navy-900 text-base mb-1 leading-snug"
+            <p class="text-aw-deep text-base mb-1 leading-snug"
                style="font-weight:500;">{stap.vraag}</p>
             <p class="text-xs uppercase tracking-widest mb-4"
                style={`font-weight:500; color:${stap.kleur};`}>{stap.instrument}</p>
@@ -209,7 +209,7 @@ import '../styles/global.css';
     <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Instrumenten</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-4"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-deep mb-4"
           style="font-weight:500;">
         Compass en Relicore zijn geen losse producten.<br />Ze zijn onderdeel van hetzelfde systeem.
       </h2>
@@ -257,7 +257,7 @@ import '../styles/global.css';
 
         <!-- Relicore -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <div class="px-8 py-7 bg-navy-900" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div class="px-8 py-7 bg-aw-deep" style="border-bottom:1px solid rgba(255,255,255,0.1);">
             <div class="flex items-center gap-3 mb-4">
               <svg viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
                 <circle cx="20" cy="20" r="16" fill="none" stroke="#2dd4bf" stroke-width="1.5"/>
@@ -302,7 +302,7 @@ import '../styles/global.css';
     <div class="aw-container">
       <p class="text-teal-700 text-xs uppercase tracking-[0.12em] mb-4"
          style="font-weight:600;">Voor wie</p>
-      <h2 class="text-2xl md:text-3xl leading-snug text-navy-900 mb-10 max-w-lg"
+      <h2 class="text-2xl md:text-3xl leading-snug text-aw-deep mb-10 max-w-lg"
           style="font-weight:500;">
         AssetWize spreekt de taal van het bestuur.<br />Maar werkt op alle niveaus.
       </h2>
@@ -310,7 +310,7 @@ import '../styles/global.css';
         {[
           {
             rol: "Directie & bestuur",
-            kleur: "#0f1f35",
+            kleur: "var(--aw-deep)",
             h: "Grip op risico, waarde en continuïteit",
             p: "Voor bestuurlijk inzicht in de vraag of de organisatie daadwerkelijk in staat is waarde uit assets te realiseren — en welke besluiten daarvoor nodig zijn.",
           },
@@ -330,7 +330,7 @@ import '../styles/global.css';
           <div class="border border-gray-200 rounded-xl p-7 bg-white">
             <p class="text-xs uppercase tracking-[0.12em] mb-3"
                style={`font-weight:600; color:${item.kleur};`}>{item.rol}</p>
-            <p class="text-navy-900 text-sm mb-3 leading-snug"
+            <p class="text-aw-deep text-sm mb-3 leading-snug"
                style="font-weight:500;">{item.h}</p>
             <p class="text-gray-500 text-sm leading-relaxed"
                style="font-weight:400;">{item.p}</p>
@@ -341,7 +341,7 @@ import '../styles/global.css';
   </section>
 
   <!-- ⑥ CTA -->
-  <section class="bg-navy-900 text-white py-20">
+  <section class="bg-aw-deep text-white py-20">
     <div class="aw-container text-center">
       <h2 class="text-2xl md:text-3xl leading-snug text-white mb-4 max-w-lg mx-auto"
           style="font-weight:500;">
