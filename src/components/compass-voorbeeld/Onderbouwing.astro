@@ -1,0 +1,139 @@
+---
+// "Meer onderbouwing" — port van KoersBijlage.tsx: antwoorden per vraag, spreiding per thema, antwoordverdeling.
+// Uitklappen met <details>: standaard dicht, Enter/Spatie op de samenvatting, zichtbare focus.
+import Onderschrift from './Onderschrift.astro';
+import { THEMAS, VERDELING, AANTAL_ANTWOORDEN, NIVEAU_LABEL } from './voorbeeld-data';
+import { AW, NIVEAU_RAMP, NIVEAU_TEKST } from './stijl';
+
+const kaart = `background-color:#ffffff; border:1px solid ${AW.tile}; border-radius:10px; color:${AW.navy};`;
+const titel = `margin:0 0 4px; font-size:11px; font-weight:600; letter-spacing:0.12em; color:${AW.slate}; text-transform:uppercase;`;
+const uitleg = `margin:0 0 16px; font-size:12px; color:${AW.slate};`;
+const niveau = (n: number, size = 26) =>
+  `width:${size}px; height:${size}px; border-radius:6px; background:${NIVEAU_RAMP[n]}; color:${NIVEAU_TEKST[n]}; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:500; flex-shrink:0;`;
+---
+<details class="cv-details" style={`border:1px solid ${AW.tile}; border-radius:10px; background:#ffffff; color:${AW.navy};`}>
+  <summary class="cv-summary" style="padding:16px 20px;">
+    <span style="font-size:15px; font-weight:500;">Meer onderbouwing</span>
+    <span aria-hidden="true" class="cv-pijl" style={`font-size:12px; color:${AW.slate};`}></span>
+  </summary>
+
+  <div class="p-3 sm:p-5" style={`display:flex; flex-direction:column; gap:16px; border-top:1px solid ${AW.tile}; background:${AW.wolk}; border-radius:0 0 10px 10px;`}>
+
+    <!-- 1. Antwoorden per vraag -->
+    <div class="p-4 sm:p-6" style={kaart}>
+      <p style={titel}>Antwoorden per vraag</p>
+      <p style={uitleg}>Per vraag het gekozen niveau en de gekozen antwoordtekst; met toelichting van de respondent als die is gegeven.</p>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        {THEMAS.map((t) => (
+          <details class="cv-details" style={`border:1px solid ${AW.tile}; border-radius:8px; overflow:hidden;`}>
+            <summary class="cv-summary" style="padding:12px 14px; background:#ffffff;">
+              <span style="font-size:14px; font-weight:500; min-width:0;"><span style={`color:${AW.slate}; font-weight:400; margin-right:6px;`}>{t.nr}</span>{t.naam}</span>
+              <span style="display:inline-flex; gap:10px; align-items:center; flex-shrink:0;">
+                <span style="display:inline-flex; gap:3px;">{t.vragen.map((v) => <span aria-label={`Niveau ${v.niveau}`} style={niveau(v.niveau, 18)}>{v.niveau}</span>)}</span>
+                <span aria-hidden="true" class="cv-pijl-klein" style={`font-size:10px; color:${AW.slate};`}></span>
+              </span>
+            </summary>
+            <div style={`border-top:1px solid ${AW.hair};`}>
+              {t.vragen.map((v, i) => (
+                <div style={`display:grid; grid-template-columns:26px minmax(0,1fr); gap:14px; padding:14px; border-top:${i ? `1px solid ${AW.hair}` : 'none'};`}>
+                  <span aria-label={`Niveau ${v.niveau}`} style={niveau(v.niveau)}>{v.niveau}</span>
+                  <div>
+                    <p style={`margin:0 0 6px; font-size:13px; font-weight:500; color:${AW.navy}; line-height:1.45;`}>
+                      <span style={`color:${AW.slate}; font-weight:400; margin-right:6px;`}>V{v.nr}</span>{v.tekst}
+                    </p>
+                    <p style={`margin:0; font-size:13px; line-height:1.55; color:${AW.ink};`}>
+                      <span style={`color:${AW.forest}; font-weight:500;`}>Niveau {v.niveau} · {NIVEAU_LABEL[v.niveau]}</span> — {v.antwoord}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-4">
+      <!-- 2. Spreiding per thema -->
+      <div class="p-4 sm:p-6" style={kaart}>
+        <p style={titel}>Spreiding per thema</p>
+        <p style={uitleg}>Elk punt is één vraag; gelijke antwoorden staan naast elkaar. Een groot verschil binnen een thema betekent dat het thema intern verdeeld is.</p>
+        <div class="cv-spreiding" style="display:grid; row-gap:12px; column-gap:12px; align-items:center;">
+          <span />
+          <div style={`display:grid; grid-template-columns:repeat(5, 1fr); font-size:10px; color:${AW.slate};`}>
+            {[1, 2, 3, 4, 5].map((n) => <span style="text-align:center;">{n}</span>)}
+          </div>
+          <span style={`font-size:10px; color:${AW.slate}; text-align:right;`}>verschil</span>
+          {THEMAS.map((t) => {
+            const scores = t.vragen.map((v) => v.niveau);
+            return (
+              <Fragment>
+                <span style={`font-size:13px; color:${AW.navy}; line-height:1.3;`}>{t.naam}</span>
+                <div style={`display:grid; grid-template-columns:repeat(5, 1fr); align-items:center; height:26px; background-image:linear-gradient(${AW.hair}, ${AW.hair}); background-size:100% 2px; background-position:center; background-repeat:no-repeat;`}>
+                  {[1, 2, 3, 4, 5].map((n) => {
+                    const k = scores.filter((s) => s === n).length;
+                    return (
+                      <span style="display:flex; justify-content:center; gap:2px;">
+                        {Array.from({ length: k }).map(() => (
+                          <span title={`${k}× niveau ${n}`} style={`width:12px; height:12px; border-radius:50%; background:${NIVEAU_RAMP[n]}; border:2px solid #ffffff; box-shadow:0 0 0 1px ${AW.forest};`} />
+                        ))}
+                      </span>
+                    );
+                  })}
+                </div>
+                <span style={`font-size:12px; color:${t.spreiding >= 2 ? AW.navy : AW.slate}; font-weight:${t.spreiding >= 2 ? 500 : 400}; text-align:right;`}>
+                  {t.spreiding === 0 ? 'gelijk' : `${t.spreiding} niveau${t.spreiding > 1 ? 's' : ''}`}
+                </span>
+              </Fragment>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- 3. Antwoordverdeling -->
+      <div class="p-4 sm:p-6" style={kaart}>
+        <p style={titel}>Antwoordverdeling</p>
+        <p style={uitleg}>Alle {AANTAL_ANTWOORDEN} antwoorden over de vijf niveaus.</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          {VERDELING.map((count, i) => {
+            const n = i + 1;
+            return (
+              <div style="display:grid; grid-template-columns:26px 104px minmax(0,1fr) 28px; gap:10px; align-items:center;">
+                <span aria-label={`Niveau ${n}`} style={niveau(n)}>{n}</span>
+                <span style={`font-size:13px; color:${AW.navy};`}>{NIVEAU_LABEL[n]}</span>
+                <div style={`height:8px; background:${AW.hair}; border-radius:4px; overflow:hidden;`}>
+                  <div style={`width:${(count / AANTAL_ANTWOORDEN) * 100}%; height:100%; border-radius:4px; background:${AW.forest};`} />
+                </div>
+                <span style={`font-size:13px; font-weight:500; color:${AW.navy}; text-align:right; font-variant-numeric:tabular-nums;`}>{count}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+
+    <Onderschrift />
+  </div>
+</details>
+
+<style>
+  .cv-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    list-style: none;
+    border-radius: inherit;
+  }
+  .cv-summary::-webkit-details-marker { display: none; }
+  .cv-summary:focus-visible {
+    outline: 2px solid #048192;
+    outline-offset: 2px;
+  }
+  .cv-pijl::after { content: "▼ Openen"; }
+  details[open] > summary .cv-pijl::after { content: "▲ Sluiten"; }
+  .cv-pijl-klein::after { content: "▼"; }
+  details[open] > summary .cv-pijl-klein::after { content: "▲"; }
+  .cv-spreiding { grid-template-columns: minmax(88px, 200px) minmax(110px, 1fr) 52px; }
+</style>

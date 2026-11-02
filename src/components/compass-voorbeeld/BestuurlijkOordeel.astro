@@ -1,0 +1,67 @@
+---
+// Bestuurlijke stand en score per thema — port van rij 2 van KoersZoneA.tsx (zonder radar; die staat in de hero).
+import { ORGANISATIE, THEMAS, TOTAAL, BAND, LAAG_12, AANTAL_ANTWOORDEN, STERKSTE, LEVEL_DESCRIPTIONS, fmt2 } from './voorbeeld-data';
+import { AW, kader, eyebrow, zoneLabel } from './stijl';
+
+const markerPct = ((TOTAAL - 1) / 4) * 100;
+---
+<section aria-label="Voorbeeld: bestuurlijk oordeel" style={kader}>
+  <div style={`padding:20px 24px 16px; border-bottom:1px solid ${AW.hair};`}>
+    <p style={zoneLabel}>Koers · Bestuurlijk oordeel</p>
+    <h3 style="margin:0; font-size:20px; font-weight:500; letter-spacing:-0.01em;">{ORGANISATIE}</h3>
+  </div>
+  <div class="grid md:grid-cols-2">
+    <div class="border-b md:border-b-0 md:border-r" style={`padding:20px 24px; border-color:${AW.hair};`}>
+      <p style={eyebrow}>Bestuurlijke stand</p>
+      <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
+        <span style="font-size:44px; font-weight:500; line-height:1; letter-spacing:-0.02em; font-variant-numeric:tabular-nums;">{fmt2(TOTAAL)}</span>
+        {BAND && (
+          <span style={`display:inline-flex; align-items:center; height:26px; padding:0 12px; border-radius:13px; background-color:${AW.forestLight}; color:${AW.forestDark}; font-size:13px; font-weight:500;`}>
+            Niveau {BAND.levelInt} · {BAND.label}
+          </span>
+        )}
+      </div>
+      {BAND && <p style={`margin:12px 0 0; font-size:13px; line-height:1.55; color:${AW.ink};`}>{LEVEL_DESCRIPTIONS[BAND.levelInt]}</p>}
+
+      <div style="margin-top:16px;" aria-hidden="true">
+        <div style="position:relative; display:grid; grid-template-columns:repeat(5, 1fr); gap:2px;">
+          {[1, 2, 3, 4, 5].map((n) => (
+            <div style={`height:6px; border-radius:2px; background-color:${BAND && n <= BAND.levelInt ? AW.forest : '#E6ECEF'};`} />
+          ))}
+          <div style={`position:absolute; top:-4px; left:calc(${markerPct}% - 1px); width:2px; height:14px; background-color:${AW.navy};`} />
+        </div>
+        <div style={`display:grid; grid-template-columns:repeat(5, 1fr); margin-top:6px; font-size:10px; color:${AW.slate};`}>
+          {[1, 2, 3, 4, 5].map((n) => (
+            <span style={BAND?.levelInt === n ? `color:${AW.navy}; font-weight:500;` : undefined}>{n}</span>
+          ))}
+        </div>
+      </div>
+
+      <div style={`margin-top:16px; padding-top:14px; border-top:1px solid ${AW.hair}; display:flex; flex-direction:column; gap:6px; font-size:13px; color:${AW.ink};`}>
+        <p style="margin:0;"><span style={`color:${AW.forest}; font-weight:500;`}>Relatief sterk:</span> {STERKSTE.naam} ({fmt2(STERKSTE.avg)})</p>
+        <p style={`margin:0; color:${AW.slate};`}>{LAAG_12} van {AANTAL_ANTWOORDEN} antwoorden op niveau 1–2</p>
+      </div>
+    </div>
+
+    <div style="padding:20px 24px;">
+      <p style={eyebrow}>Score per thema</p>
+      <ol style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
+        {THEMAS.map((t) => {
+          const pct = ((t.avg - 1) / 4) * 100;
+          return (
+            <li style="display:grid; grid-template-columns:22px minmax(0,1fr) 40px; align-items:center; gap:10px;">
+              <span aria-hidden="true" style={`width:22px; height:22px; border-radius:50%; border:1px solid ${AW.line}; font-size:11px; font-weight:500; color:${AW.ink}; display:inline-flex; align-items:center; justify-content:center;`}>{t.nr}</span>
+              <div style="min-width:0;">
+                <p style={`margin:0 0 5px; font-size:13px; color:${AW.navy}; line-height:1.3;`}>{t.naam}</p>
+                <div style="height:4px; border-radius:2px; background-color:#E6ECEF; overflow:hidden;">
+                  <div style={`height:4px; width:${Math.max(2, pct)}%; background-color:${AW.forest};`} />
+                </div>
+              </div>
+              <span style="font-size:14px; font-weight:500; text-align:right; font-variant-numeric:tabular-nums;">{fmt2(t.avg)}</span>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+---
+// Vast onderschrift onder elk voorbeeldscherm (TASK-013). `donker` voor gebruik op #071A30.
+interface Props { donker?: boolean }
+const { donker = false } = Astro.props;
+---
+<p class={`mt-3 text-xs ${donker ? 'text-white/65' : 'text-forest-400'}`} style="font-weight:400;">
+  Voorbeeld met fictieve gegevens · beeld van één respondent, onderbouwd in het begeleide gesprek.
+</p>

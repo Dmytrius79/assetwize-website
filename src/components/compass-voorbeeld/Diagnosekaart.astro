@@ -1,0 +1,56 @@
+---
+// Controle · diagnosekaart werken & leren — port van Visual E in L2ReportView.tsx (25 organisatievermogens × 4 PDCA-fasen).
+// Onder 640 px staan de vier fasen onder de naam, zodat de kaart zonder horizontaal scrollen leesbaar blijft.
+import { CONTROLE_THEMAS, PDCA_STEPS, fmt1 } from './voorbeeld-data';
+import { AW, kader, scoreColor, scoreBg } from './stijl';
+---
+<section aria-label="Voorbeeld: diagnosekaart werken en leren" class="p-4 sm:p-6" style={kader}>
+  <table class="cv-kaart" style="width:100%; border-collapse:collapse;">
+    <thead>
+      <tr style={`border-bottom:1px solid ${AW.line};`}>
+        <th class="cv-naam" scope="col" style={`text-align:left; font-size:11px; color:${AW.slate}; padding:4px 0; font-weight:400; letter-spacing:0.06em;`}>ORGANISATIEVERMOGEN</th>
+        {PDCA_STEPS.map((p) => (
+          <th scope="col" style={`text-align:center; font-size:11px; color:${AW.slate}; padding:4px 2px; font-weight:400;`}>{p}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {CONTROLE_THEMAS.map((thema) => (
+        <Fragment>
+          <tr class="cv-groep">
+            <th colspan="5" scope="colgroup" style={`text-align:left; padding-top:14px; padding-bottom:4px; font-size:12px; font-weight:500; color:${AW.forestDark};`}>{thema.naam}</th>
+          </tr>
+          {thema.subs.map((s) => (
+            <tr style="border-bottom:1px solid #E0EBE4;">
+              <th class="cv-naam" scope="row" style={`text-align:left; padding:6px 8px 6px 0; font-size:13px; font-weight:400; color:${AW.forest900};`}>{s.naam}</th>
+              {s.pdca.map((v, i) => (
+                <td style="text-align:center; padding:6px 2px;">
+                  <span aria-label={`${PDCA_STEPS[i]}: ${fmt1(v)}`} style={`display:inline-block; min-width:30px; font-size:11px; font-weight:500; color:${scoreColor(v)}; background-color:${scoreBg(v)}; border-radius:99px; padding:2px 6px;`}>{fmt1(v)}</span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </Fragment>
+      ))}
+    </tbody>
+  </table>
+  <p style={`font-size:11px; color:${AW.slate}; margin:12px 0 0;`}>
+    Toont waar de verbetercyclus consistent zwak is: rood vraagt aandacht, groen is op orde.
+  </p>
+</section>
+
+<style>
+  .cv-kaart th, .cv-kaart td { vertical-align: middle; }
+  .cv-kaart thead th:not(.cv-naam) { width: 84px; }
+  @media (max-width: 639px) {
+    .cv-kaart thead tr,
+    .cv-kaart tbody tr:not(.cv-groep) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .cv-kaart .cv-naam { grid-column: 1 / -1; padding-bottom: 2px !important; }
+    .cv-kaart thead th:not(.cv-naam) { width: auto; font-size: 10px !important; }
+    .cv-kaart tbody tr.cv-groep { display: block; }
+    .cv-kaart tbody tr.cv-groep th { display: block; }
+  }
+</style>

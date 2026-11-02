@@ -1,0 +1,19 @@
+---
+// Drie spiegelkaarten — opmaak van de patroonkaarten in KoersZoneB.tsx (label · kop · alinea).
+import { SPIEGELKAARTEN, themaNaam } from './voorbeeld-data';
+import { AW, kader, zoneLabel } from './stijl';
+---
+<section aria-label="Voorbeeld: bestuurlijke spiegel" style={kader}>
+  <div style={`padding:20px 24px 16px; border-bottom:1px solid ${AW.hair};`}>
+    <p style={`${zoneLabel} margin:0;`}>Koers · Bestuurlijke spiegel</p>
+  </div>
+  <div class="grid lg:grid-cols-3">
+    {SPIEGELKAARTEN.map((k, i) => (
+      <article class={i < SPIEGELKAARTEN.length - 1 ? 'border-b lg:border-b-0 lg:border-r' : ''} style={`padding:20px 24px 22px; border-color:${AW.hair};`}>
+        <p style={`margin:0 0 8px; font-size:11px; font-weight:600; letter-spacing:0.12em; color:${AW.slate}; text-transform:uppercase;`}>{themaNaam(k.themaId)}</p>
+        <h3 style={`margin:0 0 10px; font-size:17px; font-weight:500; line-height:1.35; color:${AW.navy};`}>{k.kop}</h3>
+        <p style={`margin:0; font-size:14px; line-height:1.65; color:${AW.ink};`}>{k.tekst}</p>
+      </article>
+    ))}
+  </div>
+</section>

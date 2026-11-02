@@ -1,0 +1,39 @@
+---
+// Profiel over 7 thema's — port van Radar() in KoersZoneA.tsx: nummers op de assen, namen in de legenda.
+import { THEMAS, fmt2 } from './voorbeeld-data';
+import { AW } from './stijl';
+
+const size = 280, c = size / 2, R = 100, n = THEMAS.length;
+const pt = (i: number, r: number) => {
+  const a = -Math.PI / 2 + (2 * Math.PI * i) / n;
+  return [c + r * Math.cos(a), c + r * Math.sin(a)] as const;
+};
+const rOf = (v: number) => ((v - 1) / 4) * R;
+const ring = (lvl: number) => THEMAS.map((_, i) => pt(i, rOf(lvl)).join(',')).join(' ');
+const poly = THEMAS.map((t, i) => pt(i, rOf(t.avg)).join(',')).join(' ');
+const label = `Radar van de zeven themascores: ${THEMAS.map((t) => `${t.naam} ${fmt2(t.avg)}`).join(', ')}`;
+---
+<svg viewBox={`0 0 ${size} ${size}`} width="100%" style="max-width:280px; display:block; margin:0 auto;" role="img" aria-label={label}>
+  {[1, 2, 3, 4, 5].map((lvl) => (
+    <polygon points={ring(lvl)} fill="none" stroke={lvl === 5 ? AW.line : AW.hair} stroke-width="1" />
+  ))}
+  {THEMAS.map((_, i) => { const [x, y] = pt(i, R); return <line x1={c} y1={c} x2={x} y2={y} stroke={AW.hair} />; })}
+  <polygon points={poly} fill="rgba(45,106,79,0.14)" stroke={AW.forest} stroke-width="1.5" />
+  {THEMAS.map((t, i) => { const [x, y] = pt(i, rOf(t.avg)); return <circle cx={x} cy={y} r="2.5" fill={AW.forestDark} />; })}
+  {THEMAS.map((t, i) => {
+    const [x, y] = pt(i, R + 18);
+    return (
+      <g>
+        <circle cx={x} cy={y} r="10" fill="#ffffff" stroke={AW.line} />
+        <text x={x} y={y} text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="500" fill={AW.ink}>{t.nr}</text>
+      </g>
+    );
+  })}
+</svg>
+<ol class="mt-4 grid sm:grid-cols-2 gap-x-4 gap-y-1.5" style="list-style:none; margin-left:0; padding:0;">
+  {THEMAS.map((t) => (
+    <li style={`display:flex; gap:8px; font-size:12px; line-height:1.35; color:${AW.ink};`}>
+      <span style={`flex-shrink:0; width:14px; text-align:right; color:${AW.slate};`}>{t.nr}</span>{t.naam}
+    </li>
+  ))}
+</ol>
