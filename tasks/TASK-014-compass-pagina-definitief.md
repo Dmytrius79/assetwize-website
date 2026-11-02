@@ -84,3 +84,78 @@ Description: Compass maakt zichtbaar waar besluiten over bedrijfsmiddelen niet a
 4. Breedtes 390, 768, 1440 en 1920 px: geen horizontale scroll, grid in blok 2 correct, hero leesbaar op #1A4A35.
 5. `git diff --stat` toont alleen src/pages/compass/index.astro en eventueel bestanden in src/components/compass-voorbeeld/. Geen screenshots committen.
 6. Voeg onderaan dit bestand een sectie "Resultaat" toe: wat is gedaan, bevindingen, preview-URL, afwijkingen van de opdracht en open vragen. Vraag niets tijdens het werk. Als iets niet past, noteer het onder open vragen en kies de veiligste lezing.
+
+## Resultaat
+
+**Wat is gedaan**
+
+- **Branch:** `content/compass-pagina`, gepusht. Niet gemerged, geen nieuwe PR.
+- **Commits:**
+  - `e3577e9`: taakbestand
+  - `1685363`: pagina en componenten
+  - plus de commit met dit Resultaat
+- **Preview:**
+  - Branch: https://content-compass-pagina.assetwize-website.pages.dev/compass/
+  - Commit `1685363`: https://035fa5ed.assetwize-website.pages.dev/compass/
+  - Cloudflare-check geslaagd; de preview toont de nieuwe H1 en de afsluiting.
+- **`src/pages/compass/index.astro`:** opnieuw opgebouwd in acht blokken met de letterlijke tekst uit dit bestand. Daarbij:
+  - Blok 2 is een genummerd grid: 1 kolom op mobiel, 2 vanaf 768 px.
+  - Blok 6: score per thema, drie spiegelkaarten, de regel bij het uittreksel, het uittreksel van acht rijen met een beschrijvende legenda, en het onderschrift "Voorbeeld met de Voorbeeldorganisatie."
+- **Componenten in `src/components/compass-voorbeeld/`:**
+  - `HeroScherm`, `ScorePerThema` en `Spiegel`: het zonelabel is nu "Koers". Het was "Koers · Bestuurlijk oordeel" / "Koers · Bestuurlijke spiegel", maar "bestuur" mag alleen in de eyebrow en de meta staan.
+  - `Spiegel`: het aria-label is "Voorbeeld: spiegelkaarten".
+  - `PerspectiefSymbool`: kreeg de gedempte variant uit de app (`gedempt`). Groei gebruikt die, met een grijs label en de badge "Binnenkort", zonder link.
+
+**Controles**
+
+1. **Build:** slaagt, inclusief de bouw-assertion in `voorbeeld-data.ts`. Die controleert:
+   - spiegelkaart 1 en 2 horen bij de twee laagste thema's, kaart 3 bij het hoogste
+   - de weergave "2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0 · totaal 2,5"
+   - de controlewaarden
+
+   **Negatieve proef:** T1 vraag 4 tijdelijk van 2 naar 3. De build faalde (exit 1) met "weergave wijkt af: 2,5 / 3,3 / … · totaal 2,6; controlewaarden wijken af: 13 op niveau 1–2, verdeling 2/11/12/3/0". Teruggezet (bestand gelijk aan de commit); de build slaagt weer.
+2. **Verboden woorden:**
+   - Gezocht in `src/pages/compass/index.astro` en alle componenten in `compass-voorbeeld/` op bewezen, `\bAI\b`, kunstmatige intelligentie, zelfevaluatie, "28 vragen", "25 subthema" en dag/dagen/week/weken/uur/uren: **0 treffers**.
+   - In de gebouwde HTML ook 0 treffers, net als voor `\b28\b`, `\b25\b` en `!`.
+
+   **Alle voorkomens van "bestuur":**
+   - Bronnen:
+     - `index.astro:33`: title "Compass — bestuurbaarheid in beeld"
+     - `index.astro:45`: eyebrow "Compass · bestuurbaarheid in beeld" (getoond in hoofdletters)
+   - Gebouwde pagina:
+     - `<title>`, `og:title` en `twitter:title` ("Compass — bestuurbaarheid in beeld | AssetWize")
+     - de eyebrow
+     - De meta-description bevat het woord niet.
+   - Verder nergens: niet in de lopende tekst, de schermen, de header of de footer.
+3. **Letterlijke tekst:** een regel-voor-regelcontrole van de paginatekst uit dit bestand tegen de zichtbare tekst in `dist/compass/index.html` vond **38 van 38 fragmenten**. Er is één verschil in hoofdletters:
+   - De eyebrow staat in de bron als "Compass · bestuurbaarheid in beeld" en wordt met CSS in hoofdletters getoond: "COMPASS · BESTUURBAARHEID IN BEELD". Dat is de huisregel voor eyebrows (sentence case in de bron).
+
+   Title en description zijn letterlijk gelijk.
+4. **Breedtes 390, 768, 1440 en 1920 px:**
+   - Geen horizontale scroll.
+   - Blok 2: 1 kolom op 390 px, 2 kolommen op 768, 1440 en 1920 px.
+   - De hero is `rgb(26, 74, 53)` = `#1A4A35`. Contrast zoals in TASK-013: alles AA, de laagste waarde is de subtekst met 5,33:1.
+   - Screenshots in `tasks/screenshots/TASK-014/`, niet gecommit.
+5. **`git diff --stat`:**
+   - De code-commit `1685363` raakt alleen `src/pages/compass/index.astro` en vier bestanden in `src/components/compass-voorbeeld/`.
+   - Het taakbestand staat in een eigen commit (`e3577e9`).
+
+**Bevindingen**
+
+- Scores: 2,3 / 3,3 / 2,0 / 2,8 / 2,0 / 2,5 / 3,0. Het uittreksel heeft 8 rijen. Er zijn 0 `<details>` en 0 onderschriften over fictieve gegevens.
+- "Voorbeeldorganisatie" staat 3 keer: in het heroscherm, in Score per thema en in het onderschrift.
+- PR #2 (`rebrand/afronding`) staat op OPEN. Dat was hij al; ik heb hem niet aangeraakt.
+
+**Afwijkingen van de opdracht**
+
+- **Zonelabels:** "Koers" in plaats van de app-labels "Koers · Bestuurlijk oordeel" en "Koers · Bestuurlijke spiegel", vanwege de regel over "bestuur". Dit is een verschil met de app (voor de app-backlog).
+- **Perspectiefkaarten:** "Koers · Hebben wij grip?" en "Controle · Waar loopt het vast, en waarom?" staan in de kaartstijl van de app: label als eyebrow, vraag als titel. De middelste punt is daardoor niet als teken zichtbaar. Groei: label plus badge "Binnenkort".
+- **Subkop uittreksel:** de subkop "Controle: uittreksel van de diagnosekaart" uit TASK-013 is vervallen, omdat de paginatekst hem niet noemt. De opgegeven regel staat nu boven het uittreksel.
+- **Onderschrift:** één keer, onder het hele beeld van blok 6.
+- **Totaal 2,5:** nergens zichtbaar. De specificatie noemt bij blok 6 geen stand. Het totaal wordt wel berekend en bij de build gecontroleerd.
+
+**Open vragen**
+
+1. **Totaal:** moet het totaal (2,5 · Niveau 2 · Fragmentarisch) zichtbaar worden, bijvoorbeeld als één regel boven de score per thema? Gekozen: niet tonen, omdat de specificatie het niet noemt.
+2. **"Profiel over 7 thema's":** het heroscherm toont dit label, letterlijk uit de app, met het cijfer 7. Dat valt onder "alleen de zeven thema's tonen" en is geen verboden aantal. Akkoord?
+3. **Foutmelding bouw-assertion:** de melding verwijst nog naar "TASK-013". Dat is alleen tekst in de foutmelding; ik heb het laten staan, zodat de diff klein blijft.
